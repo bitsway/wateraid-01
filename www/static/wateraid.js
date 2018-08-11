@@ -1623,7 +1623,7 @@ function syncDataAch(){
 			
 			achPlanId="";
 			wordCode="";
-			$(".errorChk").text('Successfully Submitted');
+			$(".sucMsg").text('Successfully Submitted');
 			$("#btn_ach_save").hide();
 			$("#btn_take_pic").hide();
 			$("#btn_ach_lat_long").hide();

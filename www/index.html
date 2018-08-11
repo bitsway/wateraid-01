@@ -48,6 +48,7 @@
     <style>	
         .reqField{ color:#FF0000;}
         .errorChk{ color:#FF0000; text-shadow:none;}
+		.sucMsg{ color:#009933; text-shadow:none;}
 		.auto_break{
 			word-wrap:break-word!important;
 			white-space:normal!important;
@@ -302,11 +303,11 @@
         <ul data-role="listview" data-inset="true" data-theme="c">
             <li class="ui-field-contain">
                 <label for="mobile"> Mobile No</label>
-                <input name="mobile" id="mobile" placeholder="" value="8801755520153" type="number">
+                <input name="mobile" id="mobile" placeholder="" value="" type="number">
             </li>
             <li class="ui-field-contain">
                 <label for="password">Password </label>
-                <input type="password" name="password" id="password" placeholder="" value="123" >
+                <input type="password" name="password" id="password" placeholder="" value="" >
             </li>
         </ul>
         <a data-role="button" href="#" id="syncBasic"  data-theme="c" data-transition="slide" >Sync</a>
@@ -403,7 +404,7 @@
     <div data-theme="c" data-role="header" data-position="fixed" >
     <a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
         <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
-        <h3>ALL Event</h3>
+        <h3>Activity</h3>
     </div>
     <div data-role="content">
         <div id="typeOfFac">
@@ -739,6 +740,7 @@
         <br />
         <a data-role="button" href="#" onClick="serviceRecipentNext();"  data-transition="slide" >Next</a>
         <div class="errorChk"></div>
+        <div class="sucMsg"></div>
         <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>			
     </div>
            
