@@ -3,13 +3,13 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.yeapps.WaterAid-01"
-        version   = "4.0.01">
+        id        = "com.businesssolutionapps.wab01"
+        version   = "4.0.18">
 
     <name>WaterAid-01</name>
 
     <description>
-       M-Reporting
+       M-Reporting for WaterAid Bangladesh
     </description>
 
     <author href="businesssolutionapps.com" email="info@im-gp.com">
@@ -54,6 +54,7 @@
 
     <!-- Core plugins -->
     <plugin name="cordova-plugin-battery-status" />
+    <plugin name="cordova-plugin-camera" />
     <plugin name="cordova-plugin-media-capture" />
     <plugin name="cordova-plugin-console" />
     <plugin name="cordova-plugin-contacts" />
@@ -61,6 +62,8 @@
     <plugin name="cordova-plugin-device-motion" />
     <plugin name="cordova-plugin-device-orientation" />
     <plugin name="cordova-plugin-dialogs" />
+    <plugin name="cordova-plugin-file" />
+    <plugin name="cordova-plugin-file-transfer" />
     <plugin name="cordova-plugin-geolocation" />
     <plugin name="cordova-plugin-globalization" />
     <plugin name="cordova-plugin-inappbrowser" />
@@ -68,9 +71,6 @@
     <plugin name="cordova-plugin-network-information" />
     <plugin name="cordova-plugin-splashscreen" />
     <plugin name="cordova-plugin-vibration" />
-	<plugin name="cordova-plugin-camera" version="2.4.1" />
-	<plugin name="cordova-plugin-file" version="4.3.3"/>
-	<plugin name="cordova-plugin-file-transfer" version="1.6.3" />
 
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
