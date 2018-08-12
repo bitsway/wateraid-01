@@ -69,9 +69,9 @@ function onSuccessAreaWq(position) {
 function onErrorAreaWq(error) {
    $("#area_lat").val(0);
    $("#area_long").val(0);
-   /*localStorage.latitudeAreaWq=$("#area_lat").val();
-	localStorage.longitudeAreaWq=$("#area_long").val();
-   alert(localStorage.latitudeAreaWq+'-'+localStorage.longitudeAreaWq);*/
+   //localStorage.latitudeAreaWq=$("#area_lat").val();
+	//localStorage.longitudeAreaWq=$("#area_long").val();
+   //alert(localStorage.latitudeAreaWq+'-'+localStorage.longitudeAreaWq);
    $(".errorChk").html("Failed to Confirmed Location.");
 }
 
@@ -204,7 +204,7 @@ $(function(){
 						localStorage.project=syncResultArray[9];
 						localStorage.domain=syncResultArray[10];
 						localStorage.sector=syncResultArray[11];
-						
+						//alert(localStorage.plan_list);
 						localStorage.mobile_no=mobile;
 						localStorage.ach_save="";
 						localStorage.water_q_save="";
@@ -637,23 +637,19 @@ function achNext(){
 		localStorage.planStr=planStr;
 		
 		//$("#selectIndicator").removeClass('ui-radio-off').addClass('ui-radio-on');
-		if (localStorage.planStr.length >=50){
-			if (planFlag==0){
-				$("#planlistDiv").html(localStorage.planStr);
-				planFlag=1;
-			}else{
-				$("#planlistDiv").empty();
-				$("#planlistDiv").append(localStorage.planStr).trigger('create');
-			}
-			
-			$(".errorChk").text("");	
-			var url = "#planList";
-			$.mobile.navigate(url);	
-		}else{	
-			$(".errorChk").text("Indicator not found");	
-			var url = "#servType";
-			$.mobile.navigate(url)
+		
+		if (planFlag==0){
+			$("#planlistDiv").html(localStorage.planStr);
+			planFlag=1;
+		}else{
+			$("#planlistDiv").empty();
+			$("#planlistDiv").append(localStorage.planStr).trigger('create');
 		}
+		//achPlanId=$("input[name='plan_select']:checked").val();
+		//$("selectIndicator").html(localStorage.planStr);
+		$(".errorChk").text("");	
+		var url = "#planList";
+		$.mobile.navigate(url);	
 	}
 }
 
@@ -1175,8 +1171,7 @@ function achiveDataSave(){
 				reviewAchDisplayFlag==false;
 				arrayId=-1;					
 				
-				$(".errorChk").text("");
-				$(".sucMsg").text("Successfully saved for review");
+				$(".errorChk").text("Successfully saved for review");
 				$("#btn_take_pic").hide();
 				$("#btn_ach_lat_long").hide();
 			}
@@ -1628,7 +1623,6 @@ function syncDataAch(){
 			
 			achPlanId="";
 			wordCode="";
-			$(".errorChk").text('');
 			$(".sucMsg").text('Successfully Submitted');
 			$("#btn_ach_save").hide();
 			$("#btn_take_pic").hide();
