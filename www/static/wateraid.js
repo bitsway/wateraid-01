@@ -165,8 +165,6 @@ var dapFemale='';
 var totalWiBen='';
 var totalInBen='';
 var achServiceRecpt='';
-var achSerType='';
-
 
 //var achCBOid='';
 //var achPopulation='';
@@ -536,6 +534,8 @@ function achivementclick(){
 		$("#s_girlsUnder").val("");
 		$("#s_population").val("");
 		$("#s_house_hold").val("");
+		$("#s_disability").val("");
+		
 		$("#b_male").val("");
 		$("#b_female").val("");
 		$("#b_boys").val("");
@@ -544,6 +544,8 @@ function achivementclick(){
 		$("#b_girlsUnder").val("");
 		$("#b_population").val("");
 		$("#b_house_hold").val("");
+		$("#b_disability").val("");
+		
 		$("#l_male").val("");
 		$("#l_female").val("");
 		$("#l_boys").val("");
@@ -552,10 +554,32 @@ function achivementclick(){
 		$("#l_girlsUnder").val("");
 		$("#l_population").val("");
 		$("#l_house_hold").val("");
+		$("#l_disability").val("");
+		
+		$("#d_male").val("");
+		$("#d_female").val("");
+		$("#d_boys").val("");
+		$("#d_girls").val("");
+		$("#d_boysUnder").val("");
+		$("#d_girlsUnder").val("");
+		$("#d_population").val("");
+		$("#d_house_hold").val("");
+		$("#d_disability").val("");
+		
+		$("#i_male").val("");
+		$("#i_female").val("");
+		$("#i_boys").val("");
+		$("#i_girls").val("");
+		$("#i_boysUnder").val("");
+		$("#i_girlsUnder").val("");
+		$("#i_population").val("");
+		$("#i_house_hold").val("");
+		$("#i_disability").val("");
+		
 		$("#dapMale").val("");
 		$("#dapFemale").val("");
 		$("#serRecpent").val("");
-		$("#serType").val("");
+		//$("#serType").val("");
 		$("#achPhoto").val("");	
 		$("#ach_lat").val("");
 		$("#ach_long").val("");		
@@ -894,6 +918,9 @@ function achivementDataPSupport(){
 	if(sGirlsUnder==''){
 		sGirlsUnder=0;
 	}
+	if(sPopulation==''){
+		sPopulation=0;	
+	}
 	if(sHouse_hold==''){
 		sHouse_hold=0;
 	}
@@ -919,6 +946,9 @@ function achivementDataPSupport(){
 	if(bGirlsUnder==''){
 		bGirlsUnder=0;
 	}	
+	if(bPopulation==''){
+		bPopulation=0;	
+	}
 	if(bHouse_hold==''){
 		bHouse_hold=0;
 	}
@@ -945,6 +975,9 @@ function achivementDataPSupport(){
 	if(lGirlsUnder==''){
 		lGirlsUnder=0;
 	}	
+	if(lPopulation==''){
+		lPopulation=0;	
+	}
 	if(lHouse_hold==''){
 		lHouse_hold=0;
 	}
@@ -970,7 +1003,10 @@ function achivementDataPSupport(){
 	}
 	if(dGirlsUnder==''){
 		dGirlsUnder=0;
-	}		
+	}	
+	if(dPopulation==''){
+		dPopulation=0;	
+	}	
 	if(dHouse_hold==''){
 		dHouse_hold=0;
 	}
@@ -996,7 +1032,10 @@ function achivementDataPSupport(){
 	}
 	if(iGirlsUnder==''){
 		iGirlsUnder=0;
-	}		
+	}	
+	if(iPopulation==''){
+		iPopulation=0;
+	}	
 	if(iHouse_hold==''){
 		iHouse_hold=0;
 	}
@@ -1193,12 +1232,12 @@ function i_totalPopulation(){
 //------------------achivement sector next 
 function serviceRecipentNext(){
 	achServiceRecpt=$("#serRecpent").val();
-	achSerType=$("#serType").val();
+	//achSerType=$("#serType").val();
 	
 	if(achServiceRecpt=="" ){
 		$(".errorChk").text("Select Location");
-	}else if(achSerType==""){
-		$(".errorChk").text("Select Service Type");
+	/*}else if(achSerType==""){
+		$(".errorChk").text("Select Service Type");*/
 	}else{
 		$(".errorChk").text("");
 		var url="#inPhoto";	
@@ -1240,7 +1279,7 @@ function achiveDataSave(){
 		
 		
 		
-		achivementSave=asinDomain+'fdfd'+intervention_area+'fdfd'+servicType+'fdfd'+serviceLevelWs+'fdfd'+serviceLevelHy+'fdfd'+achPlanId+'fdfd'+achPlanActivities+'fdfd'+typeOfFacility+'fdfd'+exManagCon+'fdfd'+typeOfActivity+'fdfd'+availHandWashFac+'fdfd'+availWaterSoapFac+'fdfd'+typeOfEven+'fdfd'+evenIssues+'fdfd'+wordCode+'fdfd'+achID+'fdfd'+communityName+'fdfd'+ownerName+'fdfd'+sMale+'fdfd'+sFemale+'fdfd'+sBoys+'fdfd'+sGirls+'fdfd'+sBoysUnder+'fdfd'+sGirlsUnder+'fdfd'+sPopulation+'fdfd'+sHouse_hold+'fdfd'+sDisability+'fdfd'+bMale+'fdfd'+bFemale+'fdfd'+bBoys+'fdfd'+bGirls+'fdfd'+bBoysUnder+'fdfd'+bGirlsUnder+'fdfd'+bPopulation+'fdfd'+bHouse_hold+'fdfd'+bDisability+'fdfd'+lMale+'fdfd'+lFemale+'fdfd'+lBoys+'fdfd'+lGirls+'fdfd'+lBoysUnder+'fdfd'+lGirlsUnder+'fdfd'+lPopulation+'fdfd'+lHouse_hold+'fdfd'+lDisability+'fdfd'+dMale+'fdfd'+dFemale+'fdfd'+dBoys+'fdfd'+dGirls+'fdfd'+dBoysUnder+'fdfd'+dGirlsUnder+'fdfd'+dPopulation+'fdfd'+dHouse_hold+'fdfd'+dDisability+'fdfd'+iMale+'fdfd'+iFemale+'fdfd'+iBoys+'fdfd'+iGirls+'fdfd'+iBoysUnder+'fdfd'+iGirlsUnder+'fdfd'+iPopulation+'fdfd'+iHouse_hold+'fdfd'+iDisability+'fdfd'+dapMale+'fdfd'+dapFemale+'fdfd'+totalWiBen+'fdfd'+totalInBen+'fdfd'+achServiceRecpt+'fdfd'+achSerType+'fdfd'+achPhoto+'fdfd'+startDt+'fdfd'+latitude+'fdfd'+longitude;
+		achivementSave=asinDomain+'fdfd'+intervention_area+'fdfd'+servicType+'fdfd'+serviceLevelWs+'fdfd'+serviceLevelHy+'fdfd'+achPlanId+'fdfd'+achPlanActivities+'fdfd'+typeOfFacility+'fdfd'+exManagCon+'fdfd'+typeOfActivity+'fdfd'+availHandWashFac+'fdfd'+availWaterSoapFac+'fdfd'+typeOfEven+'fdfd'+evenIssues+'fdfd'+wordCode+'fdfd'+achID+'fdfd'+communityName+'fdfd'+ownerName+'fdfd'+sMale+'fdfd'+sFemale+'fdfd'+sBoys+'fdfd'+sGirls+'fdfd'+sBoysUnder+'fdfd'+sGirlsUnder+'fdfd'+sPopulation+'fdfd'+sHouse_hold+'fdfd'+sDisability+'fdfd'+bMale+'fdfd'+bFemale+'fdfd'+bBoys+'fdfd'+bGirls+'fdfd'+bBoysUnder+'fdfd'+bGirlsUnder+'fdfd'+bPopulation+'fdfd'+bHouse_hold+'fdfd'+bDisability+'fdfd'+lMale+'fdfd'+lFemale+'fdfd'+lBoys+'fdfd'+lGirls+'fdfd'+lBoysUnder+'fdfd'+lGirlsUnder+'fdfd'+lPopulation+'fdfd'+lHouse_hold+'fdfd'+lDisability+'fdfd'+dMale+'fdfd'+dFemale+'fdfd'+dBoys+'fdfd'+dGirls+'fdfd'+dBoysUnder+'fdfd'+dGirlsUnder+'fdfd'+dPopulation+'fdfd'+dHouse_hold+'fdfd'+dDisability+'fdfd'+iMale+'fdfd'+iFemale+'fdfd'+iBoys+'fdfd'+iGirls+'fdfd'+iBoysUnder+'fdfd'+iGirlsUnder+'fdfd'+iPopulation+'fdfd'+iHouse_hold+'fdfd'+iDisability+'fdfd'+dapMale+'fdfd'+dapFemale+'fdfd'+totalWiBen+'fdfd'+totalInBen+'fdfd'+achServiceRecpt+'fdfd'+achPhoto+'fdfd'+startDt+'fdfd'+latitude+'fdfd'+longitude;
 		
 		//alert(achivementSave);							
 		
@@ -1321,6 +1360,8 @@ function achiveDataSave(){
 				sGirlsUnder='';
 				sPopulation='';
 				sHouse_hold='';
+				sDisability='';
+				
 				bMale='';
 				bFemale='';
 				bBoys='';
@@ -1329,6 +1370,8 @@ function achiveDataSave(){
 				bGirlsUnder='';
 				bPopulation='';
 				bHouse_hold='';
+				bDisability='';
+				
 				lMale='';
 				lFemale='';
 				lBoys='';
@@ -1337,12 +1380,33 @@ function achiveDataSave(){
 				lGirlsUnder='';
 				lPopulation='';
 				lHouse_hold='';
+				lDisability='';
+				
+				dMale='';
+				dFemale='';
+				dBoys='';
+				dGirls='';
+				dBoysUnder='';
+				dGirlsUnder='';
+				dPopulation='';
+				dHouse_hold='';
+				dDisability='';
+				
+				iMale='';
+				iFemale='';
+				iBoys='';
+				iGirls='';
+				iBoysUnder='';
+				iGirlsUnder='';
+				iPopulation='';
+				iHouse_hold='';
+				iDisability='';
+				
 				dapMale='';
 				dapFemale='';
 				totalWiBen='';
 				totalInBen='';
 				achServiceRecpt='';
-				achSerType='';
 				achPhoto='';
 				startDt='';
 				latitude='';
@@ -1375,6 +1439,8 @@ function achiveDataSave(){
 				$("#s_girlsUnder").val("");
 				$("#s_population").val("");
 				$("#s_house_hold").val("");
+				$("#s_disability").val("");
+				
 				$("#b_male").val("");
 				$("#b_female").val("");
 				$("#b_boys").val("");
@@ -1383,6 +1449,8 @@ function achiveDataSave(){
 				$("#b_girlsUnder").val("");
 				$("#b_population").val("");
 				$("#b_house_hold").val("");
+				$("#b_disability").val("");
+				
 				$("#l_male").val("");
 				$("#l_female").val("");
 				$("#l_boys").val("");
@@ -1391,12 +1459,34 @@ function achiveDataSave(){
 				$("#l_girlsUnder").val("");
 				$("#l_population").val("");
 				$("#l_house_hold").val("");
+				$("#l_disability").val("");
+				
+				$("#d_male").val("");
+				$("#d_female").val("");
+				$("#d_boys").val("");
+				$("#d_girls").val("");
+				$("#d_boysUnder").val("");
+				$("#d_girlsUnder").val("");
+				$("#d_population").val("");
+				$("#d_house_hold").val("");
+				$("#d_disability").val("");
+				
+				$("#i_male").val("");
+				$("#i_female").val("");
+				$("#i_boys").val("");
+				$("#i_girls").val("");
+				$("#i_boysUnder").val("");
+				$("#i_girlsUnder").val("");
+				$("#i_population").val("");
+				$("#i_house_hold").val("");
+				$("#i_disability").val("");
+				
 				$("#dapMale").val("");
 				$("#dapFemale").val("");
 				$("#totalWiBen").val("");
 				$("#totalInBen").val("");
 				$("#serRecpent").val("");
-				$("#serType").val("");
+				//$("#serType").val("");
 				$("#achPhoto").val("");	
 				$("#ach_lat").val("");
 				$("#ach_long").val("");
@@ -1557,6 +1647,8 @@ function reviewAchiveData(){
 		$("#s_girlsUnder").val("");
 		$("#s_population").val("");
 		$("#s_house_hold").val("");
+		$("#s_disability").val("");
+		
 		$("#b_male").val("");
 		$("#b_female").val("");
 		$("#b_boys").val("");
@@ -1565,6 +1657,8 @@ function reviewAchiveData(){
 		$("#b_girlsUnder").val("");
 		$("#b_population").val("");
 		$("#b_house_hold").val("");
+		$("#b_disability").val("");
+		
 		$("#l_male").val("");
 		$("#l_female").val("");
 		$("#l_boys").val("");
@@ -1573,12 +1667,34 @@ function reviewAchiveData(){
 		$("#l_girlsUnder").val("");
 		$("#l_population").val("");
 		$("#l_house_hold").val("");
+		$("#l_disability").val("");
+		
+		$("#d_male").val("");
+		$("#d_female").val("");
+		$("#d_boys").val("");
+		$("#d_girls").val("");
+		$("#d_boysUnder").val("");
+		$("#d_girlsUnder").val("");
+		$("#d_population").val("");
+		$("#d_house_hold").val("");
+		$("#d_disability").val("");
+		
+		$("#i_male").val("");
+		$("#i_female").val("");
+		$("#i_boys").val("");
+		$("#i_girls").val("");
+		$("#i_boysUnder").val("");
+		$("#i_girlsUnder").val("");
+		$("#i_population").val("");
+		$("#i_house_hold").val("");
+		$("#i_disability").val("");
+		
 		$("#dapMale").val("");
 		$("#dapFemale").val("");
 		$("#totalWiBen").val("");
 		$("#totalInBen").val("");		
 		$("#serRecpent").val("");
-		$("#serType").val("");
+		//$("#serType").val("");
 		$("#achPhoto").val("");	
 		$("#ach_lat").val("");
 		$("#ach_long").val("");
@@ -1616,20 +1732,6 @@ function reviewDataNext(){
 	$("#selectIndicator").val(achRevDetailsArray[5]);//No Save
 		
 	$("input:radio[name='plan_select'][value='"+achRevDetailsArray[5]+"']").attr("checked","checked");
-	
-	//.removeClass('ui-radio-off').addClass('ui-radio-on');
-
-	
-	
-	/*var test='<input type="radio" name="plan_select" id="'+achRevDetailsArray[5]+'"  value="'+achRevDetailsArray[5]+'" checked><label for="'+achRevDetailsArray[5]+'"></label>'
-		
-	$('#planlistDiv2').empty();
-	$('#planlistDiv2').append(test).trigger('create');*/
-	
-	
-	
-	//achivementSave=asinDomain+'fdfd'+intervention_area+'fdfd'+servicType+'fdfd'+serviceLevelWs+'fdfd'+serviceLevelHy+'fdfd'+achPlanId+'fdfd'+achPlanActivities+'fdfd'+typeOfFacility+'fdfd'+exManagCon+'fdfd'+typeOfActivity+'fdfd'+availHandWashFac+'fdfd'+availWaterSoapFac+'fdfd'+typeOfEven+'fdfd'+evenIssues+'fdfd'+wordCode+'fdfd'+achID+'fdfd'+communityName+'fdfd'+ownerName+'fdfd'+sMale+'fdfd'+sFemale+'fdfd'+sBoys+'fdfd'+sGirls+'fdfd'+sBoysUnder+'fdfd'+sGirlsUnder+'fdfd'+sPopulation+'fdfd'+sHouse_hold+'fdfd'+bMale+'fdfd'+bFemale+'fdfd'+bBoys+'fdfd'+bGirls+'fdfd'+bBoysUnder+'fdfd'+bGirlsUnder+'fdfd'+bPopulation+'fdfd'+bHouse_hold+'fdfd'+lMale+'fdfd'+lFemale+'fdfd'+lBoys+'fdfd'+lGirls+'fdfd'+lBoysUnder+'fdfd'+lGirlsUnder+'fdfd'+lPopulation+'fdfd'+lHouse_hold+'fdfd'+dapMale+'fdfd'+dapFemale+'fdfd'+totalWiBen+'fdfd'+totalInBen+'fdfd'+achServiceRecpt+'fdfd'+achSerType+'fdfd'+achPhoto+'fdfd'+startDt+'fdfd'+latitude+'fdfd'+longitude;
-	
 		
 	$("#typeOf_Facility").val(achRevDetailsArray[7]);
 	$("#ex_manag_con").val(achRevDetailsArray[8]);
@@ -1641,7 +1743,7 @@ function reviewDataNext(){
 	
 	$("#cbo_combo").val(achRevDetailsArray[14]);
 	$("#achID_show").val(achRevDetailsArray[14]);
-	$("#ach_id").val(achRevDetailsArray[16]);
+	$("#ach_id").val(achRevDetailsArray[15]);
 	
 	$("#community_name").val(achRevDetailsArray[16]);
 	$("#owner_name").val(achRevDetailsArray[17]);
@@ -1654,43 +1756,76 @@ function reviewDataNext(){
 	$("#s_girlsUnder").val(achRevDetailsArray[23]);
 	$("#s_population").val(achRevDetailsArray[24]);
 	$("#s_house_hold").val(achRevDetailsArray[25]);
+	$("#s_disability").val(achRevDetailsArray[26]);
 	
-	$("#b_male").val(achRevDetailsArray[26]);
-	$("#b_female").val(achRevDetailsArray[27]);
-	$("#b_boys").val(achRevDetailsArray[28]);
-	$("#b_girls").val(achRevDetailsArray[29]);
-	$("#b_boysUnder").val(achRevDetailsArray[30]);
-	$("#b_girlsUnder").val(achRevDetailsArray[31]);
-	$("#b_population").val(achRevDetailsArray[32]);
-	$("#b_house_hold").val(achRevDetailsArray[33]);
+	$("#b_male").val(achRevDetailsArray[27]);
+	$("#b_female").val(achRevDetailsArray[28]);
+	$("#b_boys").val(achRevDetailsArray[29]);
+	$("#b_girls").val(achRevDetailsArray[30]);
+	$("#b_boysUnder").val(achRevDetailsArray[31]);
+	$("#b_girlsUnder").val(achRevDetailsArray[32]);
+	$("#b_population").val(achRevDetailsArray[33]);
+	$("#b_house_hold").val(achRevDetailsArray[34]);
+	$("#b_disability").val(achRevDetailsArray[35]);
 	
-	$("#l_male").val(achRevDetailsArray[34]);
-	$("#l_female").val(achRevDetailsArray[35]);
-	$("#l_boys").val(achRevDetailsArray[36]);
-	$("#l_girls").val(achRevDetailsArray[37]);
-	$("#l_boysUnder").val(achRevDetailsArray[38]);
-	$("#l_girlsUnder").val(achRevDetailsArray[39]);
-	$("#l_population").val(achRevDetailsArray[40]);
-	$("#l_house_hold").val(achRevDetailsArray[41]);
-	$("#dapMale").val(achRevDetailsArray[42]);
-	$("#dapFemale").val(achRevDetailsArray[43]);
-	$("#totalWiBen").val(achRevDetailsArray[44]);
-	$("#totalInBen").val(achRevDetailsArray[45]);
+	$("#l_male").val(achRevDetailsArray[36]);
+	$("#l_female").val(achRevDetailsArray[37]);
+	$("#l_boys").val(achRevDetailsArray[38]);
+	$("#l_girls").val(achRevDetailsArray[39]);
+	$("#l_boysUnder").val(achRevDetailsArray[40]);
+	$("#l_girlsUnder").val(achRevDetailsArray[41]);
+	$("#l_population").val(achRevDetailsArray[42]);
+	$("#l_house_hold").val(achRevDetailsArray[43]);
+	$("#l_disability").val(achRevDetailsArray[44]);
 	
-	$("#serRecpent").val(achRevDetailsArray[46]);
-	$("#serType").val(achRevDetailsArray[47]);
+	$("#d_male").val(achRevDetailsArray[45]);
+	$("#d_female").val(achRevDetailsArray[46]);
+	$("#d_boys").val(achRevDetailsArray[47]);
+	$("#d_girls").val(achRevDetailsArray[48]);
+	$("#d_boysUnder").val(achRevDetailsArray[49]);
+	$("#d_girlsUnder").val(achRevDetailsArray[50]);
+	$("#d_population").val(achRevDetailsArray[51]);
+	$("#d_house_hold").val(achRevDetailsArray[52]);
+	$("#d_disability").val(achRevDetailsArray[53]);
 	
-	$("#achPhoto").val(achRevDetailsArray[48]);	
+	$("#i_male").val(achRevDetailsArray[54]);
+	$("#i_female").val(achRevDetailsArray[55]);
+	$("#i_boys").val(achRevDetailsArray[56]);
+	$("#i_girls").val(achRevDetailsArray[57]);
+	$("#i_boysUnder").val(achRevDetailsArray[58]);
+	$("#i_girlsUnder").val(achRevDetailsArray[59]);
+	$("#i_population").val(achRevDetailsArray[60]);
+	$("#i_house_hold").val(achRevDetailsArray[61]);
+	$("#i_disability").val(achRevDetailsArray[62]);
+		
+	$("#dapMale").val(achRevDetailsArray[63]);
+	$("#dapFemale").val(achRevDetailsArray[64]);
+	$("#totalWiBen").val(achRevDetailsArray[65]);
+	$("#totalInBen").val(achRevDetailsArray[66]);
 	
-	startDt=achRevDetailsArray[49]
+	$("#serRecpent").val(achRevDetailsArray[67]);	
+	$("#achPhoto").val(achRevDetailsArray[68]);	
 	
-	var achlat=$("#ach_lat").val(achRevDetailsArray[50]);
-	var achlong=$("#ach_long").val(achRevDetailsArray[51]);
+	startDt=achRevDetailsArray[69]
+	
+	var achlat=$("#ach_lat").val(achRevDetailsArray[70]);
+	var achlong=$("#ach_long").val(achRevDetailsArray[71]);
 	
 	var image = document.getElementById('myImageA');
-    image.src = achRevDetailsArray[48];
-    imagePathA = achRevDetailsArray[48];
+    image.src = achRevDetailsArray[68];
+    imagePathA = achRevDetailsArray[68];
 	
+	if ((achRevDetailsArray[2]=='Water' || achRevDetailsArray[2]=='Sanitation') && (achRevDetailsArray[1]=='Watsan')){
+		$("#allShow").show();
+		$("#directShow").hide();	
+		$("#indirectShow").show();
+		//$("#dap").show();
+	}else{
+		$("#allShow").hide();
+		$("#directShow").show();
+		$("#indirectShow").show();
+		//$("#dap").hide();	
+	}
 	
 	if (achRevDetailsArray[2]=='Water'){
 		$("#ifHygiene").hide();		
@@ -1821,11 +1956,11 @@ function syncDataAch(){
 		latitude=localStorage.latitudeAreaWq;
 		longitude=localStorage.longitudeAreaWq;
 	}
-	//alert(apipath+'submitAchiveData?cid=WAB&mobile_no='+localStorage.mobile_no+'&syncCode='+localStorage.sync_code+'&asinDomain='+asinDomain+'&intervention_area='+intervention_area+'&servicType='+servicType+'&serviceLevelWs='+serviceLevelWs+'&serviceLevelHy='+serviceLevelHy+'&achPlanId='+achPlanId+'&achPlanActivities='+achPlanActivities+'&typeOfFacility='+typeOfFacility+'&exManagCon='+exManagCon+'&typeOfActivity='+typeOfActivity+'&availHandWashFac='+availHandWashFac+'&availWaterSoapFac='+availWaterSoapFac+'&typeOfEven='+typeOfEven+'&evenIssues='+evenIssues+'&wordCode='+wordCode+'&achID='+achID+'&communityName='+communityName+'&ownerName='+ownerName+'&sMale='+sMale+'&sFemale='+sFemale+'&sBoys='+sBoys+'&sGirls='+sGirls+'&sBoysUnder='+sBoysUnder+'&sGirlsUnder='+sGirlsUnder+'&sPopulation='+sPopulation+'&sHouse_hold='+sHouse_hold+'&bMale='+bMale+'&bFemale='+bFemale+'&bBoys='+bBoys+'&bGirls='+bGirls+'&bBoysUnder='+bBoysUnder+'&bGirlsUnder='+bGirlsUnder+'&bPopulation='+bPopulation+'&bHouse_hold='+bHouse_hold+'&lMale='+lMale+'&lFemale='+lFemale+'&lBoys='+lBoys+'&lGirls='+lGirls+'&lBoysUnder='+lBoysUnder+'&lGirlsUnder='+lGirlsUnder+'&lPopulation='+lPopulation+'&lHouse_hold='+lHouse_hold+'&dapMale='+dapMale+'&dapFemale='+dapFemale+'&achServiceRecpt='+achServiceRecpt+'&achSerType='+achSerType+'&totalWiBen='+totalWiBen+'&totalInBen='+totalInBen+'&achPhoto='+achPhoto+'&startDt='+startDt+'&latitude='+latitude+'&longitude='+longitude)
+	//alert(apipath+'submitAchiveData?cid=WAB&mobile_no='+localStorage.mobile_no+'&syncCode='+localStorage.sync_code+'&asinDomain='+asinDomain+'&intervention_area='+intervention_area+'&servicType='+servicType+'&serviceLevelWs='+serviceLevelWs+'&serviceLevelHy='+serviceLevelHy+'&achPlanId='+achPlanId+'&achPlanActivities='+achPlanActivities+'&typeOfFacility='+typeOfFacility+'&exManagCon='+exManagCon+'&typeOfActivity='+typeOfActivity+'&availHandWashFac='+availHandWashFac+'&availWaterSoapFac='+availWaterSoapFac+'&typeOfEven='+typeOfEven+'&evenIssues='+evenIssues+'&wordCode='+wordCode+'&achID='+achID+'&communityName='+communityName+'&ownerName='+ownerName+'&sMale='+sMale+'&sFemale='+sFemale+'&sBoys='+sBoys+'&sGirls='+sGirls+'&sBoysUnder='+sBoysUnder+'&sGirlsUnder='+sGirlsUnder+'&sPopulation='+sPopulation+'&sHouse_hold='+sHouse_hold+'&sDisability='+sDisability+'&bMale='+bMale+'&bFemale='+bFemale+'&bBoys='+bBoys+'&bGirls='+bGirls+'&bBoysUnder='+bBoysUnder+'&bGirlsUnder='+bGirlsUnder+'&bPopulation='+bPopulation+'&bHouse_hold='+bHouse_hold+'&bDisability='+bDisability+'&lMale='+lMale+'&lFemale='+lFemale+'&lBoys='+lBoys+'&lGirls='+lGirls+'&lBoysUnder='+lBoysUnder+'&lGirlsUnder='+lGirlsUnder+'&lPopulation='+lPopulation+'&lHouse_hold='+lHouse_hold+'&lDisability='+lDisability+'&dMale='+dMale+'&dFemale='+dFemale+'&dBoys='+dBoys+'&dGirls='+dGirls+'&dBoysUnder='+dBoysUnder+'&dGirlsUnder='+dGirlsUnder+'&dPopulation='+dPopulation+'&dHouse_hold='+dHouse_hold+'&dDisability='+dDisability+'&iMale='+iMale+'&iFemale='+iFemale+'&iBoys='+iBoys+'&iGirls='+iGirls+'&iBoysUnder='+iBoysUnder+'&iGirlsUnder='+iGirlsUnder+'&iPopulation='+iPopulation+'&iHouse_hold='+iHouse_hold+'&iDisability='+iDisability+'&dapMale='+dapMale+'&dapFemale='+dapFemale+'&totalWiBen='+totalWiBen+'&totalInBen='+totalInBen+'&achServiceRecpt='+achServiceRecpt+'&achPhoto='+achPhoto+'&startDt='+startDt+'&latitude='+latitude+'&longitude='+longitude)
 	
 	$.ajax({
 		type: 'POST',
-		url:apipath+'submitAchiveData?cid=WAB&mobile_no='+localStorage.mobile_no+'&syncCode='+localStorage.sync_code+'&asinDomain='+asinDomain+'&intervention_area='+intervention_area+'&servicType='+servicType+'&serviceLevelWs='+serviceLevelWs+'&serviceLevelHy='+serviceLevelHy+'&achPlanId='+achPlanId+'&achPlanActivities='+achPlanActivities+'&typeOfFacility='+typeOfFacility+'&exManagCon='+exManagCon+'&typeOfActivity='+typeOfActivity+'&availHandWashFac='+availHandWashFac+'&availWaterSoapFac='+availWaterSoapFac+'&typeOfEven='+typeOfEven+'&evenIssues='+evenIssues+'&wordCode='+wordCode+'&achID='+achID+'&communityName='+communityName+'&ownerName='+ownerName+'&sMale='+sMale+'&sFemale='+sFemale+'&sBoys='+sBoys+'&sGirls='+sGirls+'&sBoysUnder='+sBoysUnder+'&sGirlsUnder='+sGirlsUnder+'&sPopulation='+sPopulation+'&sHouse_hold='+sHouse_hold+'&bMale='+bMale+'&bFemale='+bFemale+'&bBoys='+bBoys+'&bGirls='+bGirls+'&bBoysUnder='+bBoysUnder+'&bGirlsUnder='+bGirlsUnder+'&bPopulation='+bPopulation+'&bHouse_hold='+bHouse_hold+'&lMale='+lMale+'&lFemale='+lFemale+'&lBoys='+lBoys+'&lGirls='+lGirls+'&lBoysUnder='+lBoysUnder+'&lGirlsUnder='+lGirlsUnder+'&lPopulation='+lPopulation+'&lHouse_hold='+lHouse_hold+'&dapMale='+dapMale+'&dapFemale='+dapFemale+'&achServiceRecpt='+achServiceRecpt+'&achSerType='+achSerType+'&totalWiBen='+totalWiBen+'&totalInBen='+totalInBen+'&achPhoto='+achPhoto+'&startDt='+startDt+'&latitude='+latitude+'&longitude='+longitude,
+		url:apipath+'submitAchiveData?cid=WAB&mobile_no='+localStorage.mobile_no+'&syncCode='+localStorage.sync_code+'&asinDomain='+asinDomain+'&intervention_area='+intervention_area+'&servicType='+servicType+'&serviceLevelWs='+serviceLevelWs+'&serviceLevelHy='+serviceLevelHy+'&achPlanId='+achPlanId+'&achPlanActivities='+achPlanActivities+'&typeOfFacility='+typeOfFacility+'&exManagCon='+exManagCon+'&typeOfActivity='+typeOfActivity+'&availHandWashFac='+availHandWashFac+'&availWaterSoapFac='+availWaterSoapFac+'&typeOfEven='+typeOfEven+'&evenIssues='+evenIssues+'&wordCode='+wordCode+'&achID='+achID+'&communityName='+communityName+'&ownerName='+ownerName+'&sMale='+sMale+'&sFemale='+sFemale+'&sBoys='+sBoys+'&sGirls='+sGirls+'&sBoysUnder='+sBoysUnder+'&sGirlsUnder='+sGirlsUnder+'&sPopulation='+sPopulation+'&sHouse_hold='+sHouse_hold+'&sDisability='+sDisability+'&bMale='+bMale+'&bFemale='+bFemale+'&bBoys='+bBoys+'&bGirls='+bGirls+'&bBoysUnder='+bBoysUnder+'&bGirlsUnder='+bGirlsUnder+'&bPopulation='+bPopulation+'&bHouse_hold='+bHouse_hold+'&bDisability='+bDisability+'&lMale='+lMale+'&lFemale='+lFemale+'&lBoys='+lBoys+'&lGirls='+lGirls+'&lBoysUnder='+lBoysUnder+'&lGirlsUnder='+lGirlsUnder+'&lPopulation='+lPopulation+'&lHouse_hold='+lHouse_hold+'&lDisability='+lDisability+'&dMale='+dMale+'&dFemale='+dFemale+'&dBoys='+dBoys+'&dGirls='+dGirls+'&dBoysUnder='+dBoysUnder+'&dGirlsUnder='+dGirlsUnder+'&dPopulation='+dPopulation+'&dHouse_hold='+dHouse_hold+'&dDisability='+dDisability+'&iMale='+iMale+'&iFemale='+iFemale+'&iBoys='+iBoys+'&iGirls='+iGirls+'&iBoysUnder='+iBoysUnder+'&iGirlsUnder='+iGirlsUnder+'&iPopulation='+iPopulation+'&iHouse_hold='+iHouse_hold+'&iDisability='+iDisability+'&dapMale='+dapMale+'&dapFemale='+dapFemale+'&totalWiBen='+totalWiBen+'&totalInBen='+totalInBen+'&achServiceRecpt='+achServiceRecpt+'&achPhoto='+achPhoto+'&startDt='+startDt+'&latitude='+latitude+'&longitude='+longitude,
 		
 		
 	   success: function(result) {
