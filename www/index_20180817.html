@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>water aid</title>
     
-    <link rel="stylesheet" href="static/themes/my.css" />
+    <link rel="stylesheet" href="static/themes/c.css" />
     <link rel="stylesheet" href="static/jquery.mobile-1.4.0/jquery.mobile-1.4.0.min.css" />
         
     <script src="static/jquery/1.10.2/jquery-1.10.2.min.js">   </script>
@@ -60,8 +60,8 @@
 
 
 <!-- MAIN MENU ----------------------------------------------------------------------------- -->
-<div data-role="page" data-theme="d" id="reportType" style="overflow:scroll" >
-    <div data-theme="d" data-role="header" data-position="fixed" >
+<div data-role="page" data-theme="c" id="reportType" style="overflow:scroll" >
+    <div data-theme="c" data-role="header" data-position="fixed" >
         <a data-role="button" href="#leftpanel" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
         
         <a data-role="button" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-power ui-btn-icon-notext " onClick="exit();" >Exit </a>
@@ -91,9 +91,9 @@
         		<a data-role="button" id="btn_area_lat_long" onClick="getLocationInfoAreaWq();" class="ui-btn" >Area location</a>
            </ul> 
     </div>
-    <div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >mReporting 20180818</div>
+    <div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >mReporting 20180812</div>
   
-    <div data-role="panel" id="leftpanel" data-position="left" data-display="overlay" data-theme="d">
+    <div data-role="panel" id="leftpanel" data-position="left" data-display="overlay" data-theme="c">
         <div align="center"><img src="wab.jpg"></div>
         <br/>
         <br/>
@@ -112,8 +112,8 @@
 </div>
 
 <!-- REPORT ----------------------------------------------------------------------------- -->
-<div data-theme="d" data-role="page" id="reportPage" style="overflow:scroll">
-    <div data-theme="d" data-role="header" data-position="fixed" >
+<div data-theme="c" data-role="page" id="reportPage" style="overflow:scroll">
+    <div data-theme="c" data-role="header" data-position="fixed" >
         <a data-role="button" onClick="waterAidClick();"  data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
         <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
         <h3>Show Report</h3>
@@ -221,7 +221,7 @@
 		
 		<br/>
 		
-		<table class="ui-body-d ui-shadow table-stripe ui-responsive" id="plan_details_progress_all_activity"  data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px;">
+		<table class="ui-body-d ui-shadow table-stripe ui-responsive" id="plan_details_progress_all_activity"  data-role="table" data-theme="c"  data-mode="display:none" style="cell-spacing:0px;">
                     <tr style="background-color:#FFFFFF; font-size:11px;">
                       <td style="width:60%; text-align:center" >Activity</td>					  
                       <td colspan="2" style="width:20%" >Plan</td>
@@ -242,8 +242,8 @@
 
 
 <!-- ACHIVEMENT REVIEW ----------------------------------------------------------------------------- -->
-<div data-theme="d" data-role="page" id="reviewDataList" style="overflow:scroll" >
-    <div data-theme="d" data-role="header" data-position="fixed" >
+<div data-theme="c" data-role="page" id="reviewDataList" style="overflow:scroll" >
+    <div data-theme="c" data-role="header" data-position="fixed" >
         <a data-role="button" onClick="waterAidClick();"  data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
         <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
         <h3>Review Data list</h3>
@@ -268,8 +268,8 @@
 		
 
 <!-- ------------------- review water Quality data list---------------------------------------------------------------------------------------- -->
-<div data-theme="d" data-role="page" id="reviewWqDataList" style="overflow:scroll" >
-    <div data-theme="d" data-role="header" data-position="fixed" >
+<div data-theme="c" data-role="page" id="reviewWqDataList" style="overflow:scroll" >
+    <div data-theme="c" data-role="header" data-position="fixed" >
         <a data-role="button" onClick="waterAidClick();"  data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
         <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
         <h3>Review Water Quality Data list</h3>
@@ -293,24 +293,24 @@
 
 
 <!-- ------------------- sync page---------------------------------------------------------------------------------------- -->
-<div data-theme="d" data-role="page" id="pagesync" style="overflow:scroll" >
-    <div data-theme="d" data-role="header" data-position="fixed" >
+<div data-theme="c" data-role="page" id="pagesync" style="overflow:scroll" >
+    <div data-theme="c" data-role="header" data-position="fixed" >
         <a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
         <h3>Sync</h3>
     </div>
     <div data-role="content">
         <div class="errorChk"></div>
-        <ul data-role="listview" data-inset="true" data-theme="d">
+        <ul data-role="listview" data-inset="true" data-theme="c">
             <li class="ui-field-contain">
                 <label for="mobile"> Mobile No</label>
-                <input name="mobile" id="mobile" placeholder="" value="8801755520153" type="number">
+                <input name="mobile" id="mobile" placeholder="" value="" type="number">
             </li>
             <li class="ui-field-contain">
                 <label for="password">Password </label>
-                <input type="password" name="password" id="password" placeholder="" value="123" >
+                <input type="password" name="password" id="password" placeholder="" value="" >
             </li>
         </ul>
-        <a data-role="button" href="#" id="syncBasic"  data-theme="d" data-transition="slide" >Sync</a>
+        <a data-role="button" href="#" id="syncBasic"  data-theme="c" data-transition="slide" >Sync</a>
 		<div id="#syncData"></div>
         <br/>
         <br/>
@@ -326,44 +326,46 @@
 
 
 <!-- Achivement - select plan list page---------------------------------------- -->
-<div data-role="page" id="servType" data-theme="d" style="overflow:scroll" >
-    <div data-theme="d" data-role="header" data-position="fixed" >
+<div data-role="page" id="servType" data-theme="c" style="overflow:scroll" >
+    <div data-theme="c" data-role="header" data-position="fixed" >
     <a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
         <!--<a data-role="button" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>-->
         <h3>Select Service</h3>
     </div>
     
     <div data-role="content">
-        <ul data-role="listview" data-inset="true" data-theme="d">
-           <!-- <li class="ui-field-contain">
+        <ul data-role="listview" data-inset="true" data-theme="c">
+            <li class="ui-field-contain">
             	<label for="">Select Project</label>
             	<div id="asignProject"></div>
-            </li>-->
+                <!--<label for="project">Project</label><select name="project" id="project" data-native-menu="false"><option value="0">Select Service Type</option><option value="Water">Water</option><option value="Sanitation">Sanitation</option><option value="Hygiene">Hygiene</option></select>-->
+            </li>
+            <br />
             <li class="ui-field-contain">
-            	<label for="">Select Domain &nbsp;<sup class="reqField">*</sup></label>
+            	<label for="">Select Domain</label>
             	<div id="asignDomain"></div>
-            </li>
-            <br />
-            <li class="ui-field-contain" >
-                <label for="intervention_area">Select Intervention Area &nbsp;<sup class="reqField">*</sup></label><select name="intervention_area" id="intervention_area" data-native-menu="false"><option value="">Select Intervention Area</option><option value="Others">Others</option><option value="Watsan">Watsan</option></select>
+                <!--<label for="domain">Domain</label><select name="domain" id="domain" data-native-menu="false"><option value="0">Select Service Type</option><option value="Water">Water</option><option value="Sanitation">Sanitation</option><option value="Hygiene">Hygiene</option></select>-->
             </li>
             <br />
             <li class="ui-field-contain">
-            <label for="service_type">Select Sector &nbsp;<sup class="reqField">*</sup></label>
+            <label for="service_type">Service Type</label>
                 <div id="serTyp"></div>
+                <!--<label for="service_type">Service Type</label><select name="service_type" id="service_type" onblur="serviceType_wsh()" ><option value="">Select Service Type</option><option value="Water">Water</option><option value="Sanitation">Sanitation</option><option value="Hygiene">Hygiene</option></select>-->
             </li>
         </ul>
         <div id="ifWaterSani">
-            	<ul data-role="listview" data-inset="true" data-theme="d">
+            	<ul data-role="listview" data-inset="true" data-theme="c">
                     <li class="ui-field-contain" >
-                        <label for="service_level_ws">Select Service Type &nbsp;<sup class="reqField">*</sup></label><select name="service_level_ws" id="service_level_ws" data-native-menu="false"><option value="">Select Service Type</option><option value="Installation">Installation</option><option value="Renovation">Renovation</option><option value="Other">Other</option></select>
+                        <!--<div id="serviceLevel_ws"></div>-->
+                        <label for="service_level_ws">Service Level</label><select name="service_level_ws" id="service_level_ws" data-native-menu="false"><option value="">Select Service Level</option><option value="New">New</option><option value="Renovation">Renovation</option><option value="Other">Other</option></select>
                     </li>
                 </ul>
             </div>
         	<div id="ifHygiene">
-            	<ul data-role="listview" data-inset="true" data-theme="d">
+            	<ul data-role="listview" data-inset="true" data-theme="c">
                     <li class="ui-field-contain" >
-                        <label for="service_leve_hy">Select Service Type &nbsp;<sup class="reqField">*</sup></label><select name="service_leve_hy" id="service_level_hy" data-native-menu="false"><option value="">Select Service Type</option><option value="Event">Event</option><option value="Session">Session</option><option value="Other">Other</option></select>
+                        <!--<div id="serviceLeve_hy"></div>-->
+                        <label for="service_leve_hy">Service Level</label><select name="service_leve_hy" id="service_level_hy" data-native-menu="false"><option value="">Select Service Level</option><option value="Event">Event</option><option value="Session">Session</option><option value="Other">Other</option></select>
                     </li>
                 </ul>
             </div>
@@ -372,13 +374,13 @@
         <br />
         <div class="errorChk"></div>
     </div>
-<!--<div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
+<!--<div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
 --></div>
 
 
 
-<div data-role="page" id="planList" data-theme="d" style="overflow:scroll" >
-    <div data-theme="d" data-role="header" data-position="fixed" >
+<div data-role="page" id="planList" data-theme="c" style="overflow:scroll" >
+    <div data-theme="c" data-role="header" data-position="fixed" >
     <a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
     <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
         <h3>Select Indicator</h3>
@@ -392,71 +394,71 @@
         <br />
         <div class="errorChk"></div>        
     </div>
-<!--<div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
+<!--<div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
 --></div>
 
 
 
 
-<div data-role="page" id="achiveEvent" data-theme="d" style="overflow:scroll" >
-    <div data-theme="d" data-role="header" data-position="fixed" >
+<div data-role="page" id="achiveEvent" data-theme="c" style="overflow:scroll" >
+    <div data-theme="c" data-role="header" data-position="fixed" >
     <a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
         <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
         <h3>Activity</h3>
     </div>
     <div data-role="content">
         <div id="typeOfFac">
-            <ul data-role="listview" data-inset="true" data-theme="d">
+            <ul data-role="listview" data-inset="true" data-theme="c">
                 <li class="ui-field-contain">
-                    <label for="">Type of Facility &nbsp;<sup class="reqField">*</sup></label>
+                    <label for="">Type of Facility</label>
                     <select id="typeOf_Facility" name="typeOf_Facility" data-native-menu="false" ><option value="">Select</option><option value="Individual">Individual</option><option value="Shared">Shared</option></select>
                 </li>
             </ul>
         </div>        
         <div id="exManag_con">
-            <ul data-role="listview" data-inset="true" data-theme="d">
+            <ul data-role="listview" data-inset="true" data-theme="c">
                 <li class="ui-field-contain">
-                    <label for="">Excreta management consent &nbsp;<sup class="reqField">*</sup></label>
+                    <label for="">Excreta management consent </label>
                     <select id="ex_manag_con" name="ex_manag_con" data-native-menu="false"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option></select>
                 </li>
             </ul>
         </div>
         <div id="typeOf_act">
-            <ul data-role="listview" data-inset="true" data-theme="d">
+            <ul data-role="listview" data-inset="true" data-theme="c">
                 <li class="ui-field-contain">
-                    <label for="typeOf_activity">Type of Activity  &nbsp;<sup class="reqField">*</sup></label>
-                    <select id="typeOf_activity" name="typeOf_activity" data-native-menu="false" onchange="type_ofActivity()" ><option value="">Select</option><option value="Hand Washing F">Hand Washing F</option><option value="Hygiene Reach">Hygiene Reach</option></select>
+                    <label for="typeOf_activity">Type of Activity  </label>
+                    <select id="typeOf_activity" name="typeOf_activity" data-native-menu="false" onchange="type_ofActivity()" ><option value="">Select</option><option value="Basic">Basic</option><option value="Event">Event</option></select>
                 </li>
             </ul>
         </div>
         <div id="availHandWash_fac">
-            <ul data-role="listview" data-inset="true" data-theme="d">
+            <ul data-role="listview" data-inset="true" data-theme="c">
                 <li class="ui-field-contain auto_break">
-                    <label for="">Availability of Hand Washing Facility &nbsp;<sup class="reqField">*</sup></label>
+                    <label for="">Availability of Hand Washing Facility </label>
                     <select id="avail_handWash_fac" name="avail_handWash_fac" data-native-menu="false" onchange="avail_handWashFac()"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option></select>
                 </li>
             </ul>
         </div>
         <div id="availWaterSoap_fac">
-            <ul data-role="listview" data-inset="true" data-theme="d">
+            <ul data-role="listview" data-inset="true" data-theme="c">
                 <li class="ui-field-contain auto_break">
-                    <label for="">Availability of running water and soap is near to the facility &nbsp;<sup class="reqField">*</sup></label>
+                    <label for="">Availability of running water and soap is near to the facility </label>
                     <select id="avail_WaterSoap_fac" name="avail_WaterSoap_fac" data-native-menu="false" ><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option></select>
                 </li>
             </ul>
         </div>
         <div id="typeOfEvent">
-            <ul data-role="listview" data-inset="true" data-theme="d">
+            <ul data-role="listview" data-inset="true" data-theme="c">
                 <li class="ui-field-contain">
-                    <label for="typeOf_event">Type of Hygiene Reach &nbsp;<sup class="reqField">*</sup></label>
+                    <label for="typeOf_event">Type of Event  </label>
                     <select id="typeOf_event" name="typeOf_event" data-native-menu="false" onchange="typeOf_Event()"><option value="" >Select</option><option value="Orientation">Orientation</option><option value="Session">Session</option><option value="Campaign">Campaign</option></select>
                 </li>
             </ul>
         </div>
         <div id="eventIssues">
-            <ul data-role="listview" data-inset="true" data-theme="d">
+            <ul data-role="listview" data-inset="true" data-theme="c">
                 <li class="ui-field-contain">
-                    <label for="">Hygiene Reach issues &nbsp;<sup class="reqField">*</sup></label>
+                    <label for="">Event issues  </label>
                     <select id="event_issues" name="event_issues" data-native-menu="false" ><option value="">Select</option><option value="Hand Washing">Hand Washing</option><option value="MHM">MHM</option><option value="Caretaker">Caretaker</option></select>
                 </li>
             </ul>
@@ -472,37 +474,37 @@
             
     </div>
            
-<!--<div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
+<!--<div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
 --></div>
 
 
 
 <!-- --------------------------achive data list page----People Supported---------------------------------- -->
-<div data-role="page" id="achiveDataList" data-theme="d" style="overflow:scroll" >
-    <div data-theme="d" data-role="header" data-position="fixed" >
+<div data-role="page" id="achiveDataList" data-theme="c" style="overflow:scroll" >
+    <div data-theme="c" data-role="header" data-position="fixed" >
     <a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
         <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
         <h3> Enter Population</h3>
     </div>
     <div data-role="content">
         
-        <ul data-role="listview" data-inset="true" data-theme="d">
+        <ul data-role="listview" data-inset="true" data-theme="c">
             <li class="ui-field-contain">
-                <label for="">Ward Code &nbsp;<sup class="reqField">*</sup></label>
+                <label for="">Ward Code</label>
                 <div id="cboIdDiv" ></div>
             </li>
         </ul>
-        <ul data-role="listview" data-inset="true" data-theme="d">
+        <ul data-role="listview" data-inset="true" data-theme="c">
             <li class="ui-field-contain">
                 
            
-           <table class="ui-body-d ui-shadow table-stripe ui-responsive"  data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px;">
+           <table class="ui-body-d ui-shadow table-stripe ui-responsive"  data-role="table" data-theme="c"  data-mode="display:none" style="cell-spacing:0px;">
                     <tr valign="middle">
-                        <td colspan="3" ><strong><label for="achID"> ID related to output &nbsp;<sup class="reqField">*</sup></label></strong></td>
+                        <td colspan="3" ><strong><label for="achID"> ID related to output</label></strong></td>
                   </tr>
                   <tr>
-                        <td width="45%"><input name="achID_show" id="achID_show" placeholder="" value="" type="text" readonly="readonly"></td>
-                        <td width="0%" style="vertical-align:middle; padding:0px;">-</td>
+                        <td width="40%"><input name="achID_show" id="achID_show" placeholder="" value="" type="text" readonly="readonly"></td>
+                        <td width="5%" style="vertical-align:middle">-</td>
                     <td width="55%"><input name="ach_id" id="ach_id" placeholder="" value="" type="text"></td>
                     </tr>
             </table>     
@@ -511,27 +513,26 @@
         </ul>
         
         
-         <table class="ui-body-d ui-shadow table-stripe ui-responsive"  data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px;">
+         <table class="ui-body-d ui-shadow table-stripe ui-responsive"  data-role="table" data-theme="c"  data-mode="display:none" style="cell-spacing:0px;">
                     <tr valign="middle">
                         <td colspan="3" ><strong>Community</strong></td>
                   </tr>
 				  <tr>
                         <td width="100%">
-                        <label for="community_name"> Community Name &nbsp;<sup class="reqField">*</sup></label>
-                		<input name="community_name" id="community_name" placeholder="" value="" type="text"></td>
+                        <label for="community_name"> Community Name</label>
+                <input name="community_name" id="community_name" placeholder="" value="" type="text"></td>
                     </tr>
                     <tr>
                         <td width="100%">
-                        <label for="owner_name"> Owner Name &nbsp;<sup class="reqField">*</sup></label>
-                		<input name="owner_name" id="owner_name" placeholder="" value="" type="text"></td>
+                        <label for="owner_name"> Owner Name</label>
+                <input name="owner_name" id="owner_name" placeholder="" value="" type="text"></td>
                     </tr>
                     
 			</table>
-			<br/>  
-         <div id="allShow">     
-         <table class="ui-body-d ui-shadow table-stripe ui-responsive"  data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px;">
+			<br/>       
+         <table class="ui-body-d ui-shadow table-stripe ui-responsive"  data-role="table" data-theme="c"  data-mode="display:none" style="cell-spacing:0px;">
                     <tr valign="middle">
-                        <td colspan="3" ><strong>Enter Population (Safely)</strong></td>
+                        <td colspan="3" ><strong>Enter Population Safely</strong></td>
                   </tr>
                   <tr>
                         <td width="70%" style="vertical-align:middle;">Male(17+)</td>
@@ -572,20 +573,26 @@
                         <td width="5" align="left"></td>
                     </tr>
                     <tr>
-                        <td width="70%" style="vertical-align:middle;">Household</td>
+                        <td width="70%" style="vertical-align:middle;">House Hold</td>
                         <td width="30%"><input name="s_house_hold" id="s_house_hold" placeholder="" value="" type="number"></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
-					<tr>
-                        <td width="70%" style="vertical-align:middle;">Disability</td>
-                        <td width="30%"><input name="s_disability" id="s_disability" placeholder="" value="" type="number"></td>
+					
+                   <!-- <tr>
+                        <td width="70%" style="vertical-align:middle;">Ethnic Female</td>
+                        <td width="30%"><input name="ethFemale" id="ethFemale" placeholder="" value="" type="number"></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
+                    <tr>
+                        <td width="70%" style="vertical-align:middle;">Ethnic Male</td>
+                        <td width="30%"><input name="ethMale" id="ethMale" placeholder="" value="" type="number"></td>
+                        <td width="5" align="left">&nbsp;</td>
+                    </tr>-->
 			</table>
 			<br/>
-            <table class="ui-body-d ui-shadow table-stripe ui-responsive"  data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px;">
+            <table class="ui-body-d ui-shadow table-stripe ui-responsive"  data-role="table" data-theme="c"  data-mode="display:none" style="cell-spacing:0px;">
                     <tr valign="middle">
-                        <td colspan="3" ><strong>Enter Population (Basic)</strong></td>
+                        <td colspan="3" ><strong>Enter Population Basic</strong></td>
                   </tr>
                   <tr>
                         <td width="70%" style="vertical-align:middle;">Male(17+)</td>
@@ -626,20 +633,15 @@
                         <td width="5" align="left"></td>
                     </tr>
 					<tr>
-                        <td width="70%" style="vertical-align:middle;">Household</td>
+                        <td width="70%" style="vertical-align:middle;">House Hold</td>
                         <td width="30%"><input name="b_house_hold" id="b_house_hold" placeholder="" value="" type="number"></td>
-                        <td width="5" align="left">&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td width="70%" style="vertical-align:middle;">Disability</td>
-                        <td width="30%"><input name="b_disability" id="b_disability" placeholder="" value="" type="number"></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
 			</table>
 			<br/>
-            <table class="ui-body-d ui-shadow table-stripe ui-responsive"  data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px;">
+            <table class="ui-body-d ui-shadow table-stripe ui-responsive"  data-role="table" data-theme="c"  data-mode="display:none" style="cell-spacing:0px;">
                     <tr valign="middle">
-                        <td colspan="3" ><strong>Enter Population (Limited)</strong></td>
+                        <td colspan="3" ><strong>Enter Population Limited</strong></td>
                   </tr>
                   <tr>
                         <td width="70%" style="vertical-align:middle;">Male(17+)</td>
@@ -672,166 +674,39 @@
                         <td width="30%"><input name="l_girlsUnder" id="l_girlsUnder" placeholder="" onBlur="l_totalPopulation();" value="" type="number"></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
+                    
+                    
 					<tr >
                         <td width="70%" style="vertical-align:middle;">Total Population</td>
                         <td width="30%"><input name="l_population" id="l_population"  placeholder="" value="" type="number" readonly="readonly" style="background-color:#EEEEEE;"></td>
                         <td width="5" align="left"></td>
                     </tr>
 					<tr>
-                        <td width="70%" style="vertical-align:middle;">Household</td>
+                        <td width="70%" style="vertical-align:middle;">House Hold</td>
                         <td width="30%"><input name="l_house_hold" id="l_house_hold" placeholder="" value="" type="number"></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td width="70%" style="vertical-align:middle;">Disability</td>
-                        <td width="30%"><input name="l_disability" id="l_disability" placeholder="" value="" type="number"></td>
+                        <td width="70%" style="vertical-align:middle;">DAP Male</td>
+                        <td width="30%"><input name="dapMale" id="dapMale" placeholder="" value="" type="number"></td>
+                        <td width="5" align="left">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td width="70%" style="vertical-align:middle;">DAP Female</td>
+                        <td width="30%"><input name="dapFemale" id="dapFemale" placeholder="" value="" type="number"></td>
+                        <td width="5" align="left">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td width="70%" style="vertical-align:middle;">Total Wider Beneficiary</td>
+                        <td width="30%"><input name="totalWiBen" id="totalWiBen" placeholder="" value="" type="number"></td>
+                        <td width="5" align="left">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td width="70%" style="vertical-align:middle;">Total Indirect Beneficiary</td>
+                        <td width="30%"><input name="totalInBen" id="totalInBen" placeholder="" value="" type="number"></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
 			</table>
-            
-            <br/>
-            </div>
-            <div id="directShow">
-            <table class="ui-body-d ui-shadow table-stripe ui-responsive"  id="" data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px;">
-                    <tr valign="middle">
-                        <td colspan="3" ><strong>Enter Population (Direct)</strong></td>
-                  </tr>
-                  <tr>
-                        <td width="70%" style="vertical-align:middle;">Male(17+)</td>
-                        <td width="30%"><input name="d_male" id="d_male" onBlur="d_totalPopulation();" placeholder="" value="" type="number"></td>
-                        <td width="5" align="left"><sup class="reqField">*</sup></td>
-                    </tr>
-				  <tr>
-                        <td width="70%" style="vertical-align:middle;">Female(17+)</td>
-                        <td width="30%">
-                        <input name="d_female" id="d_female" placeholder="" onBlur="d_totalPopulation();" value="" type="number"></td>
-                        <td width="5" align="left"><sup class="reqField">*</sup></td>
-                    </tr>
-                    <tr>
-                        <td width="70%" style="vertical-align:middle;">Boy(5-17yrs)</td>
-                        <td width="30%"><input name="d_boys" id="d_boys" placeholder="" value="" min="0" onBlur="d_totalPopulation();" type="number"></td>
-                        <td width="5" align="left">&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td width="70%" style="vertical-align:middle;">Girl(5-17yrs)</td>
-                        <td width="30%"><input name="d_girls" id="d_girls" placeholder="" value="" onBlur="d_totalPopulation();" min="0" type="number"></td>
-                        <td width="5" align="left">&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td width="70%" style="vertical-align:middle;">Boy(0-5yrs)</td>
-                        <td width="30%"><input name="d_boysUnder" id="d_boysUnder" placeholder="" onBlur="d_totalPopulation();" value="" type="number"></td>
-                        <td width="5" align="left">&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td width="70%" style="vertical-align:middle;">Girl(0-5yrs)</td>
-                        <td width="30%"><input name="d_girlsUnder" id="d_girlsUnder" placeholder="" onBlur="d_totalPopulation();" value="" type="number"></td>
-                        <td width="5" align="left">&nbsp;</td>
-                    </tr>
-					<tr >
-                        <td width="70%" style="vertical-align:middle;">Total Population</td>
-                        <td width="30%"><input name="d_population" id="d_population"  placeholder="" value="" type="number" readonly="readonly" style="background-color:#EEEEEE;"></td>
-                        <td width="5" align="left"></td>
-                    </tr>
-					<tr>
-                        <td width="70%" style="vertical-align:middle;">Household</td>
-                        <td width="30%"><input name="d_house_hold" id="d_house_hold" placeholder="" value="" type="number"></td>
-                        <td width="5" align="left">&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td width="70%" style="vertical-align:middle;">Disability</td>
-                        <td width="30%"><input name="d_disability" id="d_disability" placeholder="" value="" type="number"></td>
-                        <td width="5" align="left">&nbsp;</td>
-                    </tr>
-			</table>
-            <br/>
-            </div>
-            <div id="indirectShow">
-            <table class="ui-body-d ui-shadow table-stripe ui-responsive"  id="" data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px;">
-                    <tr valign="middle">
-                        <td colspan="3" ><strong>Enter Population (Indirect)</strong></td>
-                  </tr>
-                  <tr>
-                        <td width="70%" style="vertical-align:middle;">Male(17+)</td>
-                        <td width="30%"><input name="i_male" id="i_male" onBlur="i_totalPopulation();" placeholder="" value="" type="number"></td>
-                        <td width="5" align="left"><sup class="reqField">*</sup></td>
-                    </tr>
-				  <tr>
-                        <td width="70%" style="vertical-align:middle;">Female(17+)</td>
-                        <td width="30%">
-                        <input name="i_female" id="i_female" placeholder="" onBlur="i_totalPopulation();" value="" type="number"></td>
-                        <td width="5" align="left"><sup class="reqField">*</sup></td>
-                    </tr>
-                    <tr>
-                        <td width="70%" style="vertical-align:middle;">Boy(5-17yrs)</td>
-                        <td width="30%"><input name="i_boys" id="i_boys" placeholder="" value="" min="0" onBlur="i_totalPopulation();" type="number"></td>
-                        <td width="5" align="left">&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td width="70%" style="vertical-align:middle;">Girl(5-17yrs)</td>
-                        <td width="30%"><input name="i_girls" id="i_girls" placeholder="" value="" onBlur="i_totalPopulation();" min="0" type="number"></td>
-                        <td width="5" align="left">&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td width="70%" style="vertical-align:middle;">Boy(0-5yrs)</td>
-                        <td width="30%"><input name="i_boysUnder" id="i_boysUnder" placeholder="" onBlur="i_totalPopulation();" value="" type="number"></td>
-                        <td width="5" align="left">&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td width="70%" style="vertical-align:middle;">Girl(0-5yrs)</td>
-                        <td width="30%"><input name="i_girlsUnder" id="i_girlsUnder" placeholder="" onBlur="i_totalPopulation();" value="" type="number"></td>
-                        <td width="5" align="left">&nbsp;</td>
-                    </tr>
-					<tr >
-                        <td width="70%" style="vertical-align:middle;">Total Population</td>
-                        <td width="30%"><input name="i_population" id="i_population"  placeholder="" value="" type="number" readonly="readonly" style="background-color:#EEEEEE;"></td>
-                        <td width="5" align="left"></td>
-                    </tr>
-					<tr>
-                        <td width="70%" style="vertical-align:middle;">Household</td>
-                        <td width="30%"><input name="i_house_hold" id="i_house_hold" placeholder="" value="" type="number"></td>
-                        <td width="5" align="left">&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td width="70%" style="vertical-align:middle;">Disability</td>
-                        <td width="30%"><input name="i_disability" id="i_disability" placeholder="" value="" type="number"></td>
-                        <td width="5" align="left">&nbsp;</td>
-                    </tr>
-			</table>
-            <br/>
-            </div>
-            <div id="dap">
-            <table class="ui-body-d ui-shadow table-stripe ui-responsive"  data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px;">
-                  <tr valign="middle">
-                     <td colspan="3" ><strong>DAP</strong></td>
-                 </tr>
-                 <tr>
-                    <td width="70%" style="vertical-align:middle;">Male</td>
-                    <td width="30%"><input name="dapMale" id="dapMale" placeholder="" value="" type="number"></td>
-                    <td width="5" align="left">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td width="70%" style="vertical-align:middle;">Female</td>
-                    <td width="30%"><input name="dapFemale" id="dapFemale" placeholder="" value="" type="number"></td>
-                    <td width="5" align="left">&nbsp;</td>
-                </tr>
-            </table>
-            <br/>
-            </div>
-            <table class="ui-body-d ui-shadow table-stripe ui-responsive"  data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px;">
-                  <tr valign="middle">
-                     <td colspan="3" ><strong>Beneficiary</strong></td>
-                 </tr>
-                 <tr>
-                    <td width="70%" style="vertical-align:middle;">Total Wider</td>
-                    <td width="30%"><input name="totalWiBen" id="totalWiBen" placeholder="" value="" type="number"></td>
-                    <td width="5" align="left">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td width="70%" style="vertical-align:middle;">Total Indirect</td>
-                    <td width="30%"><input name="totalInBen" id="totalInBen" placeholder="" value="" type="number"></td>
-                    <td width="5" align="left">&nbsp;</td>
-                </tr>
-            </table>
          <a data-role="button" href="#" onClick="achivementDataPSupport();"  data-transition="slide" >Next</a>
         
       <div class="errorChk"></div>
@@ -840,7 +715,7 @@
             
     </div>
            
-<!--<div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
+<!--<div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
 --></div>
 		
 
@@ -851,8 +726,8 @@
 
 
  <!-- ===============select Achive list page2   LOCATION================== -->
-<div data-role="page" data-theme="d" id="achiveDataList2" style="overflow:scroll" >
-    <div data-theme="d" data-role="header" data-position="fixed" >
+<div data-role="page" data-theme="c" id="achiveDataList2" style="overflow:scroll" >
+    <div data-theme="c" data-role="header" data-position="fixed" >
     <a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
         <a data-role="button" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
         <h3>
@@ -860,8 +735,8 @@
   </div>
 
     <div data-role="content">        
-        <div id="serResDiv" ></div>
-        <!--<div id="serTypeDiv"></div>-->
+        <div id="serResDiv" style="margin-bottom:20px;"></div>
+        <div id="serTypeDiv"></div>
         <br />
         <a data-role="button" href="#" onClick="serviceRecipentNext();"  data-transition="slide" >Next</a>
         <div class="errorChk"></div>
@@ -869,13 +744,13 @@
         <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>			
     </div>
            
-<!--<div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
+<!--<div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
 --></div>
 		
 
 <!-- -------------achivment Submit page3 -------------------- -->
-<div data-role="page" data-theme="d" id="inPhoto" style="overflow:scroll" >
-    <div data-theme="d" data-role="header" data-position="fixed" >
+<div data-role="page" data-theme="c" id="inPhoto" style="overflow:scroll" >
+    <div data-theme="c" data-role="header" data-position="fixed" >
     <a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
         <!--<a data-role="button" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>-->
         <h3>Achievement Data</h3>
@@ -899,7 +774,7 @@
         
     </div>
     
-<!--	<div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
+<!--	<div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
 --></div>
 
 
@@ -909,8 +784,8 @@
 
 			
 <!-- ---------plan list water quality page----------------------------- -->
-<div data-role="page" data-theme="d" id="planListWq" style="overflow:scroll" >
-    <div data-theme="d" data-role="header" data-position="fixed" >
+<div data-role="page" data-theme="c" id="planListWq" style="overflow:scroll" >
+    <div data-theme="c" data-role="header" data-position="fixed" >
     <a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
         <!--<a data-role="button" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>-->
         <h3>Select Indicator</h3>
@@ -922,7 +797,7 @@
     
     </div>
 
-<!--<div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
+<!--<div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
 --></div>
 
 
@@ -931,21 +806,21 @@
 
 
  <!-- ----------------------------------------------------water quality page----------------------------------- -->
-<div data-role="page" data-theme="d" id="waterData" style="overflow:scroll" >
-    <div data-theme="d" data-role="header" data-position="fixed" >
+<div data-role="page" data-theme="c" id="waterData" style="overflow:scroll" >
+    <div data-theme="c" data-role="header" data-position="fixed" >
     <a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>	
         <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
         <h3> Water Quality Data</h3>
     </div>
     <div data-role="content">
         <div class="errorChk"></div>        
-        <ul data-role="listview" data-inset="true" data-theme="d">
+        <ul data-role="listview" data-inset="true" data-theme="c">
             <li class="ui-field-contain">
                 <label for="">Ward Code</label>
                 <div id="wQCboIdDiv"></div>
             </li>
         </ul>
-        <ul data-role="listview" data-inset="true" data-theme="d">
+        <ul data-role="listview" data-inset="true" data-theme="c">
             <li style="background-color:#F2F2F2;">Village/ward/slum name <sup class="reqField">*</sup></li>
             <li class="ui-field-contain">
                 <input name="wq_vill" id="wq_vill" placeholder="" value="" type="text">
@@ -953,7 +828,7 @@
         </ul>
         <div id="providedByDiv"></div>
        <!-- <div id="providedByDiv1"></div>-->
-        <ul data-role="listview" data-inset="true" data-theme="d">
+        <ul data-role="listview" data-inset="true" data-theme="c">
             <li class="ui-field-contain">
                 <label for="test_type">Test Type <sup class="reqField">*</sup></label>
                 <select name="test_type" id="test_type" data-native-menu="false" onchange="testType();">
@@ -966,7 +841,7 @@
                 
             </li>
         </ul>
-        <ul data-role="listview" data-inset="true" data-theme="d">
+        <ul data-role="listview" data-inset="true" data-theme="c">
             <li class="ui-field-contain">
                 <label for="type_of_wq_facility">Type of water facility<sup class="reqField">*</sup></label>
                 <select name="type_of_wq_facility" id="type_of_wq_facility" data-native-menu="false" >
@@ -982,7 +857,7 @@
             </li>
         </ul>				
         
-        <ul data-role="listview" data-inset="true" data-theme="d">
+        <ul data-role="listview" data-inset="true" data-theme="c">
             <li style="background-color:#F2F2F2;"></li>
             <li class="ui-field-contain">
                 <label for="wq_ref">To track history of facility </label>
@@ -997,7 +872,7 @@
         <a data-role="button" onClick="waterDataNext();"  data-transition="slide" >Next</a>
     </div>
            
-<!--<div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
+<!--<div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
 --><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 </div> 
 
@@ -1006,15 +881,15 @@
 
 
 <!-- --------------------water quality page2------------------------------------------------- -->
-<div data-role="page" data-theme="d" id="waterData2" style="overflow:scroll" >
-<div data-theme="d" data-role="header" data-position="fixed" >
+<div data-role="page" data-theme="c" id="waterData2" style="overflow:scroll" >
+<div data-theme="c" data-role="header" data-position="fixed" >
 	<a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
     <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
     <h3>Water Quality Data</h3>
 </div>
 
 <div data-role="content">
-		<ul data-role="listview" data-inset="true" data-theme="d">
+		<ul data-role="listview" data-inset="true" data-theme="c">
 			<li style="background-color:#F2F2F2;">Operation and Maintenance</li>
             <li class="ui-field-contain">
                 <label for="plat_condition">Platform condition</label>
@@ -1053,7 +928,7 @@
             </li>
         </ul>
         
-        <ul data-role="listview" data-inset="true" data-theme="d">
+        <ul data-role="listview" data-inset="true" data-theme="c">
             <li style="background-color:#F2F2F2;">Water option maintained by whom</li>
             <li class="ui-field-contain">
                 <fieldset data-role="controlgroup">
@@ -1087,7 +962,7 @@
         <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 </div>
 
-<!--<div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
+<!--<div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
 -->
 </div>
 
@@ -1097,8 +972,8 @@
 
 
 <!-- ===============water quality page3================== -->
-<div data-role="page" data-theme="d" id="waterData3" style="overflow:scroll" >
-    <div data-theme="d" data-role="header" data-position="fixed" >
+<div data-role="page" data-theme="c" id="waterData3" style="overflow:scroll" >
+    <div data-theme="c" data-role="header" data-position="fixed" >
     <a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
         <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
         <h3>Water Quality Data</h3>
@@ -1106,7 +981,7 @@
     
     <div data-role="content">
                 
-                <table data-role="table" data-theme="d" data-mode="display:none" class="ui-body-d ui-shadow table-stripe ui-responsive">
+                <table data-role="table" data-theme="c" data-mode="display:none" class="ui-body-d ui-shadow table-stripe ui-responsive">
                     <tr>
                         <td colspan="3" id="otherPart"><strong>Other Particulars</strong></td>
                         <!--<td colspan="3" id="otherPartBoreDate"><strong>Other Particulars Borehole data</strong></td>-->
@@ -1495,7 +1370,7 @@
             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     </div>
            
-<!--    <div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
+<!--    <div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
 -->
 </div>
 
@@ -1504,8 +1379,8 @@
 
 
 <!-- ------------------water quality page4------------------------------- -->
-<div data-role="page" data-theme="d" id="waterData4" style="overflow:scroll" >
-    <div data-theme="d" data-role="header" data-position="fixed" >
+<div data-role="page" data-theme="c" id="waterData4" style="overflow:scroll" >
+    <div data-theme="c" data-role="header" data-position="fixed" >
     <a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
         <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
         <h3>Water Quality Data</h3>
@@ -1513,7 +1388,7 @@
 
     <div data-role="content">
             <div class="errorChk"></div>
-            <table data-role="table" data-theme="d" data-mode="display:none" class="ui-body-d ui-shadow table-stripe ui-responsive">
+            <table data-role="table" data-theme="c" data-mode="display:none" class="ui-body-d ui-shadow table-stripe ui-responsive">
                     <tr>
                         <td><strong>Other Particulars (History) </strong></td>
                     </tr>
@@ -1747,7 +1622,7 @@
             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     </div>
            
-<!--<div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
+<!--<div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
 -->
 </div>
 
@@ -1757,8 +1632,8 @@
 
 
 <!-- -----------------------water quality page5------------------------------- -->
-<div data-role="page" data-theme="d" id="waterData5" style="overflow:scroll" >
-    <div data-theme="d" data-role="header" data-position="fixed" >
+<div data-role="page" data-theme="c" id="waterData5" style="overflow:scroll" >
+    <div data-theme="c" data-role="header" data-position="fixed" >
     <a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
     <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right">Back</a>
     <h3>Water Quality Data</h3>
@@ -1766,7 +1641,7 @@
 
 <div data-role="content">
             
-        <ul data-role="listview" data-inset="true" data-theme="d">
+        <ul data-role="listview" data-inset="true" data-theme="c">
             <li style="background-color:#F2F2F2;">Other Particulars</li>
             <li class="ui-field-contain">
                 <label for="ownerName">Owner Name </label>
@@ -1792,7 +1667,7 @@
         <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 </div>
            
-<!--<div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
+<!--<div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
 --></div>
 
 
@@ -1802,8 +1677,8 @@
 
 
 <!-- ===============water quality page7================== -->
-<div data-role="page" data-theme="d" id="waterData7" style="overflow:scroll" >
-    <div data-theme="d" data-role="header" data-position="fixed" >
+<div data-role="page" data-theme="c" id="waterData7" style="overflow:scroll" >
+    <div data-theme="c" data-role="header" data-position="fixed" >
     	<a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
         <a data-role="button"  onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
         <h3> Test Data</h3>
@@ -1811,7 +1686,7 @@
     
     <div data-role="content">
         
-        <ul data-role="listview" data-inset="true" data-theme="d">
+        <ul data-role="listview" data-inset="true" data-theme="c">
 			<li class="ui-field-contain">
 				<label for="test_type" id="pree_install">Type of water facility</label>
                 <label for="test_type" id="dont_pree_install">Particulars for drilling</label>
@@ -1835,7 +1710,7 @@
 		</ul>
 		
         <div id="typeOfTestKit">
-            <ul data-role="listview" data-inset="true" data-theme="d">
+            <ul data-role="listview" data-inset="true" data-theme="c">
                 <li style="background-color:#F2F2F2;">Name of the test kit used at field<sup class="reqField">*</sup></li>
                 <li class="ui-field-contain">
                     <fieldset data-role="controlgroup">
@@ -1860,7 +1735,7 @@
             </ul>
         </div>
             
-                <table data-role="table" id="tbl_wq_test" data-theme="d" data-mode="display:none" class="ui-body-d ui-shadow table-stripe ui-responsive">
+                <table data-role="table" id="tbl_wq_test" data-theme="c" data-mode="display:none" class="ui-body-d ui-shadow table-stripe ui-responsive">
                     <tr>
                         <td colspan="2" style="background-color:#F2F2F2;"><strong>Test score/exists</strong></td>
                     </tr>
@@ -1964,7 +1839,7 @@
             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     </div>
            
-<!--<div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
+<!--<div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
 --></div>
 
 
@@ -1973,9 +1848,9 @@
 
 
 <!-- ----------------------------water quality page8--------------------------------- -->
-<div data-role="page" data-theme="d" id="waterData8" style="overflow:scroll" >
+<div data-role="page" data-theme="c" id="waterData8" style="overflow:scroll" >
 
-    <div data-theme="d" data-role="header" data-position="fixed" >
+    <div data-theme="c" data-role="header" data-position="fixed" >
     	<a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
         <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
         <h3>Test Data </h3>
@@ -1983,7 +1858,7 @@
     
     <div data-role="content">
             <div class="errorChk"></div>
-            <ul data-role="listview" data-inset="true" data-theme="d">
+            <ul data-role="listview" data-inset="true" data-theme="c">
                 <li style="background-color:#F2F2F2;">Tested At</li>
                 <li class="ui-field-contain">
                     <fieldset data-role="controlgroup" data-type="horizontal">
@@ -1996,7 +1871,7 @@
                     </fieldset>
                 </li>
             </ul>
-            <ul data-role="listview" data-inset="true" id="ironTest" data-theme="d">
+            <ul data-role="listview" data-inset="true" id="ironTest" data-theme="c">
                 <li style="background-color:#F2F2F2;">Iron Test</li>
                 <li class="ui-field-contain">
                     <fieldset data-role="controlgroup" data-type="horizontal">
@@ -2009,7 +1884,7 @@
                     </fieldset>
                 </li>
             </ul>
-            <ul data-role="listview" data-inset="true" data-theme="d">
+            <ul data-role="listview" data-inset="true" data-theme="c">
                 <li style="background-color:#F2F2F2;">TW Painter</li>
                 <li class="ui-field-contain">
                     <fieldset data-role="controlgroup" data-type="horizontal">
@@ -2028,7 +1903,7 @@
             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     </div>
     
-<!--    <div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
+<!--    <div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
 -->    
 </div>
 
@@ -2040,9 +1915,9 @@
 
 
 <!-- ---------------------------water quality page9----------------------------------- -->
-<div data-role="page" data-theme="d" id="waterData9" style="overflow:scroll" >
+<div data-role="page" data-theme="c" id="waterData9" style="overflow:scroll" >
 
-    <div data-theme="d" data-role="header" data-position="fixed" >
+    <div data-theme="c" data-role="header" data-position="fixed" >
     	<a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
         <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
         <h3>Water Quality Data</h3>
@@ -2050,7 +1925,7 @@
     
     <div data-role="content">
             
-            <ul data-role="listview" data-inset="true" id="safeWaterOPtion" data-theme="d">
+            <ul data-role="listview" data-inset="true" id="safeWaterOPtion" data-theme="c">
                 <li style="background-color:#F2F2F2;">Safe water option</li>
                 <li class="ui-field-contain">                	
                     <fieldset data-role="controlgroup" data-type="horizontal">
@@ -2063,7 +1938,7 @@
                     </fieldset>
                 </li>
             </ul>
-            <ul data-role="listview" data-inset="true" id="safW_altOption" data-theme="d">
+            <ul data-role="listview" data-inset="true" id="safW_altOption" data-theme="c">
                 <li style="background-color:#F2F2F2;">If yes, what type of option</li>
                 <li class="ui-field-contain">
                 	              
@@ -2091,7 +1966,7 @@
                     </fieldset>
                 </li>
             </ul>
-            <ul data-role="listview" data-inset="true" id="safW_dist" data-theme="d">
+            <ul data-role="listview" data-inset="true" id="safW_dist" data-theme="c">
                 <li style="background-color:#F2F2F2;">How far that option is</li>
                 <li class="ui-field-contain">
                     <fieldset data-role="controlgroup" >
@@ -2113,7 +1988,7 @@
                 </li>
             </ul>
             
-            <ul data-role="listview" data-inset="true" id="saf_acT" data-theme="d">
+            <ul data-role="listview" data-inset="true" id="saf_acT" data-theme="c">
               <li style="background-color:#F2F2F2;">Action taken for project funded water facility</li>
                 <li class="ui-field-contain">
                     <fieldset data-role="controlgroup" >
@@ -2132,7 +2007,7 @@
             </ul>
             
             
-            <table data-role="table" data-theme="d" data-mode="display:none" class="ui-body-d ui-shadow table-stripe ui-responsive">
+            <table data-role="table" data-theme="c" data-mode="display:none" class="ui-body-d ui-shadow table-stripe ui-responsive">
                 <tr>
                     <td style="vertical-align:middle;">Is there any arsenic patient</td>
                     <td>
@@ -2155,14 +2030,14 @@
         <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     </div>
     
-<!--    <div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
+<!--    <div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
 -->    
 </div>
 
 
 <!-- ===============water quality page9.1================== -->
-<div data-role="page" data-theme="d" id="waterData9_1" style="overflow:scroll" >
-    <div data-theme="d" data-role="header" data-position="fixed" >
+<div data-role="page" data-theme="c" id="waterData9_1" style="overflow:scroll" >
+    <div data-theme="c" data-role="header" data-position="fixed" >
     <a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
         <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
         <h3>Water Quality Data</h3>
@@ -2170,7 +2045,7 @@
     
     <div data-role="content">
                 
-                <table data-role="table" data-theme="d" data-mode="display:none" class="ui-body-d ui-shadow table-stripe ui-responsive">
+                <table data-role="table" data-theme="c" data-mode="display:none" class="ui-body-d ui-shadow table-stripe ui-responsive">
                     <tr>
                         <td colspan="3"><strong>Sanitary inspection</strong></td>
                     </tr>
@@ -2265,7 +2140,7 @@
             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     </div>
            
-<!--    <div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
+<!--    <div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
 -->
 </div>
 
@@ -2274,9 +2149,9 @@
 
 
 <!-- -------------------------water quality page10------------------------------ -->
-<div data-role="page" data-theme="d" id="waterData10" style="overflow:scroll" >
+<div data-role="page" data-theme="c" id="waterData10" style="overflow:scroll" >
 
-    <div data-theme="d" data-role="header" data-position="fixed" >
+    <div data-theme="c" data-role="header" data-position="fixed" >
     	<a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
         <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
         <h3>Water Quality Data</h3>
@@ -2284,7 +2159,7 @@
     
     <div data-role="content">
             <div class="errorChk"></div>
-            <ul data-role="listview" data-inset="true" data-theme="d">
+            <ul data-role="listview" data-inset="true" data-theme="c">
                 <li style="background-color:#F2F2F2;">What is the status of the water option <sup class="reqField">*</sup></li>
                 <li class="ui-field-contain">
                     <fieldset data-role="controlgroup">
@@ -2302,7 +2177,7 @@
                 </li>
             </ul>
             
-                <ul data-role="listview" data-inset="true" id="useOfChk" data-theme="d">
+                <ul data-role="listview" data-inset="true" id="useOfChk" data-theme="c">
                     <li style="background-color:#F2F2F2;">Use of water </li>
                     <li class="ui-field-contain">
                         <fieldset data-role="controlgroup">
@@ -2328,7 +2203,7 @@
         <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     </div>
     
-<!--    <div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
+<!--    <div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
 -->    
 </div>
 
@@ -2339,9 +2214,9 @@
 
 
 <!-- --------------------------water quality page11------------------------------------- -->
-<div data-role="page" data-theme="d" id="waterData11" style="overflow:scroll" >
+<div data-role="page" data-theme="c" id="waterData11" style="overflow:scroll" >
 
-    <div data-theme="d" data-role="header" data-position="fixed" >
+    <div data-theme="c" data-role="header" data-position="fixed" >
     	<a data-role="button" href="#reportType" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
         <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
         <h3>Water Quality Data</h3>
@@ -2350,7 +2225,7 @@
     <div data-role="content">
         <div class="errorChk"></div>
         <div id="potableStatus">
-            <ul data-role="listview" data-inset="true" data-theme="d">
+            <ul data-role="listview" data-inset="true" data-theme="c">
                 <li class="ui-field-contain">
                     <fieldset data-role="controlgroup">
                         <legend>Potable Status <sup class="reqField">*</sup></legend>
@@ -2362,7 +2237,7 @@
                 </li>
             </ul>
         </div>
-            <ul data-role="listview" data-inset="true" data-theme="d">
+            <ul data-role="listview" data-inset="true" data-theme="c">
                 <li class="ui-field-contain" id="non_potbl_res">
                 	<label for="reason_non_potable"> Reason for non- potable water  </label>
                 	<select name="reason_non_potable" id="reason_non_potable" data-native-menu="false" >
@@ -2389,7 +2264,7 @@
         <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     </div>
     
-<!--    <div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
+<!--    <div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
 -->    
 </div>
 
@@ -2399,8 +2274,8 @@
 
 
 <!-- ----------------------water quality page12----------------------------------------------------- -->
-<div data-role="page" data-theme="d" id="waterData12" style="overflow:scroll" >
-    <div data-theme="d" data-role="header" data-position="fixed" >
+<div data-role="page" data-theme="c" id="waterData12" style="overflow:scroll" >
+    <div data-theme="c" data-role="header" data-position="fixed" >
     	<a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
         <a data-role="button" onclick="backClick();" data-rel="back" data-icon="arrow-l"  class="ui-btn-right" data-transition="slide">Back</a>
         <h3>Water Quality Data</h3>
@@ -2408,7 +2283,7 @@
 
     <div data-role="content">
                 <div class="errorChk"></div>
-                <ul data-role="listview" data-inset="true" data-theme="d">
+                <ul data-role="listview" data-inset="true" data-theme="c">
                     <li style="background-color:#F2F2F2;">Other Particulars<sup class="reqField">*</sup></li>
                     <li class="ui-field-contain">
                         <label for="wab_con"> WaterAid contribution  </label>
@@ -2423,7 +2298,7 @@
                         <input name="total_cost" id="total_cost" placeholder="" value="" type="number" >
                     </li>
                 </ul>
-                <ul data-role="listview" data-inset="true" data-theme="d">
+                <ul data-role="listview" data-inset="true" data-theme="c">
                     <li class="ui-field-contain">
                         <fieldset data-role="controlgroup">
                             <legend>Do users pay for operation and <br/>maintenance of the water options</legend>
@@ -2439,7 +2314,7 @@
                     </li>
                 </ul>
                  
-                <ul data-role="listview" data-inset="true" id="pipe_conc" data-theme="d">
+                <ul data-role="listview" data-inset="true" id="pipe_conc" data-theme="c">
                     <li class="ui-field-contain">
                         <fieldset data-role="controlgroup">
                             <legend>In case of piped water,<br/> is the connection legal</legend>
@@ -2466,7 +2341,7 @@
             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     </div>
            
-<!--	<div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
+<!--	<div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
 --></div>
 
 
@@ -2477,8 +2352,8 @@
 
 
 <!-- ------------------------water quality page13----------------------------------------- -->
-<div data-role="page" id="waterData13" style="overflow:scroll" data-theme="d">
-    <div data-theme="d" data-role="header" data-position="fixed" >
+<div data-role="page" id="waterData13" style="overflow:scroll" data-theme="c">
+    <div data-theme="c" data-role="header" data-position="fixed" >
     	<a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
         <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
         <h3>Water Quality Data</h3>
@@ -2486,7 +2361,7 @@
 
     <div data-role="content">
                 <div class="errorChk"></div>
-                <ul data-role="listview" data-inset="true" data-theme="d">
+                <ul data-role="listview" data-inset="true" data-theme="c">
                     <li class="ui-field-contain">
                         <fieldset data-role="controlgroup">
                             <legend>Are all test completed</legend>
@@ -2507,7 +2382,7 @@
                         <textarea cols="20" rows="3" name="res_n_test" id="res_n_test"></textarea>
                     </li>
                 </ul>-->
-                <ul data-role="listview" data-inset="true" id="newField" data-theme="d">
+                <ul data-role="listview" data-inset="true" id="newField" data-theme="c">
                     <li class="ui-field-contain">
                         <fieldset data-role="controlgroup">
                             <legend></legend>
@@ -2527,7 +2402,7 @@
             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     </div>
            
-<!--	<div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
+<!--	<div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
 --></div>
 
 
@@ -2536,8 +2411,8 @@
 
 
 <!-- -----------------------water quality page14------------------------------- -->
-<div data-role="page" data-theme="d" id="waterData14" style="overflow:scroll" >
-    <div data-theme="d" data-role="header" data-position="fixed" >
+<div data-role="page" data-theme="c" id="waterData14" style="overflow:scroll" >
+    <div data-theme="c" data-role="header" data-position="fixed" >
     	<a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
         <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
        
@@ -2545,7 +2420,7 @@
   	</div>
 
     <div data-role="content">                
-                <ul data-role="listview" data-inset="true" id="isManagement" data-theme="d">
+                <ul data-role="listview" data-inset="true" id="isManagement" data-theme="c">
                     <li class="ui-field-contain">
                         <fieldset data-role="controlgroup">
                             <legend>Does management committee exist</legend>
@@ -2607,7 +2482,7 @@
                     </li>
                 </ul>
                 
-                <ul data-role="listview" data-inset="true" id="caretakerTrained" data-theme="d">
+                <ul data-role="listview" data-inset="true" id="caretakerTrained" data-theme="c">
                     <li class="ui-field-contain">
                         <fieldset data-role="controlgroup">
                             <legend>Is caretaker trained</legend>
@@ -2636,7 +2511,7 @@
                     </li>
                 </ul>
                 
-                <ul data-role="listview" data-inset="true" id="smpleAnaly" data-theme="d">
+                <ul data-role="listview" data-inset="true" id="smpleAnaly" data-theme="c">
                     <li class="ui-field-contain">                        
                         <fieldset data-role="controlgroup">
                             <legend>Who analysed the sample</legend>
@@ -2651,7 +2526,7 @@
                     </li>
                 </ul>
                 
-                <ul data-role="listview" data-inset="true" id="typeOfRenovation" data-theme="d">
+                <ul data-role="listview" data-inset="true" id="typeOfRenovation" data-theme="c">
                     <li class="ui-field-contain">
                         <fieldset data-role="controlgroup">
                             <legend>Type of renovation done</legend>
@@ -2664,13 +2539,13 @@
                         </fieldset>
                     </li>
                 </ul>
-                 <ul data-role="listview" data-inset="true" id="other_alt" data-theme="d">
+                 <ul data-role="listview" data-inset="true" id="other_alt" data-theme="c">
                     <li class="ui-field-contain">
                         <label for="alt">Alternative</label>
                         <textarea cols="20" rows="3" name="alt" id="alt"></textarea>
                     </li>
                 </ul>
-                <ul data-role="listview" data-inset="true" id="installationDone" data-theme="d">
+                <ul data-role="listview" data-inset="true" id="installationDone" data-theme="c">
                     <li class="ui-field-contain">
                         <fieldset data-role="controlgroup">
                             <legend>Installation done</legend>
@@ -2703,7 +2578,7 @@
 			
     </div>
            
-<!--	<div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
+<!--	<div data-theme="c" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
 --></div>
 
 

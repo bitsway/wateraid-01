@@ -91,9 +91,10 @@ var sectorFlag=0;
 var startDt='';
 var syncResult='';
 
+//var asinProject;asinDomain;servicType;serviceLevelWs;serviceLevelHy;achPlanId;achPlanActivities;typeOfFacility;exManagCon;typeOfActivity;availHandWashFac;availWaterSoapFac;typeOfEven;evenIssues;wordCode;achID;communityName;ownerName;sMale;sFemale;sBoys;sGirls;sBoysUnder;sGirlsUnder;sPopulation;sHouse_hold;bMale;bFemale;bBoys;bGirls;bBoysUnder;bGirlsUnder;bPopulation;bHouse_hold;lMale;lFemale;lBoys;lGirls;lBoysUnder;lGirlsUnder;lPopulation;lHouse_hold;achServiceRecpt;achSerType;
+
 var asinProject='';
 var asinDomain='';
-var intervention_area='';
 var servicType='';
 var serviceLevelWs='';
 var serviceLevelHy='';
@@ -118,8 +119,6 @@ var sBoysUnder='';
 var sGirlsUnder='';
 var sPopulation='';
 var sHouse_hold='';
-var sDisability='';
-
 var bMale='';
 var bFemale='';
 var bBoys='';
@@ -128,8 +127,6 @@ var bBoysUnder='';
 var bGirlsUnder='';
 var bPopulation='';
 var bHouse_hold='';
-var bDisability='';
-
 var lMale='';
 var lFemale='';
 var lBoys='';
@@ -138,35 +135,12 @@ var lBoysUnder='';
 var lGirlsUnder='';
 var lPopulation='';
 var lHouse_hold='';
-var lDisability='';
-
-var dMale='';
-var dFemale='';
-var dBoys='';
-var dGirls='';
-var dBoysUnder='';
-var dGirlsUnder='';
-var dPopulation='';
-var dHouse_hold='';
-var dDisability='';
-
-var iMale='';
-var iFemale='';
-var iBoys='';
-var iGirls='';
-var iBoysUnder='';
-var iGirlsUnder='';
-var iPopulation='';
-var iHouse_hold='';
-var iDisability='';
-
 var dapMale='';
 var dapFemale='';
 var totalWiBen='';
 var totalInBen='';
 var achServiceRecpt='';
 var achSerType='';
-
 
 //var achCBOid='';
 //var achPopulation='';
@@ -227,9 +201,9 @@ $(function(){
 						localStorage.plan_wq=syncResultArray[6];
 						localStorage.cbo_id_wq=syncResultArray[7];
 						localStorage.service_type=syncResultArray[8];
-						//localStorage.project=syncResultArray[9];
-						localStorage.domain=syncResultArray[9];
-						localStorage.sector=syncResultArray[10];
+						localStorage.project=syncResultArray[9];
+						localStorage.domain=syncResultArray[10];
+						localStorage.sector=syncResultArray[11];
 						
 						localStorage.mobile_no=mobile;
 						localStorage.ach_save="";
@@ -240,13 +214,13 @@ $(function(){
 						$(".errorChk").html("Sync Successful");
 						$('#syncBasic').show();
 						
-						/*if (projectFlag==0){
+						if (projectFlag==0){
 							$("#asignProject").html(localStorage.project);	
 							projectFlag=1;
 						}else{
 							$('#asignProject').empty();
 							$('#asignProject').append(localStorage.project).trigger('create');
-						}*/
+						}
 						if (domainFlag==0){
 							$("#asignDomain").html(localStorage.domain);	
 							domainFlag=1;
@@ -280,13 +254,13 @@ $(function(){
 							$('#serResDiv').append(localStorage.ser_res_list).trigger('create');
 						}
 						
-						/*if (serTypeFlag==0){			   
+						if (serTypeFlag==0){			   
 							$("#serTypeDiv").html(localStorage.service_type);	
 							serTypeFlag=1;
 						}else{
 							$('#serTypeDiv').empty();
 							$('#serTypeDiv').append(localStorage.service_type).trigger('create');
-						}*/
+						}
 												
 						
 						$("#planWqlistDiv").html(localStorage.plan_wq);
@@ -335,14 +309,14 @@ $(document).ready(function(){
 	
 	$("#planlistDiv").html(localStorage.planStr);
 		
-	//$("#asignProject").html(localStorage.project);
+	$("#asignProject").html(localStorage.project);
 	$("#asignDomain").html(localStorage.domain);
 	
 	$("#serTyp").html(localStorage.sector);			
 		
 	$("#cboIdDiv").html(localStorage.cbo_list);					   
 	$("#serResDiv").html(localStorage.ser_res_list);
-	//$("#serTypeDiv").html(localStorage.service_type);	
+	$("#serTypeDiv").html(localStorage.service_type);	
 	$("#reviewAchList").html(localStorage.reviewDataDiv);
 	
 	$("#planWqlistDiv").html(localStorage.plan_wq);
@@ -463,13 +437,13 @@ function achivementclick(){
 		$(".errorChk").text("Required Sync");
 	}else{
 				
-		/*if (projectFlag==0){
+		if (projectFlag==0){
 			$("#asignProject").html(localStorage.project);	
 			projectFlag=1;
 		}else{
 			$('#asignProject').empty();
 			$('#asignProject').append(localStorage.project).trigger('create');
-		}*/
+		}
 		if (domainFlag==0){
 			$("#asignDomain").html(localStorage.domain);	
 			domainFlag=1;
@@ -494,13 +468,13 @@ function achivementclick(){
 			$('#serResDiv').append(localStorage.ser_res_list).trigger('create');
 		}
 		
-		/*if (serTypeFlag==0){			   
+		if (serTypeFlag==0){			   
 			$("#serTypeDiv").html(localStorage.service_type);	
 			serTypeFlag=1;
 		}else{
 			$('#serTypeDiv').empty();
 			$('#serTypeDiv').append(localStorage.service_type).trigger('create');
-		}*/
+		}
 		
 		if (sectorFlag==0){
 			$("#serTyp").html(localStorage.sector);	
@@ -615,18 +589,17 @@ function serviceType_wsh(){
 }
 
 function achNext(){	
-	//asinProject=$("#asign_project").val();
+	asinProject=$("#asign_project").val();
 	asinDomain=$("#asign_domain").val();
-	intervention_area=$("#intervention_area").val()
 	servicType=$("#service_type").val();
 	serviceLevelWs=$("#service_level_ws").val();
 	serviceLevelHy=$("#service_level_hy").val();
 	sIndicator=$("#selectIndicator").val();
 	
-	if(asinDomain==''){
-		$(".errorChk").text("Required Project");	
-	}else if (intervention_area==''){
-		$(".errorChk").text("Required Intervention Area");	
+	if(asinProject==''){
+		$(".errorChk").text("Required Project");		
+	}else if(asinDomain==''){
+		$(".errorChk").text("Required Domain");	
 	}else if (servicType==''){
 		$(".errorChk").text("Required Service Type");
 	}else if((((servicType=='Water' || servicType=='Sanitation') && (serviceLevelWs=='')) || ((servicType=='Hygiene' || servicType=='X-Sector') && (serviceLevelHy=='')))){//&&(serviceLevelWs=='')
@@ -639,10 +612,9 @@ function achNext(){
 			planLi=planLst[i].split('||');
 			activityName=planLi[0]
 			activity_id=planLi[1]
-			interventionArea=planLi[2]
-			serviceType=planLi[3]
-			serviceLevel=planLi[4]
-			planId=planLi[5]
+			serviceType=planLi[2]
+			serviceLevel=planLi[3]
+			planId=planLi[4]
 			
 			//alert(servicType+'=='+serviceType+'||'+serviceLevelWs+'=='+serviceLevel+'|||'+serviceLevelHy+'=='+serviceLevel);
 			if ((servicType==serviceType) && (serviceLevelWs==serviceLevel || serviceLevelHy==serviceLevel)){
@@ -674,20 +646,6 @@ function achNext(){
 				$("#planlistDiv").append(localStorage.planStr).trigger('create');
 			}
 			
-			
-			if((servicType=='Water' || servicType=='Sanitation') && (intervention_area=='Watsan')){
-				$("#allShow").show();
-				$("#directShow").hide();	
-				$("#indirectShow").show();
-				//$("#dap").show();
-			}else{
-				$("#allShow").hide();
-				$("#directShow").show();
-				$("#indirectShow").show();
-				//$("#dap").hide();				
-			}		
-			
-			
 			$(".errorChk").text("");	
 			var url = "#planList";
 			$.mobile.navigate(url);	
@@ -713,17 +671,7 @@ function achDataNext(){
 			startDt = now.getUTCFullYear()+ "-" + month + "-" + now.getUTCDate()+" "+now.getHours()+':'+now.getMinutes()+':'+now.getSeconds();
 		}
 		
-		
 		if (servicType=='Water'){
-			$(".errorChk").text("");
-			var url = "#achiveDataList";
-			$.mobile.navigate(url);				
-		}else if(intervention_area=='Watsan'  && servicType=='Sanitation'){
-			
-			$(".errorChk").text("");
-			var url = "#achiveEvent";
-			$.mobile.navigate(url);
-		}else if(intervention_area=='Others'  && servicType=='Sanitation'){
 			$(".errorChk").text("");
 			var url = "#achiveDataList";
 			$.mobile.navigate(url);	
@@ -737,11 +685,11 @@ function achDataNext(){
 
 function type_ofActivity(){
 	typeOf_activity=$("#typeOf_activity").val();
-	if (typeOf_activity=='Hand Washing F'){
+	if (typeOf_activity=='Basic'){
 		$("#availHandWash_fac").show();
 		$("#typeOfEvent").hide();
 		$("#eventIssues").hide();
-	}else if(typeOf_activity=='Hygiene Reach'){
+	}else if(typeOf_activity=='Event'){
 		$("#availHandWash_fac").hide();
 		$("#availWaterSoap_fac").hide();
 		$("#typeOfEvent").show();		
@@ -788,14 +736,14 @@ function achive_Event(){
 		$(".errorChk").text("Required Excreta management consent");
 	}else if(servicType=='Hygiene' && typeOfActivity==''){
 		$(".errorChk").text("Required Type of Activity ");
-	}else if(servicType=='Hygiene' && typeOfActivity=='Hand Washing F' && availHandWashFac==''){
+	}else if(servicType=='Hygiene' && typeOfActivity=='Basic' && availHandWashFac==''){
 		$(".errorChk").text("Required Availability of Hand Washing Facility ");
-	}else if(servicType=='Hygiene' && typeOfActivity=='Hand Washing F' && availHandWashFac=='Yes' && availWaterSoapFac==''){
+	}else if(servicType=='Hygiene' && typeOfActivity=='Basic' && availHandWashFac=='Yes' && availWaterSoapFac==''){
 		$(".errorChk").text("Required Availability of running water and soap is near to the facility ");
-	}else if(servicType=='Hygiene' && typeOfActivity=='Hygiene Reach' && typeOfEven==''){
-		$(".errorChk").text("Required Type of Hygiene Reach ");
-	}else if(servicType=='Hygiene' && typeOfActivity=='Hygiene Reach' && typeOfEven !='' && evenIssues==''){
-		$(".errorChk").text("Required Hygiene Reach issues");
+	}else if(servicType=='Hygiene' && typeOfActivity=='Event' && typeOfEven==''){
+		$(".errorChk").text("Required Type of Event ");
+	}else if(servicType=='Hygiene' && typeOfActivity=='Event' && typeOfEven !='' && evenIssues==''){
+		$(".errorChk").text("Required Event issues");
 	}else{
 		$(".errorChk").text("");
 		var url = "#achiveDataList";
@@ -827,7 +775,6 @@ function achivementDataPSupport(){
 	sGirlsUnder=$("#s_girlsUnder").val();
 	sPopulation=$("#s_population").val();
 	sHouse_hold=$("#s_house_hold").val();
-	sDisability=$("#s_disability").val();
 	
 	bMale=$("#b_male").val();
 	bFemale=$("#b_female").val();
@@ -837,7 +784,6 @@ function achivementDataPSupport(){
 	bGirlsUnder=$("#b_girlsUnder").val();
 	bPopulation=$("#b_population").val();
 	bHouse_hold=$("#b_house_hold").val();
-	bDisability=$("#b_disability").val();
 	
 	lMale=$("#l_male").val();
 	lFemale=$("#l_female").val();
@@ -847,27 +793,6 @@ function achivementDataPSupport(){
 	lGirlsUnder=$("#l_girlsUnder").val();
 	lPopulation=$("#l_population").val();
 	lHouse_hold=$("#l_house_hold").val();
-	lDisability=$("#l_disability").val();
-	
-	dMale=$("#d_male").val();
-	dFemale=$("#d_female").val();
-	dBoys=$("#d_boys").val();
-	dGirls=$("#d_girls").val();
-	dBoysUnder=$("#d_boysUnder").val();
-	dGirlsUnder=$("#d_girlsUnder").val();
-	dPopulation=$("#d_population").val();
-	dHouse_hold=$("#d_house_hold").val();
-	dDisability=$("#d_disability").val();
-	
-	iMale=$("#i_male").val();
-	iFemale=$("#i_female").val();
-	iBoys=$("#i_boys").val();
-	iGirls=$("#i_girls").val();
-	iBoysUnder=$("#i_boysUnder").val();
-	iGirlsUnder=$("#i_girlsUnder").val();
-	iPopulation=$("#i_population").val();
-	iHouse_hold=$("#i_house_hold").val();
-	iDisability=$("#i_disability").val();
 	
 	dapMale=$("#dapMale").val();
 	dapFemale=$("#dapFemale").val();
@@ -876,12 +801,6 @@ function achivementDataPSupport(){
 	
 	var regStr=/^[a-zA-Z\s]+$/;
 	
-	if(sMale==''){
-		sMale=0;	
-	}
-	if(sFemale==''){
-		sFemale=0;	
-	}
 	if(sBoys==''){
 		sBoys=0;
 	}
@@ -894,19 +813,7 @@ function achivementDataPSupport(){
 	if(sGirlsUnder==''){
 		sGirlsUnder=0;
 	}
-	if(sHouse_hold==''){
-		sHouse_hold=0;
-	}
-	if(sDisability==''){
-		sDisability=0;
-	}
-	
-	if(bMale==''){
-		bMale=0;	
-	}
-	if(bFemale==''){
-		bFemale=0;	
-	}		
+			
 	if(bBoys==''){
 		bBoys=0;
 	}
@@ -918,21 +825,8 @@ function achivementDataPSupport(){
 	}
 	if(bGirlsUnder==''){
 		bGirlsUnder=0;
-	}	
-	if(bHouse_hold==''){
-		bHouse_hold=0;
-	}
-	if(bDisability==''){
-		bDisability=0;
 	}
 	
-	
-	if(lMale==''){
-		lMale=0;	
-	}
-	if(lFemale==''){
-		lFemale=0;	
-	}
 	if(lBoys==''){
 		lBoys=0;
 	}
@@ -944,66 +838,7 @@ function achivementDataPSupport(){
 	}
 	if(lGirlsUnder==''){
 		lGirlsUnder=0;
-	}	
-	if(lHouse_hold==''){
-		lHouse_hold=0;
 	}
-	if(lDisability==''){
-		lDisability=0;
-	}
-	
-	/*=====direct=======*/
-	if(dMale==''){
-		dMale=0;	
-	}
-	if(dFemale==''){
-		dFemale=0;	
-	}
-	if(dBoys==''){
-		dBoys=0;
-	}
-	if(dGirls==''){
-		dGirls=0;
-	}	
-	if(dBoysUnder==''){
-		dBoysUnder=0;
-	}
-	if(dGirlsUnder==''){
-		dGirlsUnder=0;
-	}		
-	if(dHouse_hold==''){
-		dHouse_hold=0;
-	}
-	if(dDisability==''){
-		dDisability=0;
-	}
-	
-	/*=====Indirect=======*/
-	if(iMale==''){
-		iMale=0;	
-	}
-	if(iFemale==''){
-		iFemale=0;	
-	}
-	if(iBoys==''){
-		iBoys=0;
-	}
-	if(iGirls==''){
-		iGirls=0;
-	}	
-	if(iBoysUnder==''){
-		iBoysUnder=0;
-	}
-	if(iGirlsUnder==''){
-		iGirlsUnder=0;
-	}		
-	if(iHouse_hold==''){
-		iHouse_hold=0;
-	}
-	if(iDisability==''){
-		iDisability=0;
-	}
-		
 		
 	if (wordCode=="" ){
 		$(".errorChk").text("Required Ward Code ");
@@ -1017,7 +852,7 @@ function achivementDataPSupport(){
 		$(".errorChk").text("Required Owner Name");
 	}else if (!ownerName.match(regStr)){
 		$(".errorChk").text("Owner Name Only Alphabetic Character Allowed ");	
-	/*}else if (sMale=="" ){
+	}else if (sMale=="" ){
 		$(".errorChk").text("Required Male 17+ Safely ");
 	}else if (sFemale=="" ){
 		$(".errorChk").text("Required Female 17+ Safely ");
@@ -1028,7 +863,7 @@ function achivementDataPSupport(){
 	}else if (lMale=="" ){
 		$(".errorChk").text("Required Male 17+ Limited");
 	}else if (lFemale=="" ){
-		$(".errorChk").text("Required Female 17+ Limited");*/
+		$(".errorChk").text("Required Female 17+ Limited");
 	}else{
 		$(".errorChk").text("");
 		var url="#achiveDataList2";
@@ -1046,23 +881,23 @@ function s_totalPopulation(){
 	var s_girlsUnder=$("#s_girlsUnder").val();
 	
 	if(s_male==''){
-		s_male=0;
-	}
+			s_male=0;
+			}
 	if(s_female==''){
-		s_female=0;
-	}
+			s_female=0;
+			}
 	if(s_boys==''){
-		s_boys=0;
-	}
+			s_boys=0;
+			}
 	if(s_girls==''){
-		s_girls=0;
-	}
+			s_girls=0;
+			}
 	if(s_boysUnder==''){
-		s_boysUnder=0;
-	}
+			s_boysUnder=0;
+			}
 	if(s_girlsUnder==''){
-		s_girlsUnder=0;
-	}
+			s_girlsUnder=0;
+			}
 			
 	var totalMF_s=eval(s_male)+eval(s_female)+eval(s_boys)+eval(s_girls)+eval(s_boysUnder)+eval(s_girlsUnder);	
 	$("#s_population").val(totalMF_s);
@@ -1106,89 +941,28 @@ function l_totalPopulation(){
 	var l_girlsUnder=$("#l_girlsUnder").val();
 	
 	if(l_male==''){
-		l_male=0;
-	}
+			l_male=0;
+			}
 	if(l_female==''){
-		l_female=0;
-	}
+			l_female=0;
+			}
 	if(l_boys==''){
-		l_boys=0;
-	}
+			l_boys=0;
+			}
 	if(l_girls==''){
-		l_girls=0;
-	}
+			l_girls=0;
+			}
 	if(l_boysUnder==''){
-		l_boysUnder=0;
-	}
+			l_boysUnder=0;
+			}
 	if(l_girlsUnder==''){
-		l_girlsUnder=0;
-	}
+			l_girlsUnder=0;
+			}
 			
 	var totalMF_l=eval(l_male)+eval(l_female)+eval(l_boys)+eval(l_girls)+eval(l_boysUnder)+eval(l_girlsUnder);	
 	$("#l_population").val(totalMF_l);
 }
 
-function d_totalPopulation(){
-	var d_male=$("#d_male").val();
-	var d_female=$("#d_female").val();
-	var d_boys=$("#d_boys").val();
-	var d_girls=$("#d_girls").val();
-	var d_boysUnder=$("#d_boysUnder").val();
-	var d_girlsUnder=$("#d_girlsUnder").val();
-	
-	if(d_male==''){
-		d_male=0;
-	}
-	if(d_female==''){
-		d_female=0;
-	}
-	if(d_boys==''){
-		d_boys=0;
-	}
-	if(d_girls==''){
-		d_girls=0;
-	}
-	if(d_boysUnder==''){
-		d_boysUnder=0;
-	}
-	if(d_girlsUnder==''){
-		d_girlsUnder=0;
-	}
-			
-	var totalMF_d=eval(d_male)+eval(d_female)+eval(d_boys)+eval(d_girls)+eval(d_boysUnder)+eval(d_girlsUnder);	
-	$("#d_population").val(totalMF_d);
-}
-
-function i_totalPopulation(){
-	var i_male=$("#i_male").val();
-	var i_female=$("#i_female").val();
-	var i_boys=$("#i_boys").val();
-	var i_girls=$("#i_girls").val();
-	var i_boysUnder=$("#i_boysUnder").val();
-	var i_girlsUnder=$("#i_girlsUnder").val();
-	
-	if(i_male==''){
-		i_male=0;
-	}
-	if(i_female==''){
-		i_female=0;
-	}
-	if(i_boys==''){
-		i_boys=0;
-	}
-	if(i_girls==''){
-		i_girls=0;
-	}
-	if(i_boysUnder==''){
-		i_boysUnder=0;
-	}
-	if(i_girlsUnder==''){
-		i_girlsUnder=0;
-	}
-			
-	var totalMF_i=eval(i_male)+eval(i_female)+eval(i_boys)+eval(i_girls)+eval(i_boysUnder)+eval(i_girlsUnder);	
-	$("#i_population").val(totalMF_i);
-}
 
 //------------------achivement sector next 
 function serviceRecipentNext(){
@@ -1239,11 +1013,10 @@ function achiveDataSave(){
 		}	
 		
 		
-		
-		achivementSave=asinDomain+'fdfd'+intervention_area+'fdfd'+servicType+'fdfd'+serviceLevelWs+'fdfd'+serviceLevelHy+'fdfd'+achPlanId+'fdfd'+achPlanActivities+'fdfd'+typeOfFacility+'fdfd'+exManagCon+'fdfd'+typeOfActivity+'fdfd'+availHandWashFac+'fdfd'+availWaterSoapFac+'fdfd'+typeOfEven+'fdfd'+evenIssues+'fdfd'+wordCode+'fdfd'+achID+'fdfd'+communityName+'fdfd'+ownerName+'fdfd'+sMale+'fdfd'+sFemale+'fdfd'+sBoys+'fdfd'+sGirls+'fdfd'+sBoysUnder+'fdfd'+sGirlsUnder+'fdfd'+sPopulation+'fdfd'+sHouse_hold+'fdfd'+sDisability+'fdfd'+bMale+'fdfd'+bFemale+'fdfd'+bBoys+'fdfd'+bGirls+'fdfd'+bBoysUnder+'fdfd'+bGirlsUnder+'fdfd'+bPopulation+'fdfd'+bHouse_hold+'fdfd'+bDisability+'fdfd'+lMale+'fdfd'+lFemale+'fdfd'+lBoys+'fdfd'+lGirls+'fdfd'+lBoysUnder+'fdfd'+lGirlsUnder+'fdfd'+lPopulation+'fdfd'+lHouse_hold+'fdfd'+lDisability+'fdfd'+dMale+'fdfd'+dFemale+'fdfd'+dBoys+'fdfd'+dGirls+'fdfd'+dBoysUnder+'fdfd'+dGirlsUnder+'fdfd'+dPopulation+'fdfd'+dHouse_hold+'fdfd'+dDisability+'fdfd'+iMale+'fdfd'+iFemale+'fdfd'+iBoys+'fdfd'+iGirls+'fdfd'+iBoysUnder+'fdfd'+iGirlsUnder+'fdfd'+iPopulation+'fdfd'+iHouse_hold+'fdfd'+iDisability+'fdfd'+dapMale+'fdfd'+dapFemale+'fdfd'+totalWiBen+'fdfd'+totalInBen+'fdfd'+achServiceRecpt+'fdfd'+achSerType+'fdfd'+achPhoto+'fdfd'+startDt+'fdfd'+latitude+'fdfd'+longitude;
+		achivementSave=asinProject+'fdfd'+asinDomain+'fdfd'+servicType+'fdfd'+serviceLevelWs+'fdfd'+serviceLevelHy+'fdfd'+achPlanId+'fdfd'+achPlanActivities+'fdfd'+typeOfFacility+'fdfd'+exManagCon+'fdfd'+typeOfActivity+'fdfd'+availHandWashFac+'fdfd'+availWaterSoapFac+'fdfd'+typeOfEven+'fdfd'+evenIssues+'fdfd'+wordCode+'fdfd'+achID+'fdfd'+communityName+'fdfd'+ownerName+'fdfd'+sMale+'fdfd'+sFemale+'fdfd'+sBoys+'fdfd'+sGirls+'fdfd'+sBoysUnder+'fdfd'+sGirlsUnder+'fdfd'+sPopulation+'fdfd'+sHouse_hold+'fdfd'+bMale+'fdfd'+bFemale+'fdfd'+bBoys+'fdfd'+bGirls+'fdfd'+bBoysUnder+'fdfd'+bGirlsUnder+'fdfd'+bPopulation+'fdfd'+bHouse_hold+'fdfd'+lMale+'fdfd'+lFemale+'fdfd'+lBoys+'fdfd'+lGirls+'fdfd'+lBoysUnder+'fdfd'+lGirlsUnder+'fdfd'+lPopulation+'fdfd'+lHouse_hold+'fdfd'+dapMale+'fdfd'+dapFemale+'fdfd'+totalWiBen+'fdfd'+totalInBen+'fdfd'+achServiceRecpt+'fdfd'+achSerType+'fdfd'+achPhoto+'fdfd'+startDt+'fdfd'+latitude+'fdfd'+longitude;
 		
 		//alert(achivementSave);							
-		
+		//achivementSave=achPlanId+'fdfd'+achCBOid+'fdfd'+achID+'fdfd'+achPopulation+'fdfd'+achHousehold+'fdfd'+achMale+'fdfd'+achFemale+'fdfd'+achGirlsUnder+'fdfd'+achBoysUnder+'fdfd'+achGirls+'fdfd'+achBoys+'fdfd'+achDapMale+'fdfd'+achDapFemale+'fdfd'+achPoorA+'fdfd'+achPoorB+'fdfd'+achPoorC+'fdfd'+achPoorEx+'fdfd'+achEthMale+'fdfd'+achEthFemale+'fdfd'+achServiceRecpt+'fdfd'+achPlanActivities+'fdfd'+achPhoto+'fdfd'+startDt+'fdfd'+latitude+'fdfd'+longitude+'fdfd'+achSerType
 		
 		if (achPlanId=='' || wordCode==''){
 			$(".errorChk").text("New records not available");
@@ -1294,9 +1067,8 @@ function achiveDataSave(){
 				$(".errorChk").text("Maximum 10 records allowed to be saved for review");
 				$("#btn_ach_save").show();
 			}else{
-				//asinProject='';
+				asinProject='';
 				asinDomain='';
-				intervention_area='';
 				servicType='';
 				serviceLevelWs='';
 				serviceLevelHy='';
@@ -1348,9 +1120,8 @@ function achiveDataSave(){
 				latitude='';
 				longitude='';
 									
-				//$("#asign_project").val("");
+				$("#asign_project").val("");
 				$("#asign_domain").val("");
-				$("#intervention_area").val("")
 				$("#service_type").val("");
 				$("#service_level_ws").val("");
 				$("#service_level_hy").val("");
@@ -1484,13 +1255,13 @@ function reviewAchiveData(){
 						
 		//-----------------------------
 				
-		/*if (projectFlag==0){
+		if (projectFlag==0){
 			$("#asignProject").html(localStorage.project);	
 			projectFlag=1;
 		}else{
 			$('#asignProject').empty();
 			$('#asignProject').append(localStorage.project).trigger('create');
-		}*/
+		}
 		if (domainFlag==0){
 			$("#asignDomain").html(localStorage.domain);	
 			domainFlag=1;
@@ -1522,16 +1293,15 @@ function reviewAchiveData(){
 			$('#serResDiv').append(localStorage.ser_res_list).trigger('create');
 		}
 		
-		/*if (serTypeFlag==0){			   
+		if (serTypeFlag==0){			   
 			$("#serTypeDiv").html(localStorage.service_type);	
 			serTypeFlag=1;
 		}else{
 			$('#serTypeDiv').empty();
 			$('#serTypeDiv').append(localStorage.service_type).trigger('create');
-		}*/
+		}
 		
-		//$("#asign_project").val("");
-		$("#intervention_area").val("")
+		$("#asign_project").val("");
 		$("#asign_domain").val("");
 		$("#service_type").val("");
 		$("#service_level_ws").val("");
@@ -1606,9 +1376,8 @@ function reviewDataNext(){
 	
 	var achRevDetailsArray=achRevDetails.split('fdfd');
 	
-	//$("#asign_project").val(achRevDetailsArray[0]);
-	$("#asign_domain").val(achRevDetailsArray[0]);
-	$("#intervention_area").val(achRevDetailsArray[1]);
+	$("#asign_project").val(achRevDetailsArray[0]);
+	$("#asign_domain").val(achRevDetailsArray[1]);
 	$("#service_type").val(achRevDetailsArray[2]);
 	$("#service_level_ws").val(achRevDetailsArray[3]);
 	$("#service_level_hy").val(achRevDetailsArray[4]);
@@ -1627,9 +1396,6 @@ function reviewDataNext(){
 	$('#planlistDiv2').append(test).trigger('create');*/
 	
 	
-	
-	//achivementSave=asinDomain+'fdfd'+intervention_area+'fdfd'+servicType+'fdfd'+serviceLevelWs+'fdfd'+serviceLevelHy+'fdfd'+achPlanId+'fdfd'+achPlanActivities+'fdfd'+typeOfFacility+'fdfd'+exManagCon+'fdfd'+typeOfActivity+'fdfd'+availHandWashFac+'fdfd'+availWaterSoapFac+'fdfd'+typeOfEven+'fdfd'+evenIssues+'fdfd'+wordCode+'fdfd'+achID+'fdfd'+communityName+'fdfd'+ownerName+'fdfd'+sMale+'fdfd'+sFemale+'fdfd'+sBoys+'fdfd'+sGirls+'fdfd'+sBoysUnder+'fdfd'+sGirlsUnder+'fdfd'+sPopulation+'fdfd'+sHouse_hold+'fdfd'+bMale+'fdfd'+bFemale+'fdfd'+bBoys+'fdfd'+bGirls+'fdfd'+bBoysUnder+'fdfd'+bGirlsUnder+'fdfd'+bPopulation+'fdfd'+bHouse_hold+'fdfd'+lMale+'fdfd'+lFemale+'fdfd'+lBoys+'fdfd'+lGirls+'fdfd'+lBoysUnder+'fdfd'+lGirlsUnder+'fdfd'+lPopulation+'fdfd'+lHouse_hold+'fdfd'+dapMale+'fdfd'+dapFemale+'fdfd'+totalWiBen+'fdfd'+totalInBen+'fdfd'+achServiceRecpt+'fdfd'+achSerType+'fdfd'+achPhoto+'fdfd'+startDt+'fdfd'+latitude+'fdfd'+longitude;
-	
 		
 	$("#typeOf_Facility").val(achRevDetailsArray[7]);
 	$("#ex_manag_con").val(achRevDetailsArray[8]);
@@ -1641,7 +1407,7 @@ function reviewDataNext(){
 	
 	$("#cbo_combo").val(achRevDetailsArray[14]);
 	$("#achID_show").val(achRevDetailsArray[14]);
-	$("#ach_id").val(achRevDetailsArray[16]);
+	$("#ach_id").val(achRevDetailsArray[15]);
 	
 	$("#community_name").val(achRevDetailsArray[16]);
 	$("#owner_name").val(achRevDetailsArray[17]);
@@ -1733,11 +1499,11 @@ function reviewDataNext(){
 	}
 	
 	
-	if (achRevDetailsArray[9]=='Hand Washing F'){
+	if (achRevDetailsArray[9]=='Basic'){
 		$("#availHandWash_fac").show();
 		$("#typeOfEvent").hide();
 		$("#eventIssues").hide();
-	}else if(achRevDetailsArray[9]=='Hygiene Reach'){
+	}else if(achRevDetailsArray[9]=='Event'){
 		$("#availHandWash_fac").hide();
 		$("#availWaterSoap_fac").hide();
 		$("#typeOfEvent").show();		
@@ -1821,11 +1587,11 @@ function syncDataAch(){
 		latitude=localStorage.latitudeAreaWq;
 		longitude=localStorage.longitudeAreaWq;
 	}
-	//alert(apipath+'submitAchiveData?cid=WAB&mobile_no='+localStorage.mobile_no+'&syncCode='+localStorage.sync_code+'&asinDomain='+asinDomain+'&intervention_area='+intervention_area+'&servicType='+servicType+'&serviceLevelWs='+serviceLevelWs+'&serviceLevelHy='+serviceLevelHy+'&achPlanId='+achPlanId+'&achPlanActivities='+achPlanActivities+'&typeOfFacility='+typeOfFacility+'&exManagCon='+exManagCon+'&typeOfActivity='+typeOfActivity+'&availHandWashFac='+availHandWashFac+'&availWaterSoapFac='+availWaterSoapFac+'&typeOfEven='+typeOfEven+'&evenIssues='+evenIssues+'&wordCode='+wordCode+'&achID='+achID+'&communityName='+communityName+'&ownerName='+ownerName+'&sMale='+sMale+'&sFemale='+sFemale+'&sBoys='+sBoys+'&sGirls='+sGirls+'&sBoysUnder='+sBoysUnder+'&sGirlsUnder='+sGirlsUnder+'&sPopulation='+sPopulation+'&sHouse_hold='+sHouse_hold+'&bMale='+bMale+'&bFemale='+bFemale+'&bBoys='+bBoys+'&bGirls='+bGirls+'&bBoysUnder='+bBoysUnder+'&bGirlsUnder='+bGirlsUnder+'&bPopulation='+bPopulation+'&bHouse_hold='+bHouse_hold+'&lMale='+lMale+'&lFemale='+lFemale+'&lBoys='+lBoys+'&lGirls='+lGirls+'&lBoysUnder='+lBoysUnder+'&lGirlsUnder='+lGirlsUnder+'&lPopulation='+lPopulation+'&lHouse_hold='+lHouse_hold+'&dapMale='+dapMale+'&dapFemale='+dapFemale+'&achServiceRecpt='+achServiceRecpt+'&achSerType='+achSerType+'&totalWiBen='+totalWiBen+'&totalInBen='+totalInBen+'&achPhoto='+achPhoto+'&startDt='+startDt+'&latitude='+latitude+'&longitude='+longitude)
+	//alert(apipath+'submitAchiveData?cid=WAB&mobile_no='+localStorage.mobile_no+'&syncCode='+localStorage.sync_code+'&asinProject='+asinProject+'&asinDomain='+asinDomain+'&servicType='+servicType+'&serviceLevelWs='+serviceLevelWs+'&serviceLevelHy='+serviceLevelHy+'&achPlanId='+achPlanId+'&achPlanActivities='+achPlanActivities+'&typeOfFacility='+typeOfFacility+'&exManagCon='+exManagCon+'&typeOfActivity='+typeOfActivity+'&availHandWashFac='+availHandWashFac+'&availWaterSoapFac='+availWaterSoapFac+'&typeOfEven='+typeOfEven+'&evenIssues='+evenIssues+'&wordCode='+wordCode+'&achID='+achID+'&communityName='+communityName+'&ownerName='+ownerName+'&sMale='+sMale+'&sFemale='+sFemale+'&sBoys='+sBoys+'&sGirls='+sGirls+'&sBoysUnder='+sBoysUnder+'&sGirlsUnder='+sGirlsUnder+'&sPopulation='+sPopulation+'&sHouse_hold='+sHouse_hold+'&bMale='+bMale+'&bFemale='+bFemale+'&bBoys='+bBoys+'&bGirls='+bGirls+'&bBoysUnder='+bBoysUnder+'&bGirlsUnder='+bGirlsUnder+'&bPopulation='+bPopulation+'&bHouse_hold='+bHouse_hold+'&lMale='+lMale+'&lFemale='+lFemale+'&lBoys='+lBoys+'&lGirls='+lGirls+'&lBoysUnder='+lBoysUnder+'&lGirlsUnder='+lGirlsUnder+'&lPopulation='+lPopulation+'&lHouse_hold='+lHouse_hold+'&dapMale='+dapMale+'&dapFemale='+dapFemale+'&achServiceRecpt='+achServiceRecpt+'&achSerType='+achSerType+'&totalWiBen='+totalWiBen+'&totalInBen='+totalInBen+'&achPhoto='+achPhoto+'&startDt='+startDt+'&latitude='+latitude+'&longitude='+longitude)
 	
 	$.ajax({
 		type: 'POST',
-		url:apipath+'submitAchiveData?cid=WAB&mobile_no='+localStorage.mobile_no+'&syncCode='+localStorage.sync_code+'&asinDomain='+asinDomain+'&intervention_area='+intervention_area+'&servicType='+servicType+'&serviceLevelWs='+serviceLevelWs+'&serviceLevelHy='+serviceLevelHy+'&achPlanId='+achPlanId+'&achPlanActivities='+achPlanActivities+'&typeOfFacility='+typeOfFacility+'&exManagCon='+exManagCon+'&typeOfActivity='+typeOfActivity+'&availHandWashFac='+availHandWashFac+'&availWaterSoapFac='+availWaterSoapFac+'&typeOfEven='+typeOfEven+'&evenIssues='+evenIssues+'&wordCode='+wordCode+'&achID='+achID+'&communityName='+communityName+'&ownerName='+ownerName+'&sMale='+sMale+'&sFemale='+sFemale+'&sBoys='+sBoys+'&sGirls='+sGirls+'&sBoysUnder='+sBoysUnder+'&sGirlsUnder='+sGirlsUnder+'&sPopulation='+sPopulation+'&sHouse_hold='+sHouse_hold+'&bMale='+bMale+'&bFemale='+bFemale+'&bBoys='+bBoys+'&bGirls='+bGirls+'&bBoysUnder='+bBoysUnder+'&bGirlsUnder='+bGirlsUnder+'&bPopulation='+bPopulation+'&bHouse_hold='+bHouse_hold+'&lMale='+lMale+'&lFemale='+lFemale+'&lBoys='+lBoys+'&lGirls='+lGirls+'&lBoysUnder='+lBoysUnder+'&lGirlsUnder='+lGirlsUnder+'&lPopulation='+lPopulation+'&lHouse_hold='+lHouse_hold+'&dapMale='+dapMale+'&dapFemale='+dapFemale+'&achServiceRecpt='+achServiceRecpt+'&achSerType='+achSerType+'&totalWiBen='+totalWiBen+'&totalInBen='+totalInBen+'&achPhoto='+achPhoto+'&startDt='+startDt+'&latitude='+latitude+'&longitude='+longitude,
+		url:apipath+'submitAchiveData?cid=WAB&mobile_no='+localStorage.mobile_no+'&syncCode='+localStorage.sync_code+'&asinProject='+asinProject+'&asinDomain='+asinDomain+'&servicType='+servicType+'&serviceLevelWs='+serviceLevelWs+'&serviceLevelHy='+serviceLevelHy+'&achPlanId='+achPlanId+'&achPlanActivities='+achPlanActivities+'&typeOfFacility='+typeOfFacility+'&exManagCon='+exManagCon+'&typeOfActivity='+typeOfActivity+'&availHandWashFac='+availHandWashFac+'&availWaterSoapFac='+availWaterSoapFac+'&typeOfEven='+typeOfEven+'&evenIssues='+evenIssues+'&wordCode='+wordCode+'&achID='+achID+'&communityName='+communityName+'&ownerName='+ownerName+'&sMale='+sMale+'&sFemale='+sFemale+'&sBoys='+sBoys+'&sGirls='+sGirls+'&sBoysUnder='+sBoysUnder+'&sGirlsUnder='+sGirlsUnder+'&sPopulation='+sPopulation+'&sHouse_hold='+sHouse_hold+'&bMale='+bMale+'&bFemale='+bFemale+'&bBoys='+bBoys+'&bGirls='+bGirls+'&bBoysUnder='+bBoysUnder+'&bGirlsUnder='+bGirlsUnder+'&bPopulation='+bPopulation+'&bHouse_hold='+bHouse_hold+'&lMale='+lMale+'&lFemale='+lFemale+'&lBoys='+lBoys+'&lGirls='+lGirls+'&lBoysUnder='+lBoysUnder+'&lGirlsUnder='+lGirlsUnder+'&lPopulation='+lPopulation+'&lHouse_hold='+lHouse_hold+'&dapMale='+dapMale+'&dapFemale='+dapFemale+'&achServiceRecpt='+achServiceRecpt+'&achSerType='+achSerType+'&totalWiBen='+totalWiBen+'&totalInBen='+totalInBen+'&achPhoto='+achPhoto+'&startDt='+startDt+'&latitude='+latitude+'&longitude='+longitude,
 		
 		
 	   success: function(result) {
