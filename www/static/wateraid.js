@@ -74,7 +74,7 @@ function onErrorAreaWq(error) {
    alert(localStorage.latitudeAreaWq+'-'+localStorage.longitudeAreaWq);*/
    $(".errorChk").html("Failed to Confirmed Location.");
 }
-
+//---Online
 var apipath="http://w05.yeapps.com/wateraid/syncmobile/";
 
 //--- local
@@ -673,13 +673,13 @@ function achNext(){
 				if ((sIndicator!='') && (sIndicator==planId)){					
 					planStr+='<li class="ui-field-contain"><fieldset data-role="controlgroup">'
 					planStr+='<input type="radio" name="plan_select"  id="'+planId+'" value="'+planId+'" checked>'
-					planStr+='<label for="'+planId+'" style="color:#05940a;" >'+activity_id+'-'+activityName+'-'+planId+'-'+serviceType+'-'+serviceLevel+'</label>'
+					planStr+='<label for="'+planId+'" style="color:#05940a;" >'+activity_id+'-'+activityName+'-'+planId+'</label>'
 					planStr+='<input type="hidden" name="achActivityName"  id="achActivityName'+planId+'" value="'+activityName+'">'
 					planStr+='</fieldset></li>'
 				}else{
 					planStr+='<li class="ui-field-contain"><fieldset data-role="controlgroup">'
 					planStr+='<input type="radio" name="plan_select"  id="'+planId+'" value="'+planId+'" >'
-					planStr+='<label for="'+planId+'" >'+activity_id+'-'+activityName+'-'+planId+'-'+serviceType+'-'+serviceLevel+'</label>'
+					planStr+='<label for="'+planId+'" >'+activity_id+'-'+activityName+'-'+planId+'</label>'
 					planStr+='<input type="hidden" name="achActivityName"  id="achActivityName'+planId+'" value="'+activityName+'">'
 					planStr+='</fieldset></li>'
 				}
@@ -702,13 +702,13 @@ function achNext(){
 			if((servicType=='Water' || servicType=='Sanitation') && (intervention_area=='Watsan')){
 				$("#allShow").show();
 				$("#directShow").hide();	
-				$("#indirectShow").show();
-				//$("#dap").show();
+				$("#indirectShow").hide();
+				$("#dap").hide();
 			}else{
 				$("#allShow").hide();
 				$("#directShow").show();
 				$("#indirectShow").show();
-				//$("#dap").hide();				
+				$("#dap").hide();				
 			}		
 			
 			
@@ -1048,12 +1048,8 @@ function achivementDataPSupport(){
 		$(".errorChk").text("Required Ward Code ");
 	}else if(achID==""){
 		$(".errorChk").text("Required ID related to output");
-	}else if(communityName==""){
-		$(".errorChk").text("Required Community Name");	
 	}else if (!communityName.match(regStr)){
 		$(".errorChk").text("Community Name Only Alphabetic Character Allowed ");
-	}else if (ownerName=="" ){
-		$(".errorChk").text("Required Owner Name");
 	}else if (!ownerName.match(regStr)){
 		$(".errorChk").text("Owner Name Only Alphabetic Character Allowed ");	
 	/*}else if (sMale=="" ){
@@ -1732,6 +1728,7 @@ function reviewDataNext(){
 	$("#selectIndicator").val(achRevDetailsArray[5]);//No Save
 		
 	$("input:radio[name='plan_select'][value='"+achRevDetailsArray[5]+"']").attr("checked","checked");
+	
 		
 	$("#typeOf_Facility").val(achRevDetailsArray[7]);
 	$("#ex_manag_con").val(achRevDetailsArray[8]);
@@ -1826,6 +1823,7 @@ function reviewDataNext(){
 		$("#indirectShow").show();
 		//$("#dap").hide();	
 	}
+	
 	
 	if (achRevDetailsArray[2]=='Water'){
 		$("#ifHygiene").hide();		

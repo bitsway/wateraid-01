@@ -303,11 +303,11 @@
         <ul data-role="listview" data-inset="true" data-theme="d">
             <li class="ui-field-contain">
                 <label for="mobile"> Mobile No</label>
-                <input name="mobile" id="mobile" placeholder="" value="8801755520153" type="number">
+                <input name="mobile" id="mobile" placeholder="" value="" type="number">
             </li>
             <li class="ui-field-contain">
                 <label for="password">Password </label>
-                <input type="password" name="password" id="password" placeholder="" value="123" >
+                <input type="password" name="password" id="password" placeholder="" value="" >
             </li>
         </ul>
         <a data-role="button" href="#" id="syncBasic"  data-theme="d" data-transition="slide" >Sync</a>
@@ -345,7 +345,7 @@
             </li>
             <br />
             <li class="ui-field-contain" >
-                <label for="intervention_area">Select Intervention Area &nbsp;<sup class="reqField">*</sup></label><select name="intervention_area" id="intervention_area" data-native-menu="false"><option value="">Select Intervention Area</option><option value="Others">Others</option><option value="Watsan">Watsan</option></select>
+                <label for="intervention_area">Select Indicator Type &nbsp;<sup class="reqField">*</sup></label><select name="intervention_area" id="intervention_area" data-native-menu="false"><option value="">Select Indicator Type</option><option value="Others">Others</option><option value="Watsan">Watsan</option></select>
             </li>
             <br />
             <li class="ui-field-contain">
@@ -409,7 +409,7 @@
             <ul data-role="listview" data-inset="true" data-theme="d">
                 <li class="ui-field-contain">
                     <label for="">Type of Facility &nbsp;<sup class="reqField">*</sup></label>
-                    <select id="typeOf_Facility" name="typeOf_Facility" data-native-menu="false" ><option value="">Select</option><option value="Individual">Individual</option><option value="Shared">Shared</option></select>
+                    <select id="typeOf_Facility" name="typeOf_Facility" data-native-menu="false" ><option value="">Select</option><option value="Shared">Shared</option><option value="Not Shared">Not Shared</option></select>
                 </li>
             </ul>
         </div>        
@@ -517,12 +517,12 @@
                   </tr>
 				  <tr>
                         <td width="100%">
-                        <label for="community_name"> Community Name &nbsp;<sup class="reqField">*</sup></label>
+                        <label for="community_name"> Community Name </label>
                 		<input name="community_name" id="community_name" placeholder="" value="" type="text"></td>
                     </tr>
                     <tr>
                         <td width="100%">
-                        <label for="owner_name"> Owner Name &nbsp;<sup class="reqField">*</sup></label>
+                        <label for="owner_name"> Owner Name </label>
                 		<input name="owner_name" id="owner_name" placeholder="" value="" type="text"></td>
                     </tr>
                     
@@ -577,9 +577,14 @@
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
 					<tr>
-                        <td width="70%" style="vertical-align:middle;">Disability</td>
+                        <td width="70%" style="vertical-align:middle;">Disability Male</td>
                         <td width="30%"><input name="s_disability" id="s_disability" placeholder="" value="" type="number"></td>
-                        <td width="5" align="left">&nbsp;</td>
+                        <td width="5" align="left"><sup class="reqField">*</sup></td>
+                    </tr>
+                    <tr>
+                        <td width="70%" style="vertical-align:middle;">Disability Female</td>
+                        <td width="30%"><input name="s_disability_f" id="s_disability_f" placeholder="" value="" type="number"></td>
+                        <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
 			</table>
 			<br/>
@@ -631,9 +636,14 @@
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td width="70%" style="vertical-align:middle;">Disability</td>
+                        <td width="70%" style="vertical-align:middle;">Disability Male</td>
                         <td width="30%"><input name="b_disability" id="b_disability" placeholder="" value="" type="number"></td>
-                        <td width="5" align="left">&nbsp;</td>
+                        <td width="5" align="left"><sup class="reqField">*</sup></td>
+                    </tr>
+                    <tr>
+                        <td width="70%" style="vertical-align:middle;">Disability Female</td>
+                        <td width="30%"><input name="b_disability_f" id="b_disability_f" placeholder="" value="" type="number"></td>
+                        <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
 			</table>
 			<br/>
@@ -683,9 +693,14 @@
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td width="70%" style="vertical-align:middle;">Disability</td>
+                        <td width="70%" style="vertical-align:middle;">Disability Male</td>
                         <td width="30%"><input name="l_disability" id="l_disability" placeholder="" value="" type="number"></td>
-                        <td width="5" align="left">&nbsp;</td>
+                        <td width="5" align="left"><sup class="reqField">*</sup></td>
+                    </tr>
+                    <tr>
+                        <td width="70%" style="vertical-align:middle;">Disability Female</td>
+                        <td width="30%"><input name="l_disability_f" id="l_disability_f" placeholder="" value="" type="number"></td>
+                        <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
 			</table>
             
@@ -738,9 +753,14 @@
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td width="70%" style="vertical-align:middle;">Disability</td>
+                        <td width="70%" style="vertical-align:middle;">Disability Male</td>
                         <td width="30%"><input name="d_disability" id="d_disability" placeholder="" value="" type="number"></td>
-                        <td width="5" align="left">&nbsp;</td>
+                        <td width="5" align="left"><sup class="reqField">*</sup></td>
+                    </tr>
+                    <tr>
+                        <td width="70%" style="vertical-align:middle;">Disability Female</td>
+                        <td width="30%"><input name="d_disability_f" id="d_disability_f" placeholder="" value="" type="number"></td>
+                        <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
 			</table>
             <br/>
@@ -792,9 +812,14 @@
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td width="70%" style="vertical-align:middle;">Disability</td>
+                        <td width="70%" style="vertical-align:middle;">Disability Male</td>
                         <td width="30%"><input name="i_disability" id="i_disability" placeholder="" value="" type="number"></td>
-                        <td width="5" align="left">&nbsp;</td>
+                        <td width="5" align="left"><sup class="reqField">*</sup></td>
+                    </tr>
+                    <tr>
+                        <td width="70%" style="vertical-align:middle;">Disability Female</td>
+                        <td width="30%"><input name="i_disability_f" id="i_disability_f" placeholder="" value="" type="number"></td>
+                        <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
 			</table>
             <br/>
