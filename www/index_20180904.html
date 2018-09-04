@@ -24,12 +24,8 @@
 		$(document).ready(function(){
 			$('#loader').hide();
 			
-			$("#ifOthers").hide();
-			$("#ifWatsan").hide();
-			
 			$("#ifWaterSani").hide();
 			$("#ifHygiene").hide();
-			$("#ifXsector").hide();
 			
 			$("#typeOfFac").hide();
 			$("#exManag_con").hide();
@@ -40,9 +36,7 @@
 			$("#typeOfEvent").hide();
 			$("#eventIssues").hide();
 						
-			$("#sShow").hide();
-			$("#bShow").hide();
-			$("#lShow").hide();
+			
 		});
 		
 		function getEmpty(){
@@ -97,7 +91,7 @@
         		<a data-role="button" id="btn_area_lat_long" onClick="getLocationInfoAreaWq();" class="ui-btn" >Area location</a>
            </ul> 
     </div>
-    <div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >mReporting 20180905</div>
+    <div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >mReporting 20180818</div>
   
     <div data-role="panel" id="leftpanel" data-position="left" data-display="overlay" data-theme="d">
         <div align="center"><img src="wab.jpg"></div>
@@ -351,45 +345,25 @@
             </li>
             <br />
             <li class="ui-field-contain" >
-                <label for="intervention_area">Select Indicator Type &nbsp;<sup class="reqField">*</sup></label><select name="intervention_area" id="intervention_area" data-native-menu="false" onchange="select_indicator()"><option value="">Select Indicator Type</option><option value="Others">Others</option><option value="Watsan">Watsan HH</option></select>
+                <label for="intervention_area">Select Indicator Type &nbsp;<sup class="reqField">*</sup></label><select name="intervention_area" id="intervention_area" data-native-menu="false"><option value="">Select Indicator Type</option><option value="Others">Others</option><option value="Watsan">Watsan</option></select>
             </li>
-            </ul>
-            <div id="ifOthers">
-            	<ul data-role="listview" data-inset="true" data-theme="d">
-                <li class="ui-field-contain">
-                <label for="service_type_ot">Select Sector &nbsp;<sup class="reqField">*</sup></label>
-                <select name="service_type_ot" id="service_type_ot" data-native-menu="false" onchange="serviceType_wsh()"><option value="">Select Sector</option><option value="Hygiene">Hygiene</option><option value="Sanitation">Sanitation</option><option value="Water">Water</option><option value="X-Sector">X-Sector</option></select>
-                    <!--<div id="serTyp"></div>-->
-                </li>
-            </ul>
-        </div>
-        <div id="ifWatsan">
-            <ul data-role="listview" data-inset="true" data-theme="d">
-                <li class="ui-field-contain">
-                <label for="service_type_hh">Select Sector &nbsp;<sup class="reqField">*</sup></label>
-                <select name="service_type_hh" id="service_type_hh" data-native-menu="false" onchange="serviceType_wsh()"><option value="">Select Sector</option><option value="Sanitation">Sanitation</option><option value="Water">Water</option></select>
-                    <!--<div id="serTyp"></div>-->
-                </li>
-            </ul>
-        </div>
+            <br />
+            <li class="ui-field-contain">
+            <label for="service_type">Select Sector &nbsp;<sup class="reqField">*</sup></label>
+                <div id="serTyp"></div>
+            </li>
+        </ul>
         <div id="ifWaterSani">
             	<ul data-role="listview" data-inset="true" data-theme="d">
                     <li class="ui-field-contain" >
-                        <label for="service_level_ws">Select Service Type &nbsp;<sup class="reqField">*</sup></label><select name="service_level_ws" id="service_level_ws" data-native-menu="false"><option value="">Select Service Type</option><option value="Installation">Installation</option><option value="Renovation">Renovation</option><option value="Others">Others</option></select>
+                        <label for="service_level_ws">Select Service Type &nbsp;<sup class="reqField">*</sup></label><select name="service_level_ws" id="service_level_ws" data-native-menu="false"><option value="">Select Service Type</option><option value="Installation">Installation</option><option value="Renovation">Renovation</option><option value="Other">Other</option></select>
                     </li>
                 </ul>
             </div>
         	<div id="ifHygiene">
             	<ul data-role="listview" data-inset="true" data-theme="d">
                     <li class="ui-field-contain" >
-                        <label for="service_leve_hy">Select Service Type &nbsp;<sup class="reqField">*</sup></label><select name="service_leve_hy" id="service_level_hy" data-native-menu="false" ><option value="">Select Service Type</option><option value="Event">Event</option><option value="Handwashing F">Handwashing Facility</option><option value="Others">Others</option></select><!--onchange="type_ofActivity()"-->
-                    </li>
-                </ul>
-            </div>
-            <div id="ifXsector">
-            	<ul data-role="listview" data-inset="true" data-theme="d">
-                    <li class="ui-field-contain" >
-                        <label for="service_leve_xsector">Select Service Type &nbsp;<sup class="reqField">*</sup></label><select name="service_leve_xsector" id="service_level_xsector" data-native-menu="false" ><option value="">Select Service Type</option><option value="Event">Event</option><option value="Others">Others</option></select><!--onchange="type_ofActivity()"-->
+                        <label for="service_leve_hy">Select Service Type &nbsp;<sup class="reqField">*</sup></label><select name="service_leve_hy" id="service_level_hy" data-native-menu="false"><option value="">Select Service Type</option><option value="Event">Event</option><option value="Session">Session</option><option value="Other">Other</option></select>
                     </li>
                 </ul>
             </div>
@@ -447,26 +421,26 @@
                 </li>
             </ul>
         </div>
-        <!--<div id="typeOf_act">
+        <div id="typeOf_act">
             <ul data-role="listview" data-inset="true" data-theme="d">
                 <li class="ui-field-contain">
                     <label for="typeOf_activity">Type of Activity  &nbsp;<sup class="reqField">*</sup></label>
                     <select id="typeOf_activity" name="typeOf_activity" data-native-menu="false" onchange="type_ofActivity()" ><option value="">Select</option><option value="Hand Washing F">Hand Washing F</option><option value="Hygiene Reach">Hygiene Reach</option></select>
                 </li>
             </ul>
-        </div>-->
+        </div>
         <div id="availHandWash_fac">
             <ul data-role="listview" data-inset="true" data-theme="d">
                 <li class="ui-field-contain auto_break">
-                    <label for="">Availability of running water is near to the Facility &nbsp;<sup class="reqField">*</sup></label>
-                    <select id="avail_handWash_fac" name="avail_handWash_fac" data-native-menu="false" ><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option></select><!--onchange="avail_handWashFac()"-->
+                    <label for="">Availability of Hand Washing Facility &nbsp;<sup class="reqField">*</sup></label>
+                    <select id="avail_handWash_fac" name="avail_handWash_fac" data-native-menu="false" onchange="avail_handWashFac()"><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option></select>
                 </li>
             </ul>
         </div>
         <div id="availWaterSoap_fac">
             <ul data-role="listview" data-inset="true" data-theme="d">
                 <li class="ui-field-contain auto_break">
-                    <label for="">Availability of soap is near to the facility &nbsp;<sup class="reqField">*</sup></label>
+                    <label for="">Availability of running water and soap is near to the facility &nbsp;<sup class="reqField">*</sup></label>
                     <select id="avail_WaterSoap_fac" name="avail_WaterSoap_fac" data-native-menu="false" ><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option></select>
                 </li>
             </ul>
@@ -474,7 +448,7 @@
         <div id="typeOfEvent">
             <ul data-role="listview" data-inset="true" data-theme="d">
                 <li class="ui-field-contain">
-                    <label for="typeOf_event">Type of Event &nbsp;<sup class="reqField">*</sup></label>
+                    <label for="typeOf_event">Type of Hygiene Reach &nbsp;<sup class="reqField">*</sup></label>
                     <select id="typeOf_event" name="typeOf_event" data-native-menu="false" onchange="typeOf_Event()"><option value="" >Select</option><option value="Orientation">Orientation</option><option value="Session">Session</option><option value="Campaign">Campaign</option></select>
                 </li>
             </ul>
@@ -482,7 +456,7 @@
         <div id="eventIssues">
             <ul data-role="listview" data-inset="true" data-theme="d">
                 <li class="ui-field-contain">
-                    <label for="">Event issues &nbsp;<sup class="reqField">*</sup></label>
+                    <label for="">Hygiene Reach issues &nbsp;<sup class="reqField">*</sup></label>
                     <select id="event_issues" name="event_issues" data-native-menu="false" ><option value="">Select</option><option value="Hand Washing">Hand Washing</option><option value="MHM">MHM</option><option value="Caretaker">Caretaker</option></select>
                 </li>
             </ul>
@@ -543,7 +517,7 @@
                   </tr>
 				  <tr>
                         <td width="100%">
-                        <label for="community_name">Village/Community/Slum Name </label>
+                        <label for="community_name"> Community Name </label>
                 		<input name="community_name" id="community_name" placeholder="" value="" type="text"></td>
                     </tr>
                     <tr>
@@ -553,41 +527,30 @@
                     </tr>
                     
 			</table>
-			<br/>
-            <div id="sbl_btn">
-                 <fieldset data-role="controlgroup">   
-                     <input type="radio" name="radio_b"  id="safely" value="safely" onchange="sbl_p()">
-                     <label for="safely" >Safely</label>  
-                     <input type="radio" name="radio_b"  id="basic" value="basic" onchange="sbl_p()">
-                     <label for="basic" >Basic</label> 
-                     <input type="radio" name="radio_b"  id="limited" value="limited" onchange="sbl_p()">
-                     <label for="limited" >Limited</label> 
-                 </fieldset>
-            </div>
-         <br />
-         <div id="sShow">     
+			<br/>  
+         <div id="allShow">     
          <table class="ui-body-d ui-shadow table-stripe ui-responsive"  data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px;">
                     <tr valign="middle">
                         <td colspan="3" ><strong>Enter Population (Safely)</strong></td>
                   </tr>
                   <tr>
-                        <td width="70%" style="vertical-align:middle;">Male(18+)</td>
+                        <td width="70%" style="vertical-align:middle;">Male(17+)</td>
                         <td width="30%"><input name="s_male" id="s_male" onBlur="s_totalPopulation();" placeholder="" value="" type="number"></td>
                         <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
 				  <tr>
-                        <td width="70%" style="vertical-align:middle;">Female(18+)</td>
+                        <td width="70%" style="vertical-align:middle;">Female(17+)</td>
                         <td width="30%">
                         <input name="s_female" id="s_female" placeholder="" onBlur="s_totalPopulation();" value="" type="number"></td>
                         <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
                     <tr>
-                        <td width="70%" style="vertical-align:middle;">Boy(6-18yrs)</td>
+                        <td width="70%" style="vertical-align:middle;">Boy(5-17yrs)</td>
                         <td width="30%"><input name="s_boys" id="s_boys" placeholder="" value="" min="0" onBlur="s_totalPopulation();" type="number" ></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td width="70%" style="vertical-align:middle;">Girl(6-18yrs)</td>
+                        <td width="70%" style="vertical-align:middle;">Girl(5-17yrs)</td>
                         <td width="30%"><input name="s_girls" id="s_girls" placeholder="" value="" onBlur="s_totalPopulation();" min="0" type="number"></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
@@ -616,39 +579,37 @@
 					<tr>
                         <td width="70%" style="vertical-align:middle;">Disability Male</td>
                         <td width="30%"><input name="s_disability" id="s_disability" placeholder="" value="" type="number"></td>
-                        <td width="5" align="left"><!--<sup class="reqField">*</sup>--></td>
+                        <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Disability Female</td>
                         <td width="30%"><input name="s_disability_f" id="s_disability_f" placeholder="" value="" type="number"></td>
-                        <td width="5" align="left"><!--<sup class="reqField">*</sup>--></td>
+                        <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
 			</table>
 			<br/>
-            </div>
-            <div id="bShow">     
             <table class="ui-body-d ui-shadow table-stripe ui-responsive"  data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px;">
                     <tr valign="middle">
                         <td colspan="3" ><strong>Enter Population (Basic)</strong></td>
                   </tr>
                   <tr>
-                        <td width="70%" style="vertical-align:middle;">Male(18+)</td>
+                        <td width="70%" style="vertical-align:middle;">Male(17+)</td>
                         <td width="30%"><input name="b_male" id="b_male" onBlur="b_totalPopulation();" placeholder="" value="" type="number"></td>
                         <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
 				  <tr>
-                        <td width="70%" style="vertical-align:middle;">Female(18+)</td>
+                        <td width="70%" style="vertical-align:middle;">Female(17+)</td>
                         <td width="30%">
                         <input name="b_female" id="b_female" placeholder="" onBlur="b_totalPopulation();" value="" type="number"></td>
                         <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
                     <tr>
-                        <td width="70%" style="vertical-align:middle;">Boy(6-18yrs)</td>
+                        <td width="70%" style="vertical-align:middle;">Boy(5-17yrs)</td>
                         <td width="30%"><input name="b_boys" id="b_boys" placeholder="" value="" min="0" onBlur="b_totalPopulation();" type="number"></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td width="70%" style="vertical-align:middle;">Girl(6-18yrs)</td>
+                        <td width="70%" style="vertical-align:middle;">Girl(5-17yrs)</td>
                         <td width="30%"><input name="b_girls" id="b_girls" placeholder="" value="" onBlur="b_totalPopulation();" min="0" type="number"></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
@@ -677,39 +638,37 @@
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Disability Male</td>
                         <td width="30%"><input name="b_disability" id="b_disability" placeholder="" value="" type="number"></td>
-                        <td width="5" align="left"><!--<sup class="reqField">*</sup>--></td>
+                        <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Disability Female</td>
                         <td width="30%"><input name="b_disability_f" id="b_disability_f" placeholder="" value="" type="number"></td>
-                        <td width="5" align="left"><!--<sup class="reqField">*</sup>--></td>
+                        <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
 			</table>
 			<br/>
-            </div>
-            <div id="lShow">     
             <table class="ui-body-d ui-shadow table-stripe ui-responsive"  data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px;">
                     <tr valign="middle">
                         <td colspan="3" ><strong>Enter Population (Limited)</strong></td>
                   </tr>
                   <tr>
-                        <td width="70%" style="vertical-align:middle;">Male(18+)</td>
+                        <td width="70%" style="vertical-align:middle;">Male(17+)</td>
                         <td width="30%"><input name="l_male" id="l_male" onBlur="l_totalPopulation();" placeholder="" value="" type="number"></td>
                         <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
 				  <tr>
-                        <td width="70%" style="vertical-align:middle;">Female(18+)</td>
+                        <td width="70%" style="vertical-align:middle;">Female(17+)</td>
                         <td width="30%">
                         <input name="l_female" id="l_female" placeholder="" onBlur="l_totalPopulation();" value="" type="number"></td>
                         <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
                     <tr>
-                        <td width="70%" style="vertical-align:middle;">Boy(6-18yrs)</td>
+                        <td width="70%" style="vertical-align:middle;">Boy(5-17yrs)</td>
                         <td width="30%"><input name="l_boys" id="l_boys" placeholder="" value="" min="0" onBlur="l_totalPopulation();" type="number"></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td width="70%" style="vertical-align:middle;">Girl(6-18yrs)</td>
+                        <td width="70%" style="vertical-align:middle;">Girl(5-17yrs)</td>
                         <td width="30%"><input name="l_girls" id="l_girls" placeholder="" value="" onBlur="l_totalPopulation();" min="0" type="number"></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
@@ -736,12 +695,12 @@
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Disability Male</td>
                         <td width="30%"><input name="l_disability" id="l_disability" placeholder="" value="" type="number"></td>
-                        <td width="5" align="left"><!--<sup class="reqField">*</sup>--></td>
+                        <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Disability Female</td>
                         <td width="30%"><input name="l_disability_f" id="l_disability_f" placeholder="" value="" type="number"></td>
-                        <td width="5" align="left"><!--<sup class="reqField">*</sup>--></td>
+                        <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
 			</table>
             
@@ -753,23 +712,23 @@
                         <td colspan="3" ><strong>Enter Population (Direct)</strong></td>
                   </tr>
                   <tr>
-                        <td width="70%" style="vertical-align:middle;">Male(18+)</td>
+                        <td width="70%" style="vertical-align:middle;">Male(17+)</td>
                         <td width="30%"><input name="d_male" id="d_male" onBlur="d_totalPopulation();" placeholder="" value="" type="number"></td>
                         <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
 				  <tr>
-                        <td width="70%" style="vertical-align:middle;">Female(18+)</td>
+                        <td width="70%" style="vertical-align:middle;">Female(17+)</td>
                         <td width="30%">
                         <input name="d_female" id="d_female" placeholder="" onBlur="d_totalPopulation();" value="" type="number"></td>
                         <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
                     <tr>
-                        <td width="70%" style="vertical-align:middle;">Boy(6-18yrs)</td>
+                        <td width="70%" style="vertical-align:middle;">Boy(5-17yrs)</td>
                         <td width="30%"><input name="d_boys" id="d_boys" placeholder="" value="" min="0" onBlur="d_totalPopulation();" type="number"></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td width="70%" style="vertical-align:middle;">Girl(6-18yrs)</td>
+                        <td width="70%" style="vertical-align:middle;">Girl(5-17yrs)</td>
                         <td width="30%"><input name="d_girls" id="d_girls" placeholder="" value="" onBlur="d_totalPopulation();" min="0" type="number"></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
@@ -796,39 +755,39 @@
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Disability Male</td>
                         <td width="30%"><input name="d_disability" id="d_disability" placeholder="" value="" type="number"></td>
-                        <td width="5" align="left"><!--<sup class="reqField">*</sup>--></td>
+                        <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Disability Female</td>
                         <td width="30%"><input name="d_disability_f" id="d_disability_f" placeholder="" value="" type="number"></td>
-                        <td width="5" align="left"><!--<sup class="reqField">*</sup>--></td>
+                        <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
 			</table>
             <br/>
             </div>
-            <!--<div id="indirectShow">
+            <div id="indirectShow">
             <table class="ui-body-d ui-shadow table-stripe ui-responsive"  id="" data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px;">
                     <tr valign="middle">
                         <td colspan="3" ><strong>Enter Population (Indirect)</strong></td>
                   </tr>
                   <tr>
-                        <td width="70%" style="vertical-align:middle;">Male(18+)</td>
+                        <td width="70%" style="vertical-align:middle;">Male(17+)</td>
                         <td width="30%"><input name="i_male" id="i_male" onBlur="i_totalPopulation();" placeholder="" value="" type="number"></td>
                         <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
 				  <tr>
-                        <td width="70%" style="vertical-align:middle;">Female(18+)</td>
+                        <td width="70%" style="vertical-align:middle;">Female(17+)</td>
                         <td width="30%">
                         <input name="i_female" id="i_female" placeholder="" onBlur="i_totalPopulation();" value="" type="number"></td>
                         <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
                     <tr>
-                        <td width="70%" style="vertical-align:middle;">Boy(6-18yrs)</td>
+                        <td width="70%" style="vertical-align:middle;">Boy(5-17yrs)</td>
                         <td width="30%"><input name="i_boys" id="i_boys" placeholder="" value="" min="0" onBlur="i_totalPopulation();" type="number"></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td width="70%" style="vertical-align:middle;">Girl(6-18yrs)</td>
+                        <td width="70%" style="vertical-align:middle;">Girl(5-17yrs)</td>
                         <td width="30%"><input name="i_girls" id="i_girls" placeholder="" value="" onBlur="i_totalPopulation();" min="0" type="number"></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
@@ -864,8 +823,8 @@
                     </tr>
 			</table>
             <br/>
-            </div>-->
-            <!--<div id="dap">
+            </div>
+            <div id="dap">
             <table class="ui-body-d ui-shadow table-stripe ui-responsive"  data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px;">
                   <tr valign="middle">
                      <td colspan="3" ><strong>DAP</strong></td>
@@ -878,24 +837,6 @@
                 <tr>
                     <td width="70%" style="vertical-align:middle;">Female</td>
                     <td width="30%"><input name="dapFemale" id="dapFemale" placeholder="" value="" type="number"></td>
-                    <td width="5" align="left">&nbsp;</td>
-                </tr>
-            </table>
-            <br/>
-            </div>-->
-            <div id="ethnic">
-            <table class="ui-body-d ui-shadow table-stripe ui-responsive"  data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px;">
-                  <tr valign="middle">
-                     <td colspan="3" ><strong>Ethnic</strong></td>
-                 </tr>
-                 <tr>
-                    <td width="70%" style="vertical-align:middle;">Male</td>
-                    <td width="30%"><input name="eMale" id="eMale" placeholder="" value="" type="number"></td>
-                    <td width="5" align="left">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td width="70%" style="vertical-align:middle;">Female</td>
-                    <td width="30%"><input name="eFemale" id="eFemale" placeholder="" value="" type="number"></td>
                     <td width="5" align="left">&nbsp;</td>
                 </tr>
             </table>
