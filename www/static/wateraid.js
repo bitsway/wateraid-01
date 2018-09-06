@@ -593,17 +593,38 @@ function achivementclick(){
 	}
 }
 
-function select_indicator(){
+function select_indicator(){	
 	var intervention_area=$("#intervention_area").val();
-	
 	if (intervention_area=='Watsan'){
+		serviceLevelWs='';
+		serviceLevelHy='';
+		serviceLevelXsector='';
+		$("#service_level_ws").val("");
+		$("#service_level_hy").val("");
+		$("#service_level_xsector").val("");
+		
+		$("#ifWaterSani").hide();
+		$("#ifHygiene").hide();
+		$("#ifXsector").hide();
+		
 		$("#ifOthers").hide();
 		$("#ifWatsan").show();	
 	}else{
+		serviceLevelWs='';
+		serviceLevelHy='';
+		serviceLevelXsector='';
+		
+		$("#service_level_ws").val("");
+		$("#service_level_hy").val("");
+		$("#service_level_xsector").val("");
+		
+		$("#ifWaterSani").hide();
+		$("#ifHygiene").hide();
+		$("#ifXsector").hide();
+		
 		$("#ifWatsan").hide();	
 		$("#ifOthers").show();
 	}
-		
 }
 function serviceType_wsh(){	
 	var intervention_area=$("#intervention_area").val();
@@ -685,6 +706,10 @@ function achNext(){
 	serviceLevelXsector=$("#service_level_xsector").val();
 	sIndicator=$("#selectIndicator").val();
 	
+	asinDomainStr=asinDomain.lastIndexOf('/');
+	projectDomain=asinDomain.substr(0,asinDomainStr);
+	
+	
 	if (interventionArea=='Watsan'){
 		servicType=$("#service_type_hh").val();	
 	}else{
@@ -711,9 +736,10 @@ function achNext(){
 			serviceType=planLi[3]
 			serviceLevel=planLi[4]
 			planId=planLi[5]
+			projectName=planLi[6]
 			
 			//alert(servicType+'=='+serviceType+'||'+serviceLevelWs+'=='+serviceLevel+'|||'+serviceLevelHy+'=='+serviceLevel);
-			if ((servicType==serviceType) && (serviceLevelWs==serviceLevel || serviceLevelHy==serviceLevel || serviceLevelXsector==serviceLevel)){
+			if ((servicType==serviceType) && (projectDomain==projectName) && (interventionArea==intervention_Area) && (serviceLevelWs==serviceLevel || serviceLevelHy==serviceLevel || serviceLevelXsector==serviceLevel)){
 				if ((sIndicator!='') && (sIndicator==planId)){					
 					planStr+='<li class="ui-field-contain"><fieldset data-role="controlgroup">'
 					planStr+='<input type="radio" name="plan_select"  id="'+planId+'" value="'+planId+'" checked>'
@@ -1163,7 +1189,7 @@ function achivementDataPSupport(){
 	if(iDisability==''){
 		iDisability=0;
 	}*/
-		
+	
 		
 	if (wordCode=="" ){
 		$(".errorChk").text("Required Ward Code ");
@@ -1173,7 +1199,7 @@ function achivementDataPSupport(){
 		$(".errorChk").text("Village/Community/Slum Name Only Alphabetic Character Allowed ");
 	}else if ((!ownerName.match(regStr)) && (ownerName !='')){
 		$(".errorChk").text("Owner Name Only Alphabetic Character Allowed ");
-	}else if (sPopulation==0 && bPopulation==0 && lPopulation==0){
+	}else if (interventionArea=='Watsan' && sPopulation==0 && bPopulation==0 && lPopulation==0){
 		$(".errorChk").text("Required Minimum Safely/Basic/Limited");
 	/*}else if (sMale=="" ){
 		$(".errorChk").text("Required Male 18+ Safely ");
@@ -1187,18 +1213,23 @@ function achivementDataPSupport(){
 		$(".errorChk").text("Required Male 18+ Limited");
 	}else if (lFemale=="" ){
 		$(".errorChk").text("Required Female 18+ Limited");*/
-	}else if (sMale=="" && sPopulation==0 && bPopulation==0 && lPopulation==0){
+	}else if (interventionArea=='Watsan' && sMale=="" && sPopulation==0 && bPopulation==0 && lPopulation==0){
 		$(".errorChk").text("Required Male 18+ Safely ");
-	}else if (sFemale=="" && sPopulation==0 && bPopulation==0 && lPopulation==0){
+	}else if (interventionArea=='Watsan' && sFemale=="" && sPopulation==0 && bPopulation==0 && lPopulation==0){
 		$(".errorChk").text("Required Female 18+ Safely ");
-	}else if (bMale=="" && sPopulation==0 && bPopulation==0 && lPopulation==0){
+	}else if (interventionArea=='Watsan' && bMale=="" && sPopulation==0 && bPopulation==0 && lPopulation==0){
 		$(".errorChk").text("Required Male 18+ Basic");
-	}else if (bFemale=="" && sPopulation==0 && bPopulation==0 && lPopulation==0){
+	}else if (interventionArea=='Watsan' && bFemale=="" && sPopulation==0 && bPopulation==0 && lPopulation==0){
 		$(".errorChk").text("Required Female 18+ Basic");
-	}else if (lMale=="" && sPopulation==0 && bPopulation==0 && lPopulation==0){
+	}else if (interventionArea=='Watsan' && lMale=="" && sPopulation==0 && bPopulation==0 && lPopulation==0){
 		$(".errorChk").text("Required Male 18+ Limited");
-	}else if (lFemale=="" && sPopulation==0 && bPopulation==0 && lPopulation==0){
+	}else if (interventionArea=='Watsan' && lFemale=="" && sPopulation==0 && bPopulation==0 && lPopulation==0){
 		$(".errorChk").text("Required Female 18+ Limited");
+		
+	}else if (interventionArea=='Others' && dMale==0 ){
+		$(".errorChk").text("Required Male 18+ Direct");
+	}else if (interventionArea=='Others' && dFemale==0 ){
+		$(".errorChk").text("Required Female 18+ Direct");		
 	}else{
 		$(".errorChk").text("");
 		var url="#achiveDataList2";
