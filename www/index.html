@@ -43,6 +43,7 @@
 			$("#sShow").hide();
 			$("#bShow").hide();
 			$("#lShow").hide();
+			$("#directShow").hide();
 		});
 		
 		function getEmpty(){
@@ -97,7 +98,7 @@
         		<a data-role="button" id="btn_area_lat_long" onClick="getLocationInfoAreaWq();" class="ui-btn" >Area location</a>
            </ul> 
     </div>
-    <div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >mReporting 20180905</div>
+    <div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >mReporting 20180906</div>
   
     <div data-role="panel" id="leftpanel" data-position="left" data-display="overlay" data-theme="d">
         <div align="center"><img src="wab.jpg"></div>
@@ -527,9 +528,9 @@
                         <td colspan="3" ><strong><label for="achID"> ID related to output &nbsp;<sup class="reqField">*</sup></label></strong></td>
                   </tr>
                   <tr>
-                        <td width="45%"><input name="achID_show" id="achID_show" placeholder="" value="" type="text" readonly="readonly"></td>
+                        <td width="45%"><input name="achID_show" id="achID_show" type="text" readonly="readonly"></td>
                         <td width="0%" style="vertical-align:middle; padding:0px;">-</td>
-                    <td width="55%"><input name="ach_id" id="ach_id" placeholder="" value="" type="text"></td>
+                    <td width="55%"><input name="ach_id" id="ach_id" maxlength="20" type="text"></td>
                     </tr>
             </table>     
           </li>
@@ -544,20 +545,21 @@
 				  <tr>
                         <td width="100%">
                         <label for="community_name">Village/Community/Slum Name </label>
-                		<input name="community_name" id="community_name" placeholder="" value="" type="text"></td>
+                		<input name="community_name" id="community_name" maxlength="100" type="text"></td>
                     </tr>
                     <tr>
                         <td width="100%">
                         <label for="owner_name"> Owner Name </label>
-                		<input name="owner_name" id="owner_name" placeholder="" value="" type="text"></td>
+                		<input name="owner_name" id="owner_name" maxlength="100"type="text"></td>
                     </tr>
                     
 			</table>
 			<br/>
             <div id="sbl_btn">
+            	<label for="service_level"> Service Level</label>
                  <fieldset data-role="controlgroup">   
                      <input type="radio" name="radio_b"  id="safely" value="safely" onchange="sbl_p()">
-                     <label for="safely" >Safely</label>  
+                     <label for="safely" >Safely M</label>  
                      <input type="radio" name="radio_b"  id="basic" value="basic" onchange="sbl_p()">
                      <label for="basic" >Basic</label> 
                      <input type="radio" name="radio_b"  id="limited" value="limited" onchange="sbl_p()">
@@ -568,7 +570,7 @@
          <div id="sShow">     
          <table class="ui-body-d ui-shadow table-stripe ui-responsive"  data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px;">
                     <tr valign="middle">
-                        <td colspan="3" ><strong>Enter Population (Safely)</strong></td>
+                        <td colspan="3" ><strong>Enter Population (Safely M)</strong></td>
                   </tr>
                   <tr>
                         <td width="70%" style="vertical-align:middle;">Male(18+)</td>
@@ -614,12 +616,12 @@
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
 					<tr>
-                        <td width="70%" style="vertical-align:middle;">Disability Male</td>
-                        <td width="30%"><input name="s_disability" id="s_disability" placeholder="" value="" type="number"></td>
+                        <td width="70%" style="vertical-align:middle;">PWD (Male)</td>
+                        <td width="30%"><input name="s_disability_m" id="s_disability_m" placeholder="" value="" type="number"></td>
                         <td width="5" align="left"><!--<sup class="reqField">*</sup>--></td>
                     </tr>
                     <tr>
-                        <td width="70%" style="vertical-align:middle;">Disability Female</td>
+                        <td width="70%" style="vertical-align:middle;">PWD (Female)</td>
                         <td width="30%"><input name="s_disability_f" id="s_disability_f" placeholder="" value="" type="number"></td>
                         <td width="5" align="left"><!--<sup class="reqField">*</sup>--></td>
                     </tr>
@@ -675,12 +677,12 @@
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td width="70%" style="vertical-align:middle;">Disability Male</td>
-                        <td width="30%"><input name="b_disability" id="b_disability" placeholder="" value="" type="number"></td>
+                        <td width="70%" style="vertical-align:middle;">PWD (Male)</td>
+                        <td width="30%"><input name="b_disability_m" id="b_disability_m" placeholder="" value="" type="number"></td>
                         <td width="5" align="left"><!--<sup class="reqField">*</sup>--></td>
                     </tr>
                     <tr>
-                        <td width="70%" style="vertical-align:middle;">Disability Female</td>
+                        <td width="70%" style="vertical-align:middle;">PWD (Female)</td>
                         <td width="30%"><input name="b_disability_f" id="b_disability_f" placeholder="" value="" type="number"></td>
                         <td width="5" align="left"><!--<sup class="reqField">*</sup>--></td>
                     </tr>
@@ -734,12 +736,12 @@
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td width="70%" style="vertical-align:middle;">Disability Male</td>
-                        <td width="30%"><input name="l_disability" id="l_disability" placeholder="" value="" type="number"></td>
+                        <td width="70%" style="vertical-align:middle;">PWD (Male)</td>
+                        <td width="30%"><input name="l_disability_m" id="l_disability_m" placeholder="" value="" type="number"></td>
                         <td width="5" align="left"><!--<sup class="reqField">*</sup>--></td>
                     </tr>
                     <tr>
-                        <td width="70%" style="vertical-align:middle;">Disability Female</td>
+                        <td width="70%" style="vertical-align:middle;">PWD (Female)</td>
                         <td width="30%"><input name="l_disability_f" id="l_disability_f" placeholder="" value="" type="number"></td>
                         <td width="5" align="left"><!--<sup class="reqField">*</sup>--></td>
                     </tr>
@@ -794,12 +796,12 @@
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td width="70%" style="vertical-align:middle;">Disability Male</td>
-                        <td width="30%"><input name="d_disability" id="d_disability" placeholder="" value="" type="number"></td>
+                        <td width="70%" style="vertical-align:middle;">PWD (Male)</td>
+                        <td width="30%"><input name="d_disability_m" id="d_disability_m" placeholder="" value="" type="number"></td>
                         <td width="5" align="left"><!--<sup class="reqField">*</sup>--></td>
                     </tr>
                     <tr>
-                        <td width="70%" style="vertical-align:middle;">Disability Female</td>
+                        <td width="70%" style="vertical-align:middle;">PWD (Female)</td>
                         <td width="30%"><input name="d_disability_f" id="d_disability_f" placeholder="" value="" type="number"></td>
                         <td width="5" align="left"><!--<sup class="reqField">*</sup>--></td>
                     </tr>
