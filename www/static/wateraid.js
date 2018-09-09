@@ -489,15 +489,16 @@ function achivementclick(){
 			$('#serTyp').append(localStorage.sector).trigger('create');
 		}
 					
-		$("#asign_project").val("");
 		$("#asign_domain").val("");
-		$("#service_type").val("");
+		$("#intervention_area").val("")
+		$("#service_type_ot").val("");
+		$("#service_type_hh").val("");
 		$("#service_level_ws").val("");
 		$("#service_level_hy").val("");
-		//$("input:radio[name='plan_select'][value='"+achPlanId+"']" ).attr('checked','');
+		$("#service_level_xsector").val("");
+		$("input:radio[name='plan_select'][value='"+achPlanId+"']" ).attr('checked','');
 		$("#typeOf_Facility").val("");
 		$("#ex_manag_con").val("");
-		$("#typeOf_activity").val("");
 		$("#avail_handWash_fac").val("");
 		$("#avail_WaterSoap_fac").val("");
 		$("#typeOf_event").val("");
@@ -515,7 +516,8 @@ function achivementclick(){
 		$("#s_girlsUnder").val("");
 		$("#s_population").val("");
 		$("#s_house_hold").val("");
-		$("#s_disability").val("");
+		$("#s_disability_m").val("");
+		$("#s_disability_f").val("");
 		
 		$("#b_male").val("");
 		$("#b_female").val("");
@@ -525,7 +527,8 @@ function achivementclick(){
 		$("#b_girlsUnder").val("");
 		$("#b_population").val("");
 		$("#b_house_hold").val("");
-		$("#b_disability").val("");
+		$("#b_disability_m").val("");
+		$("#b_disability_f").val("");
 		
 		$("#l_male").val("");
 		$("#l_female").val("");
@@ -535,7 +538,8 @@ function achivementclick(){
 		$("#l_girlsUnder").val("");
 		$("#l_population").val("");
 		$("#l_house_hold").val("");
-		$("#l_disability").val("");
+		$("#l_disability_m").val("");
+		$("#l_disability_f").val("");
 		
 		$("#d_male").val("");
 		$("#d_female").val("");
@@ -545,25 +549,18 @@ function achivementclick(){
 		$("#d_girlsUnder").val("");
 		$("#d_population").val("");
 		$("#d_house_hold").val("");
-		$("#d_disability").val("");
+		$("#d_disability_m").val("");
+		$("#d_disability_f").val("");
 		
-		$("#i_male").val("");
-		$("#i_female").val("");
-		$("#i_boys").val("");
-		$("#i_girls").val("");
-		$("#i_boysUnder").val("");
-		$("#i_girlsUnder").val("");
-		$("#i_population").val("");
-		$("#i_house_hold").val("");
-		$("#i_disability").val("");
-		
-		$("#dapMale").val("");
-		$("#dapFemale").val("");
+		$("#eMale").val("");
+		$("#eFemale").val("");
+		$("#totalWiBen").val("");
+		$("#totalInBen").val("");
 		$("#serRecpent").val("");
 		//$("#serType").val("");
 		$("#achPhoto").val("");	
 		$("#ach_lat").val("");
-		$("#ach_long").val("");		
+		$("#ach_long").val("");	
 		
 		reviewAchDisplayFlag==false;
 		arrayId='';
@@ -610,9 +607,11 @@ function serviceType_wsh(){
 	var intervention_area=$("#intervention_area").val();
 	
 	if (intervention_area=='Watsan'){
-		service_type=$("#service_type_hh").val();	
+		service_type=$("#service_type_hh").val();
+		$("#service_type_ot").val("");	
 	}else{
-		service_type=$("#service_type_ot").val();	
+		service_type=$("#service_type_ot").val();
+		$("#service_type_hh").val("");	
 	}
 	
 	if (service_type=='Water'){
@@ -624,6 +623,8 @@ function serviceType_wsh(){
 		
 		serviceLevelHy='';
 		serviceLevelXsector='';	
+		$("#service_level_hy").val("");	
+		$("#service_level_xsector").val("");	
 		
 		$("#ifWaterSani").show();		
 	}else if (service_type=='Sanitation'){
@@ -635,10 +636,12 @@ function serviceType_wsh(){
 		
 		serviceLevelHy="";	
 		serviceLevelXsector="";	
+		$("#service_level_hy").val("");	
+		$("#service_level_xsector").val("");
 			
 		$("#ifWaterSani").show();
-		$("#typeOfFac").show();
-		$("#exManag_con").show();
+		//$("#typeOfFac").show();
+		//$("#exManag_con").show();
 	}else if(service_type=='Hygiene'){
 		$("#ifWaterSani").hide();
 		$("#typeOfFac").hide();
@@ -647,6 +650,8 @@ function serviceType_wsh(){
 		
 		serviceLevelWs="";
 		serviceLevelXsector="";		
+		$("#service_level_ws").val("");
+		$("#service_level_xsector").val("");
 		
 		$("#ifHygiene").show();	
 		//$("#typeOf_act").show();
@@ -658,6 +663,8 @@ function serviceType_wsh(){
 		
 		serviceLevelWs="";
 		serviceLevelHy="";
+		$("#service_level_ws").val("");
+		$("#service_level_hy").val("");	
 		
 		$("#ifXsector").show();
 		//$("#typeOf_act").show();
@@ -670,6 +677,9 @@ function serviceType_wsh(){
 		//$("#typeOf_act").hide();
 		//$("#availHandWash_fac").hide();
 		//$("#availWaterSoap_fac").hide();	
+		$("#service_level_ws").val("");
+		$("#service_level_hy").val("");	
+		$("#service_level_xsector").val("");
 	}
 }
 
@@ -826,20 +836,36 @@ function achDataNext(){
 		}else{
 			serviceTypeHX=service_level_xsector;
 		}
-		if (servicType=='Hygiene' && serviceTypeHX=='Handwashing F'){
-			$("#availHandWash_fac").show();
-			$("#availWaterSoap_fac").show();
+		if(servicType=='Sanitation'){			
 			$("#typeOfEvent").hide();
 			$("#eventIssues").hide();
+			$("#availHandWash_fac").hide();
+			$("#availWaterSoap_fac").hide();
+			
+			$("#typeOfFac").show();
+			$("#exManag_con").show();			
+		}else if (servicType=='Hygiene' && serviceTypeHX=='Handwashing F'){
+			$("#typeOfEvent").hide();
+			$("#eventIssues").hide();
+			$("#typeOfFac").hide();
+			$("#exManag_con").hide();
+			
+			$("#availHandWash_fac").show();
+			$("#availWaterSoap_fac").show();			
 		}else if ((servicType=='Hygiene' && serviceTypeHX=='Event') || (servicType=='X-Sector' && serviceTypeHX=='Event')){
 			$("#availHandWash_fac").hide();
 			$("#availWaterSoap_fac").hide();
+			$("#typeOfFac").hide();
+			$("#exManag_con").hide();
+			
 			$("#typeOfEvent").show();		
 		}else{
 			$("#availHandWash_fac").hide();
 			$("#typeOfEvent").hide();
 			$("#availWaterSoap_fac").hide();
 			$("#eventIssues").hide();
+			$("#typeOfFac").hide();
+			$("#exManag_con").hide();
 		}	
 		
 		
@@ -4443,8 +4469,8 @@ function syncDataWQ(){
 
 
 function exit() {
-navigator.app.exitApp();
-//navigator.device.exitApp();
+	navigator.app.exitApp();
+	//navigator.device.exitApp();
 }
 
 function showLatLong(){
