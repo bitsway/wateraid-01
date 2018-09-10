@@ -310,11 +310,11 @@
         <ul data-role="listview" data-inset="true" data-theme="d">
             <li class="ui-field-contain">
                 <label for="mobile"> Mobile No</label>
-                <input name="mobile" id="mobile" placeholder="" value="" type="number">
+                <input name="mobile" id="mobile" placeholder="" value="" type="number" />
             </li>
             <li class="ui-field-contain">
                 <label for="password">Password </label>
-                <input type="password" name="password" id="password" placeholder="" value="" >
+                <input type="password" name="password" id="password" placeholder="" value=""  />
             </li>
         </ul>
         <a data-role="button" href="#" id="syncBasic"  data-theme="d" data-transition="slide" >Sync</a>
@@ -519,24 +519,18 @@
                 <div id="cboIdDiv" ></div>
             </li>
         </ul>
-        <ul data-role="listview" data-inset="true" data-theme="d">
-            <li class="ui-field-contain">
-                
-           
+                  
            <table class="ui-body-d ui-shadow table-stripe ui-responsive"  data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px;">
                     <tr valign="middle">
                         <td colspan="3" ><strong><label for="achID"> ID related to output &nbsp;<sup class="reqField">*</sup></label></strong></td>
                   </tr>
                   <tr>
-                        <td width="45%"><input name="achID_show" id="achID_show" type="text" readonly="readonly"></td>
+                        <td width="45%"><input name="achID_show" id="achID_show" type="text" readonly="readonly"  /></td>
                         <td width="0%" style="vertical-align:middle; padding:0px;">-</td>
-                    <td width="55%"><input name="ach_id" id="ach_id" maxlength="20" type="text"></td>
+                    <td width="55%"><input name="ach_id" id="ach_id" maxlength="20" type="text"  /></td>
                     </tr>
-            </table>     
-          </li>
-            
-        </ul>
-        
+            </table>  
+        	<br />
         
          <table class="ui-body-d ui-shadow table-stripe ui-responsive"  data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px;">
                     <tr valign="middle">
@@ -545,12 +539,12 @@
 				  <tr>
                         <td width="100%">
                         <label for="community_name">Village/Community/Slum Name </label>
-                		<input name="community_name" id="community_name" maxlength="100" type="text"></td>
+                		<input name="community_name" id="community_name" maxlength="100" type="text"  /></td>
                     </tr>
                     <tr>
                         <td width="100%">
                         <label for="owner_name"> Owner Name </label>
-                		<input name="owner_name" id="owner_name" maxlength="100"type="text"></td>
+                		<input name="owner_name" id="owner_name" maxlength="100"type="text"  /></td>
                     </tr>
                     
 			</table>
@@ -558,11 +552,11 @@
             <div id="sbl_btn">
             	<label for="service_level"> Service Level</label>
                  <fieldset data-role="controlgroup">   
-                     <input type="radio" name="radio_b"  id="safely" value="safely" onchange="sbl_p()">
+                     <input type="radio" name="radio_b"  id="safely" value="safely" onchange="sbl_p()" />
                      <label for="safely" >Safely M</label>  
-                     <input type="radio" name="radio_b"  id="basic" value="basic" onchange="sbl_p()">
+                     <input type="radio" name="radio_b"  id="basic" value="basic" onchange="sbl_p()" />
                      <label for="basic" >Basic</label> 
-                     <input type="radio" name="radio_b"  id="limited" value="limited" onchange="sbl_p()">
+                     <input type="radio" name="radio_b"  id="limited" value="limited" onchange="sbl_p()" />
                      <label for="limited" >Limited</label> 
                  </fieldset>
             </div>
@@ -574,55 +568,55 @@
                   </tr>
                   <tr>
                         <td width="70%" style="vertical-align:middle;">Male(18+)</td>
-                        <td width="30%"><input name="s_male" id="s_male" onBlur="s_totalPopulation();" placeholder="" value="" type="number"></td>
+                        <td width="30%"><input name="s_male" id="s_male" onBlur="s_totalPopulation();" placeholder="" value="" type="number" /></td>
                         <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
 				  <tr>
                         <td width="70%" style="vertical-align:middle;">Female(18+)</td>
                         <td width="30%">
-                        <input name="s_female" id="s_female" placeholder="" onBlur="s_totalPopulation();" value="" type="number"></td>
+                        <input name="s_female" id="s_female" placeholder="" onBlur="s_totalPopulation();" value="" type="number" /></td>
                         <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Boy(6-18yrs)</td>
-                        <td width="30%"><input name="s_boys" id="s_boys" placeholder="" value="" min="0" onBlur="s_totalPopulation();" type="number" ></td>
+                        <td width="30%"><input name="s_boys" id="s_boys" placeholder="" value="" min="0" onBlur="s_totalPopulation();" type="number"  /></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Girl(6-18yrs)</td>
-                        <td width="30%"><input name="s_girls" id="s_girls" placeholder="" value="" onBlur="s_totalPopulation();" min="0" type="number"></td>
+                        <td width="30%"><input name="s_girls" id="s_girls" placeholder="" value="" onBlur="s_totalPopulation();" min="0" type="number" /></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Boy(0-5yrs)</td>
-                        <td width="30%"><input name="s_boysUnder" id="s_boysUnder" placeholder="" onBlur="s_totalPopulation();" value="" type="number"></td>
+                        <td width="30%"><input name="s_boysUnder" id="s_boysUnder" placeholder="" onBlur="s_totalPopulation();" value="" type="number" /></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Girl(0-5yrs)</td>
-                        <td width="30%"><input name="s_girlsUnder" id="s_girlsUnder" placeholder="" onBlur="s_totalPopulation();" value="" type="number"></td>
+                        <td width="30%"><input name="s_girlsUnder" id="s_girlsUnder" placeholder="" onBlur="s_totalPopulation();" value="" type="number" /></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     
                     
 					<tr >
                         <td width="70%" style="vertical-align:middle;">Total Population</td>
-                        <td width="30%"><input name="s_population" id="s_population"  placeholder="" value="" type="number" readonly="readonly" style="background-color:#EEEEEE;"></td>
+                        <td width="30%"><input name="s_population" id="s_population"  placeholder="" value="" type="number" readonly="readonly" style="background-color:#EEEEEE;" /></td>
                         <td width="5" align="left"></td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Household</td>
-                        <td width="30%"><input name="s_house_hold" id="s_house_hold" placeholder="" value="" type="number"></td>
+                        <td width="30%"><input name="s_house_hold" id="s_house_hold" placeholder="" value="" type="number" /></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
 					<tr>
                         <td width="70%" style="vertical-align:middle;">PWD (Male)</td>
-                        <td width="30%"><input name="s_disability_m" id="s_disability_m" placeholder="" value="" type="number"></td>
+                        <td width="30%"><input name="s_disability_m" id="s_disability_m" placeholder="" value="" type="number" /></td>
                         <td width="5" align="left"><!--<sup class="reqField">*</sup>--></td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">PWD (Female)</td>
-                        <td width="30%"><input name="s_disability_f" id="s_disability_f" placeholder="" value="" type="number"></td>
+                        <td width="30%"><input name="s_disability_f" id="s_disability_f" placeholder="" value="" type="number" /></td>
                         <td width="5" align="left"><!--<sup class="reqField">*</sup>--></td>
                     </tr>
 			</table>
@@ -635,55 +629,55 @@
                   </tr>
                   <tr>
                         <td width="70%" style="vertical-align:middle;">Male(18+)</td>
-                        <td width="30%"><input name="b_male" id="b_male" onBlur="b_totalPopulation();" placeholder="" value="" type="number"></td>
+                        <td width="30%"><input name="b_male" id="b_male" onBlur="b_totalPopulation();" placeholder="" value="" type="number" /></td>
                         <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
 				  <tr>
                         <td width="70%" style="vertical-align:middle;">Female(18+)</td>
                         <td width="30%">
-                        <input name="b_female" id="b_female" placeholder="" onBlur="b_totalPopulation();" value="" type="number"></td>
+                        <input name="b_female" id="b_female" placeholder="" onBlur="b_totalPopulation();" value="" type="number" /></td>
                         <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Boy(6-18yrs)</td>
-                        <td width="30%"><input name="b_boys" id="b_boys" placeholder="" value="" min="0" onBlur="b_totalPopulation();" type="number"></td>
+                        <td width="30%"><input name="b_boys" id="b_boys" placeholder="" value="" min="0" onBlur="b_totalPopulation();" type="number" /></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Girl(6-18yrs)</td>
-                        <td width="30%"><input name="b_girls" id="b_girls" placeholder="" value="" onBlur="b_totalPopulation();" min="0" type="number"></td>
+                        <td width="30%"><input name="b_girls" id="b_girls" placeholder="" value="" onBlur="b_totalPopulation();" min="0" type="number" /></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Boy(0-5yrs)</td>
-                        <td width="30%"><input name="b_boysUnder" id="b_boysUnder" placeholder="" onBlur="b_totalPopulation();" value="" type="number"></td>
+                        <td width="30%"><input name="b_boysUnder" id="b_boysUnder" placeholder="" onBlur="b_totalPopulation();" value="" type="number" /></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Girl(0-5yrs)</td>
-                        <td width="30%"><input name="b_girlsUnder" id="b_girlsUnder" placeholder="" onBlur="b_totalPopulation();" value="" type="number"></td>
+                        <td width="30%"><input name="b_girlsUnder" id="b_girlsUnder" placeholder="" onBlur="b_totalPopulation();" value="" type="number" /></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     
                     
 					<tr >
                         <td width="70%" style="vertical-align:middle;">Total Population</td>
-                        <td width="30%"><input name="b_population" id="b_population"  placeholder="" value="" type="number" readonly="readonly" style="background-color:#EEEEEE;"></td>
+                        <td width="30%"><input name="b_population" id="b_population"  placeholder="" value="" type="number" readonly="readonly" style="background-color:#EEEEEE;" /></td>
                         <td width="5" align="left"></td>
                     </tr>
 					<tr>
                         <td width="70%" style="vertical-align:middle;">Household</td>
-                        <td width="30%"><input name="b_house_hold" id="b_house_hold" placeholder="" value="" type="number"></td>
+                        <td width="30%"><input name="b_house_hold" id="b_house_hold" placeholder="" value="" type="number" /></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">PWD (Male)</td>
-                        <td width="30%"><input name="b_disability_m" id="b_disability_m" placeholder="" value="" type="number"></td>
+                        <td width="30%"><input name="b_disability_m" id="b_disability_m" placeholder="" value="" type="number" /></td>
                         <td width="5" align="left"><!--<sup class="reqField">*</sup>--></td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">PWD (Female)</td>
-                        <td width="30%"><input name="b_disability_f" id="b_disability_f" placeholder="" value="" type="number"></td>
+                        <td width="30%"><input name="b_disability_f" id="b_disability_f" placeholder="" value="" type="number" /></td>
                         <td width="5" align="left"><!--<sup class="reqField">*</sup>--></td>
                     </tr>
 			</table>
@@ -696,53 +690,53 @@
                   </tr>
                   <tr>
                         <td width="70%" style="vertical-align:middle;">Male(18+)</td>
-                        <td width="30%"><input name="l_male" id="l_male" onBlur="l_totalPopulation();" placeholder="" value="" type="number"></td>
+                        <td width="30%"><input name="l_male" id="l_male" onBlur="l_totalPopulation();" placeholder="" value="" type="number" /></td>
                         <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
 				  <tr>
                         <td width="70%" style="vertical-align:middle;">Female(18+)</td>
                         <td width="30%">
-                        <input name="l_female" id="l_female" placeholder="" onBlur="l_totalPopulation();" value="" type="number"></td>
+                        <input name="l_female" id="l_female" placeholder="" onBlur="l_totalPopulation();" value="" type="number" /></td>
                         <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Boy(6-18yrs)</td>
-                        <td width="30%"><input name="l_boys" id="l_boys" placeholder="" value="" min="0" onBlur="l_totalPopulation();" type="number"></td>
+                        <td width="30%"><input name="l_boys" id="l_boys" placeholder="" value="" min="0" onBlur="l_totalPopulation();" type="number" /></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Girl(6-18yrs)</td>
-                        <td width="30%"><input name="l_girls" id="l_girls" placeholder="" value="" onBlur="l_totalPopulation();" min="0" type="number"></td>
+                        <td width="30%"><input name="l_girls" id="l_girls" placeholder="" value="" onBlur="l_totalPopulation();" min="0" type="number" /></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Boy(0-5yrs)</td>
-                        <td width="30%"><input name="l_boysUnder" id="l_boysUnder" placeholder="" onBlur="l_totalPopulation();" value="" type="number"></td>
+                        <td width="30%"><input name="l_boysUnder" id="l_boysUnder" placeholder="" onBlur="l_totalPopulation();" value="" type="number" /></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Girl(0-5yrs)</td>
-                        <td width="30%"><input name="l_girlsUnder" id="l_girlsUnder" placeholder="" onBlur="l_totalPopulation();" value="" type="number"></td>
+                        <td width="30%"><input name="l_girlsUnder" id="l_girlsUnder" placeholder="" onBlur="l_totalPopulation();" value="" type="number" /></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
 					<tr >
                         <td width="70%" style="vertical-align:middle;">Total Population</td>
-                        <td width="30%"><input name="l_population" id="l_population"  placeholder="" value="" type="number" readonly="readonly" style="background-color:#EEEEEE;"></td>
+                        <td width="30%"><input name="l_population" id="l_population"  placeholder="" value="" type="number" readonly="readonly" style="background-color:#EEEEEE;" /></td>
                         <td width="5" align="left"></td>
                     </tr>
 					<tr>
                         <td width="70%" style="vertical-align:middle;">Household</td>
-                        <td width="30%"><input name="l_house_hold" id="l_house_hold" placeholder="" value="" type="number"></td>
+                        <td width="30%"><input name="l_house_hold" id="l_house_hold" placeholder="" value="" type="number" /></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">PWD (Male)</td>
-                        <td width="30%"><input name="l_disability_m" id="l_disability_m" placeholder="" value="" type="number"></td>
+                        <td width="30%"><input name="l_disability_m" id="l_disability_m" placeholder="" value="" type="number" /></td>
                         <td width="5" align="left"><!--<sup class="reqField">*</sup>--></td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">PWD (Female)</td>
-                        <td width="30%"><input name="l_disability_f" id="l_disability_f" placeholder="" value="" type="number"></td>
+                        <td width="30%"><input name="l_disability_f" id="l_disability_f" placeholder="" value="" type="number" /></td>
                         <td width="5" align="left"><!--<sup class="reqField">*</sup>--></td>
                     </tr>
 			</table>
@@ -756,53 +750,53 @@
                   </tr>
                   <tr>
                         <td width="70%" style="vertical-align:middle;">Male(18+)</td>
-                        <td width="30%"><input name="d_male" id="d_male" onBlur="d_totalPopulation();" placeholder="" value="" type="number"></td>
+                        <td width="30%"><input name="d_male" id="d_male" onBlur="d_totalPopulation();" placeholder="" value="" type="number" /></td>
                         <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
 				  <tr>
                         <td width="70%" style="vertical-align:middle;">Female(18+)</td>
                         <td width="30%">
-                        <input name="d_female" id="d_female" placeholder="" onBlur="d_totalPopulation();" value="" type="number"></td>
+                        <input name="d_female" id="d_female" placeholder="" onBlur="d_totalPopulation();" value="" type="number" /></td>
                         <td width="5" align="left"><sup class="reqField">*</sup></td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Boy(6-18yrs)</td>
-                        <td width="30%"><input name="d_boys" id="d_boys" placeholder="" value="" min="0" onBlur="d_totalPopulation();" type="number"></td>
+                        <td width="30%"><input name="d_boys" id="d_boys" placeholder="" value="" min="0" onBlur="d_totalPopulation();" type="number" /></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Girl(6-18yrs)</td>
-                        <td width="30%"><input name="d_girls" id="d_girls" placeholder="" value="" onBlur="d_totalPopulation();" min="0" type="number"></td>
+                        <td width="30%"><input name="d_girls" id="d_girls" placeholder="" value="" onBlur="d_totalPopulation();" min="0" type="number" /></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Boy(0-5yrs)</td>
-                        <td width="30%"><input name="d_boysUnder" id="d_boysUnder" placeholder="" onBlur="d_totalPopulation();" value="" type="number"></td>
+                        <td width="30%"><input name="d_boysUnder" id="d_boysUnder" placeholder="" onBlur="d_totalPopulation();" value="" type="number" /></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Girl(0-5yrs)</td>
-                        <td width="30%"><input name="d_girlsUnder" id="d_girlsUnder" placeholder="" onBlur="d_totalPopulation();" value="" type="number"></td>
+                        <td width="30%"><input name="d_girlsUnder" id="d_girlsUnder" placeholder="" onBlur="d_totalPopulation();" value="" type="number" /></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
 					<tr >
                         <td width="70%" style="vertical-align:middle;">Total Population</td>
-                        <td width="30%"><input name="d_population" id="d_population"  placeholder="" value="" type="number" readonly="readonly" style="background-color:#EEEEEE;"></td>
+                        <td width="30%"><input name="d_population" id="d_population"  placeholder="" value="" type="number" readonly="readonly" style="background-color:#EEEEEE;" /></td>
                         <td width="5" align="left"></td>
                     </tr>
 					<tr>
                         <td width="70%" style="vertical-align:middle;">Household</td>
-                        <td width="30%"><input name="d_house_hold" id="d_house_hold" placeholder="" value="" type="number"></td>
+                        <td width="30%"><input name="d_house_hold" id="d_house_hold" placeholder="" value="" type="number" /></td>
                         <td width="5" align="left">&nbsp;</td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">PWD (Male)</td>
-                        <td width="30%"><input name="d_disability_m" id="d_disability_m" placeholder="" value="" type="number"></td>
+                        <td width="30%"><input name="d_disability_m" id="d_disability_m" placeholder="" value="" type="number" /></td>
                         <td width="5" align="left"><!--<sup class="reqField">*</sup>--></td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">PWD (Female)</td>
-                        <td width="30%"><input name="d_disability_f" id="d_disability_f" placeholder="" value="" type="number"></td>
+                        <td width="30%"><input name="d_disability_f" id="d_disability_f" placeholder="" value="" type="number" /></td>
                         <td width="5" align="left"><!--<sup class="reqField">*</sup>--></td>
                     </tr>
 			</table>
@@ -892,12 +886,12 @@
                  </tr>
                  <tr>
                     <td width="70%" style="vertical-align:middle;">Male</td>
-                    <td width="30%"><input name="eMale" id="eMale" placeholder="" value="" type="number"></td>
+                    <td width="30%"><input name="eMale" id="eMale" placeholder="" value="" type="number" /></td>
                     <td width="5" align="left">&nbsp;</td>
                 </tr>
                 <tr>
                     <td width="70%" style="vertical-align:middle;">Female</td>
-                    <td width="30%"><input name="eFemale" id="eFemale" placeholder="" value="" type="number"></td>
+                    <td width="30%"><input name="eFemale" id="eFemale" placeholder="" value="" type="number" /></td>
                     <td width="5" align="left">&nbsp;</td>
                 </tr>
             </table>
@@ -909,12 +903,12 @@
                  </tr>
                  <tr>
                     <td width="70%" style="vertical-align:middle;">Total Wider</td>
-                    <td width="30%"><input name="totalWiBen" id="totalWiBen" placeholder="" value="" type="number"></td>
+                    <td width="30%"><input name="totalWiBen" id="totalWiBen" placeholder="" value="" type="number" /></td>
                     <td width="5" align="left">&nbsp;</td>
                 </tr>
                 <tr>
                     <td width="70%" style="vertical-align:middle;">Total Indirect</td>
-                    <td width="30%"><input name="totalInBen" id="totalInBen" placeholder="" value="" type="number"></td>
+                    <td width="30%"><input name="totalInBen" id="totalInBen" placeholder="" value="" type="number" /></td>
                     <td width="5" align="left">&nbsp;</td>
                 </tr>
             </table>
@@ -969,7 +963,7 @@
     <div data-role="content">       
         
         <a data-role="button" id="btn_take_pic" onClick="getAchivementImage();" class="ui-btn" >Take Picture</a>       
-        <img src="" width="128" height="128" alt="Image" id="myImageA">
+        <img width="128" height="128" alt="Image" id="myImageA">
         <input name="achPhoto" id="achPhoto"   type="hidden">
        <!-- <input name="achlocation" id="achlocation"   type="text">-->
         <input name="ach_lat" id="ach_lat"   type="hidden">
