@@ -98,7 +98,7 @@
         		<a data-role="button" id="btn_area_lat_long" onClick="getLocationInfoAreaWq();" class="ui-btn" >Area location</a>
            </ul> 
     </div>
-    <div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >mReporting 20180909</div>
+    <div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >mReporting 20180917</div>
   
     <div data-role="panel" id="leftpanel" data-position="left" data-display="overlay" data-theme="d">
         <div align="center"><img src="wab.jpg"></div>
@@ -352,7 +352,7 @@
             </li>
             <br />
             <li class="ui-field-contain" >
-                <label for="intervention_area">Select Indicator Type &nbsp;<sup class="reqField">*</sup></label><select name="intervention_area" id="intervention_area" data-native-menu="false" onchange="select_indicator()"><option value="">Select Indicator Type</option><option value="Others">Others</option><option value="Watsan">Watsan HH</option></select>
+                <label for="intervention_area">Select Indicator Type &nbsp;<sup class="reqField">*</sup></label><select name="intervention_area" id="intervention_area" data-native-menu="false" onchange="select_indicator()"><option value="">Select Indicator Type</option><option value="Others">Others</option><option value="Watsan" >Watsan HH</option></select>
             </li>
             </ul>
             <div id="ifOthers">
@@ -515,6 +515,7 @@
         
         <ul data-role="listview" data-inset="true" data-theme="d">
             <li class="ui-field-contain">
+            	<input type="hidden" id="selectWardCode" />
                 <label for="">Ward Code &nbsp;<sup class="reqField">*</sup></label>
                 <div id="cboIdDiv" ></div>
             </li>
@@ -525,7 +526,7 @@
                         <td colspan="3" ><strong><label for="achID"> ID related to output &nbsp;<sup class="reqField">*</sup></label></strong></td>
                   </tr>
                   <tr>
-                        <td width="45%"><input name="achID_show" id="achID_show" type="text" readonly="readonly"  /></td>
+                        <td width="45%"><input name="achID_show" id="achID_show" type="text" readonly="readonly"  style="background-color:#EEEEEE;"/></td>
                         <td width="0%" style="vertical-align:middle; padding:0px;">-</td>
                     <td width="55%"><input name="ach_id" id="ach_id" maxlength="20" type="text"  /></td>
                     </tr>
@@ -544,7 +545,7 @@
                     <tr>
                         <td width="100%">
                         <label for="owner_name"> Owner Name </label>
-                		<input name="owner_name" id="owner_name" maxlength="100"type="text"  /></td>
+                		<input name="owner_name" id="owner_name" maxlength="100" type="text"  /></td>
                     </tr>
                     
 			</table>
@@ -569,13 +570,13 @@
                   <tr>
                         <td width="70%" style="vertical-align:middle;">Male(18+)</td>
                         <td width="30%"><input name="s_male" id="s_male" onBlur="s_totalPopulation();" placeholder="" value="" type="number" /></td>
-                        <td width="5" align="left"><sup class="reqField">*</sup></td>
+                        <td width="5" align="left"><!--<sup class="reqField">*</sup>--></td>
                     </tr>
 				  <tr>
                         <td width="70%" style="vertical-align:middle;">Female(18+)</td>
                         <td width="30%">
                         <input name="s_female" id="s_female" placeholder="" onBlur="s_totalPopulation();" value="" type="number" /></td>
-                        <td width="5" align="left"><sup class="reqField">*</sup></td>
+                        <td width="5" align="left"><!--<sup class="reqField">*</sup>--></td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Boy(6-18yrs)</td>
@@ -630,13 +631,13 @@
                   <tr>
                         <td width="70%" style="vertical-align:middle;">Male(18+)</td>
                         <td width="30%"><input name="b_male" id="b_male" onBlur="b_totalPopulation();" placeholder="" value="" type="number" /></td>
-                        <td width="5" align="left"><sup class="reqField">*</sup></td>
+                        <td width="5" align="left"></td>
                     </tr>
 				  <tr>
                         <td width="70%" style="vertical-align:middle;">Female(18+)</td>
                         <td width="30%">
                         <input name="b_female" id="b_female" placeholder="" onBlur="b_totalPopulation();" value="" type="number" /></td>
-                        <td width="5" align="left"><sup class="reqField">*</sup></td>
+                        <td width="5" align="left"></td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Boy(6-18yrs)</td>
@@ -691,13 +692,13 @@
                   <tr>
                         <td width="70%" style="vertical-align:middle;">Male(18+)</td>
                         <td width="30%"><input name="l_male" id="l_male" onBlur="l_totalPopulation();" placeholder="" value="" type="number" /></td>
-                        <td width="5" align="left"><sup class="reqField">*</sup></td>
+                        <td width="5" align="left"></td>
                     </tr>
 				  <tr>
                         <td width="70%" style="vertical-align:middle;">Female(18+)</td>
                         <td width="30%">
                         <input name="l_female" id="l_female" placeholder="" onBlur="l_totalPopulation();" value="" type="number" /></td>
-                        <td width="5" align="left"><sup class="reqField">*</sup></td>
+                        <td width="5" align="left"></td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Boy(6-18yrs)</td>
@@ -751,13 +752,13 @@
                   <tr>
                         <td width="70%" style="vertical-align:middle;">Male(18+)</td>
                         <td width="30%"><input name="d_male" id="d_male" onBlur="d_totalPopulation();" placeholder="" value="" type="number" /></td>
-                        <td width="5" align="left"><sup class="reqField">*</sup></td>
+                        <td width="5" align="left"></td>
                     </tr>
 				  <tr>
                         <td width="70%" style="vertical-align:middle;">Female(18+)</td>
                         <td width="30%">
                         <input name="d_female" id="d_female" placeholder="" onBlur="d_totalPopulation();" value="" type="number" /></td>
-                        <td width="5" align="left"><sup class="reqField">*</sup></td>
+                        <td width="5" align="left"></td>
                     </tr>
                     <tr>
                         <td width="70%" style="vertical-align:middle;">Boy(6-18yrs)</td>
@@ -939,8 +940,13 @@
         </h3>
   </div>
 
-    <div data-role="content">        
-        <div id="serResDiv" ></div>
+    <div data-role="content">  
+    	<ul data-role="listview" data-inset="true" data-theme="d">
+            <li class="ui-field-contain">
+            	<label for="">Select Location &nbsp;<sup class="reqField">*</sup></label>
+            	<div id="serResDiv" ></div>
+            </li>      
+        <!--<div id="serResDiv" ></div>-->
         <!--<div id="serTypeDiv"></div>-->
         <br />
         <a data-role="button" href="#" onClick="serviceRecipentNext();"  data-transition="slide" >Next</a>
