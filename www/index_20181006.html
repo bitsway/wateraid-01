@@ -37,8 +37,8 @@
 			$("#availHandWash_fac").hide();
 			$("#availWaterSoap_fac").hide();
 							
-			//$("#typeOfEvent").hide();
-			//$("#eventIssues").hide();
+			$("#typeOfEvent").hide();
+			$("#eventIssues").hide();
 						
 			$("#sShow").hide();
 			$("#bShow").hide();
@@ -98,7 +98,7 @@
         		<a data-role="button" id="btn_area_lat_long" onClick="getLocationInfoAreaWq();" class="ui-btn" >Area location</a>
            </ul> 
     </div>
-    <div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >mReporting 20181006</div>
+    <div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >mReporting 20180917</div>
   
     <div data-role="panel" id="leftpanel" data-position="left" data-display="overlay" data-theme="d">
         <div align="center"><img src="wab.jpg"></div>
@@ -476,9 +476,7 @@
             <ul data-role="listview" data-inset="true" data-theme="d">
                 <li class="ui-field-contain">
                     <label for="typeOf_event">Type of Event &nbsp;<sup class="reqField">*</sup></label>
-                	<div id="typeOfEventDiv" ></div>
-                    
-                    <!--<select id="typeOf_event" name="typeOf_event" data-native-menu="false" onchange="typeOf_Event()"><option value="" >Select</option><option value="Orientation">Orientation</option><option value="Session">Session</option><option value="Campaign">Campaign</option></select>-->
+                    <select id="typeOf_event" name="typeOf_event" data-native-menu="false" onchange="typeOf_Event()"><option value="" >Select</option><option value="Orientation">Orientation</option><option value="Session">Session</option><option value="Campaign">Campaign</option></select>
                 </li>
             </ul>
         </div>
@@ -486,8 +484,7 @@
             <ul data-role="listview" data-inset="true" data-theme="d">
                 <li class="ui-field-contain">
                     <label for="">Event issues &nbsp;<sup class="reqField">*</sup></label>
-                    <div id="eventIssuesDiv" ></div>
-                    <!--<select id="event_issues" name="event_issues" data-native-menu="false" ><option value="">Select</option><option value="Hand Washing">Hand Washing</option><option value="MHM">MHM</option><option value="Caretaker">Caretaker</option></select>-->
+                    <select id="event_issues" name="event_issues" data-native-menu="false" ><option value="">Select</option><option value="Hand Washing">Hand Washing</option><option value="MHM">MHM</option><option value="Caretaker">Caretaker</option></select>
                 </li>
             </ul>
         </div>
@@ -531,7 +528,7 @@
                   <tr>
                         <td width="45%"><input name="achID_show" id="achID_show" type="text" readonly="readonly"  style="background-color:#EEEEEE;"/></td>
                         <td width="0%" style="vertical-align:middle; padding:0px;">-</td>
-                    <td width="55%"><input name="ach_id" id="ach_id" maxlength="50" type="text"  /></td>
+                    <td width="55%"><input name="ach_id" id="ach_id" maxlength="20" type="text"  /></td>
                     </tr>
             </table>  
         	<br />

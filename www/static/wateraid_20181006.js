@@ -88,8 +88,6 @@ var serTypeFlag=0;
 var projectFlag=0;
 var	domainFlag=0;
 var sectorFlag=0;
-var typeOFEvent=0;
-var eventIssue=0;
 var startDt='';
 var syncResult='';
 
@@ -243,13 +241,12 @@ $(function(){
 						localStorage.domain=syncResultArray[9];
 						localStorage.sector=syncResultArray[10];
 						
-						localStorage.typeOfEvents=syncResultArray[11];
-						localStorage.eventIssuse=syncResultArray[12];
-						
 						localStorage.mobile_no=mobile;
 						localStorage.ach_save="";
 						localStorage.water_q_save="";
-										
+							
+							
+												
 						$(".errorChk").html("Sync Successful");
 						$('#syncBasic').show();
 						
@@ -285,23 +282,6 @@ $(function(){
 							$('#serResDiv').empty();
 							$('#serResDiv').append(localStorage.ser_res_list).trigger('create');
 						}
-						
-						if (typeOFEvent==0){
-							$('#typeOfEventDiv').html(localStorage.typeOfEvents);
-							typeOFEvent=1;
-						}else{
-							$('#typeOfEventDiv').empty();
-							$('#typeOfEventDiv').append(localStorage.typeOfEvents).trigger('create');
-						}						
-						
-						if (eventIssue==0){
-							$('#eventIssuesDiv').html(localStorage.eventIssuse);
-							eventIssue=1;
-						}else{
-							$('#eventIssuesDiv').empty();
-							$('#eventIssuesDiv').append(localStorage.eventIssuse).trigger('create');
-						}
-						
 						
 						/*if (serTypeFlag==0){			   
 							$("#serTypeDiv").html(localStorage.service_type);	
@@ -365,11 +345,6 @@ $(document).ready(function(){
 		
 	$("#cboIdDiv").html(localStorage.cboStr);					   
 	$("#serResDiv").html(localStorage.ser_res_list);
-	
-	$('#typeOfEventDiv').html(localStorage.typeOfEvents);
-	
-	$('#eventIssuesDiv').html(localStorage.eventIssuse);
-	
 	//$("#serTypeDiv").html(localStorage.service_type);	
 	$("#reviewAchList").html(localStorage.reviewDataDiv);
 	
@@ -505,22 +480,6 @@ function achivementclick(){
 		}else{
 			$('#serResDiv').empty();
 			$('#serResDiv').append(localStorage.ser_res_list).trigger('create');
-		}
-		
-		if (typeOFEvent==0){
-			$('#typeOfEventDiv').html(localStorage.typeOfEvents);
-			typeOFEvent=1;
-		}else{
-			$('#typeOfEventDiv').empty();
-			$('#typeOfEventDiv').append(localStorage.typeOfEvents).trigger('create');
-		}						
-		
-		if (eventIssue==0){
-			$('#eventIssuesDiv').html(localStorage.eventIssuse);
-			eventIssue=1;
-		}else{
-			$('#eventIssuesDiv').empty();
-			$('#eventIssuesDiv').append(localStorage.eventIssuse).trigger('create');
 		}
 		
 		if (sectorFlag==0){
@@ -929,14 +888,14 @@ function achDataNext(){
 	}
 }
 
-/*function typeOf_Event(){
+function typeOf_Event(){
 	var typeOf_event=$("#typeOf_event").val();
 	if (typeOf_event=='Orientation' || typeOf_event=='Session' || typeOf_event=='Campaign'){
 		$("#eventIssues").show();
 	}else{
 		$("#eventIssues").hide();
 	}	
-}*/
+}
 
 
 function achive_Event(){
@@ -1916,10 +1875,7 @@ function reviewDataNext(){
 	var achivementRevArray2=localStorage.ach_save.split('rdrd');
 	var achRevDetails=achivementRevArray2[arrayId];
 	
-	var achRevDetailsArray=achRevDetails.split('fdfd');
-	
-	
-	//achivementSave=asinDomain+'fdfd'+interventionArea+'fdfd'+service_type_ot+'fdfd'+service_type_hh+'fdfd'+serviceLevelWs+'fdfd'+serviceLevelHy+'fdfd'+serviceLevelXsector+'fdfd'+achPlanId+'fdfd'+achPlanActivities+'fdfd'+typeOfFacility+'fdfd'+exManagCon+'fdfd'+availHandWashFac+'fdfd'+availWaterSoapFac+'fdfd'+typeOfEven+'fdfd'+evenIssues+'fdfd'+wordCode+'fdfd'+achID+'fdfd'+communityName+'fdfd'+ownerName+'fdfd'+sMale+'fdfd'+sFemale+'fdfd'+sBoys+'fdfd'+sGirls+'fdfd'+sBoysUnder+'fdfd'+sGirlsUnder+'fdfd'+sPopulation+'fdfd'+sHouse_hold+'fdfd'+sDisabilityM+'fdfd'+sDisabilityF+'fdfd'+bMale+'fdfd'+bFemale+'fdfd'+bBoys+'fdfd'+bGirls+'fdfd'+bBoysUnder+'fdfd'+bGirlsUnder+'fdfd'+bPopulation+'fdfd'+bHouse_hold+'fdfd'+bDisabilityM+'fdfd'+bDisabilityF+'fdfd'+lMale+'fdfd'+lFemale+'fdfd'+lBoys+'fdfd'+lGirls+'fdfd'+lBoysUnder+'fdfd'+lGirlsUnder+'fdfd'+lPopulation+'fdfd'+lHouse_hold+'fdfd'+lDisabilityM+'fdfd'+lDisabilityF+'fdfd'+dMale+'fdfd'+dFemale+'fdfd'+dBoys+'fdfd'+dGirls+'fdfd'+dBoysUnder+'fdfd'+dGirlsUnder+'fdfd'+dPopulation+'fdfd'+dHouse_hold+'fdfd'+dDisabilityM+'fdfd'+dDisabilityF+'fdfd'+eMale+'fdfd'+eFemale+'fdfd'+totalWiBen+'fdfd'+totalInBen+'fdfd'+achServiceRecpt+'fdfd'+achPhoto+'fdfd'+startDt+'fdfd'+latitude+'fdfd'+longitude;
+	var achRevDetailsArray=achRevDetails.split('fdfd');	
 	
 	$("#asign_domain").val(achRevDetailsArray[0]);
 	$("#intervention_area").val(achRevDetailsArray[1]);
@@ -1949,8 +1905,7 @@ function reviewDataNext(){
 	$("#selectIndicator").val(achRevDetailsArray[7]);//No Save
 		
 	$("input:radio[name='plan_select'][value='"+achRevDetailsArray[8]+"']").attr("checked","checked");
-	
-	
+		
 	$("#typeOf_Facility").val(achRevDetailsArray[9]);
 	$("#ex_manag_con").val(achRevDetailsArray[10]);
 	$("#avail_handWash_fac").val(achRevDetailsArray[11]);
@@ -4396,7 +4351,7 @@ function waterQDataSubmit(){
 		$(".errorChk").text("Please confirm your location");
 		$("#btn_wq_save").show();
 		$("#btn_wq_submit").show();		
-	}else{ 			
+	}else{			
 		if (wq_plan_id=='' || wq_CBO_id==''){
 			$(".errorChk").text("New records not available");
 			$("#btn_wq_submit").show();
@@ -4476,7 +4431,6 @@ function syncDataWQ(){
 						$("#btn_wq_submit").show();
 						$("#btn_wq_save").show();
 						}
-					
 					
 				 }
 			});
