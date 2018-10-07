@@ -179,23 +179,6 @@ var totalWiBen='';
 var totalInBen='';
 var achServiceRecpt='';
 
-//var achCBOid='';
-//var achPopulation='';
-//var achHousehold='';
-//var achMale='';
-//var achFemale='';
-//var achGirlsUnder='';
-//var achBoysUnder='';
-//var achGirls='';
-//var achBoys='';
-//var achDapMale='';
-//var achDapFemale='';
-//var achPoorC='';
-//var achPoorEx='';
-//var achEthMale='';
-//var achEthFemale='';
-//var achServiceRecpt='';
-//var achSerType='';
 var achPhoto='';
 var wqPhoto='';
 var reviewAchFlag=0; //used for html triger
@@ -893,7 +876,8 @@ function achDataNext(){
 			$("#typeOfFac").hide();
 			$("#exManag_con").hide();
 			
-			$("#typeOfEvent").show();		
+			$("#typeOfEvent").show();
+			$("#eventIssues").show();	
 		}else{
 			$("#availHandWash_fac").hide();
 			$("#typeOfEvent").hide();
