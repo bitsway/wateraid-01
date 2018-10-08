@@ -98,7 +98,7 @@
         		<a data-role="button" id="btn_area_lat_long" onClick="getLocationInfoAreaWq();" class="ui-btn" >Area location</a>
            </ul> 
     </div>
-    <div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >mReporting 20181007</div>
+    <div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >mReporting 20181008</div>
   
     <div data-role="panel" id="leftpanel" data-position="left" data-display="overlay" data-theme="d">
         <div align="center"><img src="wab.jpg"></div>
@@ -1031,6 +1031,7 @@
         <ul data-role="listview" data-inset="true" data-theme="d">
             <li class="ui-field-contain">
                 <label for="">Ward Code</label>
+                <input type="hidden" id="selectWardCodeWq" />
                 <div id="wQCboIdDiv"></div>
             </li>
         </ul>
@@ -2783,6 +2784,7 @@
                 <input name="wq_long" id="wq_long"  type="hidden">
         		<a data-role="button" id="btn_wq_lat_long" onClick="getLocationInfoWq();" class="ui-btn" >confirm location</a>
 				<div class="errorChk"></div>
+                <div class="sucMsg"></div>
                 <!--<div id="checkLocationWq" style="color:#FF0000;"></div>-->
         		<br/><br/>
                 <a data-role="button" id="btn_wq_save" href="#" onClick="WaterQDataSave();"  >Save</a>

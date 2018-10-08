@@ -75,7 +75,7 @@ function onErrorAreaWq(error) {
    $(".errorChk").html("Failed to Confirmed Location.");
 }
 //---Online
-var apipath="http://w05.yeapps.com/wateraid/syncmobile/";
+var apipath="http://w05.yeapps.com/wateraid/syncmobile_20181008/";
 
 //--- local
 //var apipath="http://127.0.0.1:8000/wateraid/syncmobile/";
@@ -90,6 +90,10 @@ var	domainFlag=0;
 var sectorFlag=0;
 var typeOFEvent=0;
 var eventIssue=0;
+
+var planFlagWq=0;
+var cboFlagWq=0;
+
 var startDt='';
 var syncResult='';
 
@@ -179,6 +183,23 @@ var totalWiBen='';
 var totalInBen='';
 var achServiceRecpt='';
 
+//var achCBOid='';
+//var achPopulation='';
+//var achHousehold='';
+//var achMale='';
+//var achFemale='';
+//var achGirlsUnder='';
+//var achBoysUnder='';
+//var achGirls='';
+//var achBoys='';
+//var achDapMale='';
+//var achDapFemale='';
+//var achPoorC='';
+//var achPoorEx='';
+//var achEthMale='';
+//var achEthFemale='';
+//var achServiceRecpt='';
+//var achSerType='';
 var achPhoto='';
 var wqPhoto='';
 var reviewAchFlag=0; //used for html triger
@@ -295,8 +316,9 @@ $(function(){
 						}*/
 												
 						
-						$("#planWqlistDiv").html(localStorage.plan_wq);
-						$("#wQCboIdDiv").html(localStorage.cbo_id_wq);
+						//$("#planWqlistDiv").html(localStorage.planWqStr);
+						
+						//$("#wQCboIdDiv").html(localStorage.cbo_id_wq);
 						$("#providedByDiv").html(localStorage.provided_by);
 						$("#TestTypeDiv").html(localStorage.test_type_wq);
 						
@@ -329,7 +351,8 @@ function waterAidClick(){
 	projectFlag=0;
 	domainFlag=0;
 	sectorFlag=0;
-	
+	planFlagWq=0;
+	cboFlagWq=0;
 	$.mobile.navigate("#reportType")
 	location.reload();
 }
@@ -356,9 +379,8 @@ $(document).ready(function(){
 	//$("#serTypeDiv").html(localStorage.service_type);	
 	$("#reviewAchList").html(localStorage.reviewDataDiv);
 	
-	$("#planWqlistDiv").html(localStorage.plan_wq);
-	$("#wQCboIdDiv").html(localStorage.cbo_id_wq);
-	
+	$("#planWqlistDiv").html(localStorage.planWqStr);
+	$("#wQCboIdDiv").html(localStorage.cboStrWq);
 	$("#providedByDiv").html(localStorage.provided_by);
 	$(".errorChk").text("");
 	
@@ -2355,10 +2377,10 @@ var reviewWQDisplayFlag=false;
 var reviewWqhFlag=0;
 
 
-
+var projectWq="";
 function waterQtyClick(){
 	$(".errorChk").text("");
-	
+	$(".sucMsg").text("");
 	if(localStorage.plan_wq==undefined || localStorage.plan_wq==""){
 		$(".errorChk").text("Required Sync");
 	}else{
@@ -2367,7 +2389,36 @@ function waterQtyClick(){
 		$("#ach_lat").val("");
 		$("#ach_long").val("");
 		
-		//------------------		
+		//------------------	
+		
+		var planWqLst=localStorage.plan_wq.split('|||');
+		planWqStr='<ul data-role="listview" data-inset="true">'
+		 for (i=0;i<eval(planWqLst.length);i++){
+			planWqLi=planWqLst[i].split('||');
+			activityNameWq=planWqLi[0]
+			activity_idWq=planWqLi[1]
+			planWq_id=planWqLi[2]
+			projectWq=planWqLi[3]	
+					
+			planWqStr+='<li class="ui-field-contain"><fieldset data-role="controlgroup">'
+			planWqStr+='<input type="radio" name="plan_select_wq"  id="'+planWq_id+'" value="'+planWq_id+'" >'
+			planWqStr+='<label for="'+planWq_id+'" >'+activity_idWq+'-'+activityNameWq+'-'+planWq_id+'-'+projectWq+'</label>'
+			planWqStr+='<input type="hidden" name="activityNameWq"  id="activityNameWq'+planWq_id+'" value="'+activityNameWq+'">'
+			planWqStr+='<input type="hidden" id="projectNameWq'+planWq_id+'" value="'+projectWq+'">'
+			planWqStr+='</fieldset></li>'
+		}//for
+		planWqStr+='</ul>'
+		localStorage.planWqStr=planWqStr;
+		
+		if (planFlagWq==0){
+			$('#planWqlistDiv').html(localStorage.planWqStr);
+			planFlagWq=1;
+		}else{
+			$('#planWqlistDiv').empty();
+			$('#planWqlistDiv').append(localStorage.planWqStr).trigger('create');
+		}
+		
+					
 		var url = "#planListWq";
 		//$(location).attr('href',url);
 		$.mobile.navigate(url);
@@ -2380,13 +2431,46 @@ function wQLocationNext(){
 	if($("#planWqlistDiv").find("input[name='plan_select_wq']:checked").length==0){
 		$(".errorChk").text("Required Plan");
 	}else{
-		wq_plan_id=$("input[name='plan_select_wq']:checked").val();
+		wq_plan_id=$("input[name='plan_select_wq']:checked").val();		
 		wq_activities=$("#activityNameWq"+wq_plan_id).val();
 		
 		if (startDtWq==""){
 			var now = new Date();
 			var month=now.getUTCMonth()+1;
 			startDtWq = now.getUTCFullYear()+ "-" + month + "-" + now.getUTCDate()+" "+now.getHours()+':'+now.getMinutes()+':'+now.getSeconds();
+		}
+		
+		
+		var projectName_waterQ=$("#projectNameWq"+wq_plan_id).val();
+		
+		var selectWardCodeWq=$("#selectWardCodeWq").val();
+		var wordCodeListWq=localStorage.cbo_id_wq.split('|||');			
+		cboStrWq='<select name="wq_cbo_combo" id="wq_cbo_combo" >'	//data-native-menu="false"	
+		cboStrWq+='<option value="">Select Ward Code</option><sup class="reqField">*</sup>'
+		for (j=0;j<eval(wordCodeListWq.length);j++){
+			wordCodeWqLi=wordCodeListWq[j].split('||');
+			wordCWq=wordCodeWqLi[0]
+			wordNWq=wordCodeWqLi[1]
+			project_nameWq=wordCodeWqLi[2]
+			
+			//alert(project_nameWq +'|||'+projectWq);
+			if (project_nameWq==projectName_waterQ){
+				if ((selectWardCodeWq !='') && (selectWardCodeWq==wordCWq)){
+					cboStrWq+='<option value="'+wordCWq+'" selected="selected">'+wordCWq+'-'+wordNWq+'</option>'
+				}else{
+					cboStrWq+='<option value="'+wordCWq+'" >'+wordCWq+'-'+wordNWq+'</option>'  //+'-'+project_nameWq+'||||'+test
+				}
+			}
+		}
+		cboStrWq+='</select>'  
+		localStorage.cboStrWq=cboStrWq;
+		
+		if (cboFlagWq==0){
+			$('#wQCboIdDiv').html(localStorage.cboStrWq);
+			cboFlagWq=1;
+		}else{
+			$('#wQCboIdDiv').empty();
+			$('#wQCboIdDiv').append(localStorage.cboStrWq).trigger('create');
 		}
 		
 		$(".errorChk").text("");
@@ -3627,7 +3711,8 @@ function WaterQDataSave(){
 							reviewWQDisplayFlag==false;
 							arrayIdWq=-1;
 							
-							$(".errorChk").text("Successfully saved for review");
+							$(".errorChk").text("");
+							$(".sucMsg").text("Successfully saved for review");
 							$("#btn_take_wq_pic").hide();
 							$("#btn_wq_lat_long").hide();
 							//location.reload();
@@ -3710,6 +3795,23 @@ function reviewWaterQData(){
 				}
 			
 			//-----------------------------
+			
+			if (planFlagWq==0){
+				$('#planWqlistDiv').html(localStorage.planWqStr);
+				planFlagWq=1;
+			}else{
+				$('#planWqlistDiv').empty();
+				$('#planWqlistDiv').append(localStorage.planWqStr).trigger('create');
+			}
+			if (cboFlagWq==0){
+				$('#wQCboIdDiv').html(localStorage.cboStrWq);
+				cboFlagWq=1;
+			}else{
+				$('#wQCboIdDiv').empty();
+				$('#wQCboIdDiv').append(localStorage.cboStrWq).trigger('create');
+			}
+			
+			
 			reviewWQDisplayFlag==false;
 			arrayIdWq=-1;
 			
@@ -3745,7 +3847,7 @@ function reviewWqDataNext(){
 		//------------------
 		$( "input:radio[name='plan_select_wq'][value='"+waterQRevDetailsArray[0]+"']" ).attr('checked','checked');
 		//$("#plan_select").val(achRevDetailsArray[0])
-		
+		$("#selectWardCodeWq").val(waterQRevDetailsArray[1]);
 		$("#wq_cbo_combo").val(waterQRevDetailsArray[1]);
 		$("#wq_vill").val(waterQRevDetailsArray[2]);
 		$("#providedBy").val(waterQRevDetailsArray[3]);
@@ -4451,8 +4553,8 @@ function syncDataWQ(){
 						
 						wq_plan_id="";
 						wq_CBO_id="";
-						
-						$(".errorChk").text('Successfully Submited');
+						$(".sucMsg").text('Successfully Submitted');
+						//$(".errorChk").text('Successfully Submited');
 						$("#btn_wq_lat_long").hide();
 					}else{
 						//$(".errorChk").text('Failed to Submit');
