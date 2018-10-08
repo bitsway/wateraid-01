@@ -2402,7 +2402,7 @@ function waterQtyClick(){
 					
 			planWqStr+='<li class="ui-field-contain"><fieldset data-role="controlgroup">'
 			planWqStr+='<input type="radio" name="plan_select_wq"  id="'+planWq_id+'" value="'+planWq_id+'" >'
-			planWqStr+='<label for="'+planWq_id+'" >'+activity_idWq+'-'+activityNameWq+'-'+planWq_id+'-'+projectWq+'</label>'
+			planWqStr+='<label for="'+planWq_id+'" >'+activity_idWq+'-'+activityNameWq+'-'+planWq_id+'</label>'
 			planWqStr+='<input type="hidden" name="activityNameWq"  id="activityNameWq'+planWq_id+'" value="'+activityNameWq+'">'
 			planWqStr+='<input type="hidden" id="projectNameWq'+planWq_id+'" value="'+projectWq+'">'
 			planWqStr+='</fieldset></li>'
@@ -4553,6 +4553,7 @@ function syncDataWQ(){
 						
 						wq_plan_id="";
 						wq_CBO_id="";
+						$(".errorChk").text("");
 						$(".sucMsg").text('Successfully Submitted');
 						//$(".errorChk").text('Successfully Submited');
 						$("#btn_wq_lat_long").hide();
