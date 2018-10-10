@@ -98,7 +98,7 @@
         		<a data-role="button" id="btn_area_lat_long" onClick="getLocationInfoAreaWq();" class="ui-btn" >Area location</a>
            </ul> 
     </div>
-    <div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >mReporting 20181008</div>
+    <div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >mReporting 20181010</div>
   
     <div data-role="panel" id="leftpanel" data-position="left" data-display="overlay" data-theme="d">
         <div align="center"><img src="wab.jpg"></div>
@@ -994,7 +994,28 @@
 
 
 
-<!-- --------------------------------------------------------------Water Quality page--------------------------------------- -->	
+<!-- --------------------------------------------------------------Water Quality page--------------------------------------- -->
+<div data-role="page" id="setDomain" data-theme="d" style="overflow:scroll" >
+    <div data-theme="d" data-role="header" data-position="fixed" >
+    <a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
+        <!--<a data-role="button" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>-->
+        <h3></h3>
+    </div>
+    
+    <div data-role="content">
+        <ul data-role="listview" data-inset="true" data-theme="d">
+            <li class="ui-field-contain">
+            	<label for="">Select Domain &nbsp;<sup class="reqField">*</sup></label>
+            	<div id="asignDomainWq"></div>
+            </li>
+            </ul>
+            
+        <a data-role="button" onClick="select_domainWq()"   data-transition="slide" >Next</a>
+        <br />
+        <div class="errorChk"></div>
+    </div>
+<!--<div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
+--></div>
 
 			
 <!-- ---------plan list water quality page----------------------------- -->
@@ -1006,6 +1027,7 @@
     </div>
     <div data-role="content">
         <div class="errorChk"></div>
+        <input type="hidden" id="selectIndicatorWq" />
         <div id="planWqlistDiv"></div>
         <a data-role="button" href="#" onClick="wQLocationNext();" >Next</a>
     
