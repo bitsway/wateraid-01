@@ -1935,7 +1935,9 @@ function reviewDataNext(){
 	var achRevDetails=achivementRevArray2[arrayId];
 	
 	var achRevDetailsArray=achRevDetails.split('fdfd');
-
+	
+	
+	//achivementSave=asinDomain+'fdfd'+interventionArea+'fdfd'+service_type_ot+'fdfd'+service_type_hh+'fdfd'+serviceLevelWs+'fdfd'+serviceLevelHy+'fdfd'+serviceLevelXsector+'fdfd'+achPlanId+'fdfd'+achPlanActivities+'fdfd'+typeOfFacility+'fdfd'+exManagCon+'fdfd'+availHandWashFac+'fdfd'+availWaterSoapFac+'fdfd'+typeOfEven+'fdfd'+evenIssues+'fdfd'+wordCode+'fdfd'+achID+'fdfd'+communityName+'fdfd'+ownerName+'fdfd'+sMale+'fdfd'+sFemale+'fdfd'+sBoys+'fdfd'+sGirls+'fdfd'+sBoysUnder+'fdfd'+sGirlsUnder+'fdfd'+sPopulation+'fdfd'+sHouse_hold+'fdfd'+sDisabilityM+'fdfd'+sDisabilityF+'fdfd'+bMale+'fdfd'+bFemale+'fdfd'+bBoys+'fdfd'+bGirls+'fdfd'+bBoysUnder+'fdfd'+bGirlsUnder+'fdfd'+bPopulation+'fdfd'+bHouse_hold+'fdfd'+bDisabilityM+'fdfd'+bDisabilityF+'fdfd'+lMale+'fdfd'+lFemale+'fdfd'+lBoys+'fdfd'+lGirls+'fdfd'+lBoysUnder+'fdfd'+lGirlsUnder+'fdfd'+lPopulation+'fdfd'+lHouse_hold+'fdfd'+lDisabilityM+'fdfd'+lDisabilityF+'fdfd'+dMale+'fdfd'+dFemale+'fdfd'+dBoys+'fdfd'+dGirls+'fdfd'+dBoysUnder+'fdfd'+dGirlsUnder+'fdfd'+dPopulation+'fdfd'+dHouse_hold+'fdfd'+dDisabilityM+'fdfd'+dDisabilityF+'fdfd'+eMale+'fdfd'+eFemale+'fdfd'+totalWiBen+'fdfd'+totalInBen+'fdfd'+achServiceRecpt+'fdfd'+achPhoto+'fdfd'+startDt+'fdfd'+latitude+'fdfd'+longitude;
 	
 	$("#asign_domain").val(achRevDetailsArray[0]);
 	$("#intervention_area").val(achRevDetailsArray[1]);
@@ -4518,7 +4520,8 @@ function waterQDataSubmit(){
 		$(".errorChk").text("Please confirm Photo");
 		$("#btn_wq_save").show();
 		$("#btn_wq_submit").show();
-	}else if((latitudewq==0 || longitudewq==0) || (localStorage.latitudeAreaWq==0 || localStorage.longitudeAreaWq==0)){
+	}else
+	if((latitudewq==0 || longitudewq==0) || (localStorage.latitudeAreaWq==0 || localStorage.longitudeAreaWq==0)){
 		$(".errorChk").text("Please confirm your location");
 		$("#btn_wq_save").show();
 		$("#btn_wq_submit").show();		
@@ -4593,6 +4596,7 @@ function syncDataWQ(){
 						
 						wq_plan_id="";
 						wq_CBO_id="";
+						$(".errorChk").text("")
 						$(".sucMsg").text('Successfully Submitted');
 						//$(".errorChk").text('Successfully Submited');
 						$("#btn_wq_lat_long").hide();
