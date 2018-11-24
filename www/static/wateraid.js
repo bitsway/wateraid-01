@@ -75,10 +75,10 @@ function onErrorAreaWq(error) {
    $(".errorChk").html("Failed to Confirmed Location.");
 }
 //---Online
-var apipath="http://w05.yeapps.com/wateraid/syncmobile_20181108/";
+var apipath="http://w05.yeapps.com/wateraid/syncmobile_20181125/";
 
 //--- local
-//var apipath="http://127.0.0.1:8000/wateraid/syncmobile_20181108/";
+//var apipath="http://127.0.0.1:8000/wateraid/syncmobile/";
 
 
 var planFlag=0;
@@ -232,9 +232,9 @@ $(function(){
 //			  url:apipath+'dataSyncCheck?cid=WAB&mobile='+mobile+'&password='+encodeURI(password)+'&sync_code='+localStorage.sync_code,
 				url:apipath+'passwordCheck?cid=WAB&mobile='+mobile+'&password='+encodeURI(password)+'&sync_code='+localStorage.sync_code,
 			  success: function(result) {
-				syncResult=result
+				//syncResult=result
 				//alert(syncResult);
-				var syncResultArray = syncResult.split('rdrd');
+				var syncResultArray = result.split('rdrd');
 					if (syncResultArray[0]=='YES'){	
 						localStorage.sync_code=syncResultArray[1];
 						localStorage.plan_list=syncResultArray[2];
@@ -339,7 +339,9 @@ $(function(){
 						$('#syncBasic').show();
 					}
 				
-			  }//----/success f
+			  },error:function(result){
+				 	$(".errorChk").text('Network timeout. Please ensure you have good network signal and working Internet.'); 
+				 }
 			});//------/ajax
 		 
 		 }//-----/field
@@ -2257,19 +2259,54 @@ function syncDataAch(){
 			$(".errorChk").text('');
 			$(".sucMsg").text('Successfully Submitted');
 			$("#btn_ach_save").hide();
+			$("#btn_ach_submit").hide();
 			$("#btn_take_pic").hide();
 			$("#btn_ach_lat_long").hide();
 			//$("#achlocation").val('Successfully Submited');
 			
-		}else if(result=='Failed4'){
+		/*}else if(result=='Failed4'){
 			//$(".errorChk").text('Failed to Submit');
 			$(".errorChk").text('Achievement ID Already Exists');									
 			$("#btn_ach_submit").show();
 		}else{
 			$(".errorChk").text('Try again after 5 minutes');																		
 			$("#btn_ach_submit").show();
+		}*/
+		
+		}else if(result=='Failed1'){
+			$(".errorChk").text('Try again after 5 minutes');	
+			$("#btn_ach_submit").show();
+			$("#btn_ach_save").show();
+		}else if(result=='Failed2'){
+			$(".errorChk").text('Authorization Error');	
+			$("#btn_ach_submit").show();
+			$("#btn_ach_save").show();
+		}else if(result=='Failed3'){
+			$(".errorChk").text('Invalid Domain & Indicator');	
+			$("#btn_ach_submit").show();
+			$("#btn_ach_save").show();					
+		}else if(result=='Failed4'){
+			$(".errorChk").text('Achievement ID Already Exists');	
+			$("#btn_ach_submit").show();
+			$("#btn_ach_save").show();
+		}else if(result=='Failed5'){
+			$(".errorChk").text('Invalid Domain & Ward Code');	
+			$("#btn_ach_submit").show();
+			$("#btn_ach_save").show();
+		/*}else if(result=='Failed6'){
+			$(".errorChk").text('Invalid Facility ID & Ward Code');	
+			$("#btn_ach_submit").show();
+			$("#btn_ach_save").show();	*/
+		}else{
+			$(".errorChk").text('Please Save and try to Submit later');
+			$("#btn_ach_submit").show();
+			$("#btn_ach_save").show();
 		}
-	   }//end result
+	 },error: function(result){
+			 $(".errorChk").text('Network timeout. Please ensure you have good network signal and working Internet.');
+			 $("#btn_ach_submit").show();
+			 $("#btn_ach_save").show();
+		}
 	});//end ajax
 }
 
@@ -2419,6 +2456,9 @@ function waterQtyClick(){
 	
 function select_domainWq(){
 	asinDomainWaterQ=$("#asign_domainWq").val();
+	wqAsinDomainStr=asinDomainWaterQ.lastIndexOf('/');
+	projectWq=asinDomainWaterQ.substr(0,wqAsinDomainStr);
+	
 	var selectIndicatorWq=$("#selectIndicatorWq").val();
 	
 	var planWqLst=localStorage.plan_wq.split('|||');
@@ -2428,19 +2468,22 @@ function select_domainWq(){
 		activityNameWq=planWqLi[0]
 		activity_idWq=planWqLi[1]
 		planWq_id=planWqLi[2]
+		planWq_project=planWqLi[3]
 		
-		if ((selectIndicatorWq!='') && (selectIndicatorWq==planWq_id)){		
-			planWqStr+='<li class="ui-field-contain"><fieldset data-role="controlgroup">'
-			planWqStr+='<input type="radio" name="plan_select_wq"  id="'+planWq_id+'" value="'+planWq_id+'" checked>'
-			planWqStr+='<label for="'+planWq_id+'" style="color:#05940a;">'+activity_idWq+'-'+activityNameWq+'-'+planWq_id+'</label>'
-			planWqStr+='<input type="hidden" name="activityNameWq"  id="activityNameWq'+planWq_id+'" value="'+activityNameWq+'">'
-			planWqStr+='</fieldset></li>'
-		}else{
-			planWqStr+='<li class="ui-field-contain"><fieldset data-role="controlgroup">'
-			planWqStr+='<input type="radio" name="plan_select_wq"  id="'+planWq_id+'" value="'+planWq_id+'" >'
-			planWqStr+='<label for="'+planWq_id+'" >'+activity_idWq+'-'+activityNameWq+'-'+planWq_id+'</label>'
-			planWqStr+='<input type="hidden" name="activityNameWq"  id="activityNameWq'+planWq_id+'" value="'+activityNameWq+'">'
-			planWqStr+='</fieldset></li>'
+		if (projectWq==planWq_project){
+			if ((selectIndicatorWq!='') && (selectIndicatorWq==planWq_id)){		
+				planWqStr+='<li class="ui-field-contain"><fieldset data-role="controlgroup">'
+				planWqStr+='<input type="radio" name="plan_select_wq"  id="'+planWq_id+'" value="'+planWq_id+'" checked>'
+				planWqStr+='<label for="'+planWq_id+'" style="color:#05940a;">'+activity_idWq+'-'+activityNameWq+'-'+planWq_id+'</label>'
+				planWqStr+='<input type="hidden" name="activityNameWq"  id="activityNameWq'+planWq_id+'" value="'+activityNameWq+'">'
+				planWqStr+='</fieldset></li>'
+			}else{
+				planWqStr+='<li class="ui-field-contain"><fieldset data-role="controlgroup">'
+				planWqStr+='<input type="radio" name="plan_select_wq"  id="'+planWq_id+'" value="'+planWq_id+'" >'
+				planWqStr+='<label for="'+planWq_id+'" >'+activity_idWq+'-'+activityNameWq+'-'+planWq_id+'</label>'
+				planWqStr+='<input type="hidden" name="activityNameWq"  id="activityNameWq'+planWq_id+'" value="'+activityNameWq+'">'
+				planWqStr+='</fieldset></li>'
+			}
 		}
 		
 	}//for
@@ -4520,8 +4563,7 @@ function waterQDataSubmit(){
 		$(".errorChk").text("Please confirm Photo");
 		$("#btn_wq_save").show();
 		$("#btn_wq_submit").show();
-	}else
-	if((latitudewq==0 || longitudewq==0) || (localStorage.latitudeAreaWq==0 || localStorage.longitudeAreaWq==0)){
+	}else if((latitudewq==0 || longitudewq==0) || (localStorage.latitudeAreaWq==0 || localStorage.longitudeAreaWq==0)){
 		$(".errorChk").text("Please confirm your location");
 		$("#btn_wq_save").show();
 		$("#btn_wq_submit").show();		
@@ -4599,20 +4641,44 @@ function syncDataWQ(){
 						$(".errorChk").text("")
 						$(".sucMsg").text('Successfully Submitted');
 						//$(".errorChk").text('Successfully Submited');
+						$("#btn_wq_save").hide();		
+						$("#btn_wq_submit").hide();	
 						$("#btn_wq_lat_long").hide();
-					}else if(result=='Failed10'){
+					
+					}else if(result=='Failed1'){
+						$(".errorChk").text('Try again after 5 minutes');	
+						$("#btn_wq_submit").show();
+						$("#btn_wq_save").show();
+					}else if(result=='Failed2'){
+						$(".errorChk").text('Authorization Error');	
+						$("#btn_wq_submit").show();
+						$("#btn_wq_save").show();	
+					}else if(result=='Failed3'){
+						$(".errorChk").text('Invalid Domain & Indicator');	
+						$("#btn_wq_submit").show();
+						$("#btn_wq_save").show();						
+					}else if(result=='Failed4'){
 						$(".errorChk").text('Facility ID Already Exists');	
 						$("#btn_wq_submit").show();
 						$("#btn_wq_save").show();
+					}else if(result=='Failed5'){
+						$(".errorChk").text('Invalid Domain & Ward Code');	
+						$("#btn_wq_submit").show();
+						$("#btn_wq_save").show();
+					}else if(result=='Failed6'){
+						$(".errorChk").text('Invalid Facility ID & Ward Code');	
+						$("#btn_wq_submit").show();
+						$("#btn_wq_save").show();		
 					}else{
-						//$(".errorChk").text('Failed to Submit');
-						$(".errorChk").text('Try again after 5 minutes');
+						$(".errorChk").text('Please Save and try to Submit later');
 						$("#btn_wq_submit").show();
 						$("#btn_wq_save").show();
 						}
-					
-					
-				 }
+				 },error: function(result){
+						 $(".errorChk").text('Network timeout. Please ensure you have good network signal and working Internet.');
+						 $("#btn_wq_submit").show();
+						 $("#btn_wq_save").show();
+					}
 			});
 	
 	}
@@ -4652,27 +4718,6 @@ function onFailA(message) {
 }
 
 
-//Water
-function getWaterImage() {
-	navigator.camera.getPicture(onSuccessW, onFailW, { quality: 50,
-	targetWidth: 300,
-	destinationType: Camera.DestinationType.FILE_URI,correctOrientation: true });
-}
-
-function onSuccessW(imageURI) {
-    var image = document.getElementById('myImageW');
-    image.src = imageURI;
-	imagePathW = imageURI;
-	$("#wq_photo").val(imagePathW);
-	
-}
-
-function onFailW(message) {
-	imagePathW="";
-    alert('Failed because: ' + message);
-}
-
-
 //------------------------------------------------------------------------------
 //File upload 
 function uploadPhotoAch(imageURI, imageNameAch) {	
@@ -4692,7 +4737,7 @@ function uploadPhotoAch(imageURI, imageNameAch) {
 	options.chunkedMode = false;
 
     var ft = new FileTransfer();
-    ft.upload(imageURI, encodeURI("http://m.businesssolutionapps.com/welcome/wab_sync/fileUploader/"),winAch,fail,options);
+    ft.upload(imageURI, encodeURI("http://m.businesssolutionapps.com/welcome/wab_sync/fileUploader/"),winAch,failAch,options);
 	//ft.upload(imageURI, encodeURI("http://127.0.0.1:8000/welcome/wab_sync/fileUploader/"),winAch,fail,options);
 	
 }
@@ -4705,8 +4750,39 @@ function winAch(r) {
 	syncDataAch();
 }
 
+function failAch(error) {
+	$(".errorChk").text('Memory or Network Error. Please Save and try to Submit later');
+	$("#btn_ach_submit").show();
+	$("#btn_ach_save").show();
+    //alert("An error has occurred: Code = " + error.code);
+//    console.log("upload error source " + error.source);
+//    console.log("upload error target " + error.target);
+}
 
 
+
+
+
+//===========Water Qty============
+function getWaterImage() {
+	navigator.camera.getPicture(onSuccessW, onFailW, { quality: 50,
+	targetWidth: 300,
+	destinationType: Camera.DestinationType.FILE_URI,correctOrientation: true });
+}
+
+function onSuccessW(imageURI) {
+    var image = document.getElementById('myImageW');
+    image.src = imageURI;
+	imagePathW = imageURI;
+	$("#wq_photo").val(imagePathW);
+	
+}
+
+function onFailW(message) {
+	imagePathW="";
+	$("#wq_photo").val("");
+    alert('Failed because: ' + message);
+}
 
 //File upload 
 function uploadPhotoWQ(imageURI, imageName) {
@@ -4741,6 +4817,8 @@ function winWQ(r) {
 
 function fail(error) {
 	$(".errorChk").text('Memory or Network Error. Please Save and try to Submit later');
+	$("#btn_wq_submit").show();
+	$("#btn_wq_save").show();	
     //alert("An error has occurred: Code = " + error.code);
 //    console.log("upload error source " + error.source);
 //    console.log("upload error target " + error.target);
