@@ -75,7 +75,7 @@ function onErrorAreaWq(error) {
    $(".errorChk").html("Failed to Confirmed Location.");
 }
 //---Online
-var apipath="http://w05.yeapps.com/wateraid/syncmobile_20181125/";
+var apipath="http://w05.yeapps.com/wateraid/syncmobile_20181126/";
 
 //--- local
 //var apipath="http://127.0.0.1:8000/wateraid/syncmobile/";
@@ -231,9 +231,7 @@ $(function(){
 			$.ajax({				   
 //			  url:apipath+'dataSyncCheck?cid=WAB&mobile='+mobile+'&password='+encodeURI(password)+'&sync_code='+localStorage.sync_code,
 				url:apipath+'passwordCheck?cid=WAB&mobile='+mobile+'&password='+encodeURI(password)+'&sync_code='+localStorage.sync_code,
-			  success: function(result) {
-				//syncResult=result
-				//alert(syncResult);
+			    success: function(result) {
 				var syncResultArray = result.split('rdrd');
 					if (syncResultArray[0]=='YES'){	
 						localStorage.sync_code=syncResultArray[1];
@@ -341,6 +339,7 @@ $(function(){
 				
 			  },error:function(result){
 				 	$(".errorChk").text('Network timeout. Please ensure you have good network signal and working Internet.'); 
+					$('#syncBasic').show();
 				 }
 			});//------/ajax
 		 
@@ -1528,7 +1527,7 @@ function achiveDataSave(){
 						}
 					}
 				}else{			
-					if (achiveSavArray.length >= 10){
+					if (achiveSavArray.length >= 30){
 						addFlag=false;					
 					}else{
 						localStorage.ach_save=achivementStr+'rdrd'+achivementSave							
@@ -1537,7 +1536,7 @@ function achiveDataSave(){
 			}
 			
 			if (addFlag==false){
-				$(".errorChk").text("Maximum 10 records allowed to be saved for review");
+				$(".errorChk").text("Maximum 30 records allowed to be saved for review");
 				$("#btn_ach_save").show();
 			}else{
 				//asinProject='';
@@ -1938,8 +1937,6 @@ function reviewDataNext(){
 	
 	var achRevDetailsArray=achRevDetails.split('fdfd');
 	
-	
-	//achivementSave=asinDomain+'fdfd'+interventionArea+'fdfd'+service_type_ot+'fdfd'+service_type_hh+'fdfd'+serviceLevelWs+'fdfd'+serviceLevelHy+'fdfd'+serviceLevelXsector+'fdfd'+achPlanId+'fdfd'+achPlanActivities+'fdfd'+typeOfFacility+'fdfd'+exManagCon+'fdfd'+availHandWashFac+'fdfd'+availWaterSoapFac+'fdfd'+typeOfEven+'fdfd'+evenIssues+'fdfd'+wordCode+'fdfd'+achID+'fdfd'+communityName+'fdfd'+ownerName+'fdfd'+sMale+'fdfd'+sFemale+'fdfd'+sBoys+'fdfd'+sGirls+'fdfd'+sBoysUnder+'fdfd'+sGirlsUnder+'fdfd'+sPopulation+'fdfd'+sHouse_hold+'fdfd'+sDisabilityM+'fdfd'+sDisabilityF+'fdfd'+bMale+'fdfd'+bFemale+'fdfd'+bBoys+'fdfd'+bGirls+'fdfd'+bBoysUnder+'fdfd'+bGirlsUnder+'fdfd'+bPopulation+'fdfd'+bHouse_hold+'fdfd'+bDisabilityM+'fdfd'+bDisabilityF+'fdfd'+lMale+'fdfd'+lFemale+'fdfd'+lBoys+'fdfd'+lGirls+'fdfd'+lBoysUnder+'fdfd'+lGirlsUnder+'fdfd'+lPopulation+'fdfd'+lHouse_hold+'fdfd'+lDisabilityM+'fdfd'+lDisabilityF+'fdfd'+dMale+'fdfd'+dFemale+'fdfd'+dBoys+'fdfd'+dGirls+'fdfd'+dBoysUnder+'fdfd'+dGirlsUnder+'fdfd'+dPopulation+'fdfd'+dHouse_hold+'fdfd'+dDisabilityM+'fdfd'+dDisabilityF+'fdfd'+eMale+'fdfd'+eFemale+'fdfd'+totalWiBen+'fdfd'+totalInBen+'fdfd'+achServiceRecpt+'fdfd'+achPhoto+'fdfd'+startDt+'fdfd'+latitude+'fdfd'+longitude;
 	
 	$("#asign_domain").val(achRevDetailsArray[0]);
 	$("#intervention_area").val(achRevDetailsArray[1]);
@@ -3769,7 +3766,7 @@ function WaterQDataSave(){
 									
 									}
 							}else{				
-								if (waterQSavArray.length >= 10){
+								if (waterQSavArray.length >= 30){
 									addFlag=false;					
 								}else{
 									localStorage.water_q_save=waterQStr+'rdrd'+waterQualitySave
@@ -3779,7 +3776,7 @@ function WaterQDataSave(){
 						}
 						
 						if (addFlag==false){
-							$(".errorChk").text("Maximum 10 records allowed to be saved for review");
+							$(".errorChk").text("Maximum 30 records allowed to be saved for review");
 							$("#btn_wq_save").show();
 						}else{
 							wq_plan_id="";
