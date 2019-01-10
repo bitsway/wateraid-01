@@ -75,7 +75,7 @@ function onErrorAreaWq(error) {
    $(".errorChk").html("Failed to Confirmed Location.");
 }
 //---Online
-var apipath="http://w05.yeapps.com/wateraid/syncmobile_20181126/";
+var apipath="http://w05.yeapps.com/wateraid/syncmobile_20190110/";
 
 //--- local
 //var apipath="http://127.0.0.1:8000/wateraid/syncmobile/";
@@ -1936,7 +1936,6 @@ function reviewDataNext(){
 	var achRevDetails=achivementRevArray2[arrayId];
 	
 	var achRevDetailsArray=achRevDetails.split('fdfd');
-	
 	
 	$("#asign_domain").val(achRevDetailsArray[0]);
 	$("#intervention_area").val(achRevDetailsArray[1]);
@@ -4569,7 +4568,6 @@ function waterQDataSubmit(){
 			$(".errorChk").text("New records not available");
 			$("#btn_wq_submit").show();
 		}else{
-			//imagePathW="test1";
 			if (imagePathW!=""){
 				$(".errorChk").text("Syncing photo..")
 				imageName = localStorage.mobile_no+'_'+get_time+".jpg";					
@@ -4641,6 +4639,8 @@ function syncDataWQ(){
 						$("#btn_wq_save").hide();		
 						$("#btn_wq_submit").hide();	
 						$("#btn_wq_lat_long").hide();
+						
+						
 					
 					}else if(result=='Failed1'){
 						$(".errorChk").text('Try again after 5 minutes');	
@@ -4695,8 +4695,8 @@ function showLatLong(){
 
 //Acheivement
 function getAchivementImage() {
-	navigator.camera.getPicture(onSuccessA, onFailA, { quality: 90,
-	targetWidth: 600,
+	navigator.camera.getPicture(onSuccessA, onFailA, { quality: 70,
+	targetWidth: 300,
 	destinationType: Camera.DestinationType.FILE_URI,correctOrientation: true });
 }
 
@@ -4762,7 +4762,7 @@ function failAch(error) {
 
 //===========Water Qty============
 function getWaterImage() {
-	navigator.camera.getPicture(onSuccessW, onFailW, { quality: 50,
+	navigator.camera.getPicture(onSuccessW, onFailW, { quality: 70,
 	targetWidth: 300,
 	destinationType: Camera.DestinationType.FILE_URI,correctOrientation: true });
 }
