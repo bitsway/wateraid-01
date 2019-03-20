@@ -67,18 +67,18 @@ function onSuccessAreaWq(position) {
 }
 // onError Callback receives a PositionError object
 function onErrorAreaWq(error) {
-   $("#area_lat").val(1);
-   $("#area_long").val(1);
+   $("#area_lat").val(0);
+   $("#area_long").val(0);
    /*localStorage.latitudeAreaWq=$("#area_lat").val();
 	localStorage.longitudeAreaWq=$("#area_long").val();
    alert(localStorage.latitudeAreaWq+'-'+localStorage.longitudeAreaWq);*/
    $(".errorChk").html("Failed to Confirmed Location.");
 }
 //---Online
-var apipath="http://w05.yeapps.com/wateraid/syncmobile_wq_20190320/";
+var apipath="http://w05.yeapps.com/wateraid/syncmobile_20190110/";
 
 //--- local
-//var apipath="http://127.0.0.1:8000/wateraid/syncmobile_wq_20190320/";
+//var apipath="http://127.0.0.1:8000/wateraid/syncmobile/";
 
 
 var planFlag=0;
@@ -1937,9 +1937,6 @@ function reviewDataNext(){
 	
 	var achRevDetailsArray=achRevDetails.split('fdfd');
 	
-	
-	//achivementSave=asinDomain+'fdfd'+interventionArea+'fdfd'+service_type_ot+'fdfd'+service_type_hh+'fdfd'+serviceLevelWs+'fdfd'+serviceLevelHy+'fdfd'+serviceLevelXsector+'fdfd'+achPlanId+'fdfd'+achPlanActivities+'fdfd'+typeOfFacility+'fdfd'+exManagCon+'fdfd'+availHandWashFac+'fdfd'+availWaterSoapFac+'fdfd'+typeOfEven+'fdfd'+evenIssues+'fdfd'+wordCode+'fdfd'+achID+'fdfd'+communityName+'fdfd'+ownerName+'fdfd'+sMale+'fdfd'+sFemale+'fdfd'+sBoys+'fdfd'+sGirls+'fdfd'+sBoysUnder+'fdfd'+sGirlsUnder+'fdfd'+sPopulation+'fdfd'+sHouse_hold+'fdfd'+sDisabilityM+'fdfd'+sDisabilityF+'fdfd'+bMale+'fdfd'+bFemale+'fdfd'+bBoys+'fdfd'+bGirls+'fdfd'+bBoysUnder+'fdfd'+bGirlsUnder+'fdfd'+bPopulation+'fdfd'+bHouse_hold+'fdfd'+bDisabilityM+'fdfd'+bDisabilityF+'fdfd'+lMale+'fdfd'+lFemale+'fdfd'+lBoys+'fdfd'+lGirls+'fdfd'+lBoysUnder+'fdfd'+lGirlsUnder+'fdfd'+lPopulation+'fdfd'+lHouse_hold+'fdfd'+lDisabilityM+'fdfd'+lDisabilityF+'fdfd'+dMale+'fdfd'+dFemale+'fdfd'+dBoys+'fdfd'+dGirls+'fdfd'+dBoysUnder+'fdfd'+dGirlsUnder+'fdfd'+dPopulation+'fdfd'+dHouse_hold+'fdfd'+dDisabilityM+'fdfd'+dDisabilityF+'fdfd'+eMale+'fdfd'+eFemale+'fdfd'+totalWiBen+'fdfd'+totalInBen+'fdfd'+achServiceRecpt+'fdfd'+achPhoto+'fdfd'+startDt+'fdfd'+latitude+'fdfd'+longitude;
-	
 	$("#asign_domain").val(achRevDetailsArray[0]);
 	$("#intervention_area").val(achRevDetailsArray[1]);
 	if (achRevDetailsArray[1]=='Others'){
@@ -2455,26 +2452,21 @@ function waterQtyClick(){
 	
 function select_domainWq(){
 	asinDomainWaterQ=$("#asign_domainWq").val();
-	intervention_area_wq=$("#intervention_area_wq").val();
-	//test_type=$("#test_type").val();
-	
 	wqAsinDomainStr=asinDomainWaterQ.lastIndexOf('/');
 	projectWq=asinDomainWaterQ.substr(0,wqAsinDomainStr);
 	
 	var selectIndicatorWq=$("#selectIndicatorWq").val();
-
+	
 	var planWqLst=localStorage.plan_wq.split('|||');
 	planWqStr='<ul data-role="listview" data-inset="true">'
 	 for (i=0;i<eval(planWqLst.length);i++){
 		planWqLi=planWqLst[i].split('||');
 		activityNameWq=planWqLi[0]
 		activity_idWq=planWqLi[1]
-		indicatorTypeWq=planWqLi[2]
-		sectorWq=planWqLi[3]
-		planWq_id=planWqLi[4]
-		planWq_project=planWqLi[5]
+		planWq_id=planWqLi[2]
+		planWq_project=planWqLi[3]
 		
-		if ((projectWq==planWq_project) && (indicatorTypeWq==intervention_area_wq)){
+		if (projectWq==planWq_project){
 			if ((selectIndicatorWq!='') && (selectIndicatorWq==planWq_id)){		
 				planWqStr+='<li class="ui-field-contain"><fieldset data-role="controlgroup">'
 				planWqStr+='<input type="radio" name="plan_select_wq"  id="'+planWq_id+'" value="'+planWq_id+'" checked>'
@@ -2578,8 +2570,8 @@ function waterDataNext(){
 			$(".errorChk").text("Required Ward Code ");
 		}else if (wq_vill=="" ){
 			$(".errorChk").text("Required Village/ward/slum Name ");
-		/*}else if (test_type_val=="" ){
-			$(".errorChk").text("Required Test Type ");*/
+		}else if (test_type_val=="" ){
+			$(".errorChk").text("Required Test Type ");
 		}else if (type_of_wq_facility=="" ){
 			$(".errorChk").text("Required Type of Water facility ");
 		}else if (provided_by=="" ){
@@ -2622,15 +2614,16 @@ function waterData2Next(){
 		wq_maintain_by=$("input[name='maintain_by']:checked").val();
 		//user_w_payment=$("input[name='user_w_payment']:checked").val();
 		
-		/*if (wq_maintain_by==undefined ){
+		if (wq_maintain_by==undefined ){
 			$(".errorChk").text("Required Maitained By ");
-		
-		}else{	*/
+		/*}else if (user_w_payment==undefined ){
+			$(".errorChk").text("Required user water payment ");*/
+		}else{	
 			var url="#waterData3";
 			$(".errorChk").text("");
 			$.mobile.navigate(url);
 			//$(location).attr('href',url);
-		//}
+		}
 	
 	};	
 
@@ -2662,8 +2655,10 @@ function waterData3Next(){
 		}else if (first_d=="" || first_m=="" || first_y=="" ){
 			$(".errorChk").text("Required Valid First Date ");
 		}else*/ 
-		/*if (last_d=="" || last_m=="" || last_y=="" ){
+		if (last_d=="" || last_m=="" || last_y=="" ){
 			$(".errorChk").text("Required Valid Last Date ");
+		/*}else if (sample_c_d=="" || sample_c_m=="" || sample_c_y=="" ){
+			$(".errorChk").text("Required Valid Sample Collection Date ");*/
 		}else{
 			
 			var now = new Date();
@@ -2693,7 +2688,7 @@ function waterData3Next(){
 			var wq_analysis = new Date(wq_analysis_date);
 			
 			var date_flag=true;
-			var dateError="";*/
+			var dateError="";
 			
 			/*if (wq_ins=='Invalid Date'){
 				date_flag=false;
@@ -2701,46 +2696,46 @@ function waterData3Next(){
 			}else if (wq_first=='Invalid Date'){
 				date_flag=false;
 				dateError="Invalid First Date "+wq_first_date;				
-			}else if(wq_last=='Invalid Date'){
+			}else */if(wq_last=='Invalid Date'){
 				date_flag=false;
 				dateError="Invalid Last Date "+wq_last_date;	
 			}else if(wq_analysis=='Invalid Date'){
 				date_flag=false;
 				dateError="Invalid Sample Collection Date "+wq_analysis_date;;	
-			}*/
+			}
 						
 			//------------------------
-			/*if (date_flag==false){				
+			if (date_flag==false){				
 				$(".errorChk").text(dateError);
-			}else{	*/		
+			}else{			
 					/*if (wq_first>currentDay){
 						$(".errorChk").text("Required First Date Less Than Today");				
-					}else*/ /*if(wq_last>currentDay){
+					}else*/ if(wq_last>currentDay){
 						$(".errorChk").text("Required Last Date Less Than Today");
 					}else if(wq_analysis>currentDay){
 						$(".errorChk").text("Required Sample collection Date Less Than Today");
-					}else{*/
+					}else{
 						/*if(wq_first>wq_last){
 							$(".errorChk").text("Required Last Date Greater Than First Date");				
 						}else{*/
 							/*if(wq_last<wq_analysis){
 								$(".errorChk").text("Required sample collection Date Less then Last Date");
 							}else{*/
-								/*$(".errorChk").text("");
+								$(".errorChk").text("");
 								if (test_type_val=="Pre Instalation"){
 									var url="#waterData7";				
 									$.mobile.navigate(url);								
-								}else{*/
+								}else{
 									var url="#waterData4";				
 									$.mobile.navigate(url);
-								//}
+								}
 								
 								//$(location).attr('href',url);
 								/*}*/
 							  //} 
-							//}
-					//}//
-			//}
+							}
+					}//
+			}
 	
 	};	
 
@@ -2751,7 +2746,7 @@ function waterData4Next(){
 		//wq_appDate=$("#appDate").val();
 		//wq_handOvrDate=$("#handOvrDate").val();
 		
-		/*var app_d=$("#app_d").val();
+		var app_d=$("#app_d").val();
 		var app_m=$("#app_m").val();
 		var app_y=$("#app_y").val();
 		
@@ -2829,11 +2824,11 @@ function waterData4Next(){
 			}					
 		}else{
 			wq_siteSelectDate="";
-			wq_handOvrDate="";*/
+			wq_handOvrDate="";
 			var url="#waterData5";				
 			$.mobile.navigate(url);
 			
-		//}
+		}
 	
 }
 
@@ -2847,7 +2842,7 @@ function waterData5Next(){
 		caretakerPhone=$("#caretakerPhoneNo").val();		
 		
 		$(".errorChk").text("");
-		var url="#waterData6";				
+		var url="#waterData7";				
 		$.mobile.navigate(url);
 		//$(location).attr('href',url);
 		
@@ -3034,799 +3029,76 @@ function testType(){
 	}			
 }
 
-function selectWaterFacility(){
-	select_water_facility=$("#select_water_facility").val();
-	if (select_water_facility=='Tubewell'){	
-//=======================Test Kit
-		/*$("#tKit_ttc_row").hide();
-		$("#tKit_as_row").hide();
-		$("#tKit_fc_row").hide();*/
-		$("#tKit_sn_bacteria_row").hide();
-		$("#tKit_turbidity_row").hide();
-		$("#tKit_conductivity_row").hide();
-		/*$("#tKit_iron_row").hide();
-		$("#tKit_mn_row").hide();
-		$("#tKit_chloride_row").hide();
-		$("#tKit_bn_row").hide();
-		$("#tKit_ph_row").hide();
-		$("#tKit_si_row").hide();*/
-		//show
-		$("#tKit_ttc_row").show();
-		$("#tKit_as_row").show();
-		$("#tKit_fc_row").show();
-		/*$("#tKit_sn_bacteria_row").show();
-		$("#tKit_turbidity_row").show();
-		$("#tKit_conductivity_row").show();*/
-		$("#tKit_iron_row").show();
-		$("#tKit_mn_row").show();
-		$("#tKit_chloride_row").show();
-		$("#tKit_bn_row").show();
-		$("#tKit_ph_row").show();
-		$("#tKit_si_row").show();
-//=======================Test Score 
-		$("#tScore_sn_bacteria_row").hide();
-		$("#tScore_turbidity_row").hide();
-		$("#tScore_conductivity_row").hide();
-		//show
-		$("#tScore_ttc_row").show();
-		$("#tScore_as_row").show();
-		$("#tScore_fc_row").show();
-		$("#tScore_iron_row").show();
-		$("#tScore_mn_row").show();
-		$("#tScore_chloride_row").show();
-		$("#tScore_bn_row").show();
-		$("#tScore_ph_row").show();
-		$("#tScore_si_row").show();
-		
-//=======================Tested at 
-		$("#tAt_sn_bacteria_row").hide();
-		$("#tAt_turbidity_row").hide();
-		$("#tAt_conductivity_row").hide();
-		//show
-		$("#tAt_ttc_row").show();
-		$("#tAt_as_row").show();
-		$("#tAt_fc_row").show();
-		$("#tAt_iron_row").show();
-		$("#tAt_mn_row").show();
-		$("#tAt_chloride_row").show();
-		$("#tAt_bn_row").show();
-		$("#tAt_ph_row").show();	
-//=======================Tested Date 
-		$("#tDate_sn_bacteria_row").hide();
-		$("#tDate_turbidity_row").hide();
-		$("#tDate_conductivity_row").hide();
-		//show
-		$("#tDate_ttc_row").show();
-		$("#tDate_as_row").show();
-		$("#tDate_fc_row").show();
-		$("#tDate_iron_row").show();
-		$("#tDate_mn_row").show();
-		$("#tDate_chloride_row").show();
-		$("#tDate_bn_row").show();
-		$("#tDate_ph_row").show();	
-		$("#tDate_si_row").show();
-//=======================Tested by 
-		$("#tBy_sn_bacteria_row").hide();
-		$("#tBy_turbidity_row").hide();
-		$("#tBy_conductivity_row").hide();
-		//show
-		$("#tBy_ttc_row").show();
-		$("#tBy_as_row").show();
-		$("#tBy_fc_row").show();
-		$("#tBy_iron_row").show();
-		$("#tBy_mn_row").show();
-		$("#tBy_chloride_row").show();
-		$("#tBy_bn_row").show();
-		$("#tBy_ph_row").show();	
-		$("#tBy_si_row").show();
-	}else if (select_water_facility=='PSF'){	
-		$("#tKit_conductivity_row").hide();
-		$("#tKit_mn_row").hide();
-		$("#tKit_chloride_row").hide();
-		$("#tKit_bn_row").hide();
-		//show
-		$("#tKit_ttc_row").show();
-		$("#tKit_as_row").show();
-		$("#tKit_fc_row").show();
-		$("#tKit_sn_bacteria_row").show();
-		$("#tKit_turbidity_row").show();
-		$("#tKit_iron_row").show();
-		$("#tKit_ph_row").show();
-		$("#tKit_si_row").show();
-//=====================Test Score
-		$("#tScore_conductivity_row").hide();
-		$("#tScore_mn_row").hide();
-		$("#tScore_chloride_row").hide();
-		$("#tScore_bn_row").hide();
-		//show
-		$("#tScore_ttc_row").show();
-		$("#tScore_as_row").show();
-		$("#tScore_fc_row").show();
-		$("#tScore_sn_bacteria_row").show();
-		$("#tScore_turbidity_row").show();
-		$("#tScore_iron_row").show();
-		$("#tScore_ph_row").show();
-		$("#tScore_si_row").show();
-//=====================Tested at
-		$("#tAt_conductivity_row").hide();
-		$("#tAt_mn_row").hide();
-		$("#tAt_chloride_row").hide();
-		$("#tAt_bn_row").hide();
-		//show
-		$("#tAt_ttc_row").show();
-		$("#tAt_as_row").show();
-		$("#tAt_fc_row").show();
-		$("#tAt_sn_bacteria_row").show();
-		$("#tAt_turbidity_row").show();
-		$("#tAt_iron_row").show();
-		$("#tAt_ph_row").show();
-//=====================Tested Date
-		$("#tDate_conductivity_row").hide();
-		$("#tDate_mn_row").hide();
-		$("#tDate_chloride_row").hide();
-		$("#tDate_bn_row").hide();
-		//show
-		$("#tDate_ttc_row").show();
-		$("#tDate_as_row").show();
-		$("#tDate_fc_row").show();
-		$("#tDate_sn_bacteria_row").show();
-		$("#tDate_turbidity_row").show();
-		$("#tDate_iron_row").show();
-		$("#tDate_ph_row").show();
-		$("#tDate_si_row").show();		
-//=====================Tested by
-		$("#tBy_conductivity_row").hide();
-		$("#tBy_mn_row").hide();
-		$("#tBy_chloride_row").hide();
-		$("#tBy_bn_row").hide();
-		//show
-		$("#tBy_ttc_row").show();
-		$("#tBy_as_row").show();
-		$("#tBy_fc_row").show();
-		$("#tBy_sn_bacteria_row").show();
-		$("#tBy_turbidity_row").show();
-		$("#tBy_iron_row").show();
-		$("#tBy_ph_row").show();
-		$("#tBy_si_row").show();						
-	}else if (select_water_facility=='RO'){	
-		$("#tKit_sn_bacteria_row").hide();
-		$("#tKit_turbidity_row").hide();
-		$("#tKit_conductivity_row").hide();
-		//show
-		$("#tKit_ttc_row").show();
-		$("#tKit_as_row").show();
-		$("#tKit_fc_row").show();
-		$("#tKit_iron_row").show();
-		$("#tKit_mn_row").show();
-		$("#tKit_chloride_row").show();
-		$("#tKit_bn_row").show();
-		$("#tKit_ph_row").show();
-		$("#tKit_si_row").show();
-//=========================Test Score
-		$("#tScore_sn_bacteria_row").hide();
-		$("#tScore_turbidity_row").hide();
-		$("#tScore_conductivity_row").hide();
-		//show
-		$("#tScore_ttc_row").show();
-		$("#tScore_as_row").show();
-		$("#tScore_fc_row").show();
-		$("#tScore_iron_row").show();
-		/*$("#tScore_mn_row").show();*/
-		$("#tScore_chloride_row").show();
-		$("#tScore_bn_row").show();
-		$("#tScore_ph_row").show();
-		$("#tScore_si_row").show();
-//======================Tested at
-		$("#tAt_sn_bacteria_row").hide();
-		$("#tAt_turbidity_row").hide();
-		$("#tAt_conductivity_row").hide();
-		//show
-		$("#tAt_ttc_row").show();
-		$("#tAt_as_row").show();
-		$("#tAt_fc_row").show();
-		$("#tAt_iron_row").show();
-		$("#tAt_mn_row").show();
-		$("#tAt_chloride_row").show();
-		$("#tAt_bn_row").show();
-		$("#tAt_ph_row").show();
-//=========================Tested Date
-		$("#tDate_sn_bacteria_row").hide();
-		$("#tDate_turbidity_row").hide();
-		$("#tDate_conductivity_row").hide();
-		//show
-		$("#tDate_ttc_row").show();
-		$("#tDate_as_row").show();
-		$("#tDate_fc_row").show();
-		$("#tDate_iron_row").show();
-		$("#tDate_mn_row").show();
-		$("#tDate_chloride_row").show();
-		$("#tDate_bn_row").show();
-		$("#tDate_ph_row").show();
-		$("#tDate_si_row").show();
-//=========================Tested by
-		$("#tBy_sn_bacteria_row").hide();
-		$("#tBy_turbidity_row").hide();
-		$("#tBy_conductivity_row").hide();
-		//show
-		$("#tBy_ttc_row").show();
-		$("#tBy_as_row").show();
-		$("#tBy_fc_row").show();
-		$("#tBy_iron_row").show();
-		$("#tBy_mn_row").show();
-		$("#tBy_chloride_row").show();
-		$("#tBy_bn_row").show();
-		$("#tBy_ph_row").show();
-		$("#tBy_si_row").show();
-	}else if (select_water_facility=='GFS'){	
-		$("#tKit_as_row").hide();
-		$("#tKit_sn_bacteria_row").hide();
-		$("#tKit_conductivity_row").hide();
-		$("#tKit_iron_row").hide();
-		$("#tKit_mn_row").hide();
-		$("#tKit_chloride_row").hide();
-		$("#tKit_bn_row").hide();
-		//show
-		$("#tKit_ttc_row").show();
-		$("#tKit_fc_row").show();
-		$("#tKit_turbidity_row").show();
-		$("#tKit_ph_row").show();
-		$("#tKit_si_row").show();
-//======================Test Score
-		$("#tScore_as_row").hide();
-		$("#tScore_sn_bacteria_row").hide();
-		$("#tScore_conductivity_row").hide();
-		$("#tScore_iron_row").hide();
-		$("#tScore_mn_row").hide();
-		$("#tScore_chloride_row").hide();
-		$("#tScore_bn_row").hide();
-		//show
-		$("#tScore_ttc_row").show();
-		$("#tScore_fc_row").show();
-		$("#tScore_turbidity_row").show();
-		$("#tScore_ph_row").show();
-		$("#tScore_si_row").show();
-//======================Tested at
-		$("#tAt_as_row").hide();
-		$("#tAt_sn_bacteria_row").hide();
-		$("#tAt_conductivity_row").hide();
-		$("#tAt_iron_row").hide();
-		$("#tAt_mn_row").hide();
-		$("#tAt_chloride_row").hide();
-		$("#tAt_bn_row").hide();
-		//show
-		$("#tAt_ttc_row").show();
-		$("#tAt_fc_row").show();
-		$("#tAt_turbidity_row").show();
-		$("#tAt_ph_row").show();
-//======================Tested Date
-		$("#tDate_as_row").hide();
-		$("#tDate_sn_bacteria_row").hide();
-		$("#tDate_conductivity_row").hide();
-		$("#tDate_iron_row").hide();
-		$("#tDate_mn_row").hide();
-		$("#tDate_chloride_row").hide();
-		$("#tDate_bn_row").hide();
-		//show
-		$("#tDate_ttc_row").show();
-		$("#tDate_fc_row").show();
-		$("#tDate_turbidity_row").show();
-		$("#tDate_ph_row").show();
-		$("#tDate_si_row").show();	
-//======================Tested by
-		$("#tBy_as_row").hide();
-		$("#tBy_sn_bacteria_row").hide();
-		$("#tBy_conductivity_row").hide();
-		$("#tBy_iron_row").hide();
-		$("#tBy_mn_row").hide();
-		$("#tBy_chloride_row").hide();
-		$("#tBy_bn_row").hide();
-		//show
-		$("#tBy_ttc_row").show();
-		$("#tBy_fc_row").show();
-		$("#tBy_turbidity_row").show();
-		$("#tBy_ph_row").show();
-		$("#tBy_si_row").show();	
-	}else if (select_water_facility=='AIRP'){	
-		$("#tKit_sn_bacteria_row").hide();
-		$("#tKit_turbidity_row").hide();
-		$("#tKit_conductivity_row").hide();
-		$("#tKit_mn_row").hide();
-		$("#tKit_chloride_row").hide();
-		$("#tKit_bn_row").hide();
-		//show
-		$("#tKit_ttc_row").show();
-		$("#tKit_as_row").show();
-		$("#tKit_fc_row").show();
-		$("#tKit_iron_row").show();
-		$("#tKit_ph_row").show();
-		$("#tKit_si_row").show();
-//=====================Test Score
-		$("#tScore_sn_bacteria_row").hide();
-		$("#tScore_turbidity_row").hide();
-		$("#tScore_conductivity_row").hide();
-		$("#tScore_mn_row").hide();
-		$("#tScore_chloride_row").hide();
-		$("#tScore_bn_row").hide();
-		//show
-		$("#tScore_ttc_row").show();
-		$("#tScore_as_row").show();
-		$("#tScore_fc_row").show();
-		$("#tScore_iron_row").show();
-		$("#tScore_ph_row").show();
-		$("#tScore_si_row").show();
-//=====================Tested at
-		$("#tAt_sn_bacteria_row").hide();
-		$("#tAt_turbidity_row").hide();
-		$("#tAt_conductivity_row").hide();
-		$("#tAt_mn_row").hide();
-		$("#tAt_chloride_row").hide();
-		$("#tAt_bn_row").hide();
-		//show
-		$("#tAt_ttc_row").show();
-		$("#tAt_as_row").show();
-		$("#tAt_fc_row").show();
-		$("#tAt_iron_row").show();
-		$("#tAt_ph_row").show();		
-//=====================Tested Date
-		$("#tDate_sn_bacteria_row").hide();
-		$("#tDate_turbidity_row").hide();
-		$("#tDate_conductivity_row").hide();
-		$("#tDate_mn_row").hide();
-		$("#tDate_chloride_row").hide();
-		$("#tDate_bn_row").hide();
-		//show
-		$("#tDate_ttc_row").show();
-		$("#tDate_as_row").show();
-		$("#tDate_fc_row").show();
-		$("#tDate_iron_row").show();
-		$("#tDate_ph_row").show();
-		$("#tDate_si_row").show();	
-//=====================Tested by
-		$("#tBy_sn_bacteria_row").hide();
-		$("#tBy_turbidity_row").hide();
-		$("#tBy_conductivity_row").hide();
-		$("#tBy_mn_row").hide();
-		$("#tBy_chloride_row").hide();
-		$("#tBy_bn_row").hide();
-		//show
-		$("#tBy_ttc_row").show();
-		$("#tBy_as_row").show();
-		$("#tBy_fc_row").show();
-		$("#tBy_iron_row").show();
-		$("#tBy_ph_row").show();
-		$("#tBy_si_row").show();				
-	}else if (select_water_facility=='Ringwell/Dugwell'){	
-		$("#tKit_sn_bacteria_row").hide();
-		$("#tKit_conductivity_row").hide();
-		$("#tKit_chloride_row").hide();
-		$("#tKit_bn_row").hide();
-		//show
-		$("#tKit_ttc_row").show();
-		$("#tKit_as_row").show();
-		$("#tKit_fc_row").show();
-		$("#tKit_turbidity_row").show();
-		$("#tKit_iron_row").show();
-		$("#tKit_mn_row").show();
-		$("#tKit_ph_row").show();
-		$("#tKit_si_row").show();
-//===================Test Score
-		$("#tScore_sn_bacteria_row").hide();
-		$("#tScore_conductivity_row").hide();
-		$("#tScore_chloride_row").hide();
-		$("#tScore_bn_row").hide();
-		//show
-		$("#tScore_ttc_row").show();
-		$("#tScore_as_row").show();
-		$("#tScore_fc_row").show();
-		$("#tScore_turbidity_row").show();
-		$("#tScore_iron_row").show();
-		$("#tScore_mn_row").show();
-		$("#tScore_ph_row").show();
-		$("#tScore_si_row").show();
-//===================Tested at
-		$("#tAt_sn_bacteria_row").hide();
-		$("#tAt_conductivity_row").hide();
-		$("#tAt_chloride_row").hide();
-		$("#tAt_bn_row").hide();
-		//show
-		$("#tAt_ttc_row").show();
-		$("#tAt_as_row").show();
-		$("#tAt_fc_row").show();
-		$("#tAt_turbidity_row").show();
-		$("#tAt_iron_row").show();
-		$("#tAt_mn_row").show();
-		$("#tAt_ph_row").show();
-//===================Tested Date
-		$("#tDate_sn_bacteria_row").hide();
-		$("#tDate_conductivity_row").hide();
-		$("#tDate_chloride_row").hide();
-		$("#tDate_bn_row").hide();
-		//show
-		$("#tDate_ttc_row").show();
-		$("#tDate_as_row").show();
-		$("#tDate_fc_row").show();
-		$("#tDate_turbidity_row").show();
-		$("#tDate_iron_row").show();
-		$("#tDate_mn_row").show();
-		$("#tDate_ph_row").show();
-		$("#tDate_si_row").show();		
-//===================Tested by
-		$("#tBy_sn_bacteria_row").hide();
-		$("#tBy_conductivity_row").hide();
-		$("#tBy_chloride_row").hide();
-		$("#tBy_bn_row").hide();
-		//show
-		$("#tBy_ttc_row").show();
-		$("#tBy_as_row").show();
-		$("#tBy_fc_row").show();
-		$("#tBy_turbidity_row").show();
-		$("#tBy_iron_row").show();
-		$("#tBy_mn_row").show();
-		$("#tBy_ph_row").show();
-		$("#tBy_si_row").show();				
-	}else if (select_water_facility=='RWHS'){	
-		$("#tKit_as_row").hide();
-		$("#tKit_sn_bacteria_row").hide();
-		$("#tKit_turbidity_row").hide();
-		$("#tKit_conductivity_row").hide();
-		$("#tKit_iron_row").hide();
-		$("#tKit_mn_row").hide();
-		$("#tKit_chloride_row").hide();
-		$("#tKit_bn_row").hide();
-		//show
-		$("#tKit_ttc_row").show();
-		$("#tKit_fc_row").show();
-		$("#tKit_ph_row").show();
-		$("#tKit_si_row").show();
-//===================Test Score
-		$("#tScore_as_row").hide();
-		$("#tScore_sn_bacteria_row").hide();
-		$("#tScore_turbidity_row").hide();
-		$("#tScore_conductivity_row").hide();
-		$("#tScore_iron_row").hide();
-		$("#tScore_mn_row").hide();
-		$("#tScore_chloride_row").hide();
-		$("#tScore_bn_row").hide();
-		//show
-		$("#tScore_ttc_row").show();
-		$("#tScore_fc_row").show();
-		$("#tScore_ph_row").show();
-		$("#tScore_si_row").show();
-//===================Tested at
-		$("#tAt_as_row").hide();
-		$("#tAt_sn_bacteria_row").hide();
-		$("#tAt_turbidity_row").hide();
-		$("#tAt_conductivity_row").hide();
-		$("#tAt_iron_row").hide();
-		$("#tAt_mn_row").hide();
-		$("#tAt_chloride_row").hide();
-		$("#tAt_bn_row").hide();
-		//show
-		$("#tAt_ttc_row").show();
-		$("#tAt_fc_row").show();
-		$("#tAt_ph_row").show();	
-//===================Tested Date
-		$("#tDate_as_row").hide();
-		$("#tDate_sn_bacteria_row").hide();
-		$("#tDate_turbidity_row").hide();
-		$("#tDate_conductivity_row").hide();
-		$("#tDate_iron_row").hide();
-		$("#tDate_mn_row").hide();
-		$("#tDate_chloride_row").hide();
-		$("#tDate_bn_row").hide();
-		//show
-		$("#tDate_ttc_row").show();
-		$("#tDate_fc_row").show();
-		$("#tDate_ph_row").show();
-		$("#tDate_si_row").show();	
-//===================Tested by
-		$("#tBy_as_row").hide();
-		$("#tBy_sn_bacteria_row").hide();
-		$("#tBy_turbidity_row").hide();
-		$("#tBy_conductivity_row").hide();
-		$("#tBy_iron_row").hide();
-		$("#tBy_mn_row").hide();
-		$("#tBy_chloride_row").hide();
-		$("#tBy_bn_row").hide();
-		//show
-		$("#tBy_ttc_row").show();
-		$("#tBy_fc_row").show();
-		$("#tBy_ph_row").show();
-		$("#tBy_si_row").show();				
-	}else if (select_water_facility=='Stand Post'){	
-		$("#tKit_as_row").hide();
-		$("#tKit_sn_bacteria_row").hide();
-		$("#tKit_turbidity_row").hide();
-		$("#tKit_conductivity_row").hide();
-		$("#tKit_iron_row").hide();
-		$("#tKit_mn_row").hide();
-		$("#tKit_chloride_row").hide();
-		$("#tKit_bn_row").hide();
-		$("#tKit_ph_row").hide();
-		//show
-		$("#tKit_ttc_row").show();
-		$("#tKit_fc_row").show();
-		$("#tKit_si_row").show();
-//===================Test Score
-		$("#tScore_as_row").hide();
-		$("#tScore_sn_bacteria_row").hide();
-		$("#tScore_turbidity_row").hide();
-		$("#tScore_conductivity_row").hide();
-		$("#tScore_iron_row").hide();
-		$("#tScore_mn_row").hide();
-		$("#tScore_chloride_row").hide();
-		$("#tScore_bn_row").hide();
-		$("#tScore_ph_row").hide();
-		//show
-		$("#tScore_ttc_row").show();
-		$("#tScore_fc_row").show();
-		$("#tScore_si_row").show();
-//===================Tested at
-		$("#tAt_as_row").hide();
-		$("#tAt_sn_bacteria_row").hide();
-		$("#tAt_turbidity_row").hide();
-		$("#tAt_conductivity_row").hide();
-		$("#tAt_iron_row").hide();
-		$("#tAt_mn_row").hide();
-		$("#tAt_chloride_row").hide();
-		$("#tAt_bn_row").hide();
-		$("#tAt_ph_row").hide();
-		//show
-		$("#tAt_ttc_row").show();
-		$("#tAt_fc_row").show();	
-//===================Tested Date
-		$("#tDate_as_row").hide();
-		$("#tDate_sn_bacteria_row").hide();
-		$("#tDate_turbidity_row").hide();
-		$("#tDate_conductivity_row").hide();
-		$("#tDate_iron_row").hide();
-		$("#tDate_mn_row").hide();
-		$("#tDate_chloride_row").hide();
-		$("#tDate_bn_row").hide();
-		$("#tDate_ph_row").hide();
-		//show
-		$("#tDate_ttc_row").show();
-		$("#tDate_fc_row").show();
-		$("#tDate_si_row").show();	
-//===================Tested by
-		$("#tBy_as_row").hide();
-		$("#tBy_sn_bacteria_row").hide();
-		$("#tBy_turbidity_row").hide();
-		$("#tBy_conductivity_row").hide();
-		$("#tBy_iron_row").hide();
-		$("#tBy_mn_row").hide();
-		$("#tBy_chloride_row").hide();
-		$("#tBy_bn_row").hide();
-		$("#tBy_ph_row").hide();
-		//show
-		$("#tBy_ttc_row").show();
-		$("#tBy_fc_row").show();
-		$("#tBy_si_row").show();				
-	}else if (select_water_facility=='Piped Water Supply System'){	
-		$("#tKit_as_row").hide();
-		$("#tKit_sn_bacteria_row").hide();
-		$("#tKit_turbidity_row").hide();
-		$("#tKit_conductivity_row").hide();
-		$("#tKit_iron_row").hide();
-		$("#tKit_mn_row").hide();
-		$("#tKit_chloride_row").hide();
-		$("#tKit_bn_row").hide();
-		$("#tKit_ph_row").hide();
-		//show
-		$("#tKit_ttc_row").show();
-		$("#tKit_fc_row").show();
-		$("#tKit_si_row").show();
-//=====================Test Score
-		$("#tScore_as_row").hide();
-		$("#tScore_sn_bacteria_row").hide();
-		$("#tScore_turbidity_row").hide();
-		$("#tScore_conductivity_row").hide();
-		$("#tScore_iron_row").hide();
-		$("#tScore_mn_row").hide();
-		$("#tScore_chloride_row").hide();
-		$("#tScore_bn_row").hide();
-		$("#tScore_ph_row").hide();
-		//show
-		$("#tScore_ttc_row").show();
-		$("#tScore_fc_row").show();
-		$("#tScore_si_row").show();	
-//=====================Tested at
-		$("#tAt_as_row").hide();
-		$("#tAt_sn_bacteria_row").hide();
-		$("#tAt_turbidity_row").hide();
-		$("#tAt_conductivity_row").hide();
-		$("#tAt_iron_row").hide();
-		$("#tAt_mn_row").hide();
-		$("#tAt_chloride_row").hide();
-		$("#tAt_bn_row").hide();
-		$("#tAt_ph_row").hide();
-		//show
-		$("#tAt_ttc_row").show();
-		$("#tAt_fc_row").show();
-//=====================Tested Date
-		$("#tDate_as_row").hide();
-		$("#tDate_sn_bacteria_row").hide();
-		$("#tDate_turbidity_row").hide();
-		$("#tDate_conductivity_row").hide();
-		$("#tDate_iron_row").hide();
-		$("#tDate_mn_row").hide();
-		$("#tDate_chloride_row").hide();
-		$("#tDate_bn_row").hide();
-		$("#tDate_ph_row").hide();
-		//show
-		$("#tDate_ttc_row").show();
-		$("#tDate_fc_row").show();
-		$("#tDate_si_row").show();	
-//=====================Tested by
-		$("#tBy_as_row").hide();
-		$("#tBy_sn_bacteria_row").hide();
-		$("#tBy_turbidity_row").hide();
-		$("#tBy_conductivity_row").hide();
-		$("#tBy_iron_row").hide();
-		$("#tBy_mn_row").hide();
-		$("#tBy_chloride_row").hide();
-		$("#tBy_bn_row").hide();
-		$("#tBy_ph_row").hide();
-		//show
-		$("#tBy_ttc_row").show();
-		$("#tBy_fc_row").show();
-		$("#tBy_si_row").show();					
-	}else if (select_water_facility=='IFG'){	
-		$("#tKit_as_row").hide();
-		$("#tKit_fc_row").hide();
-		$("#tKit_sn_bacteria_row").hide();
-		$("#tKit_conductivity_row").hide();
-		$("#tKit_mn_row").hide();
-		$("#tKit_chloride_row").hide();
-		$("#tKit_bn_row").hide();
-		//show
-		$("#tKit_ttc_row").show();
-		$("#tKit_turbidity_row").show();
-		$("#tKit_iron_row").show();
-		$("#tKit_ph_row").show();
-		$("#tKit_si_row").show();
-//===================Test Score
-		$("#tScore_as_row").hide();
-		$("#tScore_fc_row").hide();
-		$("#tScore_sn_bacteria_row").hide();
-		$("#tScore_conductivity_row").hide();
-		$("#tScore_mn_row").hide();
-		$("#tScore_chloride_row").hide();
-		$("#tScore_bn_row").hide();
-		//show
-		$("#tScore_ttc_row").show();
-		$("#tScore_turbidity_row").show();
-		$("#tScore_iron_row").show();
-		$("#tScore_ph_row").show();
-		$("#tScore_si_row").show();
-//===================Tested at
-		$("#tAt_as_row").hide();
-		$("#tAt_fc_row").hide();
-		$("#tAt_sn_bacteria_row").hide();
-		$("#tAt_conductivity_row").hide();
-		$("#tAt_mn_row").hide();
-		$("#tAt_chloride_row").hide();
-		$("#tAt_bn_row").hide();
-		//show
-		$("#tAt_ttc_row").show();
-		$("#tAt_turbidity_row").show();
-		$("#tAt_iron_row").show();
-		$("#tAt_ph_row").show();
-		$("#tAt_si_row").show();
-//===================Tested Date
-		$("#tDate_as_row").hide();
-		$("#tDate_fc_row").hide();
-		$("#tDate_sn_bacteria_row").hide();
-		$("#tDate_conductivity_row").hide();
-		$("#tDate_mn_row").hide();
-		$("#tDate_chloride_row").hide();
-		$("#tDate_bn_row").hide();
-		//show
-		$("#tDate_ttc_row").show();
-		$("#tDate_turbidity_row").show();
-		$("#tDate_iron_row").show();
-		$("#tDate_ph_row").show();
-		$("#tDate_si_row").show();
-//===================Tested Date
-		$("#tBy_as_row").hide();
-		$("#tBy_fc_row").hide();
-		$("#tBy_sn_bacteria_row").hide();
-		$("#tBy_conductivity_row").hide();
-		$("#tBy_mn_row").hide();
-		$("#tBy_chloride_row").hide();
-		$("#tBy_bn_row").hide();
-		//show
-		$("#tBy_ttc_row").show();
-		$("#tBy_turbidity_row").show();
-		$("#tBy_iron_row").show();
-		$("#tBy_ph_row").show();
-		$("#tBy_si_row").show();						
-	}else{
-//=================== Test Kit
-		$("#tKit_ttc_row").show();
-		$("#tKit_as_row").show();
-		$("#tKit_fc_row").show();
-		$("#tKit_sn_bacteria_row").show();
-		$("#tKit_turbidity_row").show();
-		$("#tKit_conductivity_row").show();
-		$("#tKit_iron_row").show();
-		$("#tKit_mn_row").show();
-		$("#tKit_chloride_row").show();
-		$("#tKit_bn_row").show();
-		$("#tKit_ph_row").show();
-		$("#tKit_si_row").show();
-//=================== Test Score
-		$("#tScore_ttc_row").show();
-		$("#tScore_as_row").show();
-		$("#tScore_fc_row").show();
-		$("#tScore_sn_bacteria_row").show();
-		$("#tScore_turbidity_row").show();
-		$("#tScore_conductivity_row").show();
-		$("#tScore_iron_row").show();
-		$("#tScore_mn_row").show();
-		$("#tScore_chloride_row").show();
-		$("#tScore_bn_row").show();
-		$("#tScore_ph_row").show();
-		$("#tScore_si_row").show();
-//=================== Tested at
-		$("#tAt_ttc_row").show();
-		$("#tAt_as_row").show();
-		$("#tAt_fc_row").show();
-		$("#tAt_sn_bacteria_row").show();
-		$("#tAt_turbidity_row").show();
-		$("#tAt_conductivity_row").show();
-		$("#tAt_iron_row").show();
-		$("#tAt_mn_row").show();
-		$("#tAt_chloride_row").show();
-		$("#tAt_bn_row").show();
-		$("#tAt_ph_row").show();	
-//=================== Tested Date
-		$("#tDate_ttc_row").show();
-		$("#tDate_as_row").show();
-		$("#tDate_fc_row").show();
-		$("#tDate_sn_bacteria_row").show();
-		$("#tDate_turbidity_row").show();
-		$("#tDate_conductivity_row").show();
-		$("#tDate_iron_row").show();
-		$("#tDate_mn_row").show();
-		$("#tDate_chloride_row").show();
-		$("#tDate_bn_row").show();
-		$("#tDate_ph_row").show();	
-		$("#tDate_si_row").show();	
-//=================== Tested by
-		$("#tBy_ttc_row").show();
-		$("#tBy_as_row").show();
-		$("#tBy_fc_row").show();
-		$("#tBy_sn_bacteria_row").show();
-		$("#tBy_turbidity_row").show();
-		$("#tBy_conductivity_row").show();
-		$("#tBy_iron_row").show();
-		$("#tBy_mn_row").show();
-		$("#tBy_chloride_row").show();
-		$("#tBy_bn_row").show();
-		$("#tBy_ph_row").show();	
-		$("#tBy_si_row").show();			
-	}
-}
-
-
 //---------------------------Water quality data7 page 
-function waterData7Next(){
-	wq_add_info=$("input[name='add_info']:checked").val();	
-	if (wq_add_info==undefined){
-		$(".errorChk").text("Required Additional Information");
-	}else{
-		if (wq_add_info=='Yes'){
-			var url="#waterData8";
-		}else{
-			var url="#waterDataPhoto";
-		}
-		$.mobile.navigate(url);
-	}
-};	
 
+
+function waterData7Next(){
+		
+		wq_select_tech=$("#select_tech").val();
+		
+		if($("#typeOfTestKit").find("input[type=checkbox]:checked").length==0){
+			$(".errorChk").text("Required Type of Test kit");
+		}else{
+			wq_pota=$("input[name='pota']:checked").val();
+			wq_delAgua=$("input[name='delAgua']:checked").val();
+			wq_hach_ez_as=$("input[name='hach_ez_as']:checked").val();
+			wq_hach_fe=$("input[name='hach_fe']:checked").val();
+			wq_solinity_meter=$("input[name='solinity_meter']:checked").val();
+			wq_mn_test_kit=$("input[name='mn_test_kit']:checked").val();
+			wq_test_kit_lab_test=$("input[name='test_kit_lab_test']:checked").val();
+			wq_micro_kit=$("input[name='micro_kit']:checked").val();
+				
+			wq_ttc_cfu=$("#ttc_cfu").val();
+			//wq_sl=$("#sl").val();
+			wq_as_ppb=$("#as_ppb").val();
+			//wq_fe_ng=$("#fe_ng").val();
+			wq_mn_ppb=$("#mn_ppb").val();
+			wq_chl_ppt=$("#chl_ppt").val();
+			wq_turb_ntu=$("#turb_ntu").val();
+			//wq_residual=$("#residual").val();
+			wq_chlorine=$("#clorine").val();
+			wq_ph=$("#ph").val();
+			wq_boron=$("#boron").val();
+			wq_ironFe=$("#ironFe").val();
+			wq_c_bac=$("#c_bac").val();
+			wq_colour=$("#colour").val();
+			wq_odor=$("#odor").val();
+			wq_nitrate=$("#nitrate").val();
+			wq_zinc=$("#zinc").val();
+			wq_condvity=$("#condvity").val();
+			//wq_fluoride=$("#fluoride").val();			
+			wq_fc=$("#select_fc").val();
+			
+						
+			$(".errorChk").text("");
+			if(test_type_val=="Pre Instalation"){				
+				$("#isManagement").hide();
+				$("#m_comm_ori").hide();
+				$("#m_comm_ori_no").hide();
+				$("#caretakerTrained").hide();
+				$("#caretakerTrainedNo").hide();
+				$("#typeOfRenovation").hide();
+				$("#other_alt").hide();
+				$("#smpleAnaly").hide();	
+				$("#installationDone").hide();	
+				var url = "#waterData14";
+			}else{
+				var url = "#waterData8";
+			}
+			$.mobile.navigate(url);
+			//$(location).attr('href',url);
+		}
+		
+	};	
+
+
+
+//---------------------- waterData8 Next
+
+	
+	//$("#waterData9").hide();
 function waterData8Next(){	
-		/*wq_tested_at=$("input[name='tested_at']:checked").val();
+		wq_tested_at=$("input[name='tested_at']:checked").val();
 		wq_iron_test=$("input[name='iron_test']:checked").val();		
 		wq_tw_color=$("input[name='tw_painter']:checked").val();
 		
@@ -3914,15 +3186,15 @@ function waterData8Next(){
 				$("#safeWaterOPtion").hide();	
 				$("#safW_altOption").hide();
 				$("#safW_dist").hide();
-				$("#saf_acT").hide();*/
+				$("#saf_acT").hide();
 								
 				var url="#waterData9";	
-			//}
+			}
 	
 			$.mobile.navigate(url);
 			//$(location).attr('href',url);
 				
-			//}
+			}
 			
 		//}
 		
@@ -3959,7 +3231,7 @@ function waterData9Next(){
 				arc_patient=0;
 				}
 			$(".errorChk").text("");
-			var url="#waterData10";
+			var url="#waterData9_1";
 			$.mobile.navigate(url);
 			//$(location).attr('href',url);
 		}
@@ -3972,7 +3244,7 @@ function waterData9Next(){
 				arc_patient=0;
 				}
 			$(".errorChk").text("");
-			var url="#waterData10";
+			var url="#waterData9_1";
 			$.mobile.navigate(url);
 			//$(location).attr('href',url);
 		}
@@ -3984,10 +3256,46 @@ function waterData9Next(){
 				arc_patient=0;
 				}
 			$(".errorChk").text("");
-			var url="#waterData10";
+			var url="#waterData9_1";
 			$.mobile.navigate(url);		
 		}		
 	}		
+}
+
+var wq_san_ins="";
+var wq_inspect_date="";
+var wq_san_risk_sc="";
+
+function waterData9_1Next(){
+		wq_san_ins=$("#san_ins_yn").val();		
+		
+		var insp_d=$("#insp_d").val();
+		var insp_m=$("#insp_m").val();
+		var insp_y=$("#insp_y").val();		
+		
+		wq_san_risk_sc=$("#san_risk_sc").val();
+		
+		//---------------------
+		wq_inspect_date=insp_y+"-"+insp_m+"-"+insp_d;		
+		var wq_insp = new Date(wq_inspect_date);		
+		 
+		var date_flag=true;
+		var dateError="";
+		
+		if (wq_insp=='Invalid Date'){
+			date_flag=false;
+			dateError="Invalid inspection Date "+wq_inspect_date;
+		}
+		
+		if (date_flag==false){				
+			$(".errorChk").text(dateError);
+		}else{			
+			$(".errorChk").text("");
+			var url="#waterData10";
+			$.mobile.navigate(url);
+			//$(location).attr('href',url);
+		}
+		
 }
 
 //----------------------------water quality data 10 check
@@ -3995,7 +3303,7 @@ function waterData9Next(){
 
 function waterData10Next(){
 	
-	/*wq_functional=$("input[name='functionality']:checked").val();	
+	wq_functional=$("input[name='functionality']:checked").val();	
 	
 	wq_drinking=$("input[name='drinking']:checked").val();
 	wq_cooking=$("input[name='cooking']:checked").val();
@@ -4003,19 +3311,20 @@ function waterData10Next(){
 	wq_drinking_cooking=$("input[name='drinking_cooking']:checked").val();
 	wq_drinking_cooking_washing=$("input[name='drinking_cooking_washing']:checked").val();
 	wq_others_option=$("input[name='others_option']:checked").val();
-
+	//alert(wq_drinking+"-"+wq_cooking+"-"+wq_washing+"-"+wq_drinking_cooking+"-"+wq_drinking_cooking_washing+"-"+wq_others_option);
 	if(wq_functional==undefined){
 		$(".errorChk").text("Required functionality");
 			
-
-	}else{*/
+	/*}else if($("#useOfChk").find("input[type=checkbox]:checked").length==0 ){
+			$(".errorChk").text("Select One use of ");	*/
+	}else{
 		$(".errorChk").text("");
 		var url="#waterData11";
-	
-	//}
+		//}
+	}
 	$.mobile.navigate(url);
 	//$(location).attr('href',url);
-}
+	}
 
 //----------------------------water quality data 11
 function potableStatus(){
@@ -4040,25 +3349,120 @@ function potableStatus(){
 }
 		
 function waterData11Next(){
-	/*if($("#potableStatus").find("input[name=potable_st]:checked").length==0){
+	if($("#potableStatus").find("input[name=potable_st]:checked").length==0){
 		$(".errorChk").text("Required Potable Status");
 	}else{
 		wq_potable_status=$("input[name='potable_st']:checked").val();
 		wq_res_non_potable=$("#reason_non_potable").val();
 		wq_no_potable_initiative_taken=$("#non_potable_ini").val();
-		*/
-		var url="#waterDataPhoto";
+		//|| test_type_val=="Monitoring" || test_type_val=="Cross Check" 
+		/*if(test_type_val=="Pre Instalation" ){
+			var url="#waterData13";
+		}else{*/
+		var url="#waterData12";
 		//}
 					
 		$(".errorChk").text("");
 		$.mobile.navigate(url);
 		//$(location).attr('href',url);
 		
-	//}
+	}
 	
 }
 
+var wq_do_user_pay="";
+//----------------------------water quality data 12
 
+function waterData12Next(){
+		wq_wab_con=$("#wab_con").val();
+		wq_comm_con=$("#comm_con").val();
+		wq_total_cost=$("#total_cost").val();
+		
+		wq_do_user_pay=$("input[name='do_user_pay']:checked").val();		
+		wq_is_piped_W_connection=$("input[name='piped_w_conn']:checked").val();
+		//wq_piped_w_sup=$("#piped_w_sup").val();
+		
+		if(test_type_val=="Renovation Instalation" || test_type_val=="Monitoring"){
+			if(wq_wab_con==""){
+				$(".errorChk").text("Required WAB Contribution");
+			}else if(wq_comm_con==""){
+				$(".errorChk").text("Required Community Contribution");
+			}else if(wq_total_cost==""){
+				$(".errorChk").text("Required Total Cost");
+			
+			}else{						
+				$(".errorChk").text("");
+				var url="#waterData13";
+				$.mobile.navigate(url);
+				//$(location).attr('href',url);
+			}
+		}else{
+			if(wq_wab_con==""){
+				$(".errorChk").text("Required WAB Contribution");
+			}else if(wq_comm_con==""){
+				$(".errorChk").text("Required Community Contribution");
+			}else if(wq_total_cost==""){
+				$(".errorChk").text("Required Total Cost");
+			}else if(wq_is_piped_W_connection==undefined){
+				$(".errorChk").text("Required is piped water connection");
+			}else{						
+				$(".errorChk").text("");
+				var url="#waterData13";
+				$.mobile.navigate(url);
+			}
+		}
+}
+
+//----------------------------water quality data 13 
+
+function waterData13Next(){
+		wq_all_test_complete=$("input[name='all_test_complt']:checked").val();
+		//wq_res_n_test=$("#res_n_test").val();
+		wq_res_n_test=$("input[name='res_n_test']:checked").val();
+		
+		if(wq_all_test_complete==undefined){
+			$(".errorChk").text("Required all test complete");
+		}else{
+			$(".errorChk").text("");
+			if (provided_by=='WAB' && test_type_val=="During Instalation" ){
+				$("#installationDone").hide();
+				var url="#waterData14";
+			}else if(provided_by=='WAB' && test_type_val=="Renovation Instalation"){
+				$("#isManagement").show();
+				$("#m_comm_ori").show();
+				$("#m_comm_ori_no").show();
+				$("#caretakerTrained").show();
+				$("#caretakerTrainedNo").show();
+				$("#monitoring_new_option").hide();				
+				$("#typeOfRenovation").hide();
+				$("#other_alt").hide();
+				$("#installationDone").hide();	
+				var url="#waterData14";	
+			}else if(provided_by=='WAB' && test_type_val=="Monitoring"){
+				$("#isManagement").show();
+				$("#m_comm_ori").show();
+				//$("#m_comm_ori_no").show();
+				$("#caretakerTrained").show();
+				$("#caretakerTrainedNo").show();			
+				$("#typeOfRenovation").hide();
+				$("#other_alt").hide();
+				$("#installationDone").hide();	
+				var url="#waterData14";					
+			}else{
+				$("#isManagement").hide();
+				$("#m_comm_ori").hide();
+				$("#m_comm_ori_no").hide();
+				$("#caretakerTrained").hide();
+				$("#caretakerTrainedNo").hide();
+				$("#typeOfRenovation").hide();
+				$("#other_alt").hide();
+				$("#installationDone").hide();	
+				var url="#waterData14";	
+			}
+			$.mobile.navigate(url);
+			//$(location).attr('href',url);
+		}
+}
 
 var wq_arc_patient_yn='';
 function ChkArsenicPatient(){
@@ -5155,8 +4559,7 @@ function waterQDataSubmit(){
 		$(".errorChk").text("Please confirm Photo");
 		$("#btn_wq_save").show();
 		$("#btn_wq_submit").show();
-	}else
-	if((latitudewq==0 || longitudewq==0) || (localStorage.latitudeAreaWq==0 || localStorage.longitudeAreaWq==0)){
+	}else if((latitudewq==0 || longitudewq==0) || (localStorage.latitudeAreaWq==0 || localStorage.longitudeAreaWq==0)){
 		$(".errorChk").text("Please confirm your location");
 		$("#btn_wq_save").show();
 		$("#btn_wq_submit").show();		
