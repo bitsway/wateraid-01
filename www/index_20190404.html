@@ -98,7 +98,7 @@
         		<a data-role="button" id="btn_area_lat_long" onClick="getLocationInfoAreaWq();" class="ui-btn" >Area location</a>
            </ul> 
     </div>
-    <div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >mReporting 20190404</div>
+    <div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >mReporting 20190320</div>
   
     <div data-role="panel" id="leftpanel" data-position="left" data-display="overlay" data-theme="d">
         <div align="center"><img src="wab.jpg"></div>
@@ -1150,11 +1150,11 @@
             </li>
 		</ul>
         <table class="ui-body-d ui-shadow table-stripe ui-responsive"  data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px;">
-            <tr valign="middle" id="ttc_row_label">
-                <td colspan="3" ><strong>TTC(ml)</strong></td>
+            <tr valign="middle">
+                <td colspan="3" ><strong>Test Kit</strong></td>
             </tr>
             <tr id="tKit_ttc_row">
-                <td width="70%" style="vertical-align:middle;">Test Kit</td>
+                <td width="70%" style="vertical-align:middle;">TTC(ml)</td>
                 <td width="30%">
                     <select name="tKit_ttc" id="tKit_ttc" data-native-menu="false" >
                         <option value="">Select </option>
@@ -1165,50 +1165,8 @@
                 </td>
                 <td width="5" align="left"></td>
             </tr>
-            <tr id="tScore_ttc_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tScore_ttc">Test Score</label></td>
-                <td width="30%">
-                    <input type="text" id="tScore_ttc" name="tScore_ttc" />
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tAt_ttc_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tAt_ttc">Tested at</label></td>
-                <td width="30%">
-                    <select name="tAt_ttc" id="tAt_ttc" data-native-menu="false" >
-                        <option value="">Select </option>
-                        <option value="Field">Field</option>
-                        <option value="Lab">Lab</option>
-                        <option value="N/A">N/A</option>
-                    </select>
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tDate_ttc_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tDate_ttc">Tested Date</label></td>
-                <td width="30%">
-                    <input type="date" id="tDate_ttc" name="tDate_ttc" />
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tBy_ttc_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tBy_ttc">Tested by </label></td>
-                <td width="30%">
-                    <select name="tBy_ttc" id="tBy_ttc" data-native-menu="false" >
-                        <option value="">Select </option>
-                        <option value="Engineer">Engineer</option>
-                        <option value="Field force">Field force</option>
-                        <option value="Lab">Lab</option>
-                    </select>	
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            
-            <tr valign="middle" id="as_row_label">
-                <td colspan="3" ><strong>As(PPb)</strong></td>
-            </tr>
             <tr id="tKit_as_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tKit_as">Test Kit</label></td>
+                <td width="70%" style="vertical-align:middle;"><label for="tKit_as">As(PPb)</label></td>
                 <td width="30%">
                     <select name="tKit_as" id="tKit_as" data-native-menu="false" >
                         <option value="">Select </option>
@@ -1219,49 +1177,8 @@
                 </td>
                 <td width="5" align="left"></td>
             </tr>
-            <tr id="tScore_as_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tScore_as">Test Score</label></td>
-                <td width="30%">
-                    <input type="text" id="tScore_as" name="tScore_as" />
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tAt_as_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tAt_as">Tested at</label></td>
-                <td width="30%">
-                    <select name="tAt_as" id="tAt_as" data-native-menu="false" >
-                        <option value="">Select </option>
-                        <option value="Field">Field</option>
-                        <option value="Lab">Lab</option>
-                        <option value="N/A">N/A</option>
-                    </select>
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tDate_as_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tDate_as">Tested Date</label></td>
-                <td width="30%">
-                    <input type="date" id="tDate_as" name="tDate_as" />
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tBy_as_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tBy_as">Tested by</label></td>
-                <td width="30%">
-                    <select name="tBy_as" id="tBy_as" data-native-menu="false" >
-                        <option value="">Select </option>
-                        <option value="Engineer">Engineer</option>
-                        <option value="Field force">Field force</option>
-                        <option value="Lab">Lab</option>
-                    </select>	
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr valign="middle" id="fc_row_label">
-                <td colspan="3" ><strong>FC</strong></td>
-            </tr>
             <tr id="tKit_fc_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tKit_fc">Test Kit</label></td>
+                <td width="70%" style="vertical-align:middle;"><label for="tKit_fc">FC</label></td>
                 <td width="30%">
                     <select name="tKit_fc" id="tKit_fc" data-native-menu="false" >
                         <option value="">Select </option>
@@ -1272,54 +1189,44 @@
                 </td>
                 <td width="5" align="left"></td>
             </tr>
-            <tr id="tScore_fc_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tScore_fc">Test Score</label></td>
+            <tr id="tKit_sn_bacteria_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tKit_sn_bacteria">Sn Bacteria</label></td>
                 <td width="30%">
-                    <select name="tScore_fc" id="tScore_fc" data-native-menu="false" >
+                    <select name="tKit_sn_bacteria" id="tKit_sn_bacteria" data-native-menu="false" >
                         <option value="">Select </option>
-                        <option value="Presence">Presence</option>
-                        <option value="Absence">Absence</option>
-                        <option value="N/A">N/A</option>
+                        <option value="Hach EZ As">Hach EZ As</option>
+                        <option value="Micro">Micro</option>
+                        <option value="Micro kit">Micro kit</option>
                     </select>
                 </td>
                 <td width="5" align="left"></td>
             </tr>
-            <tr id="tAt_fc_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tAt_fc">Tested at</label></td>
+            <tr id="tKit_turbidity_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tKit_turbidity">Turbidity</label></td>
                 <td width="30%">
-                    <select name="tAt_fc" id="tAt_fc" data-native-menu="false" >
+                    <select name="tKit_turbidity" id="tKit_turbidity" data-native-menu="false" >
                         <option value="">Select </option>
-                        <option value="Field">Field</option>
-                        <option value="Lab">Lab</option>
-                        <option value="N/A">N/A</option>
+                        <option value="Hach EZ As">Hach EZ As</option>
+                        <option value="Micro">Micro</option>
+                        <option value="Micro kit">Micro kit</option>
                     </select>
                 </td>
                 <td width="5" align="left"></td>
             </tr>
-            <tr id="tDate_fc_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tDate_fc">Tested Date</label></td>
+            <tr id="tKit_conductivity_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tKit_conductivity">Conductivity</label></td>
                 <td width="30%">
-                    <input type="date" id="tDate_fc" name="tDate_fc" />
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tBy_fc_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tBy_fc">Tested by</label></td>
-                <td width="30%">
-                    <select name="tBy_fc" id="tBy_fc" data-native-menu="false" >
+                    <select name="tKit_conductivity" id="tKit_conductivity" data-native-menu="false" >
                         <option value="">Select </option>
-                        <option value="Engineer">Engineer</option>
-                        <option value="Field force">Field force</option>
-                        <option value="Lab">Lab</option>
+                        <option value="Hach EZ As">Hach EZ As</option>
+                        <option value="Micro">Micro</option>
+                        <option value="Micro kit">Micro kit</option>
                     </select>
                 </td>
                 <td width="5" align="left"></td>
-            </tr>
-            <tr valign="middle" id="iron_row_label">
-                <td colspan="3" ><strong>Iron(mg)</strong></td>
             </tr>
             <tr id="tKit_iron_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tKit_iron">Test Kit</label></td>
+                <td width="70%" style="vertical-align:middle;"><label for="tKit_iron">Iron(mg)</label></td>
                 <td width="30%">
                     <select name="tKit_iron" id="tKit_iron" data-native-menu="false" >
                         <option value="">Select </option>
@@ -1330,49 +1237,8 @@
                 </td>
                 <td width="5" align="left"></td>
             </tr>
-            <tr id="tScore_iron_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tScore_iron">Test Score</label></td>
-                <td width="30%">
-                    <input type="text" id="tScore_iron" name="tScore_iron" />
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tAt_iron_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tAt_iron">Tested at</label></td>
-                <td width="30%">
-                    <select name="tAt_iron" id="tAt_iron" data-native-menu="false" >
-                        <option value="">Select </option>
-                        <option value="Field">Field</option>
-                        <option value="Lab">Lab</option>
-                        <option value="N/A">N/A</option>
-                    </select>
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tDate_iron_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tDate_iron">Tested Date</label></td>
-                <td width="30%">
-                    <input type="date" id="tDate_iron" name="tDate_iron" />
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tBy_iron_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tBy_iron">Tested by</label></td>
-                <td width="30%">
-                    <select name="tBy_iron" id="tBy_iron" data-native-menu="false" >
-                        <option value="">Select </option>
-                        <option value="Engineer">Engineer</option>
-                        <option value="Field force">Field force</option>
-                        <option value="Lab">Lab</option>
-                    </select>
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr valign="middle" id="mn_row_label">
-                <td colspan="3" ><strong>Mn(mg)</strong></td>
-            </tr>
             <tr id="tKit_mn_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tKit_mn">Test Kit</label></td>
+                <td width="70%" style="vertical-align:middle;"><label for="tKit_mn">Mn(mg)</label></td>
                 <td width="30%">
                     <select name="tKit_mn" id="tKit_mn" data-native-menu="false" >
                         <option value="">Select </option>
@@ -1383,49 +1249,8 @@
                 </td>
                 <td width="5" align="left"></td>
             </tr>
-            <tr id="tScore_mn_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tScore_mn">Test Score</label></td>
-                <td width="30%">
-                    <input type="text" id="tScore_mn" name="tScore_mn" />
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tAt_mn_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tAt_mn">Tested at</label></td>
-                <td width="30%">
-                    <select name="tAt_mn" id="tAt_mn" data-native-menu="false" >
-                        <option value="">Select </option>
-                        <option value="Field">Field</option>
-                        <option value="Lab">Lab</option>
-                        <option value="N/A">N/A</option>
-                    </select>
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tDate_mn_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tDate_mn">Tested Date</label></td>
-                <td width="30%">
-                    <input type="date" id="tDate_mn" name="tDate_mn" />
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tBy_mn_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tBy_mn">Tested by</label></td>
-                <td width="30%">
-                    <select name="tBy_mn" id="tBy_mn" data-native-menu="false" >
-                        <option value="">Select </option>
-                        <option value="Engineer">Engineer</option>
-                        <option value="Field force">Field force</option>
-                        <option value="Lab">Lab</option>
-                    </select>
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr valign="middle" id="chloride_row_label">
-                <td colspan="3" ><strong>Chloride(mg)</strong></td>
-            </tr>            
             <tr id="tKit_chloride_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tKit_chloride">Test Kit</label></td>
+                <td width="70%" style="vertical-align:middle;"><label for="tKit_chloride">Chloride(mg)</label></td>
                 <td width="30%">
                     <select name="tKit_chloride" id="tKit_chloride" data-native-menu="false" >
                         <option value="">Select </option>
@@ -1436,40 +1261,38 @@
                 </td>
                 <td width="5" align="left"></td>
             </tr>
-            <tr id="tScore_chloride_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tScore_chloride">Test Score</label></td>
+            <tr id="tKit_bn_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tKit_bn">Bn</label></td>
                 <td width="30%">
-                    <input type="text" id="tScore_chloride" name="tScore_chloride" />
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tAt_chloride_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tAt_chloride">Tested at</label></td>
-                <td width="30%">
-                    <select name="tAt_chloride" id="tAt_chloride" data-native-menu="false" >
+                    <select name="tKit_bn" id="tKit_bn" data-native-menu="false" >
                         <option value="">Select </option>
-                        <option value="Field">Field</option>
-                        <option value="Lab">Lab</option>
-                        <option value="N/A">N/A</option>
+                        <option value="Hach EZ As">Hach EZ As</option>
+                        <option value="Micro">Micro</option>
+                        <option value="Micro kit">Micro kit</option>
                     </select>
                 </td>
                 <td width="5" align="left"></td>
             </tr>
-            <tr id="tDate_chloride_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tDate_chloride">Tested Date</label></td>
+            <tr id="tKit_ph_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tKit_ph">pH</label></td>
                 <td width="30%">
-                    <input type="date" id="tDate_chloride" name="tDate_chloride" />
+                    <select name="tKit_ph" id="tKit_ph" data-native-menu="false" >
+                        <option value="">Select </option>
+                        <option value="Hach EZ As">Hach EZ As</option>
+                        <option value="Micro">Micro</option>
+                        <option value="Micro kit">Micro kit</option>
+                    </select>
                 </td>
                 <td width="5" align="left"></td>
             </tr>
-            <tr id="tBy_chloride_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tBy_chloride">Tested by</label></td>
+            <tr id="tKit_si_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tKit_si">SI</label></td>
                 <td width="30%">
-                    <select name="tBy_chloride" id="tBy_chloride" data-native-menu="false" >
+                    <select name="tKit_si" id="tKit_si" data-native-menu="false" >
                         <option value="">Select </option>
-                        <option value="Engineer">Engineer</option>
-                        <option value="Field force">Field force</option>
-                        <option value="Lab">Lab</option>
+                        <option value="Hach EZ As">Hach EZ As</option>
+                        <option value="Micro">Micro</option>
+                        <option value="Micro kit">Micro kit</option>
                     </select>
                 </td>
                 <td width="5" align="left"></td>
@@ -1492,309 +1315,95 @@
     
     <div data-role="content">
     	<table class="ui-body-d ui-shadow table-stripe ui-responsive"  data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px;">
-            <tr valign="middle" id="bn_row_label">
-                <td colspan="3" ><strong>Bn</strong></td>
-            </tr>  
-             <tr id="tKit_bn_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tKit_bn">Test Kit</label></td>
-                <td width="30%">
-                    <select name="tKit_bn" id="tKit_bn" data-native-menu="false" >
-                        <option value="">Select </option>
-                        <option value="Hach EZ As">Hach EZ As</option>
-                        <option value="Micro">Micro</option>
-                        <option value="Micro kit">Micro kit</option>
-                    </select>
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tScore_bn_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tScore_bn">Test Score</label></td>
-                <td width="30%">
-                    <input type="text" id="tScore_bn" name="tScore_bn" />
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tAt_bn_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tAt_bn">Tested at</label></td>
-                <td width="30%">
-                    <select name="tAt_bn" id="tAt_bn" data-native-menu="false" >
-                        <option value="">Select </option>
-                        <option value="Field">Field</option>
-                        <option value="Lab">Lab</option>
-                        <option value="N/A">N/A</option>
-                    </select>
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tDate_bn_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tDate_bn">Tested Date</label></td>
-                <td width="30%">
-                    <input type="date" id="tDate_bn" name="tDate_bn" />
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tBy_bn_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tBy_bn">Tested by</label></td>
-                <td width="30%">
-                    <select name="tBy_bn" id="tBy_bn" data-native-menu="false" >
-                        <option value="">Select </option>
-                        <option value="Engineer">Engineer</option>
-                        <option value="Field force">Field force</option>
-                        <option value="Lab">Lab</option>
-                    </select>
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr valign="middle" id="ph_row_label">
-                <td colspan="3" ><strong>pH</strong></td>
-            </tr>  
-            <tr id="tKit_ph_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tKit_ph">Test Kit</label></td>
-                <td width="30%">
-                    <select name="tKit_ph" id="tKit_ph" data-native-menu="false" >
-                        <option value="">Select </option>
-                        <option value="Hach EZ As">Hach EZ As</option>
-                        <option value="Micro">Micro</option>
-                        <option value="Micro kit">Micro kit</option>
-                    </select>
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tScore_ph_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tScore_ph">Test Score</label></td>
-                <td width="30%">
-                    <input type="text" id="tScore_ph" name="tScore_ph" />
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tAt_ph_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tAt_ph">Tested at</label></td>
-                <td width="30%">
-                    <select name="tAt_ph" id="tAt_ph" data-native-menu="false" >
-                        <option value="">Select </option>
-                        <option value="Field">Field</option>
-                        <option value="Lab">Lab</option>
-                        <option value="N/A">N/A</option>
-                    </select>
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tDate_ph_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tDate_ph">Tested Date</label></td>
-                <td width="30%">
-                    <input type="date" id="tDate_ph" name="tDate_ph" />
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tBy_ph_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tBy_ph">Tested by</label></td>
-                <td width="30%">
-                    <select name="tBy_ph" id="tBy_ph" data-native-menu="false" >
-                        <option value="">Select </option>
-                        <option value="Engineer">Engineer</option>
-                        <option value="Field force">Field force</option>
-                        <option value="Lab">Lab</option>
-                    </select>
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
             <tr valign="middle">
-                <td colspan="3" id="si_row_label"><strong>SI</strong></td>
-            </tr> 
-            <tr id="tKit_si_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tKit_si">Test Kit</label></td>
+                <td colspan="3" ><strong>Test Score</strong></td>
+            </tr>
+            <tr id="tScore_ttc_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tScore_ttc">TTC (ml)</label></td>
                 <td width="30%">
-                    <select name="tKit_si" id="tKit_si" data-native-menu="false" >
+                    <input type="text" id="tScore_ttc" name="tScore_ttc" />
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tScore_as_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tScore_as">As (PPb)</label></td>
+                <td width="30%">
+                    <input type="text" id="tScore_as" name="tScore_as" />
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tScore_fc_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tScore_fc">FC</label></td>
+                <td width="30%">
+                    <select name="tScore_fc" id="tScore_fc" data-native-menu="false" >
                         <option value="">Select </option>
-                        <option value="Hach EZ As">Hach EZ As</option>
-                        <option value="Micro">Micro</option>
-                        <option value="Micro kit">Micro kit</option>
-                    </select>
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tScore_si_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tScore_si">Test Score</label></td>
-                <td width="30%">
-                    <input type="text" id="tScore_si" name="tScore_si" />
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tDate_si_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tDate_si">Tested Date</label></td>
-                <td width="30%">
-                    <input type="date" id="tDate_si" name="tDate_si" />
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tBy_si_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tBy_si">Tested by</label></td>
-                <td width="30%">
-                    <select name="tBy_si" id="tBy_si" data-native-menu="false" >
-                        <option value="">Select </option>
-                        <option value="Engineer">Engineer</option>
-                        <option value="Field force">Field force</option>
-                        <option value="Lab">Lab</option>
-                    </select>
-                </td>
-                <td width="5" align="left"></td>
-            </tr>  
-            <tr valign="middle" id="turbidity_row_label">
-                <td colspan="3" ><strong>Turbidity</strong></td>
-            </tr> 
-            <tr id="tKit_turbidity_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tKit_turbidity">Test Kit</label></td>
-                <td width="30%">
-                    <select name="tKit_turbidity" id="tKit_turbidity" data-native-menu="false" >
-                        <option value="">Select </option>
-                        <option value="Hach EZ As">Hach EZ As</option>
-                        <option value="Micro">Micro</option>
-                        <option value="Micro kit">Micro kit</option>
-                    </select>
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tScore_turbidity_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tScore_turbidity">Test Score</label></td>
-                <td width="30%">
-                    <input type="text" id="tScore_turbidity" name="tScore_turbidity" />
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tAt_turbidity_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tAt_turbidity">Tested at</label></td>
-                <td width="30%">
-                    <select name="tAt_turbidity" id="tAt_turbidity" data-native-menu="false" >
-                        <option value="">Select </option>
-                        <option value="Field">Field</option>
-                        <option value="Lab">Lab</option>
+                        <option value="Presence">Presence</option>
+                        <option value="Absence">Absence</option>
                         <option value="N/A">N/A</option>
-                    </select>
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tDate_turbidity_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tDate_turbidity">Tested Date</label></td>
-                <td width="30%">
-                    <input type="date" id="tDate_turbidity" name="tDate_turbidity" />
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tBy_turbidity_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tBy_turbidity">Tested by</label></td>
-                <td width="30%">
-                    <select name="tBy_turbidity" id="tBy_turbidity" data-native-menu="false" >
-                        <option value="">Select </option>
-                        <option value="Engineer">Engineer</option>
-                        <option value="Field force">Field force</option>
-                        <option value="Lab">Lab</option>
-                    </select>
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr valign="middle" id="sn_bacteria_row_label">
-                <td colspan="3" ><strong>Sn Bacteria</strong></td>
-            </tr> 
-            <tr id="tKit_sn_bacteria_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tKit_sn_bacteria">Test Kit</label></td>
-                <td width="30%">
-                    <select name="tKit_sn_bacteria" id="tKit_sn_bacteria" data-native-menu="false" >
-                        <option value="">Select </option>
-                        <option value="Hach EZ As">Hach EZ As</option>
-                        <option value="Micro">Micro</option>
-                        <option value="Micro kit">Micro kit</option>
                     </select>
                 </td>
                 <td width="5" align="left"></td>
             </tr>
             <tr id="tScore_sn_bacteria_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tScore_sn_bacteria">Test Score</label></td>
+                <td width="70%" style="vertical-align:middle;"><label for="tScore_sn_bacteria">Sn Bacteria</label></td>
                 <td width="30%">
                     <input type="text" id="tScore_sn_bacteria" name="tScore_sn_bacteria" />
                 </td>
                 <td width="5" align="left"></td>
             </tr>
-            <tr id="tAt_sn_bacteria_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tAt_sn_bacteria">Tested at</label></td>
+            <tr id="tScore_turbidity_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tScore_turbidity">Turbidity</label></td>
                 <td width="30%">
-                    <select name="tAt_sn_bacteria" id="tAt_sn_bacteria" data-native-menu="false" >
-                        <option value="">Select </option>
-                        <option value="Field">Field</option>
-                        <option value="Lab">Lab</option>
-                        <option value="N/A">N/A</option>
-                    </select>
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tDate_sn_bacteria_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tDate_sn_bacteria">Tested Date</label></td>
-                <td width="30%">
-                    <input type="date" id="tDate_sn_bacteria" name="tDate_sn_bacteria" />
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr id="tBy_sn_bacteria_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tBy_sn_bacteria">Tested by</label></td>
-                <td width="30%">
-                    <select name="tBy_sn_bacteria" id="tBy_sn_bacteria" data-native-menu="false" >
-                        <option value="">Select </option>
-                        <option value="Engineer">Engineer</option>
-                        <option value="Field force">Field force</option>
-                        <option value="Lab">Lab</option>
-                    </select>
-                </td>
-                <td width="5" align="left"></td>
-            </tr>
-            <tr valign="middle" id="conductivity_row_label">
-                <td colspan="3" ><strong>Conductivity</strong></td>
-            </tr> 
-            <tr id="tKit_conductivity_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tKit_conductivity">Test Kit</label></td>
-                <td width="30%">
-                    <select name="tKit_conductivity" id="tKit_conductivity" data-native-menu="false" >
-                        <option value="">Select </option>
-                        <option value="Hach EZ As">Hach EZ As</option>
-                        <option value="Micro">Micro</option>
-                        <option value="Micro kit">Micro kit</option>
-                    </select>
+                    <input type="text" id="tScore_turbidity" name="tScore_turbidity" />
                 </td>
                 <td width="5" align="left"></td>
             </tr>
             <tr id="tScore_conductivity_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tScore_conductivity">Test Score</label></td>
+                <td width="70%" style="vertical-align:middle;"><label for="tScore_conductivity">Conductivity</label></td>
                 <td width="30%">
                     <input type="text" id="tScore_conductivity" name="tScore_conductivity" />
                 </td>
                 <td width="5" align="left"></td>
             </tr>
-            <tr id="tAt_conductivity_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tAt_conductivity">Tested at</label></td>
+            <tr id="tScore_iron_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tScore_iron">Iron(mg)</label></td>
                 <td width="30%">
-                    <select name="tAt_conductivity" id="tAt_conductivity" data-native-menu="false" >
-                        <option value="">Select </option>
-                        <option value="Field">Field</option>
-                        <option value="Lab">Lab</option>
-                        <option value="N/A">N/A</option>
-                    </select>
+                    <input type="text" id="tScore_iron" name="tScore_iron" />
                 </td>
                 <td width="5" align="left"></td>
             </tr>
-             <tr id="tDate_conductivity_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tDate_conductivity">Tested Date</label></td>
+            <tr id="tScore_mn_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tScore_mn">Mn (mg)</label></td>
                 <td width="30%">
-                    <input type="date" id="tDate_conductivity" name="tDate_conductivity" />
+                    <input type="text" id="tScore_mn" name="tScore_mn" />
                 </td>
                 <td width="5" align="left"></td>
             </tr>
-            <tr id="tBy_conductivity_row">
-                <td width="70%" style="vertical-align:middle;"><label for="tBy_conductivity">Tested by</label></td>
+            <tr id="tScore_chloride_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tScore_chloride">Chloride (mg)</label></td>
                 <td width="30%">
-                    <select name="tBy_conductivity" id="tBy_conductivity" data-native-menu="false" >
-                        <option value="">Select </option>
-                        <option value="Engineer">Engineer</option>
-                        <option value="Field force">Field force</option>
-                        <option value="Lab">Lab</option>
-                    </select>
+                    <input type="text" id="tScore_chloride" name="tScore_chloride" />
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tScore_bn_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tScore_bn">Bn</label></td>
+                <td width="30%">
+                    <input type="text" id="tScore_bn" name="tScore_bn" />
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tScore_ph_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tScore_ph">pH</label></td>
+                <td width="30%">
+                    <input type="text" id="tScore_ph" name="tScore_ph" />
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tScore_si_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tScore_si">SI</label></td>
+                <td width="30%">
+                    <input type="text" id="tScore_si" name="tScore_si" />
                 </td>
                 <td width="5" align="left"></td>
             </tr>
@@ -1815,6 +1424,432 @@
         <h3>Water Quality Data</h3>
   </div>
 
+    <div data-role="content">
+    	<table class="ui-body-d ui-shadow table-stripe ui-responsive"  data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px;">
+            <tr valign="middle">
+                <td colspan="3" ><strong>Tested at</strong></td>
+            </tr>
+            <tr id="tAt_ttc_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tAt_ttc">TTC (ml)</label></td>
+                <td width="30%">
+                    <select name="tAt_ttc" id="tAt_ttc" data-native-menu="false" >
+                        <option value="">Select </option>
+                        <option value="Field">Field</option>
+                        <option value="Lab">Lab</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tAt_as_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tAt_as">As (PPb)</label></td>
+                <td width="30%">
+                    <select name="tAt_as" id="tAt_as" data-native-menu="false" >
+                        <option value="">Select </option>
+                        <option value="Field">Field</option>
+                        <option value="Lab">Lab</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tAt_fc_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tAt_fc">FC</label></td>
+                <td width="30%">
+                    <select name="tAt_fc" id="tAt_fc" data-native-menu="false" >
+                        <option value="">Select </option>
+                        <option value="Field">Field</option>
+                        <option value="Lab">Lab</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tAt_sn_bacteria_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tAt_sn_bacteria">Sn Bacteria</label></td>
+                <td width="30%">
+                    <select name="tAt_sn_bacteria" id="tAt_sn_bacteria" data-native-menu="false" >
+                        <option value="">Select </option>
+                        <option value="Field">Field</option>
+                        <option value="Lab">Lab</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tAt_turbidity_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tAt_turbidity">Turbidity</label></td>
+                <td width="30%">
+                    <select name="tAt_turbidity" id="tAt_turbidity" data-native-menu="false" >
+                        <option value="">Select </option>
+                        <option value="Field">Field</option>
+                        <option value="Lab">Lab</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tAt_conductivity_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tAt_conductivity">Conductivity</label></td>
+                <td width="30%">
+                    <select name="tAt_conductivity" id="tAt_conductivity" data-native-menu="false" >
+                        <option value="">Select </option>
+                        <option value="Field">Field</option>
+                        <option value="Lab">Lab</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tAt_iron_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tAt_iron">Iron(mg)</label></td>
+                <td width="30%">
+                    <select name="tAt_iron" id="tAt_iron" data-native-menu="false" >
+                        <option value="">Select </option>
+                        <option value="Field">Field</option>
+                        <option value="Lab">Lab</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tAt_mn_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tAt_mn">Mn (mg)</label></td>
+                <td width="30%">
+                    <select name="tAt_mn" id="tAt_mn" data-native-menu="false" >
+                        <option value="">Select </option>
+                        <option value="Field">Field</option>
+                        <option value="Lab">Lab</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tAt_chloride_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tAt_chloride">Chloride (mg)</label></td>
+                <td width="30%">
+                    <select name="tAt_chloride" id="tAt_chloride" data-native-menu="false" >
+                        <option value="">Select </option>
+                        <option value="Field">Field</option>
+                        <option value="Lab">Lab</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tAt_bn_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tAt_bn">Bn</label></td>
+                <td width="30%">
+                    <select name="tAt_bn" id="tAt_bn" data-native-menu="false" >
+                        <option value="">Select </option>
+                        <option value="Field">Field</option>
+                        <option value="Lab">Lab</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tAt_ph_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tAt_ph">pH</label></td>
+                <td width="30%">
+                    <select name="tAt_ph" id="tAt_ph" data-native-menu="false" >
+                        <option value="">Select </option>
+                        <option value="Field">Field</option>
+                        <option value="Lab">Lab</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            
+        </table>
+           
+         <a data-role="button" href="#" onClick="waterData4Next();"  data-transition="slide" >Next</a>
+         <div class="errorChk"></div>
+         <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    </div>
+</div>
+
+
+<!-- -----------------------water quality page5------------------------------- -->
+<div data-role="page" data-theme="d" id="waterData5" style="overflow:scroll" >
+    <div data-theme="d" data-role="header" data-position="fixed" >
+    <a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
+    <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right">Back</a>
+    <h3>Water Quality Data</h3>
+</div>
+
+	<div data-role="content">
+    	<table class="ui-body-d ui-shadow table-stripe ui-responsive"  data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px;">
+            <tr valign="middle">
+                <td colspan="3" ><strong>Tested Date</strong></td>
+            </tr>
+            <tr id="tDate_ttc_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tDate_ttc">TTC (ml)</label></td>
+                <td width="30%">
+                    <input type="date" id="tDate_ttc" name="tDate_ttc" />
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tDate_as_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tDate_as">As (PPb)</label></td>
+                <td width="30%">
+                    <input type="date" id="tDate_as" name="tDate_as" />
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tDate_fc_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tDate_fc">FC</label></td>
+                <td width="30%">
+                    <input type="date" id="tDate_fc" name="tDate_fc" />
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tDate_sn_bacteria_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tDate_sn_bacteria">Sn Bacteria</label></td>
+                <td width="30%">
+                    <input type="date" id="tDate_sn_bacteria" name="tDate_sn_bacteria" />
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tDate_turbidity_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tDate_turbidity">Turbidity</label></td>
+                <td width="30%">
+                    <input type="date" id="tDate_turbidity" name="tDate_turbidity" />
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tDate_conductivity_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tDate_conductivity">Conductivity</label></td>
+                <td width="30%">
+                    <input type="date" id="tDate_conductivity" name="tDate_conductivity" />
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tDate_iron_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tDate_iron">Iron(mg)</label></td>
+                <td width="30%">
+                    <input type="date" id="tDate_iron" name="tDate_iron" />
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tDate_mn_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tDate_mn">Mn (mg)</label></td>
+                <td width="30%">
+                    <input type="date" id="tDate_mn" name="tDate_mn" />
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tDate_chloride_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tDate_chloride">Chloride (mg)</label></td>
+                <td width="30%">
+                    <input type="date" id="tDate_chloride" name="tDate_chloride" />
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tDate_bn_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tDate_bn">Bn</label></td>
+                <td width="30%">
+                    <input type="date" id="tDate_bn" name="tDate_bn" />
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tDate_ph_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tDate_ph">pH</label></td>
+                <td width="30%">
+                    <input type="date" id="tDate_ph" name="tDate_ph" />
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tDate_si_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tDate_si">SI</label></td>
+                <td width="30%">
+                    <input type="date" id="tDate_si" name="tDate_si" />
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+        </table>
+        
+        <a data-role="button" href="#" onClick="waterData5Next();" data-transition="slide" >Next</a>
+        <div class="errorChk"></div>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	</div>
+</div>
+
+<!-- ===============water quality page7================== -->
+<div data-role="page" data-theme="d" id="waterData6" style="overflow:scroll" >
+    <div data-theme="d" data-role="header" data-position="fixed" >
+    	<a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
+        <a data-role="button"  onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
+        <h3> Water Quality Data</h3>
+    </div>
+    
+    <div data-role="content">
+    	<table class="ui-body-d ui-shadow table-stripe ui-responsive"  data-role="table" data-theme="d"  data-mode="display:none" style="cell-spacing:0px;">
+            <tr valign="middle">
+                <td colspan="3" ><strong>Tested by</strong></td>
+            </tr>
+            <tr id="tBy_ttc_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tBy_ttc">TTC(ml)</label></td>
+                <td width="30%">
+                    <select name="tBy_ttc" id="tBy_ttc" data-native-menu="false" >
+                        <option value="">Select </option>
+                        <option value="Engineer">Engineer</option>
+                        <option value="Field force">Field force</option>
+                        <option value="Lab">Lab</option>
+                    </select>	
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tBy_as_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tBy_as">As(PPb)</label></td>
+                <td width="30%">
+                    <select name="tBy_as" id="tBy_as" data-native-menu="false" >
+                        <option value="">Select </option>
+                        <option value="Engineer">Engineer</option>
+                        <option value="Field force">Field force</option>
+                        <option value="Lab">Lab</option>
+                    </select>	
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tBy_fc_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tBy_fc">FC</label></td>
+                <td width="30%">
+                    <select name="tBy_fc" id="tBy_fc" data-native-menu="false" >
+                        <option value="">Select </option>
+                        <option value="Engineer">Engineer</option>
+                        <option value="Field force">Field force</option>
+                        <option value="Lab">Lab</option>
+                    </select>
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tBy_sn_bacteria_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tBy_sn_bacteria">Sn Bacteria</label></td>
+                <td width="30%">
+                    <select name="tBy_sn_bacteria" id="tBy_sn_bacteria" data-native-menu="false" >
+                        <option value="">Select </option>
+                        <option value="Engineer">Engineer</option>
+                        <option value="Field force">Field force</option>
+                        <option value="Lab">Lab</option>
+                    </select>
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tBy_turbidity_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tBy_turbidity">Turbidity</label></td>
+                <td width="30%">
+                    <select name="tBy_turbidity" id="tBy_turbidity" data-native-menu="false" >
+                        <option value="">Select </option>
+                        <option value="Engineer">Engineer</option>
+                        <option value="Field force">Field force</option>
+                        <option value="Lab">Lab</option>
+                    </select>
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tBy_conductivity_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tBy_conductivity">Conductivity</label></td>
+                <td width="30%">
+                    <select name="tBy_conductivity" id="tBy_conductivity" data-native-menu="false" >
+                        <option value="">Select </option>
+                        <option value="Engineer">Engineer</option>
+                        <option value="Field force">Field force</option>
+                        <option value="Lab">Lab</option>
+                    </select>
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tBy_iron_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tBy_iron">Iron(mg)</label></td>
+                <td width="30%">
+                    <select name="tBy_iron" id="tBy_iron" data-native-menu="false" >
+                        <option value="">Select </option>
+                        <option value="Engineer">Engineer</option>
+                        <option value="Field force">Field force</option>
+                        <option value="Lab">Lab</option>
+                    </select>
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tBy_mn_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tBy_mn">Mn(mg)</label></td>
+                <td width="30%">
+                    <select name="tBy_mn" id="tBy_mn" data-native-menu="false" >
+                        <option value="">Select </option>
+                        <option value="Engineer">Engineer</option>
+                        <option value="Field force">Field force</option>
+                        <option value="Lab">Lab</option>
+                    </select>
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tBy_chloride_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tBy_chloride">Chloride(mg)</label></td>
+                <td width="30%">
+                    <select name="tBy_chloride" id="tBy_chloride" data-native-menu="false" >
+                        <option value="">Select </option>
+                        <option value="Engineer">Engineer</option>
+                        <option value="Field force">Field force</option>
+                        <option value="Lab">Lab</option>
+                    </select>
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tBy_bn_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tBy_bn">Bn</label></td>
+                <td width="30%">
+                    <select name="tBy_bn" id="tBy_bn" data-native-menu="false" >
+                        <option value="">Select </option>
+                        <option value="Engineer">Engineer</option>
+                        <option value="Field force">Field force</option>
+                        <option value="Lab">Lab</option>
+                    </select>
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tBy_ph_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tBy_ph">pH</label></td>
+                <td width="30%">
+                    <select name="tBy_ph" id="tBy_ph" data-native-menu="false" >
+                        <option value="">Select </option>
+                        <option value="Engineer">Engineer</option>
+                        <option value="Field force">Field force</option>
+                        <option value="Lab">Lab</option>
+                    </select>
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+            <tr id="tBy_si_row">
+                <td width="70%" style="vertical-align:middle;"><label for="tBy_si">SI</label></td>
+                <td width="30%">
+                    <select name="tBy_si" id="tBy_si" data-native-menu="false" >
+                        <option value="">Select </option>
+                        <option value="Engineer">Engineer</option>
+                        <option value="Field force">Field force</option>
+                        <option value="Lab">Lab</option>
+                    </select>
+                </td>
+                <td width="5" align="left"></td>
+            </tr>
+        </table>
+        
+        <a data-role="button" href="#" onClick="waterData6Next();"  data-transition="slide" >Next</a>
+        <div class="errorChk"></div>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    </div>
+</div>
+
+
+<!-- ----------------------------water quality page8--------------------------------- -->
+<div data-role="page" data-theme="d" id="waterData7" style="overflow:scroll" >
+    <div data-theme="d" data-role="header" data-position="fixed" >
+    	<a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
+        <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
+        <h3>Water Quality Data</h3>
+    </div>
+    
     <div data-role="content">
     	<ul data-role="listview" data-inset="true" data-theme="d">
 			<li style="background-color:#F2F2F2;">Other Particulars</li>
@@ -1869,70 +1904,77 @@
                 </fieldset>
             </li>
         </ul>
-        <a data-role="button" href="#" onClick="waterData4Next();"  data-transition="slide" >Next</a>
+            
+        <a data-role="button" onClick="waterData7Next();"  data-transition="slide" >Next</a>
         <div class="errorChk"></div>
         <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-    </div>
+    </div>  
 </div>
 
 
-<!-- -----------------------water quality page5------------------------------- -->
-<div data-role="page" data-theme="d" id="waterData5" style="overflow:scroll" >
-    <div data-theme="d" data-role="header" data-position="fixed" >
-    <a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
-    <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right">Back</a>
-    <h3>Water Quality Data</h3>
-</div>
-
-	<div data-role="content">
-    	<ul data-role="listview" data-inset="true" id="safeWaterOPtion" data-theme="d">
-            <li style="background-color:#F2F2F2;">Other Particulars (History)</li>
-            <li class="ui-field-contain">   
-                <label for="application_date">Application Date</label>
-                <input type="date" id="application_date" name="application_date" />
-            </li>
-            <li class="ui-field-contain">   
-                <label for="site_selection_date">Site Selection Date</label>
-                <input type="date" id="site_selection_date" name="site_selection_date" />
-            </li>
-            <li class="ui-field-contain">   
-                <label for="sample_collection_date">Sample Collection Date</label>
-                <input type="date" id="sample_collection_date" name="sample_collection_date" />
-            </li>
-        </ul>
-        
-        <ul data-role="listview" data-inset="true" data-theme="d">
-            <li style="background-color:#F2F2F2;">Other Particulars</li>
-            <li class="ui-field-contain">
-                <label for="ownerName">Owner Name </label>
-                <input name="ownerName" id="ownerName" placeholder="" value="" type="text">
-            </li>
-            <li class="ui-field-contain">
-                <label for="ownerPhone">Owner Phone No </label>
-                <input name="ownerPhone" id="ownerPhone" placeholder="" value="" type="number">
-            </li>
-            <li class="ui-field-contain">
-                <label for="caretaker">Caretaker Name </label>
-                <input name="caretaker" id="caretaker" placeholder="" value="" type="text">	
-            </li>
-            <li class="ui-field-contain">
-                <label for="caretakerPhoneNo">Caretaker Phone No </label>
-                <input name="caretakerPhoneNo" id="caretakerPhoneNo" placeholder="" value="" type="number">	
-            </li>
-        </ul>
-        <a data-role="button" href="#" onClick="waterData5Next();" data-transition="slide" >Next</a>
-        <div class="errorChk"></div>
-        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-	</div>
-</div>
-
-
-<div data-role="page" data-theme="d" id="waterData6" style="overflow:scroll" >
+<!-- ---------------------------water quality page9----------------------------------- -->
+<div data-role="page" data-theme="d" id="waterData8" style="overflow:scroll" >
     <div data-theme="d" data-role="header" data-position="fixed" >
     	<a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
-        <a data-role="button"  onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
-        <h3> Water Quality Data</h3>
+        <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
+        <h3>Water Quality Data</h3>
+  	</div>
+    
+    <div data-role="content">            
+            <ul data-role="listview" data-inset="true" id="safeWaterOPtion" data-theme="d">
+                <li style="background-color:#F2F2F2;">Other Particulars (History)</li>
+                <li class="ui-field-contain">   
+                	<label for="application_date">Application Date</label>
+                    <input type="date" id="application_date" name="application_date" />
+                </li>
+                <li class="ui-field-contain">   
+                	<label for="site_selection_date">Site Selection Date</label>
+                    <input type="date" id="site_selection_date" name="site_selection_date" />
+                </li>
+                <li class="ui-field-contain">   
+                	<label for="sample_collection_date">Sample Collection Date</label>
+                    <input type="date" id="sample_collection_date" name="sample_collection_date" />
+                </li>
+            </ul>
+            
+            <ul data-role="listview" data-inset="true" data-theme="d">
+                <li style="background-color:#F2F2F2;">Other Particulars</li>
+                <li class="ui-field-contain">
+                    <label for="ownerName">Owner Name </label>
+                    <input name="ownerName" id="ownerName" placeholder="" value="" type="text">
+                </li>
+                <li class="ui-field-contain">
+                    <label for="ownerPhone">Owner Phone No </label>
+                    <input name="ownerPhone" id="ownerPhone" placeholder="" value="" type="number">
+                </li>
+                <li class="ui-field-contain">
+                    <label for="caretaker">Caretaker Name </label>
+                    <input name="caretaker" id="caretaker" placeholder="" value="" type="text">	
+                </li>
+                <li class="ui-field-contain">
+                    <label for="caretakerPhoneNo">Caretaker Phone No </label>
+                    <input name="caretakerPhoneNo" id="caretakerPhoneNo" placeholder="" value="" type="number">	
+                </li>
+            </ul>
+            
+            <a data-role="button" href="#" onClick="waterData8Next();"  data-transition="slide" >Next</a>
+            <div class="errorChk"></div>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     </div>
+    
+<!--    <div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
+-->    
+</div>
+
+
+<!-- ===============water quality page9.1================== -->
+<div data-role="page" data-theme="d" id="waterData9" style="overflow:scroll" >
+    <div data-theme="d" data-role="header" data-position="fixed" >
+    <a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
+        <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
+        <h3>Water Quality Data</h3>
+    </div>
+    
     <div data-role="content">
     	<ul data-role="listview" data-inset="true" data-theme="d">
             <li style="background-color:#F2F2F2;">Operation and Maintenance</li>
@@ -1987,96 +2029,110 @@
                 </fieldset>
             </li>
         </ul>
-        <a data-role="button" href="#" onClick="waterData6Next();"  data-transition="slide" >Next</a>
+        <a data-role="button" href="#" onClick="waterData9Next();"   data-transition="slide" >Next</a>
         <div class="errorChk"></div>
-        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     </div>
 </div>
 
 
-<!-- ----------------------------water quality page8--------------------------------- -->
-<div data-role="page" data-theme="d" id="waterData7" style="overflow:scroll" >
-    <div data-theme="d" data-role="header" data-position="fixed" >
-    	<a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
-        <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
-        <h3>Water Quality Data</h3>
-    </div>
-    <div data-role="content">   
-    	<ul data-role="listview" data-inset="true" data-theme="d">
-            <li style="background-color:#F2F2F2;">What is the status of the water option <sup class="reqField">*</sup></li>
-            <li class="ui-field-contain">
-                <fieldset data-role="controlgroup">
-                    <input name="functionality" id="functional" value="Functional" type="radio">
-                    <label for="functional">Functional</label>
-                    <input name="functionality" id="partial" value="Partially Functional" type="radio">
-                    <label for="partial">Partially Functional</label>
-                    <input name="functionality" id="non_functional" value="Non Functional" type="radio" >
-                    <label for="non_functional">Non Functional</label>
-                </fieldset>
-            </li>
-        </ul>
-        
-        <ul data-role="listview" data-inset="true" id="useOfChk" data-theme="d">
-            <li style="background-color:#F2F2F2;">Use of water </li>
-            <li class="ui-field-contain">
-                <fieldset data-role="controlgroup">
-                    <input name="drinking" id="drinking" value="Drinking" type="checkbox" >
-                    <label for="drinking">Drinking</label>
-                    <input name="cooking" id="cooking" value="Cooking" type="checkbox" >
-                    <label for="cooking">Cooking</label>
-                    <input name="washing" id="washing" value="Washing" type="checkbox" >                              
-                    <label for="washing">Washing</label>
-                    <input name="drinking_cooking" id="drinking_cooking" value="Drinking and Cooking" type="checkbox" >
-                    <label for="drinking_cooking">Drinking and Cooking</label>
-                    <input name="drinking_cooking_washing" id="drinking_cooking_washing" value="Drinking Cooking and Washing" type="checkbox" >
-                    <label for="drinking_cooking_washing">Drinking Cooking and Washing</label>                              
-                    <input name="others_option" id="others_option" value="Others Purpose" type="checkbox" >
-                    <label for="others_option">Others Purpose</label>
-                </fieldset>
-            </li>
-            
-        </ul>
-        <ul data-role="listview" data-inset="true" data-theme="d">
-            <li style="background-color:#F2F2F2;" class="auto_break">Do users pay for operation and maintenance of the water options</li>
-            <li class="ui-field-contain">
-                <fieldset data-role="controlgroup">
-                    <input type="radio" name="do_user_pay" id="do_user_pay_y" value="YES">
-                    <label for="do_user_pay_y">YES</label>
-                    <input type="radio" name="do_user_pay" id="do_user_pay_n" value="NO">
-                    <label for="do_user_pay_n">NO</label>
-                </fieldset>
-            </li>
-        </ul>
-         
-        <ul data-role="listview" data-inset="true" data-theme="d">
-            <li style="background-color:#F2F2F2;" class="auto_break">In case of piped water, is the connection legal</li>
-            <li class="ui-field-contain">
-                <fieldset data-role="controlgroup">
-                    <input type="radio" name="piped_w_conn" id="piped_w_conn_y" value="YES" >
-                    <label for="piped_w_conn_y">YES</label>
-                    <input type="radio" name="piped_w_conn" id="piped_w_conn_n" value="NO" >
-                    <label for="piped_w_conn_n">NO</label>
-                </fieldset>
-            </li>
-        </ul> 
-    
-        <a data-role="button" onClick="waterData7Next();"  data-transition="slide" >Next</a>
-        <div class="errorChk"></div>
-        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-    </div>  
-</div>
 
 
-<!-- ---------------------------water quality page9----------------------------------- -->
-<div data-role="page" data-theme="d" id="waterData8" style="overflow:scroll" >
+
+<!-- -------------------------water quality page10------------------------------ -->
+<div data-role="page" data-theme="d" id="waterData10" style="overflow:scroll" >
     <div data-theme="d" data-role="header" data-position="fixed" >
     	<a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
         <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
         <h3>Water Quality Data</h3>
   	</div>
     
-    <div data-role="content">      
-        <ul data-role="listview" data-inset="true" id="isManagement" data-theme="d">
+    <div data-role="content">
+            <div class="errorChk"></div>
+            <ul data-role="listview" data-inset="true" data-theme="d">
+                <li style="background-color:#F2F2F2;">What is the status of the water option <sup class="reqField">*</sup></li>
+                <li class="ui-field-contain">
+                    <fieldset data-role="controlgroup">
+                        <input name="functionality" id="functional" value="Functional" type="radio">
+                        <label for="functional">Functional</label>
+                        <input name="functionality" id="partial" value="Partially Functional" type="radio">
+                        <label for="partial">Partially Functional</label>
+                        <input name="functionality" id="non_functional" value="Non Functional" type="radio" >
+                        <label for="non_functional">Non Functional</label>
+                    </fieldset>
+                </li>
+            </ul>
+            
+                <ul data-role="listview" data-inset="true" id="useOfChk" data-theme="d">
+                    <li style="background-color:#F2F2F2;">Use of water </li>
+                    <li class="ui-field-contain">
+                        <fieldset data-role="controlgroup">
+                            <input name="drinking" id="drinking" value="Drinking" type="checkbox" >
+                            <label for="drinking">Drinking</label>
+                            <input name="cooking" id="cooking" value="Cooking" type="checkbox" >
+                            <label for="cooking">Cooking</label>
+                            <input name="washing" id="washing" value="Washing" type="checkbox" >                              
+                            <label for="washing">Washing</label>
+                            <input name="drinking_cooking" id="drinking_cooking" value="Drinking and Cooking" type="checkbox" >
+                            <label for="drinking_cooking">Drinking and Cooking</label>
+                            <input name="drinking_cooking_washing" id="drinking_cooking_washing" value="Drinking Cooking and Washing" type="checkbox" >
+                            <label for="drinking_cooking_washing">Drinking Cooking and Washing</label>                              
+                            <input name="others_option" id="others_option" value="Others Purpose" type="checkbox" >
+                            <label for="others_option">Others Purpose</label>
+                        </fieldset>
+                    </li>
+                    
+                </ul>
+                <ul data-role="listview" data-inset="true" data-theme="d">
+                	<li style="background-color:#F2F2F2;" class="auto_break">Do users pay for operation and maintenance of the water options</li>
+                    <li class="ui-field-contain">
+                        <fieldset data-role="controlgroup">
+                            <input type="radio" name="do_user_pay" id="do_user_pay_y" value="YES">
+                            <label for="do_user_pay_y">YES</label>
+                            <input type="radio" name="do_user_pay" id="do_user_pay_n" value="NO">
+                            <label for="do_user_pay_n">NO</label>
+                        </fieldset>
+                    </li>
+                </ul>
+                 
+                <ul data-role="listview" data-inset="true" data-theme="d">
+                    <li style="background-color:#F2F2F2;" class="auto_break">In case of piped water, is the connection legal</li>
+                    <li class="ui-field-contain">
+                        <fieldset data-role="controlgroup">
+                            <input type="radio" name="piped_w_conn" id="piped_w_conn_y" value="YES" >
+                            <label for="piped_w_conn_y">YES</label>
+                            <input type="radio" name="piped_w_conn" id="piped_w_conn_n" value="NO" >
+                            <label for="piped_w_conn_n">NO</label>
+                        </fieldset>
+                    </li>
+                </ul>
+                                            
+            
+            <a data-role="button" href="#" onClick="waterData10Next();"  data-transition="slide" >Next</a>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    </div>
+    
+<!--    <div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
+-->    
+</div>
+
+
+
+
+
+
+
+<!-- --------------------------water quality page11------------------------------------- -->
+<div data-role="page" data-theme="d" id="waterData11" style="overflow:scroll" >
+
+    <div data-theme="d" data-role="header" data-position="fixed" >
+    	<a data-role="button" href="#reportType" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
+        <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
+        <h3>Water Quality Data</h3>
+  	</div>
+    
+    <div data-role="content">
+    	<ul data-role="listview" data-inset="true" id="isManagement" data-theme="d">
             <li class="ui-field-contain">
                 <fieldset data-role="controlgroup">
                     <legend>Does management committee exist</legend>
@@ -2165,59 +2221,12 @@
                     <label for="caretaker_train_no_4">Others</label>
                 </fieldset>
             </li>
-        </ul>     
-        <a data-role="button" href="#" onClick="waterData8Next();"  data-transition="slide" >Next</a>
-        <div class="errorChk"></div>
-        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-    </div>  
-</div>
-
-
-<!--<div data-role="page" data-theme="d" id="waterData9" style="overflow:scroll" >
-    <div data-theme="d" data-role="header" data-position="fixed" >
-    <a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
-        <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
-        <h3>Water Quality Data</h3>
-    </div>
-    <div data-role="content"> 
-    	
-        <a data-role="button" href="#" onClick="waterData9Next();"   data-transition="slide" >Next</a>
-        <div class="errorChk"></div>
-    	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-    </div>
-</div>-->
-
-
-<!--<div data-role="page" data-theme="d" id="waterData10" style="overflow:scroll" >
-    <div data-theme="d" data-role="header" data-position="fixed" >
-    	<a data-role="button" onClick="waterAidClick();" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
-        <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
-        <h3>Water Quality Data</h3>
-  	</div>
-    
-    <div data-role="content">
-         
-         <a data-role="button" href="#" onClick="waterData10Next();"  data-transition="slide" >Next</a>
-         <div class="errorChk"></div>
-        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-    </div>
-</div>
-
-
-<div data-role="page" data-theme="d" id="waterData11" style="overflow:scroll" >
-    <div data-theme="d" data-role="header" data-position="fixed" >
-    	<a data-role="button" href="#reportType" data-icon="bullets" data-iconpos="left" class="ui-btn ui-shadow ui-corner-all ui-icon-bullets " ><img src="wateraid-logo-small.jpg"></a>
-        <a data-role="button" onclick="backClick();" data-rel="back"  data-icon="arrow-l" data-iconpos="left" class="ui-btn-right" data-transition="slide">Back</a>
-        <h3>Water Quality Data</h3>
-  	</div>
-    
-    <div data-role="content">
-    	
+        </ul>
         <div class="errorChk"></div>
         <a data-role="button" href="#" onClick="waterData11Next();"  data-transition="slide" >Next</a>
         <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     </div>   
-</div>-->
+</div>
 
 
 <div data-role="page" data-theme="d" id="waterDataPhoto" style="overflow:scroll" >
@@ -2248,7 +2257,9 @@
     <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 			
     </div>
-</div>
+           
+<!--	<div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >m-Reporting</div>
+--></div>
 
 
 <script type="text/javascript" src="phonegap.js"></script>
