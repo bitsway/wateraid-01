@@ -78,7 +78,7 @@ function onErrorAreaWq(error) {
 var apipath="http://w05.yeapps.com/wateraid/syncmobile_wq_20190320/";
 
 //--- local
-//var apipath="http://127.0.0.1:8000/wateraid/syncmobile_wq_20190320/";
+//var apipath="http://127.0.0.1:8000/wateraid/syncmobile/";
 
 
 var planFlag=0;
