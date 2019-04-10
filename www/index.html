@@ -97,6 +97,9 @@
                 <input name="area_long" id="area_long"  type="hidden">
         		<a data-role="button" id="btn_area_lat_long" onClick="getLocationInfoAreaWq();" class="ui-btn" >Area location</a>
            </ul> 
+           <ul data-role="listview" data-inset="true">
+           		<a data-role="button" id="btn_area_lat_long" onClick="wqTest();" class="ui-btn" >Test</a>
+           </ul>
     </div>
     <div data-theme="d" data-role="footer" data-position="fixed" style="font-size:12px;background-color:#CCC;" align="center" >mReporting 20190410-1</div>
   
@@ -1154,25 +1157,25 @@
 		</ul>
         
 	
-        <!--<div data-role="collapsibleset" data-theme="a" data-content-theme="a" data-mini="true">
+        <div data-role="collapsibleset" data-theme="a" data-content-theme="a" data-mini="true">
             <div data-role="collapsible">
                 <h3>SI</h3>
             <p>
-            	<label for="tKit_si">Test Kit</label>
-                <select name="tKit_si" id="tKit_si" data-native-menu="false" >
+            	<label for="tKit_si0">Test Kit</label>
+                <select name="tKit_si0" id="tKit_si0" data-native-menu="false" >
                     <option value="">Select </option>
                     <option value="Hach EZ As">Hach EZ As</option>
                     <option value="Micro">Micro</option>
                     <option value="Micro kit">Micro kit</option>
                 </select>
-                <label for="tScore_si">Test Score</label>
-                <input type="text" id="tScore_si" name="tScore_si" />
+                <label for="tScore_si0">Test Score</label>
+                <input type="text" id="tScore_si0" name="tScore_si0" />
                 
-                <label for="tDate_si">Tested Date</label>
-                <input type="date" id="tDate_si" name="tDate_si" />
+                <label for="tDate_si0">Tested Date</label>
+                <input type="date" id="tDate_si0" name="tDate_si0" />
                 
-                <label for="tBy_si">Tested by</label>
-                <select name="tBy_si" id="tBy_si" data-native-menu="false" >
+                <label for="tBy_si0">Tested by</label>
+                <select name="tBy_si0" id="tBy_si0" data-native-menu="false" >
                     <option value="">Select </option>
                     <option value="Engineer">Engineer</option>
                     <option value="Field force">Field force</option>
@@ -1183,9 +1186,30 @@
             </div>
             <div data-role="collapsible">
                 <h3>Arsenic(PPb)</h3>
-            <p>Here's some collapsible content.</p>
+                <p>
+                    <label for="tKit_si1">Test Kit</label>
+                    <select name="tKit_si1" id="tKit_si1" data-native-menu="false" >
+                        <option value="">Select </option>
+                        <option value="Hach EZ As">Hach EZ As</option>
+                        <option value="Micro">Micro</option>
+                        <option value="Micro kit">Micro kit</option>
+                    </select>
+                    <label for="tScore_si1">Test Score</label>
+                    <input type="text" id="tScore_si1" name="tScore_si1" />
+                    
+                    <label for="tDate_si1">Tested Date</label>
+                    <input type="date" id="tDate_si1" name="tDate_si1" />
+                    
+                    <label for="tBy_si1">Tested by</label>
+                    <select name="tBy_si1" id="tBy_si1" data-native-menu="false" >
+                        <option value="">Select </option>
+                        <option value="Engineer">Engineer</option>
+                        <option value="Field force">Field force</option>
+                        <option value="Lab">Lab</option>
+                    </select>
+                </p>
             </div>
-            <div data-role="collapsible">
+            <!--<div data-role="collapsible">
                 <h3>FC</h3>
             <p>Final bit of collapsible content.</p>
             </div>
@@ -1224,8 +1248,8 @@
             <div data-role="collapsible">
                 <h3>Conductivity(S/m)</h3>
             <p>Final bit of collapsible content.</p>
-            </div>
-        </div>-->
+            </div>-->
+        </div>
         
         
         <label for="service_level_wq" id="service_level_wq"> Service Level <sup class="reqField">*</sup></label>
