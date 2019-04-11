@@ -75,9 +75,7 @@ function onErrorAreaWq(error) {
    $(".errorChk").html("Failed to Confirmed Location.");
 }
 
-function wqTest(){
-	alert('WaterAid Bangladesh');	
-}
+
 
 //---Online
 var apipath="http://w05.yeapps.com/wateraid/syncmobile_wq_20190320/";
@@ -335,7 +333,7 @@ $(function(){
 						$("#TestTypeDiv").html(localStorage.test_type_wq);
 						
 						//========
-						$("#service_level_wq").hide();
+						$("#parameter_label").hide();
 						$("#div_si").hide();
 						$("#div_arsenic").hide();
 						$("#div_fc").hide();
@@ -529,7 +527,7 @@ $(document).ready(function(){
 	$("#other_alt").hide();
 	
 	//========
-	$("#service_level_wq").hide();
+	$("#parameter_label").hide();
 	$("#div_si").hide();
 	$("#div_arsenic").hide();
 	$("#div_fc").hide();
@@ -1054,8 +1052,6 @@ function achive_Event(){
 function select_Wordcode(){
 	var cboCombo=$("#cbo_combo").val();	
 	$("#achID_show").val(cboCombo);
-	
-	
 }
 
 //-----------------------------achivement data people support
@@ -2575,7 +2571,7 @@ function select_domainWq(){
 			//=============ward			
 			var selectWardCodeWq=$("#selectWardCodeWq").val();
 			var wordCodeListWq=localStorage.cbo_id_wq.split('|||');			
-			cboStrWq='<select name="wq_cbo_combo" id="wq_cbo_combo" >'	//data-native-menu="false"	
+			cboStrWq='<select name="wq_cbo_combo" id="wq_cbo_combo" onchange="select_Wordcode_wq()">'	//data-native-menu="false"	
 			cboStrWq+='<option value="">Select Ward Code</option><sup class="reqField">*</sup>'
 			for (j=0;j<eval(wordCodeListWq.length);j++){
 				wordCodeWqLi=wordCodeListWq[j].split('||');
@@ -2613,6 +2609,12 @@ function select_domainWq(){
 		}
 	}
 }	
+
+function select_Wordcode_wq(){
+	var wq_cbo_combo=$("#wq_cbo_combo").val();	
+	$("#wardCode_show").val(wq_cbo_combo);
+}
+
 	
 function wQLocationNext(){
 	if($("#planWqlistDiv").find("input[name='plan_select_wq']:checked").length==0){
@@ -2689,7 +2691,7 @@ function waterData2Next(){
 	select_tech_wq=$("#select_tech").val();
 	select_water_facility_wq=$("#select_water_facility").val();
 	depthM_wq=$("#depthM").val();
-	test_parameter_wq=$("input[name='radio_c']:checked").val();
+	test_parameter_wq=water_facility;//$("input[name='radio_c']:checked").val();
 	//====SI
 	tKit_si=$("#tKit_si").val();
 	tScore_si=$("#tScore_si").val();
@@ -2768,9 +2770,9 @@ function waterData2Next(){
 		$(".errorChk").text("Required Technology Type");
 	}else if (select_water_facility_wq==''){
 		$(".errorChk").text("Required Water Facility Type");
-	}else if (depthM_wq==''){
-		$(".errorChk").text("Required Depth(in meter)");		
-	}else if (test_parameter_wq==undefined){
+	/*}else if (depthM_wq==''){
+		$(".errorChk").text("Required Depth(in meter)");		*/
+	}else if (test_parameter_wq==undefined || test_parameter_wq==''){
 		$(".errorChk").text("Required Test Parameter");
 	//=====SI
 	}else if ((test_parameter_wq=='SI') && (tKit_si=='')){
@@ -4094,7 +4096,7 @@ function selectWaterFacility(){
 		$("#div_turbidity").hide();
 		$("#div_conductivity").hide()
 		
-		$("#service_level_wq").show();
+		$("#parameter_label").show();
 		$("#div_si").show();
 		$("#div_arsenic").show();
 		$("#div_fc").show();
@@ -4104,20 +4106,7 @@ function selectWaterFacility(){
 		$("#div_mn").show();
 		$("#div_chloride").show();
 		$("#div_bn").show();
-		
-		//========
-		$("#table_si").hide();
-		$("#table_arsenic").hide();		
-		$("#table_fc").hide();		
-		$("#table_ttc").hide();		
-		$("#table_iron").hide();		
-		$("#table_ph").hide();		
-		$("#table_mn").hide();		
-		$("#table_chloride").hide();		
-		$("#table_bn").hide();		
-		$("#table_sn_bacteria").hide();		
-		$("#table_turbidity").hide();
-		$("#table_conductivity").hide();	
+			
 	}else if (select_water_facility=='Piped Water Supply System'){	
 		$("#div_arsenic").hide();
 		$("#div_iron").hide();
@@ -4129,24 +4118,11 @@ function selectWaterFacility(){
 		$("#div_turbidity").hide();
 		$("#div_conductivity").hide()
 		
-		$("#service_level_wq").show();	
+		$("#parameter_label").show();	
 		$("#div_si").show();
 		$("#div_fc").show();
 		$("#div_ttc").show()
-		
-		//========
-		$("#table_si").hide();
-		$("#table_arsenic").hide();		
-		$("#table_fc").hide();		
-		$("#table_ttc").hide();		
-		$("#table_iron").hide();		
-		$("#table_ph").hide();		
-		$("#table_mn").hide();		
-		$("#table_chloride").hide();		
-		$("#table_bn").hide();		
-		$("#table_sn_bacteria").hide();		
-		$("#table_turbidity").hide();
-		$("#table_conductivity").hide();	
+			
 	}else if (select_water_facility=='AIRP'){	
 		$("#div_mn").hide();
 		$("#div_chloride").hide();
@@ -4155,7 +4131,7 @@ function selectWaterFacility(){
 		$("#div_turbidity").hide();
 		$("#div_conductivity").hide()
 		
-		$("#service_level_wq").show();
+		$("#parameter_label").show();
 		$("#div_si").show();
 		$("#div_arsenic").show();
 		$("#div_fc").show();
@@ -4163,25 +4139,12 @@ function selectWaterFacility(){
 		$("#div_iron").show();
 		$("#div_ph").show()
 		
-		//========
-		$("#table_si").hide();
-		$("#table_arsenic").hide();		
-		$("#table_fc").hide();		
-		$("#table_ttc").hide();		
-		$("#table_iron").hide();		
-		$("#table_ph").hide();		
-		$("#table_mn").hide();		
-		$("#table_chloride").hide();		
-		$("#table_bn").hide();		
-		$("#table_sn_bacteria").hide();		
-		$("#table_turbidity").hide();
-		$("#table_conductivity").hide();	
 	}else if (select_water_facility=='RO'){	
 		$("#div_sn_bacteria").hide()
 		$("#div_turbidity").hide();
 		$("#div_conductivity").hide()
 		
-		$("#service_level_wq").show();
+		$("#parameter_label").show();
 		$("#div_si").show();
 		$("#div_arsenic").show();
 		$("#div_fc").show();
@@ -4192,19 +4155,6 @@ function selectWaterFacility(){
 		$("#div_chloride").show();
 		$("#div_bn").show();
 		
-		//========
-		$("#table_si").hide();
-		$("#table_arsenic").hide();		
-		$("#table_fc").hide();		
-		$("#table_ttc").hide();		
-		$("#table_iron").hide();		
-		$("#table_ph").hide();		
-		$("#table_mn").hide();		
-		$("#table_chloride").hide();		
-		$("#table_bn").hide();		
-		$("#table_sn_bacteria").hide();		
-		$("#table_turbidity").hide();
-		$("#table_conductivity").hide();	
 	}else if (select_water_facility=='RWH'){
 		$("#div_arsenic").hide();
 		$("#div_iron").hide();
@@ -4215,25 +4165,12 @@ function selectWaterFacility(){
 		$("#div_turbidity").hide();
 		$("#div_conductivity").hide()
 		
-		$("#service_level_wq").show();
+		$("#parameter_label").show();
 		$("#div_si").show();
 		$("#div_fc").show();
 		$("#div_ttc").show()
 		$("#div_ph").show()
-		
-		//========
-		$("#table_si").hide();
-		$("#table_arsenic").hide();		
-		$("#table_fc").hide();		
-		$("#table_ttc").hide();		
-		$("#table_iron").hide();		
-		$("#table_ph").hide();		
-		$("#table_mn").hide();		
-		$("#table_chloride").hide();		
-		$("#table_bn").hide();		
-		$("#table_sn_bacteria").hide();		
-		$("#table_turbidity").hide();
-		$("#table_conductivity").hide();	
+			
 	}else if (select_water_facility=='Stand Post'){		
 		$("#div_arsenic").hide();
 		$("#div_iron").hide();
@@ -4245,24 +4182,11 @@ function selectWaterFacility(){
 		$("#div_turbidity").hide();
 		$("#div_conductivity").hide()
 			
-		$("#service_level_wq").show();
+		$("#parameter_label").show();
 		$("#div_si").show();
 		$("#div_fc").show();
 		$("#div_ttc").show()
-		
-		//========
-		$("#table_si").hide();
-		$("#table_arsenic").hide();		
-		$("#table_fc").hide();		
-		$("#table_ttc").hide();		
-		$("#table_iron").hide();		
-		$("#table_ph").hide();		
-		$("#table_mn").hide();		
-		$("#table_chloride").hide();		
-		$("#table_bn").hide();		
-		$("#table_sn_bacteria").hide();		
-		$("#table_turbidity").hide();
-		$("#table_conductivity").hide();	
+			
 	}else if (select_water_facility=='GFS'){	
 		$("#div_arsenic").hide();
 		$("#div_iron").hide();
@@ -4272,33 +4196,20 @@ function selectWaterFacility(){
 		$("#div_sn_bacteria").hide()
 		$("#div_conductivity").hide()		
 		
-		$("#service_level_wq").show();
+		$("#parameter_label").show();
 		$("#div_si").show();
 		$("#div_fc").show();
 		$("#div_ttc").show()
 		$("#div_ph").show()
 		$("#div_turbidity").show();
 		
-		//========
-		$("#table_si").hide();
-		$("#table_arsenic").hide();		
-		$("#table_fc").hide();		
-		$("#table_ttc").hide();		
-		$("#table_iron").hide();		
-		$("#table_ph").hide();		
-		$("#table_mn").hide();		
-		$("#table_chloride").hide();		
-		$("#table_bn").hide();		
-		$("#table_sn_bacteria").hide();		
-		$("#table_turbidity").hide();
-		$("#table_conductivity").hide();	
 	}else if (select_water_facility=='Ringwell/Dugwell'){	
 		$("#div_chloride").hide();
 		$("#div_bn").hide();
 		$("#div_sn_bacteria").hide()
 		$("#div_conductivity").hide()	
 		
-		$("#service_level_wq").show();
+		$("#parameter_label").show();
 		$("#div_si").show();
 		$("#div_arsenic").show();
 		$("#div_fc").show();
@@ -4308,19 +4219,6 @@ function selectWaterFacility(){
 		$("#div_mn").show();
 		$("#div_turbidity").show();
 		
-		//========
-		$("#table_si").hide();
-		$("#table_arsenic").hide();		
-		$("#table_fc").hide();		
-		$("#table_ttc").hide();		
-		$("#table_iron").hide();		
-		$("#table_ph").hide();		
-		$("#table_mn").hide();		
-		$("#table_chloride").hide();		
-		$("#table_bn").hide();		
-		$("#table_sn_bacteria").hide();		
-		$("#table_turbidity").hide();
-		$("#table_conductivity").hide();	
 	}else if (select_water_facility=='IFG'){
 		$("#div_arsenic").hide();
 		$("#div_fc").hide();
@@ -4330,33 +4228,20 @@ function selectWaterFacility(){
 		$("#div_sn_bacteria").hide()
 		$("#div_conductivity").hide()	
 		
-		$("#service_level_wq").show();
+		$("#parameter_label").show();
 		$("#div_si").show();
 		$("#div_ttc").show()
 		$("#div_iron").show();
 		$("#div_ph").show()
 		$("#div_turbidity").show();
 		
-		//========
-		$("#table_si").hide();
-		$("#table_arsenic").hide();		
-		$("#table_fc").hide();		
-		$("#table_ttc").hide();		
-		$("#table_iron").hide();		
-		$("#table_ph").hide();		
-		$("#table_mn").hide();		
-		$("#table_chloride").hide();		
-		$("#table_bn").hide();		
-		$("#table_sn_bacteria").hide();		
-		$("#table_turbidity").hide();
-		$("#table_conductivity").hide();	
 	}else if (select_water_facility=='PSF'){
 		$("#div_mn").hide();
 		$("#div_chloride").hide();
 		$("#div_bn").hide();
 		$("#div_sn_bacteria").hide()
 		
-		$("#service_level_wq").show();
+		$("#parameter_label").show();
 		$("#div_conductivity").show()	
 		$("#div_arsenic").show();
 		$("#div_fc").show();
@@ -4365,22 +4250,9 @@ function selectWaterFacility(){
 		$("#div_iron").show();
 		$("#div_ph").show()
 		$("#div_turbidity").show();
-		
-		//========
-		$("#table_si").hide();
-		$("#table_arsenic").hide();		
-		$("#table_fc").hide();		
-		$("#table_ttc").hide();		
-		$("#table_iron").hide();		
-		$("#table_ph").hide();		
-		$("#table_mn").hide();		
-		$("#table_chloride").hide();		
-		$("#table_bn").hide();		
-		$("#table_sn_bacteria").hide();		
-		$("#table_turbidity").hide();
-		$("#table_conductivity").hide();		
+				
 	}else if (select_water_facility=='Others'){
-		$("#service_level_wq").show();
+		$("#parameter_label").show();
 		$("#div_si").show();
 		$("#div_arsenic").show();
 		$("#div_fc").show();
@@ -4394,21 +4266,8 @@ function selectWaterFacility(){
 		$("#div_turbidity").show();
 		$("#div_conductivity").show()
 		
-		//========
-		$("#table_si").hide();
-		$("#table_arsenic").hide();		
-		$("#table_fc").hide();		
-		$("#table_ttc").hide();		
-		$("#table_iron").hide();		
-		$("#table_ph").hide();		
-		$("#table_mn").hide();		
-		$("#table_chloride").hide();		
-		$("#table_bn").hide();		
-		$("#table_sn_bacteria").hide();		
-		$("#table_turbidity").hide();
-		$("#table_conductivity").hide();			
 	}else{
-		$("#service_level_wq").hide();
+		$("#parameter_label").hide();	
 		$("#div_si").hide();
 		$("#div_arsenic").hide();
 		$("#div_fc").hide();
@@ -4422,194 +4281,36 @@ function selectWaterFacility(){
 		$("#div_sn_bacteria").hide()
 		$("#div_turbidity").hide();
 		$("#div_conductivity").hide()
-		
-		//========
-		$("#table_si").hide();
-		$("#table_arsenic").hide();		
-		$("#table_fc").hide();		
-		$("#table_ttc").hide();		
-		$("#table_iron").hide();		
-		$("#table_ph").hide();		
-		$("#table_mn").hide();		
-		$("#table_chloride").hide();		
-		$("#table_bn").hide();		
-		$("#table_sn_bacteria").hide();		
-		$("#table_turbidity").hide();
-		$("#table_conductivity").hide();			
 	}
 }
-
-function waterFacilityType(){
-	var water_facility=$("input[name='radio_c']:checked").val();
-	if(water_facility=='SI'){
-		$("#table_arsenic").hide();		
-		$("#table_fc").hide();		
-		$("#table_ttc").hide();		
-		$("#table_iron").hide();		
-		$("#table_ph").hide();		
-		$("#table_mn").hide();		
-		$("#table_chloride").hide();		
-		$("#table_bn").hide();		
-		$("#table_sn_bacteria").hide();		
-		$("#table_turbidity").hide();
-		$("#table_conductivity").hide();
+var water_facility;
+function waterFacilityType(parameter){
+	water_facility=parameter;//$("input[name='radio_c']:checked").val();
+	/*if(water_facility=='SI'){
 		
-		$("#table_si").show();
 	}else if(water_facility=='Arsenic'){
-		$("#table_si").hide();	
-		$("#table_fc").hide();		
-		$("#table_ttc").hide();		
-		$("#table_iron").hide();		
-		$("#table_ph").hide();		
-		$("#table_mn").hide();		
-		$("#table_chloride").hide();		
-		$("#table_bn").hide();		
-		$("#table_sn_bacteria").hide();		
-		$("#table_turbidity").hide();
-		$("#table_conductivity").hide();
 		
-		$("#table_arsenic").show();	
 	}else if(water_facility=='FC'){
-		$("#table_si").hide();
-		$("#table_arsenic").hide();	
-		$("#table_ttc").hide();		
-		$("#table_iron").hide();		
-		$("#table_ph").hide();		
-		$("#table_mn").hide();		
-		$("#table_chloride").hide();		
-		$("#table_bn").hide();		
-		$("#table_sn_bacteria").hide();		
-		$("#table_turbidity").hide();
-		$("#table_conductivity").hide();
 		
-		$("#table_fc").show();
 	}else if(water_facility=='TTC'){
-		$("#table_si").hide();
-		$("#table_arsenic").hide();	
-		$("#table_fc").hide();	
-		$("#table_iron").hide();		
-		$("#table_ph").hide();		
-		$("#table_mn").hide();		
-		$("#table_chloride").hide();		
-		$("#table_bn").hide();		
-		$("#table_sn_bacteria").hide();		
-		$("#table_turbidity").hide();
-		$("#table_conductivity").hide();
 		
-		$("#table_ttc").show();
 	}else if(water_facility=='Iron'){
-		$("#table_si").hide();
-		$("#table_arsenic").hide();	
-		$("#table_fc").hide();	
-		$("#table_ttc").hide();		
-		$("#table_ph").hide();		
-		$("#table_mn").hide();		
-		$("#table_chloride").hide();		
-		$("#table_bn").hide();		
-		$("#table_sn_bacteria").hide();		
-		$("#table_turbidity").hide();
-		$("#table_conductivity").hide();
 		
-		$("#table_iron").show();
 	}else if(water_facility=='PH'){
-		$("#table_si").hide();
-		$("#table_arsenic").hide();	
-		$("#table_fc").hide();	
-		$("#table_ttc").hide();	
-		$("#table_iron").hide();
-		$("#table_mn").hide();		
-		$("#table_chloride").hide();		
-		$("#table_bn").hide();		
-		$("#table_sn_bacteria").hide();		
-		$("#table_turbidity").hide();
-		$("#table_conductivity").hide();
 		
-		$("#table_ph").show();
 	}else if(water_facility=='Mn'){
-		$("#table_si").hide();
-		$("#table_arsenic").hide();	
-		$("#table_fc").hide();	
-		$("#table_ttc").hide();	
-		$("#table_iron").hide();
-		$("#table_ph").hide();		
-		$("#table_chloride").hide();		
-		$("#table_bn").hide();		
-		$("#table_sn_bacteria").hide();		
-		$("#table_turbidity").hide();
-		$("#table_conductivity").hide();
 		
-		$("#table_mn").show();
 	}else if(water_facility=='Chloride'){
-		$("#table_si").hide();
-		$("#table_arsenic").hide();	
-		$("#table_fc").hide();	
-		$("#table_ttc").hide();	
-		$("#table_iron").hide();
-		$("#table_ph").hide();		
-		$("#table_mn").hide();		
-		$("#table_bn").hide();		
-		$("#table_sn_bacteria").hide();		
-		$("#table_turbidity").hide();
-		$("#table_conductivity").hide();
 		
-		$("#table_chloride").show();
 	}else if(water_facility=='Bn'){
-		$("#table_si").hide();
-		$("#table_arsenic").hide();	
-		$("#table_fc").hide();	
-		$("#table_ttc").hide();	
-		$("#table_iron").hide();
-		$("#table_ph").hide();		
-		$("#table_mn").hide();		
-		$("#table_chloride").hide();		
-		$("#table_sn_bacteria").hide();		
-		$("#table_turbidity").hide();
-		$("#table_conductivity").hide();
 		
-		$("#table_bn").show();
 	}else if(water_facility=='Cyanobacteria'){
-		$("#table_si").hide();
-		$("#table_arsenic").hide();	
-		$("#table_fc").hide();	
-		$("#table_ttc").hide();	
-		$("#table_iron").hide();
-		$("#table_ph").hide();		
-		$("#table_mn").hide();		
-		$("#table_chloride").hide();		
-		$("#table_bn").hide();		
-		$("#table_turbidity").hide();
-		$("#table_conductivity").hide();
 		
-		$("#table_sn_bacteria").show();	
-	}else if(water_facility=='Turbidity'){
-		$("#table_si").hide();
-		$("#table_arsenic").hide();	
-		$("#table_fc").hide();	
-		$("#table_ttc").hide();	
-		$("#table_iron").hide();
-		$("#table_ph").hide();		
-		$("#table_mn").hide();		
-		$("#table_chloride").hide();		
-		$("#table_bn").hide();		
-		$("#table_sn_bacteria").hide();
-		$("#table_conductivity").hide();
+	}else if(water_facility=='Turbidity'){		
 		
-		$("#table_turbidity").show();
 	}else{
-		$("#table_si").hide();
-		$("#table_arsenic").hide();	
-		$("#table_fc").hide();	
-		$("#table_ttc").hide();	
-		$("#table_iron").hide();
-		$("#table_ph").hide();		
-		$("#table_mn").hide();		
-		$("#table_chloride").hide();		
-		$("#table_bn").hide();		
-		$("#table_sn_bacteria").hide();
-		$("#table_turbidity").hide();	
 		
-		$("#table_conductivity").show();	
-	}
+	}*/
 }
 
 
