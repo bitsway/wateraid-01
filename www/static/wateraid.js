@@ -67,8 +67,8 @@ function onSuccessAreaWq(position) {
 }
 // onError Callback receives a PositionError object
 function onErrorAreaWq(error) {
-   $("#area_lat").val(0);
-   $("#area_long").val(0);
+   $("#area_lat").val(1);
+   $("#area_long").val(1);
    /*localStorage.latitudeAreaWq=$("#area_lat").val();
 	localStorage.longitudeAreaWq=$("#area_long").val();
    alert(localStorage.latitudeAreaWq+'-'+localStorage.longitudeAreaWq);*/
@@ -78,7 +78,7 @@ function onErrorAreaWq(error) {
 
 
 //---Online
-var apipath="http://w05.yeapps.com/wateraid/syncmobile_20190526/";
+var apipath="http://w05.yeapps.com/wateraid/syncmobile_wq_20190527/";
 
 //--- local
 //var apipath="http://127.0.0.1:8000/wateraid/syncmobile/";
@@ -259,7 +259,7 @@ $(function(){
 						localStorage.testedAt=syncResultArray[15];
 						localStorage.testedBy=syncResultArray[16];*/
 						
-						//alert(localStorage.testValueStr);
+						//alert(localStorage.wqMobileStr);
 						localStorage.mobile_no=mobile;
 						localStorage.ach_save="";
 						localStorage.water_q_save="";
@@ -2619,14 +2619,14 @@ function select_domainWq(){
 			
 			var wqMSetings=localStorage.wqMobileStr.split('|||');
 			facilityStrWq='<select name="select_water_facility" id="select_water_facility" onchange="selectWaterFacility()">'	//data-native-menu="false"	
-			facilityStrWq+='<option value="" selected="selected">Water Facility Type</option><sup class="reqField">*</sup>'
+			facilityStrWq+='<option value="" selected="selected">Select Water Facility Type</option><sup class="reqField">*</sup>'
 			for (k=0;k<eval(wqMSetings.length);k++){
 				facilityTypeWq=wqMSetings[k].split('||');
 				testType=facilityTypeWq[0]
 				facType=facilityTypeWq[1]
 				
 				//alert(test_type_wq.toUpperCase() +'|||'+testType);
-				if (test_type_wq.toUpperCase()==testType){
+				if (test_type_wq.toUpperCase()==testType.toUpperCase()){
 					//if ((selectWardCodeWq !='') && (selectWardCodeWq==wordCWq)){
 						facilityStrWq+='<option value="'+facType+'" >'+facType+'</option>'
 					/*}else{
@@ -2726,10 +2726,19 @@ function waterDataNext(){
 var wq_test_parameter='';
 function selectWaterFacility(){
 	select_water_facility=$("#select_water_facility").val();
+	if (select_water_facility.toUpperCase()=='TUBEWELL'){
+		$("#depthMeter").show();
+	}else{
+		$("#depthMeter").hide();
+	}
+	
+	
+	
 	//alert(select_water_facility);
 	//if ((test_type_wq=='Installation' || test_type_wq=='Renovation') ){	//&& (select_water_facility=='Tubewell')
 		var wqTpetings=localStorage.testParameterStr.split('|||');
-			wqTp='<div data-role="collapsibleset" data-theme="a" data-content-theme="a" data-mini="true">'	//data-native-menu="false"	
+			wqTp='<label id="parameter_label">Water Quality Test Parameter <sup class="reqField">*</sup></label>'
+			wqTp+='<div data-role="collapsibleset" data-theme="a" data-content-theme="a" data-mini="true">'	//data-native-menu="false"	
 			
 			for (i=0;i<eval(wqTpetings.length);i++){
 				wq_tp=wqTpetings[i].split('||');
@@ -3279,7 +3288,7 @@ function waterFacilityType(parameter){
 			}
 		}
 		
-		if ((wq_test_type.toUpperCase()==test_type_wq.toUpperCase())&&(wq_facility_type.toUpperCase()==select_water_facility.toUpperCase())&&(wq_test_parameter.toUpperCase()==test_parameter.toUpperCase())&&(wq_test_key.toUpperCase()=='TEST SCORE')){
+		if ((wq_test_type.toUpperCase()==test_type_wq.toUpperCase())&&(wq_facility_type.toUpperCase()==select_water_facility.toUpperCase())&&(wq_test_parameter.toUpperCase()==test_parameter.toUpperCase())&&(wq_test_key.toUpperCase()=='TEST RESULT')){
 			
 			if (testScoreList==""){
 				testScoreList=wq_test_value
@@ -3288,7 +3297,7 @@ function waterFacilityType(parameter){
 			}
 		}
 		
-		if ((wq_test_type.toUpperCase()==test_type_wq.toUpperCase())&&(wq_facility_type.toUpperCase()==select_water_facility.toUpperCase())&&(wq_test_parameter.toUpperCase()==test_parameter.toUpperCase())&&(wq_test_key.toUpperCase()=='TESTED DATE')){
+		if ((wq_test_type.toUpperCase()==test_type_wq.toUpperCase())&&(wq_facility_type.toUpperCase()==select_water_facility.toUpperCase())&&(wq_test_parameter.toUpperCase()==test_parameter.toUpperCase())&&(wq_test_key.toUpperCase()=='TEST DATE')){
 			
 			if (testedDateList==""){
 				testedDateList=wq_test_value
@@ -3309,8 +3318,9 @@ function waterFacilityType(parameter){
 	
 	if (testKitList !=""){
 		wqTestKitListStr=testKitList.split('|');
-		testKitStr='<label for="'+test_parameter+'_testKit">Test Kit</label>'	
+		testKitStr='<label for="'+test_parameter+'_testKit">Test Kit <sup class="reqField">*</sup></label>'	
 		testKitStr+='<select name="'+test_parameter+'_testKit" id="'+test_parameter+'_testKit">'	//data-native-menu="false"	
+		testKitStr+='<option value="" selected="selected">Select Test Kit</option>'
 		for (j=0;j<eval(wqTestKitListStr.length);j++){	
 			testKitStr+='<option value="'+wqTestKitListStr[j]+'">'+wqTestKitListStr[j]+'</option>'
 		}
@@ -3322,8 +3332,9 @@ function waterFacilityType(parameter){
 	//$("#"+test_parameter+"_testKit").append(testKitStr).trigger('create');
 	if (testedAtList!=""){
 		wqTestedAtListStr=testedAtList.split('|');
-		testedAtStr='<label for="'+test_parameter+'_testedAt">Tested At</label>'
+		testedAtStr='<label for="'+test_parameter+'_testedAt">Tested At <sup class="reqField">*</sup></label>'
 		testedAtStr+='<select name="'+test_parameter+'_testedAt" id="'+test_parameter+'_testedAt">'	//data-native-menu="false"	
+		testedAtStr+='<option value="" selected="selected">Select Tested At</option>'
 		for (k=0;k<eval(wqTestedAtListStr.length);k++){			
 			testedAtStr+='<option value="'+wqTestedAtListStr[k]+'">'+wqTestedAtListStr[k]+'</option>'
 		}
@@ -3331,21 +3342,22 @@ function waterFacilityType(parameter){
 	}
 	
 	if (testScoreList!=""){				
-		testScoreStr+='<label for="'+test_parameter+'_testScore">Test Score</label>'
+		testScoreStr+='<label for="'+test_parameter+'_testScore">Test Result <sup class="reqField">*</sup></label>'
 		testScoreStr+='<input type="text" name="'+test_parameter+'_testScore" id="'+test_parameter+'_testScore"/>'
 		testScoreStr=testScoreStr
 	}
 	
 	if (testedDateList!=""){				
-		testedDateStr+='<label for="'+test_parameter+'_testedDate">Tested Date</label>'
+		testedDateStr+='<label for="'+test_parameter+'_testedDate">Test Date <sup class="reqField">*</sup></label>'
 		testedDateStr+='<input type="date" name="'+test_parameter+'_testedDate" id="'+test_parameter+'_testedDate"/>'
 		testedDateStr=testedDateStr
 	}
 	
 	if (testedByList!=""){
 		wqTestedByListStr=testedByList.split('|');
-		testedByStr='<label for="'+test_parameter+'_testedBy">Tested By</label>'
+		testedByStr='<label for="'+test_parameter+'_testedBy">Tested By <sup class="reqField">*</sup></label>'
 		testedByStr+='<select name="'+test_parameter+'_testedBy" id="'+test_parameter+'_testedBy">'	//data-native-menu="false"	
+		testedByStr+='<option value="" selected="selected">Select Tested By</option>'
 		for (m=0;m<eval(wqTestedByListStr.length);m++){			
 			testedByStr+='<option value="'+wqTestedByListStr[m]+'">'+wqTestedByListStr[m]+'</option>'
 		}
@@ -3597,7 +3609,7 @@ function waterData2Next(){
 	tBy_conductivity=$("#tBy_conductivity").val();
 	
 	
-	//alert(test_type_wq);
+
 	if (select_tech_wq==''){
 		$(".errorChk").text("Required Technology Type");
 	}else if (select_water_facility_wq==''){
