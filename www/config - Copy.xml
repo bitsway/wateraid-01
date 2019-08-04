@@ -47,11 +47,9 @@
 	<preference name="SplashShowOnlyFirstTime" value="true" />
 	<!--
         Define a specific version of PhoneGap to build into your app.
-		<preference name="phonegap-version"       value="7.1.2" />
-        
+        <preference name="phonegap-version"       value="3.5.0" />
     -->
 
-	
     <!-- Plugins -->
 
     <!-- Core plugins -->
@@ -65,22 +63,14 @@
     <plugin name="cordova-plugin-dialogs" />
     <plugin name="cordova-plugin-geolocation" />
     <plugin name="cordova-plugin-globalization" />
-    <!-- <plugin name="cordova-plugin-inappbrowser" /> -->
+    <plugin name="cordova-plugin-inappbrowser" />
     <plugin name="cordova-plugin-media" />
     <plugin name="cordova-plugin-network-information" />
     <plugin name="cordova-plugin-splashscreen" />
     <plugin name="cordova-plugin-vibration" />
-	
 	<plugin name="cordova-plugin-camera" version="2.4.1" />
 	<plugin name="cordova-plugin-file" version="4.3.3"/>
 	<plugin name="cordova-plugin-file-transfer" version="1.6.3" />
-	
-
-
-	<!--<plugin name="cordova-plugin-camera" version="2.4.1" />
-	
-	<plugin name="cordova-plugin-file" version="4.3.3"/>
-	<plugin name="cordova-plugin-file-transfer" version="1.6.3" />-->
 
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
